@@ -1,6 +1,6 @@
 # Universal Paperclip Unofficial Patch
 Speedrunning and dark mode patch by RandomDude based on Patch 2 of Universal Paperclip. 
-The game-play mechanics has not been changed, so the timing is compatible with the original version.
+The game mechanics/logic has not been changed in order to keep timing compatible with the original version.
 
 **You can play this version of the game directly on: https://randomdude4.github.io/UniversalPaperclips/**
 
