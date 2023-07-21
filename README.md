@@ -1,10 +1,14 @@
 # Universal Paperclip Unofficial Patch
-Speedrunning and dark mode patch by RandomDude based on Patch 2 of Universal Paperclip.
-All credit to the original creator Frank Lantz, source code from https://www.decisionproblem.com/paperclips/
+Speedrunning and dark mode patch by RandomDude based on Patch 2 of Universal Paperclip. 
+The game-play mechanics has not been changed, so the timing is compatible with the original version.
 
-You can play this version of the game directly on: https://randomdude4.github.io/paperclips/
 
-## 2023-07-20, Patch v2.1
+
+**You can play this version of the game directly on: https://randomdude4.github.io/UniversalPaperclips**
+
+All credit to the original creator Frank Lantz, source code from https://www.decision<span>problem.com/paperclips/
+
+### 2023-07-21, Patch v2.1 (first release)
 - Dark mode + slight change to fonts and inverted color of the quantum computing boxes.
 - Added extra digits (0.01 s) to the printed messages relating to time (e.g. when you finish the game).
 - Added clock to top right corner with in-game-time (IGT).
@@ -14,4 +18,4 @@ You can play this version of the game directly on: https://randomdude4.github.io
 - Removed ads and links to the mobile version of the game.
 - Removed all privacy/tracking code, such as google analytics.
 - Added a few extra rows to the console.
-- Minor visual bug fixes
+- Minor visual bug fixes to the original code
