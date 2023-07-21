@@ -2,9 +2,9 @@
 Speedrunning and dark mode patch by RandomDude based on Patch 2 of Universal Paperclip. 
 The game-play mechanics has not been changed, so the timing is compatible with the original version.
 
-**You can play this version of the game directly on: https://randomdude4.github.io/UniversalPaperclips**
+**You can play this version of the game directly on: https://randomdude4.github.io/UniversalPaperclips/**
 
-All credit to the original creator Frank Lantz, source code from ht<span>tps://www.decisionproblem.com/paperclips/
+All credit to the original creator Frank Lantz, source code and original game from ht<span>tps://decisionproblem.com/paperclips/
 
 
 ### 2023-07-21, Patch v2.1 (first release)
