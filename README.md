@@ -19,6 +19,6 @@ All credit to the original creator Frank Lantz, source code and original game fr
 - Added a few extra rows to the console.
 - Minor visual bug fixes to the original code
 
-### Previous Patch Notes
-- https://randomdude4.github.io/UniversalPaperclips/patch2notes.html
-- https://randomdude4.github.io/UniversalPaperclips/patch1notes.html
+### Old Patch Notes (by Frank Lantz)
+- Patch 2: https://randomdude4.github.io/UniversalPaperclips/patch2notes.html
+- Patch 1: https://randomdude4.github.io/UniversalPaperclips/patch1notes.html
