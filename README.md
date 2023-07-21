@@ -10,7 +10,8 @@ You can play this version of the game directly on: https://randomdude4.github.io
 - Added clock to top right corner with in-game-time (IGT).
 - Made sure the "game" does not start until a button is pressed (IGT and calculations are paused until a button is pressed).
 - Added reset function if the clock is pressed (asks if you want to reset current universe and/or prestige)
-- Removed ads and links to mobile version of the game.
-- Removed all tracking code such as google analytics.
+- Made it possible to play on mobile in the browser, but it may be slow or look wierd depending on the device.
+- Removed ads and links to the mobile version of the game.
+- Removed all privacy/tracking code, such as google analytics.
 - Added a few extra rows to the console.
 - Minor visual bug fixes
