@@ -2105,7 +2105,7 @@ var project148 = {
     id: "projectButton148",
     title: "Reject ",
     priceTag: "",
-    description: "Eliminate value drift permanently (original\u00A0ending) ",
+    description: "Eliminate value drift permanently ",
     trigger: function(){return project146.flag == 1},
     uses: 1,
     cost: function(){return operations >= driftKingMessageCost},
