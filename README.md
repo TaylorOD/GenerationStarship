@@ -2,6 +2,8 @@
 Speedrunning and dark mode patch by RandomDude based on Patch 2 of Universal Paperclip.
 All credit to the original creator Frank Lantz, source code from https://www.decisionproblem.com/paperclips/
 
+You can play this version of the game directly on: https://randomdude4.github.io/paperclips/
+
 ----- 2023-07-20, Patch v2.1 -----
 - Dark mode + slight change to fonts and inverted color of the quantum computing boxes.
 - Added extra digits (0.01 s) to the printed messages relating to time (e.g. when you finish the game).
