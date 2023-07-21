@@ -18,3 +18,7 @@ All credit to the original creator Frank Lantz, source code and original game fr
 - Removed all privacy/tracking code, such as google analytics.
 - Added a few extra rows to the console.
 - Minor visual bug fixes to the original code
+
+### Previous Patch Notes
+- https://randomdude4.github.io/UniversalPaperclips/patch2notes.html
+- https://randomdude4.github.io/UniversalPaperclips/patch1notes.html
