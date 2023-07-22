@@ -1433,11 +1433,7 @@ function buttonUpdate(){
 
 
 
-
-
-
 //----------INVESTMENTS----------------------------------------------------------------
-
 
 var stocks = [];
 var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -1483,7 +1479,6 @@ function investWithdraw(){
     investmentBankrollElement.innerHTML = formatWithCommas(bankroll);
     fundsElement.innerHTML = formatWithCommas(funds,2);
     portValueElement.innerHTML = formatWithCommas(portTotal);
-    
 }
 
 function stockShop(){
@@ -1504,11 +1499,8 @@ function stockShop(){
     
     if (portfolioSize < maxPort && bankroll >= 5 && budget >= 1 && bankroll - budget >= reserves){
         if (Math.random() < .25){
-            
             createStock(budget);
-
         }
-        
     }   
 }
 
@@ -1538,7 +1530,6 @@ function createStock(dollars){
         amt = 1000000;
     }
   
-        
     var newStock = {
         id: stockID,
         symbol: sym,
@@ -1589,9 +1580,7 @@ function generateSymbol(){
         var z = Math.floor(Math.random()*26);
         name = name.concat(alphabet[z]);     
     }
-    
     return name;
-    
 }
 
 function updateStocks(){
@@ -1675,7 +1664,6 @@ window.setInterval(function(){
         stockTotalElements[i].innerHTML="&nbsp";
         stockProfitElements[i].innerHTML="&nbsp";
     }
-    
 }, 100);
 
 window.setInterval(function(){
@@ -1684,15 +1672,7 @@ window.setInterval(function(){
     }    
 }, 1000);
 
-
-// var welcomeDisplayed = 0;
 window.setInterval(function(){
-    /*
-    if (!welcomeDisplayed){
-        displayMessage("Welcome to Universal Paperclips (unofficial patch 2.1)");
-        welcomeDisplayed = 1;
-    }
-    */
     sellDelay = sellDelay+1;    
         
     if (portfolioSize>0 && sellDelay >= 5 && Math.random()<=.3 && humanFlag == 1){ 
@@ -1707,7 +1687,6 @@ window.setInterval(function(){
 }, 2500);
 
 //-------------------STRATEGY-----------------------------------------------------
-
 var tourneyCost = 1000;
 var tourneyLvl = 1;
 var choiceANames = ["cooperate", "swerve", "macro", "fight", "bet", "raise_price", "opera", "go", "heads", "particle", "discrete", "peace", "search", "lead", "accept", "accept", "attack"]; 
