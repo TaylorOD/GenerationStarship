@@ -6,8 +6,12 @@ The game mechanics/logic has not been changed in order to keep timing compatible
 
 All credit to the original creator Frank Lantz, source code and original game from ht<span>tps://decisionproblem.com/paperclips/
 
+### 2023-07-23, Patch v2.1.1
+- Improved compatibility with mobile or small screens.
+- Increased readability of the html code.
+- Various small improvement and fixes.
 
-### 2023-07-21, Patch v2.1 (first release)
+### 2023-07-21, Patch v2.1.0 (first release)
 - Dark mode + slight change to fonts and inverted color of the quantum computing boxes.
 - Added extra digits (0.01 s) to the printed messages relating to time (e.g. when you finish the game).
 - Added clock to top right corner with in-game-time (IGT).
