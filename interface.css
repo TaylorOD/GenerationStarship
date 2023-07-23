@@ -307,7 +307,6 @@ canvas {
   float: left;
   background: black;    
   width: 100%;
-  min-width: 900px;
 }
 
 #topDIv {
