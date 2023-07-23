@@ -307,26 +307,39 @@ canvas {
   float: left;
   background: black;    
   width: 100%;
+  min-width: 900px;
 }
 
 #topDIv {
   float: left;
+  white-space: nowrap;
   width: 100%;
 }
 
+#containerColumns { 
+  float: left; 
+  white-space: nowrap;
+}
+
 #leftColumn {
-  float: left ;
+  display: inline-block;
+  vertical-align:top;
+  white-space: normal;
   width: 275px;
 }
 
 #middleColumn {
-  float: left;
+  display: inline-block;
+  vertical-align:top;
+  white-space: normal;
   width: 275px;
   margin-left: 10px;
 }
 
 #rightColumn {
-  float: left;
+  display: inline-block;
+  vertical-align:top;
+  white-space: normal;
   width: 320px;
   margin-left: 10px;    
 }
