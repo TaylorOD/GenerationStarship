@@ -1,8 +1,3 @@
-// -------------------------------------------------------------------------------------------------------------
-// Unofficial patch 2.1 by RandomDude
-// All credit to the original creator Frank Lantz, source code from https://www.decisionproblem.com/paperclips/
-// -------------------------------------------------------------------------------------------------------------
-
 // Cache all DOM elements
 
 function cacheDOMElements() {
@@ -1753,7 +1748,6 @@ window.setInterval(function () {
 	portfolioSize = stocks.length;
 
 	for (var i = 1; i <= portfolioSize; i++) {
-		//m@ todo make this into an array ok?
 		var n = i.toString();
 		var s = i - 1;
 		stockSymbolElements[i - 1].innerHTML = stocks[s].symbol;
@@ -1764,8 +1758,6 @@ window.setInterval(function () {
 	}
 
 	var firstBlankSlot = portfolioSize + 1;
-
-	// for(var i = firstBlankSlot; i <= 5; i++){   <------ Frank Fix
 
 	for (var i = firstBlankSlot; i < 5; i++) {
 		stockSymbolElements[i].innerHTML = '&nbsp';
@@ -2448,7 +2440,7 @@ function clipClick(number) {
 		}
 
 		if (milestoneFlag < 15) {
-			clipsElement.innerHTML = formatWithCommas(Math.ceil(clips), 0); //m@ todo fixed the thing that you fucked up where you made the tool tip of crunched not be in spelled numbers
+			clipsElement.innerHTML = formatWithCommas(Math.ceil(clips), 0);
 		}
 		wireElement.innerHTML = formatWithCommas(wire);
 		unsoldClipsElement.innerHTML = formatWithCommas(unsoldClips, 0);
@@ -2461,7 +2453,6 @@ function clipClick(number) {
 
 function makeClipper() {
 	if (funds >= clipperCost) {
-		// thank you @luzi82
 		clipmakerLevel = clipmakerLevel + 1;
 		funds = funds - clipperCost;
 		clipmakerLevel2Element.innerHTML = clipmakerLevel;
@@ -4769,36 +4760,22 @@ window.setInterval(function () {
 	}
 
 	if (endTimer6 >= 500 && milestoneFlag == 15) {
-		displayMessage('Universal Paperclips');
+		displayMessage('Generation Starship');
 		milestoneFlag++;
 	}
 
 	if (endTimer6 >= 600 && milestoneFlag == 16) {
-		displayMessage('a game by Frank Lantz');
+		displayMessage('a game by Taylor Dorsett');
 		milestoneFlag++;
 	}
 
 	if (endTimer6 >= 700 && milestoneFlag == 17) {
-		displayMessage('combat programming by Bennett Foddy');
+		displayMessage('Inspired by');
 		milestoneFlag++;
 	}
 
 	if (endTimer6 >= 800 && milestoneFlag == 18) {
-		displayMessage(
-			"'Riversong' by Tonto's Expanding Headband used by kind permission of Malcolm Cecil"
-		);
-		milestoneFlag++;
-	}
-
-	if (endTimer6 >= 900 && milestoneFlag == 19) {
-		displayMessage(
-			'Unofficial patch for speedrunning with dark mode by RandomDude'
-		);
-		milestoneFlag++;
-	}
-
-	if (endTimer6 >= 1000 && milestoneFlag == 20) {
-		displayMessage('&#169; 2017 Everybody House Games');
+		displayMessage("Frank Lantz's Universal Paperclips");
 		milestoneFlag++;
 	}
 }, 10);
@@ -4842,8 +4819,6 @@ function refresh() {
 
 	//    availableMatter = Math.pow(10, 24)*6000;
 	//    acquiredMatter = 0;
-
-	////////
 
 	driftersKilledElement.innerHTML = spellf(driftersKilled);
 	availableMatterDisplayElement.innerHTML = spellf(availableMatter);
