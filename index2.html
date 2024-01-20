@@ -276,19 +276,20 @@
 						<b>Starship Operations</b><br />
 						<hr />
 						Available Energy: <span id="funds">0.00</span>e<br />
-						<div id="revPerSecDiv" style="display: none">
-							Avg. e per sec: <span id="avgRev">0.00</span>e<br />
-							Avg. Clips sold per sec: <span id="avgSales">0</span><br />
-						</div>
-						Unsold Inventory: <span id="unsoldClips">0</span><br />
+						Unused Energy: <span id="unsoldClips">0</span><br />
 						<button class="button2" id="btnLowerPrice" onclick="lowerPrice()">
-							lower
+							Increase Power
 						</button>
 						<button class="button2" id="btnRaisePrice" onclick="raisePrice()">
-							raise
+							Decrease Power
 						</button>
 						Price per Clip: $ <span id="margin">0.25</span><br />
-						Public Demand: <span id="demand">32</span>%<br />
+						<br />
+						<div id="revPerSecDiv" style="display: none">
+							Humans on board: <span id="avgRev">0.00</span>h<br />
+							Humans in cryosleep: <span id="avgSales">0h</span><br />
+						</div>
+						Human Happiness: <span id="demand">32</span>%<br />
 						<br />
 						<button
 							class="button2"
@@ -328,7 +329,7 @@
 						</button>
 						<span class="engineText6" id="wire">1,000</span
 						><span class="engineText6"> Stellar Dust Units (SDUs)</span><br />
-						Cost: <span id="wireCost">16e</span><br />
+						Cost: <span id="wireCost">16</span>e<br />
 						<br />
 						<div id="autoClipperDiv" style="display: none">
 							<p class="engineText5">
@@ -342,7 +343,7 @@
 								</button>
 								<span class="engineText6" id="clipmakerLevel2">0</span>
 							</p>
-							Cost: <span id="clipperCost">5.00e</span><br />
+							Cost: <span id="clipperCost">5.00</span>e<br />
 							<br />
 						</div>
 						<div id="megaClipperDiv" style="display: none">
@@ -357,7 +358,7 @@
 								</button>
 								<span class="engineText6" id="megaClipperLevel">0</span>
 							</p>
-							Cost: <span id="megaClipperCost">500e</span><br />
+							Cost: <span id="megaClipperCost">500</span>e<br />
 						</div>
 					</div>
 					<br />

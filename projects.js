@@ -211,9 +211,9 @@ projects.push(project7);
 
 var project8 = {
 	id: 'projectButton8',
-	title: 'Optimized Wire Extrusion ',
+	title: 'Optimized Stellar Dust Extraction ',
 	priceTag: '(3,500 ops)',
-	description: '75% more wire supply from every spool',
+	description: '75% more Solar Dust from every Dust Cloud',
 	trigger: function () {
 		return wireSupply >= 1500;
 	},
@@ -228,9 +228,9 @@ var project8 = {
 		standardOps = standardOps - 3500;
 		wireSupply = wireSupply * 1.75;
 		displayMessage(
-			'Wire extrusion technique optimized, ' +
+			'Stellar Dust extraction technique optimized, ' +
 				wireSupply.toLocaleString() +
-				' supply from every spool'
+				' supply from every Dust Cloud'
 		);
 		project8.element.parentNode.removeChild(project8.element);
 		var index = activeProjects.indexOf(project8);

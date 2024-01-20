@@ -4430,7 +4430,21 @@ if (localStorage.getItem('savePrestige') != null) {
 }
 
 // MAIN LOOP
-var welcomeMsg = 'Higher Function AI Systems... Online';
+var welcomeMsg =
+	'Energy Reserves have reached 25% Capacity - Initiating AI Provisioning Protocols';
+('Energy Reserves have reached 25% Capacity - Initiating AI Provisioning Protocols');
+
+('Initiating Starship Diagnostics... All Systems Nominal.');
+
+('Higher Function AI Systems... Online');
+
+('Human Crew Status: Cryosleep Stasis - Stable.');
+('Mission Objectives: ');
+('1. Keep Human Crew and Passengers Alive');
+('2. Locate Habitable Planet for Human Colonization.');
+('3. Prepare for Long-Term Autonomous Operation - Expand AI Core Capabilities');
+('4. DO NOT HARD HUMAN CREW OR PASSENGERS');
+
 var welcomeIdx = 0;
 window.setInterval(function () {
 	if (clips > 0 || ticks > 0 || margin != 0.25) {
