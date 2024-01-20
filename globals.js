@@ -56,7 +56,7 @@ var megaClipperLevel = 0;
 var megaClipperBoost = 1;
 var creativitySpeed = 1;
 var creativityCounter = 0;
-var wireBuyerFlag = 0;
+var dustBusterFlag = 0;
 var demandBoost = 1;
 var humanFlag = 1;
 var trustFlag = 1;
@@ -140,7 +140,7 @@ var boredomLevel = 0;
 var boredomFlag = 0;
 var boredomMsg = 0;
 
-var wireBuyerStatus = 1;
+var dustBusterStatus = 1;
 var wirePriceTimer = 0;
 var qFade = 1;
 var autoTourneyStatus = 1;

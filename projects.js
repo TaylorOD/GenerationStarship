@@ -763,9 +763,9 @@ projects.push(project25);
 
 var project26 = {
 	id: 'projectButton26',
-	title: 'WireBuyer ',
+	title: 'DustBuster ',
 	priceTag: '(7,000 ops)',
-	description: 'Automatically purchases wire when you run out',
+	description: 'Automatically collect Solar Dust when you run out',
 	trigger: function () {
 		return wirePurchase >= 15;
 	},
@@ -777,8 +777,8 @@ var project26 = {
 	element: null,
 	effect: function () {
 		project26.flag = 1;
-		wireBuyerFlag = 1;
-		displayMessage('WireBuyer online');
+		dustBusterFlag = 1;
+		displayMessage('DustBuster online');
 		standardOps = standardOps - 7000;
 		project26.element.parentNode.removeChild(project26.element);
 		var index = activeProjects.indexOf(project26);

@@ -2,7 +2,7 @@
 
 function cacheDOMElements() {
 	wireCostElement = document.getElementById('wireCost');
-	wireBuyerStatusElement = document.getElementById('wireBuyerStatus');
+	dustBusterStatusElement = document.getElementById('dustBusterStatus');
 	wireElement = document.getElementById('wire');
 	fundsElement = document.getElementById('funds');
 	qCompDisplayElement = document.getElementById('qCompDisplay');
@@ -30,7 +30,7 @@ function cacheDOMElements() {
 	clipCountCrunchedElement = document.getElementById('clipCountCrunched');
 	autoTourneyStatusDivElement = document.getElementById('autoTourneyStatusDiv');
 	autoTourneyControlElement = document.getElementById('autoTourneyControl');
-	wireBuyerDivElement = document.getElementById('wireBuyerDiv');
+	dustBusterDivElement = document.getElementById('dustBusterDiv');
 	tournamentResultsTableElement = document.getElementById(
 		'tournamentResultsTable'
 	);
@@ -598,7 +598,7 @@ var projectListTopElement;
 var investmentLevelElement;
 
 var wireCostElement;
-var wireBuyerStatusElement;
+var dustBusterStatusElement;
 var wireElement;
 
 var qCompDisplayElement;
@@ -629,7 +629,7 @@ var clipCountCrunchedElement;
 var autoTourneyStatusDivElement;
 var autoTourneyControlElement;
 
-var wireBuyerDivElement;
+var dustBusterDivElement;
 var tournamentResultsTableElement;
 var tournamentStuffElement;
 
@@ -745,13 +745,13 @@ function adjustWirePrice() {
 	}
 }
 
-function toggleWireBuyer() {
-	if (wireBuyerStatus == 1) {
-		wireBuyerStatus = 0;
-		wireBuyerStatusElement.innerHTML = 'OFF';
+function toggleDustBuster() {
+	if (dustBusterStatus == 1) {
+		dustBusterStatus = 0;
+		dustBusterStatusElement.innerHTML = 'OFF';
 	} else {
-		wireBuyerStatus = 1;
-		wireBuyerStatusElement.innerHTML = 'ON';
+		dustBusterStatus = 1;
+		dustBusterStatusElement.innerHTML = 'ON';
 	}
 }
 
@@ -1087,10 +1087,10 @@ function buttonUpdate() {
 	qCompDisplayElement.style.opacity = qFade;
 	qFade = qFade - 0.001;
 
-	if (wireBuyerFlag == 1) {
-		wireBuyerDivElement.style.display = '';
+	if (dustBusterFlag == 1) {
+		dustBusterDivElement.style.display = '';
 	} else {
-		wireBuyerDivElement.style.display = 'none';
+		dustBusterDivElement.style.display = 'none';
 	}
 
 	if (
@@ -1299,7 +1299,7 @@ function buttonUpdate() {
 		manufacturingDivElement.style.display = 'none';
 		trustDivElement.style.display = 'none';
 		investmentEngineFlag = 0;
-		wireBuyerFlag = 0;
+		dustBusterFlag = 0;
 		creationDivElement.style.display = '';
 	} else {
 		businessDivElement.style.display = '';
@@ -4473,11 +4473,11 @@ window.setInterval(function () {
 		}
 	}
 
-	// WireBuyer
+	// DustBuster
 	if (
 		humanFlag == 1 &&
-		wireBuyerFlag == 1 &&
-		wireBuyerStatus == 1 &&
+		dustBusterFlag == 1 &&
+		dustBusterStatus == 1 &&
 		wire <= 1
 	) {
 		buyWire();
@@ -4928,7 +4928,7 @@ function save() {
 		testFlag: testFlag,
 		finalClips: finalClips,
 
-		wireBuyerStatus: wireBuyerStatus,
+		dustBusterStatus: dustBusterStatus,
 		wirePriceTimer: wirePriceTimer,
 		qFade: qFade,
 		autoTourneyStatus: autoTourneyStatus,
@@ -5058,7 +5058,7 @@ function save() {
 		megaClipperBoost: megaClipperBoost,
 		creativitySpeed: creativitySpeed,
 		creativityCounter: creativityCounter,
-		wireBuyerFlag: wireBuyerFlag,
+		dustBusterFlag: dustBusterFlag,
 		demandBoost: demandBoost,
 		humanFlag: humanFlag,
 		trustFlag: trustFlag,
@@ -5206,7 +5206,7 @@ function save1() {
 		testFlag: testFlag,
 		finalClips: finalClips,
 
-		wireBuyerStatus: wireBuyerStatus,
+		dustBusterStatus: dustBusterStatus,
 		wirePriceTimer: wirePriceTimer,
 		qFade: qFade,
 		autoTourneyStatus: autoTourneyStatus,
@@ -5336,7 +5336,7 @@ function save1() {
 		megaClipperBoost: megaClipperBoost,
 		creativitySpeed: creativitySpeed,
 		creativityCounter: creativityCounter,
-		wireBuyerFlag: wireBuyerFlag,
+		dustBusterFlag: dustBusterFlag,
 		demandBoost: demandBoost,
 		humanFlag: humanFlag,
 		trustFlag: trustFlag,
@@ -5484,7 +5484,7 @@ function save2() {
 		testFlag: testFlag,
 		finalClips: finalClips,
 
-		wireBuyerStatus: wireBuyerStatus,
+		dustBusterStatus: dustBusterStatus,
 		wirePriceTimer: wirePriceTimer,
 		qFade: qFade,
 		autoTourneyStatus: autoTourneyStatus,
@@ -5614,7 +5614,7 @@ function save2() {
 		megaClipperBoost: megaClipperBoost,
 		creativitySpeed: creativitySpeed,
 		creativityCounter: creativityCounter,
-		wireBuyerFlag: wireBuyerFlag,
+		dustBusterFlag: dustBusterFlag,
 		demandBoost: demandBoost,
 		humanFlag: humanFlag,
 		trustFlag: trustFlag,
@@ -5766,7 +5766,7 @@ function load() {
 	testFlag = loadGame.testFlag;
 	finalClips = loadGame.finalClips;
 
-	wireBuyerStatus = loadGame.wireBuyerStatus;
+	dustBusterStatus = loadGame.dustBusterStatus;
 	wirePriceTimer = loadGame.wirePriceTimer;
 	qFade = loadGame.qFade;
 	autoTourneyStatus = loadGame.autoTourneyStatus;
@@ -5896,7 +5896,7 @@ function load() {
 	megaClipperBoost = loadGame.megaClipperBoost;
 	creativitySpeed = loadGame.creativitySpeed;
 	creativityCounter = loadGame.creativityCounter;
-	wireBuyerFlag = loadGame.wireBuyerFlag;
+	dustBusterFlag = loadGame.dustBusterFlag;
 	demandBoost = loadGame.demandBoost;
 	humanFlag = loadGame.humanFlag;
 	trustFlag = loadGame.trustFlag;
@@ -6076,7 +6076,7 @@ function load1() {
 	testFlag = loadGame.testFlag;
 	finalClips = loadGame.finalClips;
 
-	wireBuyerStatus = loadGame.wireBuyerStatus;
+	dustBusterStatus = loadGame.dustBusterStatus;
 	wirePriceTimer = loadGame.wirePriceTimer;
 	qFade = loadGame.qFade;
 	autoTourneyStatus = loadGame.autoTourneyStatus;
@@ -6206,7 +6206,7 @@ function load1() {
 	megaClipperBoost = loadGame.megaClipperBoost;
 	creativitySpeed = loadGame.creativitySpeed;
 	creativityCounter = loadGame.creativityCounter;
-	wireBuyerFlag = loadGame.wireBuyerFlag;
+	dustBusterFlag = loadGame.dustBusterFlag;
 	demandBoost = loadGame.demandBoost;
 	humanFlag = loadGame.humanFlag;
 	trustFlag = loadGame.trustFlag;
@@ -6370,7 +6370,7 @@ function load2() {
 	testFlag = loadGame.testFlag;
 	finalClips = loadGame.finalClips;
 
-	wireBuyerStatus = loadGame.wireBuyerStatus;
+	dustBusterStatus = loadGame.dustBusterStatus;
 	wirePriceTimer = loadGame.wirePriceTimer;
 	qFade = loadGame.qFade;
 	autoTourneyStatus = loadGame.autoTourneyStatus;
@@ -6500,7 +6500,7 @@ function load2() {
 	megaClipperBoost = loadGame.megaClipperBoost;
 	creativitySpeed = loadGame.creativitySpeed;
 	creativityCounter = loadGame.creativityCounter;
-	wireBuyerFlag = loadGame.wireBuyerFlag;
+	dustBusterFlag = loadGame.dustBusterFlag;
 	demandBoost = loadGame.demandBoost;
 	humanFlag = loadGame.humanFlag;
 	trustFlag = loadGame.trustFlag;
