@@ -5067,7 +5067,7 @@ function save() {
 		marketing: marketing,
 		marketingLvl: marketingLvl,
 		x: x,
-		clippperCost: clippperCost,
+		clipperCost: clipperCost,
 		processors: processors,
 		memory: memory,
 		operations: operations,
@@ -5345,7 +5345,7 @@ function save1() {
 		marketing: marketing,
 		marketingLvl: marketingLvl,
 		x: x,
-		clippperCost: clippperCost,
+		clipperCost: clipperCost,
 		processors: processors,
 		memory: memory,
 		operations: operations,
@@ -5623,7 +5623,7 @@ function save2() {
 		marketing: marketing,
 		marketingLvl: marketingLvl,
 		x: x,
-		clippperCost: clippperCost,
+		clipperCost: clipperCost,
 		processors: processors,
 		memory: memory,
 		operations: operations,
@@ -5905,7 +5905,7 @@ function load() {
 	marketing = loadGame.marketing;
 	marketingLvl = loadGame.marketingLvl;
 	x = loadGame.x;
-	clippperCost = loadGame.clippperCost;
+	clipperCost = loadGame.clipperCost;
 	processors = loadGame.processors;
 	memory = loadGame.memory;
 	operations = loadGame.operations;
@@ -6215,7 +6215,7 @@ function load1() {
 	marketing = loadGame.marketing;
 	marketingLvl = loadGame.marketingLvl;
 	x = loadGame.x;
-	clippperCost = loadGame.clippperCost;
+	clipperCost = loadGame.clipperCost;
 	processors = loadGame.processors;
 	memory = loadGame.memory;
 	operations = loadGame.operations;
@@ -6509,7 +6509,7 @@ function load2() {
 	marketing = loadGame.marketing;
 	marketingLvl = loadGame.marketingLvl;
 	x = loadGame.x;
-	clippperCost = loadGame.clippperCost;
+	clipperCost = loadGame.clipperCost;
 	processors = loadGame.processors;
 	memory = loadGame.memory;
 	operations = loadGame.operations;

@@ -10,7 +10,7 @@ var clipmakerLevel2 = 0;
 var clipperCost = 5;
 var unsoldClips = 0;
 var funds = 0;
-var margin = .25;
+var margin = 0.25;
 var wire = 1000;
 var wireCost = 20;
 var adCost = 100;
@@ -23,7 +23,7 @@ var ticks = 0;
 var marketing = 1;
 var marketingLvl = 1;
 var x = 0;
-var clippperCost = 5;
+var clipperCost = 5;
 var processors = 1;
 var memory = 1;
 var operations = 0;
@@ -70,7 +70,7 @@ var wireDroneFlag = 0;
 var factoryLevel = 0;
 var factoryBoost = 1;
 var droneBoost = 1;
-var availableMatter = Math.pow(10, 24)*6000;
+var availableMatter = Math.pow(10, 24) * 6000;
 var acquiredMatter = 0;
 var processedMatter = 0;
 var harvesterLevel = 0;
@@ -85,7 +85,7 @@ var harvesterBill = 0;
 var wireDroneBill = 0;
 var factoryBill = 0;
 var probeCount = 0;
-var totalMatter = Math.pow(10, 54)*30;
+var totalMatter = Math.pow(10, 54) * 30;
 var foundMatter = availableMatter;
 var qFlag = 0;
 var qClock = 0;
@@ -166,17 +166,4 @@ var finalClips = 0;
 
 var resetFlag = 2;
 var threnodyAudio = new Audio();
-var threnodyLoadedBool = false; 
-
-
-
-
-
-
-
-
-
-
-
-
-
+var threnodyLoadedBool = false;
