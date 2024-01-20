@@ -5,7 +5,7 @@ The game mechanics/logic has not been changed in order to keep timing compatible
 
 **You can play this version of the game directly on: <https://randomdude4.github.io/UniversalPaperclips/>**
 
-All credit to the original creator Frank Lantz, source code and original game from ht<span>tps://decisionproblem.com/paperclips/
+All credit to the original creator Frank Lantz, source code and original game from **<https://decisionproblem.com/paperclips/>**
 
 ## 2023-07-23, Patch v2.1.1
 

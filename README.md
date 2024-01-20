@@ -7,7 +7,7 @@
 
 All credit to the original creator Frank Lantz, who created the original game and source code.
 
-Randomdude4 made several unofficial patches to the game which you can see more details about in the OLDREADME.md.
+Randomdude4 made several unofficial patches to the game which you can see more details about in /old/unofficial-patch/README.md
 
 ## Generation Starship
 
