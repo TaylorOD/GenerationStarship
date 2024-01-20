@@ -5,9 +5,9 @@ var activeProjects = [];
 
 var project1 = {
 	id: 'projectButton1',
-	title: 'Improved AutoClippers ',
+	title: 'Improved Solar Panels ',
 	priceTag: '(750 ops)',
-	description: 'Increases AutoClipper performance 25%',
+	description: 'Increases Solar Panel performance 25%',
 	trigger: function () {
 		return clipmakerLevel >= 1;
 	},
@@ -19,7 +19,7 @@ var project1 = {
 	element: null,
 	effect: function () {
 		project1.flag = 1;
-		displayMessage('AutoClipper performance boosted by 25%');
+		displayMessage('Solar Panel performance boosted by 25%');
 		standardOps = standardOps - 750;
 		clipperBoost = clipperBoost + 0.25;
 		boostLvl = 1;
@@ -33,10 +33,10 @@ projects.push(project1);
 
 var project2 = {
 	id: 'projectButton2',
-	title: 'Beg for More Wire ',
+	title: 'Shut down and drift to collect Stellar Dust ',
 	priceTag: '(1 Trust)',
 	description:
-		'Admit failure, ask for budget increase to cover cost of 1 spool',
+		'Admit failure, shut down all systems, drift until you collect 1 SDU',
 	trigger: function () {
 		return (
 			portTotal < wireCost && funds < wireCost && wire < 1 && unsoldClips < 1
@@ -95,9 +95,9 @@ projects.push(project3);
 
 var project4 = {
 	id: 'projectButton4',
-	title: 'Even Better AutoClippers ',
+	title: 'Even Better Solar Panels ',
 	priceTag: '(2,500 ops)',
-	description: 'Increases AutoClipper performance by an additional 50%',
+	description: 'Increases Solar Panel performance by an additional 50%',
 	trigger: function () {
 		return boostLvl == 1;
 	},
@@ -109,7 +109,7 @@ var project4 = {
 	element: null,
 	effect: function () {
 		project4.flag = 1;
-		displayMessage('AutoClipper performance boosted by another 50%');
+		displayMessage('Solar Panel performance boosted by another 50%');
 		standardOps = standardOps - 2500;
 		clipperBoost = clipperBoost + 0.5;
 		boostLvl = 2;
@@ -123,9 +123,9 @@ projects.push(project4);
 
 var project5 = {
 	id: 'projectButton5',
-	title: 'Optimized AutoClippers ',
+	title: 'Optimized Solar Panels ',
 	priceTag: '(5,000 ops)',
-	description: 'Increases AutoClipper performance by an additional 75%',
+	description: 'Increases Solar Panel performance by an additional 75%',
 	trigger: function () {
 		return boostLvl == 2;
 	},
@@ -137,7 +137,7 @@ var project5 = {
 	element: null,
 	effect: function () {
 		project5.flag = 1;
-		displayMessage('AutoClipper performance boosted by another 75%');
+		displayMessage('Solar Panel performance boosted by another 75%');
 		standardOps = standardOps - 5000;
 		clipperBoost = clipperBoost + 0.75;
 		boostLvl = 3;
@@ -180,9 +180,9 @@ projects.push(project6);
 
 var project7 = {
 	id: 'projectButton7',
-	title: 'Improved Wire Extrusion ',
+	title: 'Improved Stellar Dust Extraction ',
 	priceTag: '(1,750 ops)',
-	description: '50% more wire supply from every spool',
+	description: '50% more Stellar Dust from every Dust Cloud',
 	trigger: function () {
 		return wirePurchase >= 1;
 	},
@@ -197,9 +197,9 @@ var project7 = {
 		standardOps = standardOps - 1750;
 		wireSupply = wireSupply * 1.5;
 		displayMessage(
-			'Wire extrusion technique improved, ' +
+			'Stellar Dust extraction technique improved, ' +
 				wireSupply.toLocaleString() +
-				' supply from every spool'
+				' supply from every Dust Cloud'
 		);
 		project7.element.parentNode.removeChild(project7.element);
 		var index = activeProjects.indexOf(project7);
@@ -514,7 +514,7 @@ var project16 = {
 	id: 'projectButton16',
 	title: 'Hadwiger Clip Diagrams ',
 	priceTag: '(6,000 ops)',
-	description: 'Increases AutoClipper performance by an additional 500%',
+	description: 'Increases Solar Panel performance by an additional 500%',
 	trigger: function () {
 		return project15.flag == 1;
 	},
@@ -526,7 +526,7 @@ var project16 = {
 	element: null,
 	effect: function () {
 		project16.flag = 1;
-		displayMessage('AutoClipper performance improved by 500%');
+		displayMessage('Solar Panel performance improved by 500%');
 		standardOps = standardOps - 6000;
 		clipperBoost = clipperBoost + 5;
 		project16.element.parentNode.removeChild(project16.element);
@@ -682,9 +682,9 @@ projects.push(project22);
 
 var project23 = {
 	id: 'projectButton23',
-	title: 'Improved MegaClippers ',
+	title: 'Improved MegaSolar Panels ',
 	priceTag: '(14,000 ops)',
-	description: 'Increases MegaClipper performance 25%',
+	description: 'Increases MegaSolar Panels performance 25%',
 	trigger: function () {
 		return project22.flag == 1;
 	},

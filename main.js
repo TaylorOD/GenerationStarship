@@ -3558,16 +3558,16 @@ function calculateOperations() {
 function milestoneCheck() {
 	if (milestoneFlag == 0 && funds >= 5) {
 		milestoneFlag = milestoneFlag + 1;
-		displayMessage('AutoClippers available for purchase');
+		displayMessage('Initiating Starship Diagnostics... All Systems Nominal.');
 	}
 
 	if (milestoneFlag == 1 && Math.ceil(clips) >= 500) {
 		milestoneFlag = milestoneFlag + 1;
-		displayMessage('500 clips created in ' + timeCruncher(ticks));
+		displayMessage('500 energy gathered in ' + timeCruncher(ticks));
 	}
 	if (milestoneFlag == 2 && Math.ceil(clips) >= 1000) {
 		milestoneFlag = milestoneFlag + 1;
-		displayMessage('1,000 clips created in ' + timeCruncher(ticks));
+		displayMessage('1,000 energy gathered in ' + timeCruncher(ticks));
 	}
 
 	if (compFlag == 0 && unsoldClips < 1 && funds < wireCost && wire < 1) {
@@ -4430,7 +4430,7 @@ if (localStorage.getItem('savePrestige') != null) {
 }
 
 // MAIN LOOP
-var welcomeMsg = 'Welcome to Universal Paperclips';
+var welcomeMsg = 'Higher Function AI Systems... Online';
 var welcomeIdx = 0;
 window.setInterval(function () {
 	if (clips > 0 || ticks > 0 || margin != 0.25) {

@@ -1,5 +1,3 @@
-<!-- Unofficial patch 2.1 by RandomDude -->
-<!-- All credit to the original creator Frank Lantz, source code from https://www.decisionproblem.com/paperclips/ -->
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
@@ -40,18 +38,18 @@
 				</div>
 				<div class="toolTip">
 					<span id="clipCountCrunched" class="toolTipText">0</span>
-					<h2>Paperclips: <span id="clips">0</span></h2>
+					<h2>Energy: <span id="clips">0</span></h2>
 				</div>
 			</div>
 
 			<div id="containerColumns">
 				<div id="leftColumn">
 					<button class="button2" id="btnMakePaperclip" onclick="clipClick(1)">
-						Make Paperclip</button
+						Collect Energy</button
 					><br />
 					<br />
 					<div id="creationDiv" style="display: none">
-						<b>Manufacturing</b><br />
+						<b>Energy Collection</b><br />
 						<hr />
 						<div id="factoryUpgradeDisplay" style="display: none">
 							<p class="clean">
@@ -60,10 +58,10 @@
 							</p>
 						</div>
 						<div id="clipsPerSecDiv">
-							Clips per Second: <span id="clipmakerRate2">0</span><br />
+							Energy per Second: <span id="clipmakerRate2">0</span><br />
 						</div>
 						<div id="tothDiv" style="display: none">
-							Unused Clips: <span id="unusedClipsDisplay">0</span><br />
+							Unused Energy: <span id="unusedClipsDisplay">0</span><br />
 						</div>
 						<br />
 						<div id="factoryDiv" style="display: none">
@@ -92,7 +90,7 @@
 								</button>
 							</div>
 							<br />
-							Cost: <span id="factoryCostDisplay">0</span> clips<br />
+							Cost: <span id="factoryCostDisplay">0</span> e<br />
 							<br />
 						</div>
 						<div id="wireTransDiv">
@@ -172,7 +170,7 @@
 								</button>
 							</div>
 							<br />
-							Cost: <span id="harvesterCostDisplay">0</span> clips<br /><br />
+							Cost: <span id="harvesterCostDisplay">0</span> e<br /><br />
 						</div>
 						<div id="wireDroneDiv" style="display: none">
 							<p class="engineText5">
@@ -224,7 +222,7 @@
 								</button>
 							</div>
 							<br />
-							Cost: <span id="wireDroneCostDisplay">0</span> clips<br />
+							Cost: <span id="wireDroneCostDisplay">0</span> e<br />
 							<br />
 						</div>
 						<div id="droneDivSpace" style="display: none">
@@ -247,7 +245,7 @@
 								>
 									Launch Probe</button
 								><br />
-								Cost: <span id="probeCostDisplay">0</span> clips<br />
+								Cost: <span id="probeCostDisplay">0</span> e<br />
 								<br />
 							</p>
 						</div>
@@ -275,11 +273,11 @@
 						</div>
 					</div>
 					<div id="businessDiv">
-						<b>Business</b><br />
+						<b>Starship Operations</b><br />
 						<hr />
-						Available Funds: $ <span id="funds">0.00</span><br />
+						Available Energy: <span id="funds">0.00</span>e<br />
 						<div id="revPerSecDiv" style="display: none">
-							Avg. Rev. per sec: $ <span id="avgRev">0.00</span><br />
+							Avg. e per sec: <span id="avgRev">0.00</span>e<br />
 							Avg. Clips sold per sec: <span id="avgSales">0</span><br />
 						</div>
 						Unsold Inventory: <span id="unsoldClips">0</span><br />
@@ -302,13 +300,13 @@
 						</button>
 						<span class="engineText6"> Level: </span
 						><span class="engineText6" id="marketingLvl">1</span><br />
-						Cost: $ <span id="adCost">100.00</span><br />
+						Cost: <span id="adCost">100.00e</span><br />
 						<br />
 					</div>
 					<div id="manufacturingDiv">
-						<b>Manufacturing</b><br />
+						<b>Energy</b><br />
 						<hr />
-						Clips per Second: <span id="clipmakerRate">0</span><br />
+						Energy Generated per Second: <span id="clipmakerRate">0</span><br />
 						<br />
 						<div id="wireBuyerDiv" style="display: none">
 							<button
@@ -326,11 +324,11 @@
 							onclick="buyWire()"
 							disabled=""
 						>
-							Wire
+							Collect Stellar Dust
 						</button>
 						<span class="engineText6" id="wire">1,000</span
-						><span class="engineText6"> inches</span><br />
-						Cost: $ <span id="wireCost">16</span><br />
+						><span class="engineText6"> Stellar Dust Units (SDUs)</span><br />
+						Cost: <span id="wireCost">16e</span><br />
 						<br />
 						<div id="autoClipperDiv" style="display: none">
 							<p class="engineText5">
@@ -340,11 +338,11 @@
 									onclick="makeClipper()"
 									disabled=""
 								>
-									AutoClippers
+									Build Solar Panel
 								</button>
 								<span class="engineText6" id="clipmakerLevel2">0</span>
 							</p>
-							Cost: $ <span id="clipperCost">5.00</span><br />
+							Cost: <span id="clipperCost">5.00e</span><br />
 							<br />
 						</div>
 						<div id="megaClipperDiv" style="display: none">
@@ -359,7 +357,7 @@
 								</button>
 								<span class="engineText6" id="megaClipperLevel">0</span>
 							</p>
-							Cost: $ <span id="megaClipperCost">500</span><br />
+							Cost: <span id="megaClipperCost">500e</span><br />
 						</div>
 					</div>
 					<br />
@@ -798,7 +796,7 @@
 							</button>
 						</div>
 						<br />
-						Cost: <span id="farmCost">0</span> clips<br />
+						Cost: <span id="farmCost">0</span> e<br />
 						<br />
 						Storage: <span id="storedPower">0</span> /
 						<span id="maxStorage">0</span> MW-seconds<br />
@@ -843,7 +841,7 @@
 							</button>
 						</div>
 						<br />
-						Cost: <span id="batteryCost">0</span> clips<br />
+						Cost: <span id="batteryCost">0</span> e<br />
 						<br />
 					</div>
 					<!--        POWER-->
