@@ -1336,7 +1336,6 @@ var project46 = {
 	flag: 0,
 	element: null,
 	effect: function () {
-		loadThrenody();
 		project46.flag = 1;
 		boredomLevel = 0;
 		spaceFlag = 1;
@@ -2219,7 +2218,6 @@ var project133 = {
 	flag: 0,
 	element: null,
 	effect: function () {
-		playThrenody();
 		project133.flag = 1;
 		creativity = creativity - threnodyCost;
 		yomi = yomi - 2 * (threnodyCost / 5);

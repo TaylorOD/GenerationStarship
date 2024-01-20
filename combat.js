@@ -44,7 +44,6 @@ var battleEndTimer = 100;
 var masterBattleClock = 0;
 
 var honorCount = 0;
-var threnodyTitle = 'Durenstein 1';
 var bonusHonor = 0;
 var honorReward = 0;
 
@@ -419,7 +418,6 @@ function Battle() {
 						document.getElementById('honorAmount').innerHTML = battleLEFTSHIPS;
 						document.getElementById('honorDisplay').innerHTML =
 							Math.round(honor).toLocaleString();
-						threnodyTitle = battleName;
 					}
 
 					if (numRightShips == 0) {

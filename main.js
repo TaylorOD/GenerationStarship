@@ -3,24 +3,6 @@
 // All credit to the original creator Frank Lantz, source code from https://www.decisionproblem.com/paperclips/
 // -------------------------------------------------------------------------------------------------------------
 
-// Threnody ---------------------------------------------------------
-function threnodyLoaded() {
-	threnodyLoadedBool = true;
-}
-
-var threnodyAudio;
-
-function loadThrenody() {
-	threnodyAudio.src = 'test.mp3';
-	threnodyAudio.addEventListener('canplaythrough', threnodyLoaded);
-}
-
-function playThrenody() {
-	if (threnodyLoadedBool) {
-		threnodyAudio.play();
-	}
-}
-
 // Cache all DOM elements
 
 function cacheDOMElements() {
@@ -4516,7 +4498,6 @@ window.setInterval(function () {
 	}
 
 	// Then, Drones
-
 	if (humanFlag == 0 && spaceFlag == 0) {
 		updateDroneButtons();
 	}
@@ -4539,7 +4520,6 @@ window.setInterval(function () {
 		clipClick(powMod * fbst * (Math.floor(factoryLevel) * factoryRate));
 	}
 	// Then Other Probe Functions
-
 	if (spaceFlag == 1) {
 		if (probeCount < 0) {
 			probeCount = 0;
@@ -4555,14 +4535,12 @@ window.setInterval(function () {
 	}
 
 	// Auto-Clipper
-
 	if (dismantle < 4) {
 		clipClick(clipperBoost * (clipmakerLevel / 100));
 		clipClick(megaClipperBoost * (megaClipperLevel * 5));
 	}
 
 	// Demand Curve
-
 	if (humanFlag == 1) {
 		marketing = Math.pow(1.1, marketingLvl - 1);
 		demand = (0.8 / margin) * marketing * marketingEffectiveness * demandBoost;
@@ -4570,13 +4548,11 @@ window.setInterval(function () {
 	}
 
 	// Creativity
-
 	if (creativityOn && operations >= memory * 1000) {
 		calculateCreativity();
 	}
 
 	// Ending
-
 	if (dismantle >= 1) {
 		probeDesignDivElement.style.display = 'none';
 		if (endTimer1 >= 50) {
@@ -4793,7 +4769,6 @@ window.setInterval(function () {
 	}
 
 	if (endTimer6 >= 500 && milestoneFlag == 15) {
-		playThrenody();
 		displayMessage('Universal Paperclips');
 		milestoneFlag++;
 	}
@@ -4829,7 +4804,6 @@ window.setInterval(function () {
 }, 10);
 
 // Slow Loop
-
 var saveTimer = 0;
 var secTimer = 0;
 
@@ -4933,10 +4907,6 @@ function refresh() {
 	updatePowPrices();
 
 	// HOT FIXES
-
-	if (project46.flag == 1) {
-		loadThrenody();
-	}
 
 	project218.uses = 1;
 	project219.uses = 1;
