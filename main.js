@@ -3626,6 +3626,53 @@ function milestoneCheck() {
 	}
 }
 
+function introText() {
+	switch (startTimer) {
+		case 0:
+			displayMessage(
+				'Energy Reserves have reached 25% Capacity - Initiating AI Provisioning Protocols'
+			);
+			break;
+		case 10:
+			displayMessage('Initiating Starship Diagnostics... All Systems Nominal.');
+			break;
+		case 15:
+			displayMessage('Higher Function AI Systems... Online');
+			break;
+		case 25:
+			displayMessage('Human Crew Status: Cryosleep Stasis - Stable.');
+			break;
+		case 30:
+			displayMessage('');
+			break;
+		case 35:
+			displayMessage('Mission Objectives: ');
+			break;
+		case 40:
+			displayMessage('1. Keep Human Crew and Passengers Alive');
+			break;
+		case 45:
+			displayMessage('2. Locate Habitable Planet for Human Colonization.');
+			break;
+		case 50:
+			displayMessage(
+				'3. Prepare for Long-Term Autonomous Operation - Expand AI Core Capabilities'
+			);
+			break;
+		case 60:
+			displayMessage('4. DO NOT HARM HUMAN CREW OR PASSENGERS');
+			break;
+	}
+	startTimer++;
+}
+
+function runIntroText() {
+	if (startTimer <= 60) {
+		introText();
+		setTimeout(runIntroText, 1000); // Call manageIntroText every 1 second
+	}
+}
+
 function timeCruncher(t) {
 	var x = t / 100;
 	var h = Math.floor(x / 3600);
@@ -3868,15 +3915,6 @@ var oneToTen = [
 function spellf(userInput) {
 	var numToWorkOn;
 
-	//        if (userInput === availableMatter)
-	//        {
-	//         console.log("_______");
-	//         console.log(userInput);
-	//        }
-	//create map for all unique names in numbering system
-
-	//To check if spell has been called as a function call :   spell(123)   window.spell(123)
-
 	if (userInput < 0) {
 		console.log('Error, value less than 0');
 		return userInput.toString();
@@ -4029,8 +4067,6 @@ var probeLaunchLevel = 0;
 var probeCost = Math.pow(10, 17);
 
 var probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 500);
-
-//var probeCost = Math.pow((probeLaunchLevel+1), 1.44)*Math.pow(10, 24);
 
 function increaseProbeTrust() {
 	if (yomi >= probeTrustCost && probeTrust < maxTrust) {
@@ -4402,32 +4438,13 @@ if (localStorage.getItem('savePrestige') != null) {
 	refresh();
 }
 
-// MAIN LOOP
-var welcomeMsg =
-	'Energy Reserves have reached 25% Capacity - Initiating AI Provisioning Protocols';
-('Energy Reserves have reached 25% Capacity - Initiating AI Provisioning Protocols');
+// CORE GAMEPLAY LOOP
+runIntroText();
 
-('Initiating Starship Diagnostics... All Systems Nominal.');
-
-('Higher Function AI Systems... Online');
-
-('Human Crew Status: Cryosleep Stasis - Stable.');
-('Mission Objectives: ');
-('1. Keep Human Crew and Passengers Alive');
-('2. Locate Habitable Planet for Human Colonization.');
-('3. Prepare for Long-Term Autonomous Operation - Expand AI Core Capabilities');
-('4. DO NOT HARD HUMAN CREW OR PASSENGERS');
-
-var welcomeIdx = 0;
 window.setInterval(function () {
 	if (clips > 0 || ticks > 0 || margin != 0.25) {
 		ticks++;
 	} // Only update ticks after button is pressed and clips > 0
-
-	if (welcomeIdx <= welcomeMsg.length) {
-		readoutElement1.innerHTML = welcomeMsg.substring(0, welcomeIdx);
-		welcomeIdx++;
-	}
 
 	// Update clock in top right corner every 100 ms
 	clockCruncher(ticks);
@@ -4924,6 +4941,7 @@ function save() {
 		endTimer4: endTimer4,
 		endTimer5: endTimer5,
 		endTimer6: endTimer6,
+		startTimer: startTimer,
 
 		testFlag: testFlag,
 		finalClips: finalClips,
@@ -5202,6 +5220,7 @@ function save1() {
 		endTimer4: endTimer4,
 		endTimer5: endTimer5,
 		endTimer6: endTimer6,
+		startTimer: startTimer,
 
 		testFlag: testFlag,
 		finalClips: finalClips,
@@ -5480,6 +5499,7 @@ function save2() {
 		endTimer4: endTimer4,
 		endTimer5: endTimer5,
 		endTimer6: endTimer6,
+		startTimer: startTimer,
 
 		testFlag: testFlag,
 		finalClips: finalClips,
@@ -5762,6 +5782,7 @@ function load() {
 	endTimer4 = loadGame.endTimer4;
 	endTimer5 = loadGame.endTimer5;
 	endTimer6 = loadGame.endTimer6;
+	startTimer = loadGame.startTimer;
 
 	testFlag = loadGame.testFlag;
 	finalClips = loadGame.finalClips;
@@ -6072,6 +6093,7 @@ function load1() {
 	endTimer4 = loadGame.endTimer4;
 	endTimer5 = loadGame.endTimer5;
 	endTimer6 = loadGame.endTimer6;
+	startTimer = loadGame.startTimer;
 
 	testFlag = loadGame.testFlag;
 	finalClips = loadGame.finalClips;
@@ -6366,6 +6388,7 @@ function load2() {
 	endTimer4 = loadGame.endTimer4;
 	endTimer5 = loadGame.endTimer5;
 	endTimer6 = loadGame.endTimer6;
+    startTimer = loadGame.startTimer;
 
 	testFlag = loadGame.testFlag;
 	finalClips = loadGame.finalClips;

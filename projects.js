@@ -244,7 +244,7 @@ var project9 = {
 	id: 'projectButton9',
 	title: 'Microlattice Shapecasting ',
 	priceTag: '(7,500 ops)',
-	description: '100% more wire supply from every spool',
+	description: '100% more dust from every cloud',
 	trigger: function () {
 		return wireSupply >= 2600;
 	},
@@ -275,7 +275,7 @@ var project10 = {
 	id: 'projectButton10',
 	title: 'Spectral Froth Annealment ',
 	priceTag: '(12,000 ops)',
-	description: '200% more wire supply from every spool',
+	description: '200% more more dust from every cloud',
 	trigger: function () {
 		return wireSupply >= 5000;
 	},
@@ -306,7 +306,7 @@ var project10b = {
 	id: 'projectButton10b',
 	title: 'Quantum Foam Annealment ',
 	priceTag: '(15,000 ops)',
-	description: '1,000% more wire supply from every spool',
+	description: '1,000% more more dust from every cloud',
 	trigger: function () {
 		return wireCost >= 125;
 	},
