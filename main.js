@@ -39,7 +39,6 @@ function cacheDOMElements() {
 	honorDivElement = document.getElementById('honorDiv');
 	drifterDivElement = document.getElementById('drifterDiv');
 	battleCanvasDivElement = document.getElementById('battleCanvasDiv');
-	combatButtonDivElement = document.getElementById('combatButtonDiv');
 	factoryUpgradeDisplayElement = document.getElementById(
 		'factoryUpgradeDisplay'
 	);
@@ -51,7 +50,6 @@ function cacheDOMElements() {
 		'probesLostHazardsDisplay'
 	);
 	driftBodyCountElement = document.getElementById('driftBodyCount');
-	combatBodyCountElement = document.getElementById('combatBodyCount');
 	prestigeDivElement = document.getElementById('prestigeDiv');
 	btnMakePaperclipElement = document.getElementById('btnMakePaperclip');
 	btnBuyWireElement = document.getElementById('btnBuyWire');
@@ -119,8 +117,6 @@ function cacheDOMElements() {
 	btnLowerProbeHarvElement = document.getElementById('btnLowerProbeHarv');
 	btnRaiseProbeWireElement = document.getElementById('btnRaiseProbeWire');
 	btnLowerProbeWireElement = document.getElementById('btnLowerProbeWire');
-	btnRaiseProbeCombatElement = document.getElementById('btnRaiseProbeCombat');
-	btnLowerProbeCombatElement = document.getElementById('btnLowerProbeCombat');
 	coverElement = document.getElementById('cover');
 	hypnoDroneEventDivElement = document.getElementById('hypnoDroneEventDiv');
 	unusedClipsDisplayElement = document.getElementById('unusedClipsDisplay');
@@ -148,14 +144,12 @@ function cacheDOMElements() {
 		'probesLaunchedDisplay'
 	);
 	probeCostDisplayElement = document.getElementById('probeCostDisplay');
-	probeCombatDisplayElement = document.getElementById('probeCombatDisplay');
 	probeWireDisplayElement = document.getElementById('probeWireDisplay');
 	probeHarvDisplayElement = document.getElementById('probeHarvDisplay');
 	probeFacDisplayElement = document.getElementById('probeFacDisplay');
 	probeRepDisplayElement = document.getElementById('probeRepDisplay');
 	probeHazDisplayElement = document.getElementById('probeHazDisplay');
 	probeNavDisplayElement = document.getElementById('probeNavDisplay');
-	probeSpeedDisplayElement = document.getElementById('probeSpeedDisplay');
 	probeTrustDisplayElement = document.getElementById('probeTrustDisplay');
 	memoryElement = document.getElementById('memory');
 	processorsElement = document.getElementById('processors');
@@ -577,14 +571,12 @@ var probesBornDisplayElement;
 var probesTotalDisplayElement;
 var probesLaunchedDisplayElement;
 var probeCostDisplayElement;
-var probeCombatDisplayElement;
 var probeWireDisplayElement;
 var probeHarvDisplayElement;
 var probeFacDisplayElement;
 var probeRepDisplayElement;
 var probeHazDisplayElement;
 var probeNavDisplayElement;
-var probeSpeedDisplayElement;
 var probeTrustDisplayElement;
 var memoryElement;
 var processorsElement;
@@ -637,7 +629,6 @@ var increaseMaxTrustDivElement;
 var honorDivElement;
 var drifterDivElement;
 var battleCanvasDivElement;
-var combatButtonDivElement;
 var factoryUpgradeDisplayElement;
 var droneUpgradeDisplayElement;
 var btnIncreaseMaxTrustElement;
@@ -645,7 +636,6 @@ var btnMakerProbeElement;
 var hazardBodyCountElement;
 var probesLostHazardsDisplayElement;
 var driftBodyCountElement;
-var combatBodyCountElement;
 var prestigeDivElement;
 var btnMakePaperclipElement;
 var btnBuyWireElement;
@@ -704,8 +694,6 @@ var btnRaiseProbeHarvElement;
 var btnLowerProbeHarvElement;
 var btnRaiseProbeWireElement;
 var btnLowerProbeWireElement;
-var btnRaiseProbeCombatElement;
-var btnLowerProbeCombatElement;
 
 var coverElement;
 
@@ -1115,14 +1103,6 @@ function buttonUpdate() {
 		revealResults();
 	};
 
-	if (project121.flag == 0) {
-		increaseMaxTrustDivElement.style.display = 'none';
-		honorDivElement.style.display = 'none';
-	} else {
-		increaseMaxTrustDivElement.style.display = '';
-		honorDivElement.style.display = '';
-	}
-
 	if (battleFlag == 0) {
 		drifterDivElement.style.display = 'none';
 	} else {
@@ -1133,12 +1113,6 @@ function buttonUpdate() {
 		battleCanvasDivElement.style.display = 'none';
 	} else {
 		battleCanvasDivElement.style.display = '';
-	}
-
-	if (project131.flag == 0) {
-		combatButtonDivElement.style.display = 'none';
-	} else {
-		combatButtonDivElement.style.display = '';
 	}
 
 	if (maxFactoryLevel >= 50 || project45.flag == 0) {
@@ -1175,12 +1149,6 @@ function buttonUpdate() {
 		driftBodyCountElement.style.display = 'none';
 	} else {
 		driftBodyCountElement.style.display = '';
-	}
-
-	if (probesLostCombat < 1) {
-		combatBodyCountElement.style.display = 'none';
-	} else {
-		combatBodyCountElement.style.display = '';
 	}
 
 	if (prestigeU < 1 && prestigeS < 1) {
@@ -1389,14 +1357,7 @@ function buttonUpdate() {
 	// PROBE DESIGN
 
 	probeUsedTrust =
-		probeSpeed +
-		probeNav +
-		probeRep +
-		probeHaz +
-		probeFac +
-		probeHarv +
-		probeWire +
-		probeCombat;
+		probeNav + probeRep + probeHaz + probeFac + probeHarv + probeWire;
 
 	probeTrustUsedDisplayElement.innerHTML = probeUsedTrust;
 
@@ -1410,12 +1371,6 @@ function buttonUpdate() {
 		btnRaiseProbeSpeedElement.disabled = true;
 	} else {
 		btnRaiseProbeSpeedElement.disabled = false;
-	}
-
-	if (probeSpeed < 1) {
-		btnLowerProbeSpeedElement.disabled = true;
-	} else {
-		btnLowerProbeSpeedElement.disabled = false;
 	}
 
 	if (probeTrust - probeUsedTrust < 1) {
@@ -1488,18 +1443,6 @@ function buttonUpdate() {
 		btnLowerProbeWireElement.disabled = true;
 	} else {
 		btnLowerProbeWireElement.disabled = false;
-	}
-
-	if (probeTrust - probeUsedTrust < 1) {
-		btnRaiseProbeCombatElement.disabled = true;
-	} else {
-		btnRaiseProbeCombatElement.disabled = false;
-	}
-
-	if (probeCombat < 1) {
-		btnLowerProbeCombatElement.disabled = true;
-	} else {
-		btnLowerProbeCombatElement.disabled = false;
 	}
 
 	coverElement.style.display = 'none';
@@ -4002,7 +3945,6 @@ function spellf(userInput) {
 
 // PROBES
 
-var probeSpeed = 0;
 var probeNav = 0;
 var probeXBaseRate = 1750000000000000000;
 var probeRep = 0;
@@ -4013,7 +3955,6 @@ var probeHazBaseRate = 0.01;
 var partialProbeHaz = 0;
 var probesLostHaz = 0;
 var probesLostDrift = 0;
-var probesLostCombat = 0;
 var probeFac = 0;
 var probeFacBaseRate = 0.000001;
 var probeHarv = 0;
@@ -4055,22 +3996,6 @@ function increaseMaxTrust() {
 		maxTrustDisplayElement.innerHTML = formatWithCommas(maxTrust);
 		// document.getElementById('maxTrustCostDisplay').innerHTML = Math.floor(maxTrustCost).toLocaleString();
 		displayMessage('Maximum trust increased, probe design space expanded');
-	}
-}
-
-function raiseProbeSpeed() {
-	if (probeUsedTrust < probeTrust) {
-		attackSpeed = attackSpeed + attackSpeedMod;
-		probeSpeed++;
-		probeSpeedDisplayElement.innerHTML = probeSpeed;
-	}
-}
-
-function lowerProbeSpeed() {
-	if (probeSpeed > 0) {
-		attackSpeed = attackSpeed - attackSpeedMod;
-		probeSpeed--;
-		probeSpeedDisplayElement.innerHTML = probeSpeed;
 	}
 }
 
@@ -4155,20 +4080,6 @@ function lowerProbeWire() {
 	if (probeWire > 0) {
 		probeWire--;
 		probeWireDisplayElement.innerHTML = probeWire;
-	}
-}
-
-function raiseProbeCombat() {
-	if (probeUsedTrust < probeTrust) {
-		probeCombat++;
-		probeCombatDisplayElement.innerHTML = probeCombat;
-	}
-}
-
-function lowerProbeCombat() {
-	if (probeCombat > 0) {
-		probeCombat--;
-		probeCombatDisplayElement.innerHTML = probeCombat;
 	}
 }
 
@@ -4831,14 +4742,12 @@ function refresh() {
 	probesTotalDisplayElement.innerHTML = spellf(probeCount);
 	probesLaunchedDisplayElement.innerHTML = formatWithCommas(probeLaunchLevel);
 	probeCostDisplayElement.innerHTML = spellf(probeCost);
-	probeCombatDisplayElement.innerHTML = probeCombat;
 	probeWireDisplayElement.innerHTML = probeWire;
 	probeHarvDisplayElement.innerHTML = probeHarv;
 	probeFacDisplayElement.innerHTML = probeFac;
 	probeRepDisplayElement.innerHTML = probeRep;
 	probeHazDisplayElement.innerHTML = probeHaz;
 	probeNavDisplayElement.innerHTML = probeNav;
-	probeSpeedDisplayElement.innerHTML = probeSpeed;
 	probeTrustDisplayElement.innerHTML = probeTrust;
 	memoryElement.innerHTML = memory;
 	processorsElement.innerHTML = processors;
@@ -4950,7 +4859,6 @@ function save() {
 		masterBattleClock: masterBattleClock,
 
 		honorCount: honorCount,
-		threnodyTitle: threnodyTitle,
 		bonusHonor: bonusHonor,
 		honorReward: honorReward,
 
@@ -4964,7 +4872,6 @@ function save() {
 		disorgFlag: disorgFlag,
 		synchCost: synchCost,
 		disorgMsg: disorgMsg,
-		threnodyCost: threnodyCost,
 
 		farmRate: farmRate,
 		batterySize: batterySize,
@@ -5132,7 +5039,6 @@ function save() {
 		yomi: yomi,
 		yomiBoost: yomiBoost,
 
-		probeSpeed: probeSpeed,
 		probeNav: probeNav,
 		probeRep: probeRep,
 		partialProbeSpawn: partialProbeSpawn,
@@ -5140,10 +5046,8 @@ function save() {
 		partialProbeHaz: partialProbeHaz,
 		probesLostHaz: probesLostHaz,
 		probesLostDrift: probesLostDrift,
-		probesLostCombat: probesLostCombat,
 		probeFac: probeFac,
 		probeWire: probeWire,
-		probeCombat: probeCombat,
 		attackSpeed: attackSpeed,
 		battleSpeed: battleSpeed,
 		attackSpeedFlag: attackSpeedFlag,
@@ -5228,7 +5132,6 @@ function save1() {
 		masterBattleClock: masterBattleClock,
 
 		honorCount: honorCount,
-		threnodyTitle: threnodyTitle,
 		bonusHonor: bonusHonor,
 		honorReward: honorReward,
 
@@ -5242,7 +5145,6 @@ function save1() {
 		disorgFlag: disorgFlag,
 		synchCost: synchCost,
 		disorgMsg: disorgMsg,
-		threnodyCost: threnodyCost,
 
 		farmRate: farmRate,
 		batterySize: batterySize,
@@ -5410,7 +5312,6 @@ function save1() {
 		yomi: yomi,
 		yomiBoost: yomiBoost,
 
-		probeSpeed: probeSpeed,
 		probeNav: probeNav,
 		probeRep: probeRep,
 		partialProbeSpawn: partialProbeSpawn,
@@ -5418,10 +5319,8 @@ function save1() {
 		partialProbeHaz: partialProbeHaz,
 		probesLostHaz: probesLostHaz,
 		probesLostDrift: probesLostDrift,
-		probesLostCombat: probesLostCombat,
 		probeFac: probeFac,
 		probeWire: probeWire,
-		probeCombat: probeCombat,
 		attackSpeed: attackSpeed,
 		battleSpeed: battleSpeed,
 		attackSpeedFlag: attackSpeedFlag,
@@ -5506,7 +5405,6 @@ function save2() {
 		masterBattleClock: masterBattleClock,
 
 		honorCount: honorCount,
-		threnodyTitle: threnodyTitle,
 		bonusHonor: bonusHonor,
 		honorReward: honorReward,
 
@@ -5520,7 +5418,6 @@ function save2() {
 		disorgFlag: disorgFlag,
 		synchCost: synchCost,
 		disorgMsg: disorgMsg,
-		threnodyCost: threnodyCost,
 
 		farmRate: farmRate,
 		batterySize: batterySize,
@@ -5688,7 +5585,6 @@ function save2() {
 		yomi: yomi,
 		yomiBoost: yomiBoost,
 
-		probeSpeed: probeSpeed,
 		probeNav: probeNav,
 		probeRep: probeRep,
 		partialProbeSpawn: partialProbeSpawn,
@@ -5696,10 +5592,8 @@ function save2() {
 		partialProbeHaz: partialProbeHaz,
 		probesLostHaz: probesLostHaz,
 		probesLostDrift: probesLostDrift,
-		probesLostCombat: probesLostCombat,
 		probeFac: probeFac,
 		probeWire: probeWire,
-		probeCombat: probeCombat,
 		attackSpeed: attackSpeed,
 		battleSpeed: battleSpeed,
 		attackSpeedFlag: attackSpeedFlag,
@@ -5788,7 +5682,6 @@ function load() {
 	masterBattleClock = loadGame.masterBattleClock;
 
 	honorCount = loadGame.honorCount;
-	threnodyTitle = loadGame.threnodyTitle;
 	bonusHonor = loadGame.bonusHonor;
 	honorReward = loadGame.honorReward;
 
@@ -5802,7 +5695,6 @@ function load() {
 	disorgFlag = loadGame.disorgFlag;
 	synchCost = loadGame.synchCost;
 	disorgMsg = loadGame.disorgMsg;
-	threnodyCost = loadGame.threnodyCost;
 
 	farmRate = loadGame.farmRate;
 	batterySize = loadGame.batterySize;
@@ -5970,7 +5862,6 @@ function load() {
 	yomi = loadGame.yomi;
 	yomiBoost = loadGame.yomiBoost;
 
-	probeSpeed = loadGame.probeSpeed;
 	probeNav = loadGame.probeNav;
 	probeRep = loadGame.probeRep;
 	partialProbeSpawn = loadGame.partialProbeSpawn;
@@ -5978,10 +5869,8 @@ function load() {
 	partialProbeHaz = loadGame.partialProbeHaz;
 	probesLostHaz = loadGame.probesLostHaz;
 	probesLostDrift = loadGame.probesLostDrift;
-	probesLostCombat = loadGame.probesLostCombat;
 	probeFac = loadGame.probeFac;
 	probeWire = loadGame.probeWire;
-	probeCombat = loadGame.probeCombat;
 	attackSpeed = loadGame.attackSpeed;
 	battleSpeed = loadGame.battleSpeed;
 	attackSpeedFlag = loadGame.attackSpeedFlag;
@@ -6098,7 +5987,6 @@ function load1() {
 	masterBattleClock = loadGame.masterBattleClock;
 
 	honorCount = loadGame.honorCount;
-	threnodyTitle = loadGame.threnodyTitle;
 	bonusHonor = loadGame.bonusHonor;
 	honorReward = loadGame.honorReward;
 
@@ -6112,7 +6000,6 @@ function load1() {
 	disorgFlag = loadGame.disorgFlag;
 	synchCost = loadGame.synchCost;
 	disorgMsg = loadGame.disorgMsg;
-	threnodyCost = loadGame.threnodyCost;
 
 	farmRate = loadGame.farmRate;
 	batterySize = loadGame.batterySize;
@@ -6280,7 +6167,6 @@ function load1() {
 	yomi = loadGame.yomi;
 	yomiBoost = loadGame.yomiBoost;
 
-	probeSpeed = loadGame.probeSpeed;
 	probeNav = loadGame.probeNav;
 	probeRep = loadGame.probeRep;
 	partialProbeSpawn = loadGame.partialProbeSpawn;
@@ -6288,10 +6174,8 @@ function load1() {
 	partialProbeHaz = loadGame.partialProbeHaz;
 	probesLostHaz = loadGame.probesLostHaz;
 	probesLostDrift = loadGame.probesLostDrift;
-	probesLostCombat = loadGame.probesLostCombat;
 	probeFac = loadGame.probeFac;
 	probeWire = loadGame.probeWire;
-	probeCombat = loadGame.probeCombat;
 	attackSpeed = loadGame.attackSpeed;
 	battleSpeed = loadGame.battleSpeed;
 	attackSpeedFlag = loadGame.attackSpeedFlag;
@@ -6392,7 +6276,6 @@ function load2() {
 	masterBattleClock = loadGame.masterBattleClock;
 
 	honorCount = loadGame.honorCount;
-	threnodyTitle = loadGame.threnodyTitle;
 	bonusHonor = loadGame.bonusHonor;
 	honorReward = loadGame.honorReward;
 
@@ -6406,7 +6289,6 @@ function load2() {
 	disorgFlag = loadGame.disorgFlag;
 	synchCost = loadGame.synchCost;
 	disorgMsg = loadGame.disorgMsg;
-	threnodyCost = loadGame.threnodyCost;
 
 	farmRate = loadGame.farmRate;
 	batterySize = loadGame.batterySize;
@@ -6574,7 +6456,6 @@ function load2() {
 	yomi = loadGame.yomi;
 	yomiBoost = loadGame.yomiBoost;
 
-	probeSpeed = loadGame.probeSpeed;
 	probeNav = loadGame.probeNav;
 	probeRep = loadGame.probeRep;
 	partialProbeSpawn = loadGame.partialProbeSpawn;
@@ -6582,10 +6463,8 @@ function load2() {
 	partialProbeHaz = loadGame.partialProbeHaz;
 	probesLostHaz = loadGame.probesLostHaz;
 	probesLostDrift = loadGame.probesLostDrift;
-	probesLostCombat = loadGame.probesLostCombat;
 	probeFac = loadGame.probeFac;
 	probeWire = loadGame.probeWire;
-	probeCombat = loadGame.probeCombat;
 	attackSpeed = loadGame.attackSpeed;
 	battleSpeed = loadGame.battleSpeed;
 	attackSpeedFlag = loadGame.attackSpeedFlag;

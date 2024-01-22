@@ -133,7 +133,6 @@ var disorgCounter = 0;
 var disorgFlag = 0;
 var synchCost = 5000;
 var disorgMsg = 0;
-var threnodyCost = 50000;
 
 var entertainCost = 10000;
 var boredomLevel = 0;
