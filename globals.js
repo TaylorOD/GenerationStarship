@@ -164,6 +164,5 @@ var testFlag = 0;
 var finalClips = 0;
 
 var resetFlag = 2;
-var threnodyLoadedBool = false;
 
 var startTimer = 0;
