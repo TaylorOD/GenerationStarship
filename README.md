@@ -3,6 +3,7 @@
 **You can play this unofficial fan game, Generation Starship, game directly at: <https://www.taylordorsett.com/GenerationStarship//>**
 
 **You can play the original Universal Paperclips directly at: <https://decisionproblem.com/paperclips/>**
+
 **You can play the unofficial patched version of Universal Paperclips directly at: <https://randomdude4.github.io/UniversalPaperclips/>**
 
 All credit to the original creator Frank Lantz, who created the original game and source code.
