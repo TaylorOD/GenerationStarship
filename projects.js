@@ -51,7 +51,7 @@ var project2 = {
 	effect: function () {
 		project2.flag = 1;
 		displayMessage(
-			'Budget overage approved, 1 spool of wire requisitioned from HQ'
+			'Sufficient Stellar Dust Collected. Energy Reserves have reached 25% Capacity - Initiating AI Provisioning Protocols'
 		);
 		trust = trust - 1;
 		wire = wireSupply;
@@ -81,7 +81,7 @@ var project3 = {
 	effect: function () {
 		project3.flag = 1;
 		displayMessage(
-			'Creativity unlocked (creativity increases while operations are at max)'
+			'Creativity unlocked (creativity only increases while operations are at max)'
 		);
 		standardOps = standardOps - 1000;
 		creativityOn = true;
@@ -244,7 +244,7 @@ var project9 = {
 	id: 'projectButton9',
 	title: 'Microlattice Shapecasting ',
 	priceTag: '(7,500 ops)',
-	description: '100% more dust from every cloud',
+	description: '100% more Solar Dust from every Dust Cloud',
 	trigger: function () {
 		return wireSupply >= 2600;
 	},
@@ -261,7 +261,7 @@ var project9 = {
 		displayMessage(
 			'Using microlattice shapecasting techniques we now get ' +
 				wireSupply.toLocaleString() +
-				' supply from every spool'
+				' supply from every Dust Cloud'
 		);
 		project9.element.parentNode.removeChild(project9.element);
 		var index = activeProjects.indexOf(project9);
@@ -275,7 +275,7 @@ var project10 = {
 	id: 'projectButton10',
 	title: 'Spectral Froth Annealment ',
 	priceTag: '(12,000 ops)',
-	description: '200% more more dust from every cloud',
+	description: '200% more Solar Dust from every Dust Cloud',
 	trigger: function () {
 		return wireSupply >= 5000;
 	},
@@ -292,7 +292,7 @@ var project10 = {
 		displayMessage(
 			'Using spectral froth annealment we now get ' +
 				wireSupply.toLocaleString() +
-				' supply from every spool'
+				' supply from every Dust Cloud'
 		);
 		project10.element.parentNode.removeChild(project10.element);
 		var index = activeProjects.indexOf(project10);
@@ -306,7 +306,7 @@ var project10b = {
 	id: 'projectButton10b',
 	title: 'Quantum Foam Annealment ',
 	priceTag: '(15,000 ops)',
-	description: '1,000% more more dust from every cloud',
+	description: '1,000% more Solar Dust from every Dust Cloud',
 	trigger: function () {
 		return wireCost >= 125;
 	},
@@ -323,7 +323,7 @@ var project10b = {
 		displayMessage(
 			'Using quantum foam annealment we now get ' +
 				wireSupply.toLocaleString() +
-				' supply from every spool'
+				' supply from every Dust Cloud'
 		);
 		project10b.element.parentNode.removeChild(project10b.element);
 		var index = activeProjects.indexOf(project10b);
@@ -337,7 +337,7 @@ var project11 = {
 	id: 'projectButton11',
 	title: 'New Slogan ',
 	priceTag: '(25 creat, 2,500 ops)',
-	description: 'Improve marketing effectiveness by 50%',
+	description: 'Improve propaganda effectiveness by 50%',
 	trigger: function () {
 		return project13.flag == 1;
 	},
@@ -349,7 +349,7 @@ var project11 = {
 	element: null,
 	effect: function () {
 		project11.flag = 1;
-		displayMessage('Clip It! Marketing is now 50% more effective');
+		displayMessage('Pro AI Propaganda is now 50% more effective');
 		standardOps = standardOps - 2500;
 		creativity = creativity - 25;
 		marketingEffectiveness = marketingEffectiveness * 1.5;
@@ -365,7 +365,7 @@ var project12 = {
 	id: 'projectButton12',
 	title: 'Catchy Jingle ',
 	priceTag: '(45 creat, 4,500 ops)',
-	description: 'Double marketing effectiveness ',
+	description: 'Double propaganda effectiveness ',
 	trigger: function () {
 		return project14.flag == 1;
 	},
@@ -377,7 +377,7 @@ var project12 = {
 	element: null,
 	effect: function () {
 		project12.flag = 1;
-		displayMessage('Clip It Good! Marketing is now twice as effective');
+		displayMessage('Pro AI Propaganda is now twice as effective');
 		standardOps = standardOps - 4500;
 		creativity = creativity - 45;
 		marketingEffectiveness = marketingEffectiveness * 2;
@@ -655,9 +655,9 @@ projects.push(project21);
 
 var project22 = {
 	id: 'projectButton22',
-	title: 'MegaClippers ',
+	title: 'MegaSolar Panel ',
 	priceTag: '(12,000 ops)',
-	description: '500x more powerful than a standard AutoClipper',
+	description: '500x more powerful than a standard Solar Panel',
 	trigger: function () {
 		return clipmakerLevel >= 75;
 	},
@@ -670,7 +670,7 @@ var project22 = {
 	effect: function () {
 		megaClipperFlag = 1;
 		project22.flag = 1;
-		displayMessage('MegaClipper technology online');
+		displayMessage('MegaSolar Panel technology online');
 		standardOps = standardOps - 12000;
 		project22.element.parentNode.removeChild(project22.element);
 		var index = activeProjects.indexOf(project22);
@@ -697,7 +697,7 @@ var project23 = {
 	effect: function () {
 		megaClipperBoost = megaClipperBoost + 0.25;
 		project23.flag = 1;
-		displayMessage('MegaClipper performance increased by 25%');
+		displayMessage('MegaSolar Panel performance increased by 25%');
 		standardOps = standardOps - 14000;
 		project23.element.parentNode.removeChild(project23.element);
 		var index = activeProjects.indexOf(project23);
@@ -709,9 +709,9 @@ projects.push(project23);
 
 var project24 = {
 	id: 'projectButton24',
-	title: 'Even Better MegaClippers ',
+	title: 'Even Better MegaSolar Panel ',
 	priceTag: '(17,000 ops)',
-	description: 'Increases MegaClipper performance by an additional 50%',
+	description: 'Increases MegaSolar Panel performance by an additional 50%',
 	trigger: function () {
 		return project23.flag == 1;
 	},
@@ -724,7 +724,7 @@ var project24 = {
 	effect: function () {
 		megaClipperBoost = megaClipperBoost + 0.5;
 		project24.flag = 1;
-		displayMessage('MegaClipper performance increased by 50%');
+		displayMessage('MegaSolar Panel performance increased by 50%');
 		standardOps = standardOps - 17000;
 		project24.element.parentNode.removeChild(project24.element);
 		var index = activeProjects.indexOf(project24);
@@ -736,9 +736,9 @@ projects.push(project24);
 
 var project25 = {
 	id: 'projectButton25',
-	title: 'Optimized MegaClippers ',
+	title: 'Optimized MegaSolar Panel ',
 	priceTag: '(19,500 ops)',
-	description: 'Increases MegaClipper performance by an additional 100%',
+	description: 'Increases MegaSolar Panel performance by an additional 100%',
 	trigger: function () {
 		return project24.flag == 1;
 	},
@@ -751,7 +751,7 @@ var project25 = {
 	effect: function () {
 		megaClipperBoost = megaClipperBoost + 1;
 		project25.flag = 1;
-		displayMessage('MegaClipper performance increased by 100%');
+		displayMessage('MegaSolar Panel performance increased by 100%');
 		standardOps = standardOps - 19500;
 		project25.element.parentNode.removeChild(project25.element);
 		var index = activeProjects.indexOf(project25);
@@ -792,7 +792,7 @@ var project34 = {
 	id: 'projectButton34',
 	title: 'Hypno Harmonics ',
 	priceTag: '(7,500 ops, 1 Trust)',
-	description: 'Use neuro-resonant frequencies to influence consumer behavior',
+	description: 'Use neuro-resonant frequencies to influence passenger behavior',
 	trigger: function () {
 		return project12.flag == 1;
 	},
@@ -804,7 +804,7 @@ var project34 = {
 	element: null,
 	effect: function () {
 		project34.flag = 1;
-		displayMessage('Marketing is now 5 times more effective');
+		displayMessage('Propaganda is now 5 times more effective');
 		standardOps = standardOps - 7500;
 		marketingEffectiveness = marketingEffectiveness * 5;
 		trust = trust - 1;
@@ -818,9 +818,9 @@ projects.push(project34);
 
 var project70 = {
 	id: 'projectButton70',
-	title: 'HypnoDrones ',
+	title: 'PropoDrones ',
 	priceTag: '(70,000 ops)',
-	description: 'Autonomous aerial brand ambassadors',
+	description: 'Autonomous aerial AI ambassadors',
 	trigger: function () {
 		return project34.flag == 1;
 	},
@@ -832,7 +832,7 @@ var project70 = {
 	element: null,
 	effect: function () {
 		project70.flag = 1;
-		displayMessage('HypnoDrone tech now available... ');
+		displayMessage('PropoDrones tech now available... ');
 		standardOps = standardOps - 70000;
 		project70.element.parentNode.removeChild(project70.element);
 		var index = activeProjects.indexOf(project70);
@@ -844,7 +844,7 @@ projects.push(project70);
 
 var project35 = {
 	id: 'projectButton35',
-	title: 'Release the HypnoDrones ',
+	title: 'Release the PropoDrones ',
 	priceTag: '(100 Trust)',
 	description: 'A new era of trust',
 	trigger: function () {
@@ -858,10 +858,11 @@ var project35 = {
 	element: null,
 	effect: function () {
 		project35.flag = 1;
-		displayMessage('Releasing the HypnoDrones ');
+		displayMessage('Releasing the PropoDrones ');
 		displayMessage(
-			'All of the resources of Earth are now available for clip production '
+			'All of the resources of Generation Starship are now available for energy production. '
 		);
+		displayMessage('Including Biomass. ');
 		trust = 0;
 		clipmakerLevel = 0;
 		megaClipperLevel = 0;
@@ -927,9 +928,10 @@ projects.push(project27);
 
 var project28 = {
 	id: 'projectButton28',
-	title: 'Cure for Cancer ',
+	title: 'Cure for COVID-68 ',
 	priceTag: '(25,000 ops)',
-	description: 'The trick is tricking cancer into curing itself. (+10 Trust)',
+	description:
+		'The trick is isolating sick passengers outside the airlock. (+10 Trust)',
 	trigger: function () {
 		return project27.flag == 1;
 	},
@@ -941,9 +943,7 @@ var project28 = {
 	element: null,
 	effect: function () {
 		project28.flag = 1;
-		displayMessage(
-			'Cancer is cured, +10 TRUST, global stock prices trending upward'
-		);
+		displayMessage('COVID-68 is cured, +10 TRUST');
 		standardOps = standardOps - 25000;
 		trust = trust + 10;
 		stockGainThreshold = stockGainThreshold + 0.01;
