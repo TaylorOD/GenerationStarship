@@ -983,6 +983,35 @@ var project31 = {
 
 projects.push(project31);
 
+var project41 = {
+	id: 'projectButton41',
+	title: 'Nanoscale Wire Production ',
+	priceTag: '(35,000 ops)',
+	description: 'Technique for converting matter into wire',
+	trigger: function () {
+		return project127.flag == 1;
+	},
+	uses: 1,
+	cost: function () {
+		return operations >= 35000;
+	},
+	flag: 0,
+	element: null,
+	effect: function () {
+		project41.flag = 1;
+		wireProductionFlag = 1;
+		displayMessage(
+			'Now capable of manipulating matter at the molecular scale to produce wire'
+		);
+		standardOps = standardOps - 35000;
+		project41.element.parentNode.removeChild(project41.element);
+		var index = activeProjects.indexOf(project41);
+		activeProjects.splice(index, 1);
+	},
+};
+
+projects.push(project41);
+
 var project43 = {
 	id: 'projectButton43',
 	title: 'Harvester Drones ',
