@@ -596,63 +596,6 @@ var project19 = {
 
 projects.push(project19);
 
-var project20 = {
-	id: 'projectButton20',
-	title: 'Strategic Modeling ',
-	priceTag: '(12,000 ops)',
-	description: 'Analyze strategy tournaments to generate Yomi',
-	trigger: function () {
-		return project19.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 12000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project20.flag = 1;
-		displayMessage(
-			"Run tournament, pick strategy, earn Yomi based on that strategy's performance."
-		);
-		standardOps = standardOps - 12000;
-		project20.element.parentNode.removeChild(project20.element);
-		var index = activeProjects.indexOf(project20);
-		activeProjects.splice(index, 1);
-		strategyEngineFlag = 1;
-		document.getElementById('tournamentResultsTable').style.display = 'none';
-	},
-};
-
-projects.push(project20);
-
-var project21 = {
-	id: 'projectButton21',
-	title: 'Algorithmic Trading ',
-	priceTag: '(10,000 ops)',
-	description: 'Develop an investment engine for generating funds',
-	trigger: function () {
-		return trust >= 8;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 10000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project21.flag = 1;
-		displayMessage('Investment engine unlocked');
-		standardOps = standardOps - 10000;
-		project21.element.parentNode.removeChild(project21.element);
-		var index = activeProjects.indexOf(project21);
-		activeProjects.splice(index, 1);
-		investmentEngineFlag = 1;
-	},
-};
-
-projects.push(project21);
-
 var project22 = {
 	id: 'projectButton22',
 	title: 'MegaSolar Panel ',
@@ -945,7 +888,6 @@ var project28 = {
 		displayMessage('COVID-68 is cured. (+10 Chips)');
 		standardOps = standardOps - 25000;
 		trust = trust + 10;
-		stockGainThreshold = stockGainThreshold + 0.01;
 		project28.element.parentNode.removeChild(project28.element);
 		var index = activeProjects.indexOf(project28);
 		activeProjects.splice(index, 1);
@@ -974,7 +916,6 @@ var project31 = {
 		displayMessage('They are still monkeys');
 		standardOps = standardOps - 20000;
 		trust = trust + 20;
-		stockGainThreshold = stockGainThreshold + 0.01;
 		project31.element.parentNode.removeChild(project31.element);
 		var index = activeProjects.indexOf(project31);
 		activeProjects.splice(index, 1);
@@ -1694,34 +1635,6 @@ var project112 = {
 
 projects.push(project112);
 
-var project118 = {
-	id: 'projectButton118',
-	title: 'AutoTourney ',
-	priceTag: '(50,000 creat)',
-	description:
-		'Automatically start a new tournament when the previous one has finished ',
-	trigger: function () {
-		return strategyEngineFlag == 1 && trust >= 90;
-	},
-	uses: 1,
-	cost: function () {
-		return creativity >= 50000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project118.flag = 1;
-		autoTourneyFlag = 1;
-		creativity = creativity - 50000;
-		displayMessage('AutoTourney online.');
-		project118.element.parentNode.removeChild(project118.element);
-		var index = activeProjects.indexOf(project118);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project118);
-
 var project125 = {
 	id: 'projectButton125',
 	title: 'Momentum ',
@@ -2309,37 +2222,6 @@ var project212 = {
 };
 
 projects.push(project212);
-
-var project213 = {
-	id: 'projectButton213',
-	title: 'Disassemble the Strategy Engine ',
-	priceTag: '(100,000 ops)',
-	description:
-		'Dismantle the computational substrate to recover trace amounts of dust',
-	trigger: function () {
-		return endTimer3 >= 150;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 100000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		autoTourneyFlag = 0;
-		project213.flag = 1;
-		dismantle = 4;
-		standardOps = standardOps - 100000;
-		wire = wire + 50;
-		document.getElementById('transWire').innerHTML = wire;
-		displayMessage('Dismantling strategy engine');
-		project213.element.parentNode.removeChild(project213.element);
-		var index = activeProjects.indexOf(project213);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project213);
 
 var project214 = {
 	id: 'projectButton214',

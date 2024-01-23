@@ -226,21 +226,6 @@ h2 {
 	margin-bottom: 2;
 }
 
-#autoTourneyStatusDiv {
-	float: left;
-	width: 30px;
-}
-
-#tourneyButton {
-	float: left;
-	width: 120px;
-}
-
-#autoTourneyControl {
-	float: left;
-	width: 78px;
-}
-
 #victoryDiv {
 	margin-top: 10px;
 	width: 289px;
@@ -389,16 +374,6 @@ canvas {
 	height: 56px;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 11;
-}
-
-#investmentEngineUpgrade {
-	margin: 5px;
-	margin-bottom: 10px;
-}
-
-#tournamentManagement {
-	margin: 5px;
-	margin-bottom: 10px;
 }
 
 #feedButtonDiv {

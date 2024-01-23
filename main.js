@@ -28,13 +28,7 @@ function cacheDOMElements() {
 	batteryRebootToolTipElement = document.getElementById('batteryRebootToolTip');
 	swarmSliderDivElement = document.getElementById('swarmSliderDiv');
 	clipCountCrunchedElement = document.getElementById('clipCountCrunched');
-	autoTourneyStatusDivElement = document.getElementById('autoTourneyStatusDiv');
-	autoTourneyControlElement = document.getElementById('autoTourneyControl');
 	dustBusterDivElement = document.getElementById('dustBusterDiv');
-	tournamentResultsTableElement = document.getElementById(
-		'tournamentResultsTable'
-	);
-	tournamentStuffElement = document.getElementById('tournamentStuff');
 	increaseMaxTrustDivElement = document.getElementById('increaseMaxTrustDiv');
 	honorDivElement = document.getElementById('honorDiv');
 	drifterDivElement = document.getElementById('drifterDiv');
@@ -58,16 +52,9 @@ function cacheDOMElements() {
 	btnLowerPriceElement = document.getElementById('btnLowerPrice');
 	btnAddProcElement = document.getElementById('btnAddProc');
 	btnAddMemElement = document.getElementById('btnAddMem');
-	btnNewTournamentElement = document.getElementById('btnNewTournament');
 	btnImproveInvestmentsElement = document.getElementById(
 		'btnImproveInvestments'
 	);
-	investmentEngineElement = document.getElementById('investmentEngine');
-	investmentEngineUpgradeElement = document.getElementById(
-		'investmentEngineUpgrade'
-	);
-	strategyEngineElement = document.getElementById('strategyEngine');
-	tournamentManagementElement = document.getElementById('tournamentManagement');
 	megaClipperDivElement = document.getElementById('megaClipperDiv');
 	btnMakeMegaClipperElement = document.getElementById('btnMakeMegaClipper');
 	autoClipperDivElement = document.getElementById('autoClipperDiv');
@@ -171,17 +158,12 @@ function cacheDOMElements() {
 	investmentBankrollElement = document.getElementById('investmentBankroll');
 	secValueElement = document.getElementById('secValue');
 	portValueElement = document.getElementById('portValue');
-	investUpgradeCostElement = document.getElementById('investUpgradeCost');
 	prestigeUcounterElement = document.getElementById('prestigeUcounter');
 	prestigeScounterElement = document.getElementById('prestigeScounter');
-	newTourneyCostElement = document.getElementById('newTourneyCost');
 	maxTrustDisplayElement = document.getElementById('maxTrustDisplay');
 	victoryDivElement = document.getElementById('victoryDiv');
 	probeTrustCostDisplayElement = document.getElementById(
 		'probeTrustCostDisplay'
-	);
-	tournamentResultsTableElement = document.getElementById(
-		'tournamentResultsTable'
 	);
 	farmCostElement = document.getElementById('farmCost');
 	batteryCostElement = document.getElementById('batteryCost');
@@ -213,7 +195,6 @@ function cacheDOMElements() {
 	clipsPerSecDivElement = document.getElementById('clipsPerSecDiv');
 	tothDivElement = document.getElementById('tothDiv');
 	strategyEngineElement = document.getElementById('strategyEngine');
-	tournamentManagementElement = document.getElementById('tournamentManagement');
 	btnQcomputeElement = document.getElementById('btnQcompute');
 	qComputingElement = document.getElementById('qComputing');
 	transWireElement = document.getElementById('transWire');
@@ -221,16 +202,10 @@ function cacheDOMElements() {
 	compDivElement = document.getElementById('compDiv');
 	projectsDivElement = document.getElementById('projectsDiv');
 	creationDivElement = document.getElementById('creationDiv');
-	stratPickerElement = document.getElementById('stratPicker');
-	investUpgradeCostElement = document.getElementById('investUpgradeCost');
 	yomiDisplayElement = document.getElementById('yomiDisplay');
 	investmentBankrollElement = document.getElementById('investmentBankroll');
 	secValueElement = document.getElementById('secValue');
 	portValueElement = document.getElementById('portValue');
-	investStratElement = document.getElementById('investStrat');
-	btnRunTournamentElement = document.getElementById('btnRunTournament');
-	vertStratElement = document.getElementById('vertStrat');
-	horizStratElement = document.getElementById('horizStrat');
 	vLabelaElement = document.getElementById('vLabela');
 	vLabelbElement = document.getElementById('vLabelb');
 	hLabelaElement = document.getElementById('hLabela');
@@ -243,12 +218,6 @@ function cacheDOMElements() {
 	baPayoffVElement = document.getElementById('baPayoffV');
 	bbPayoffHElement = document.getElementById('bbPayoffH');
 	bbPayoffVElement = document.getElementById('bbPayoffV');
-	autoTourneyStatusElement = document.getElementById('autoTourneyStatus');
-	tournamentTableElement = document.getElementById('tournamentTable');
-	tournamentResultsTableElement = document.getElementById(
-		'tournamentResultsTable'
-	);
-	tourneyDisplayElement = document.getElementById('tourneyDisplay');
 	payoffCellAAElement = document.getElementById('payoffCellAA');
 	payoffCellABElement = document.getElementById('payoffCellAB');
 	payoffCellBAElement = document.getElementById('payoffCellBA');
@@ -382,15 +351,6 @@ function cacheDOMElements() {
 	stockPriceElements.push(document.getElementById('stock5Price'));
 	stockTotalElements.push(document.getElementById('stock5Total'));
 	stockProfitElements.push(document.getElementById('stock5Profit'));
-
-	tourneyResultsElements.push(document.getElementById('results0'));
-	tourneyResultsElements.push(document.getElementById('results1'));
-	tourneyResultsElements.push(document.getElementById('results2'));
-	tourneyResultsElements.push(document.getElementById('results3'));
-	tourneyResultsElements.push(document.getElementById('results4'));
-	tourneyResultsElements.push(document.getElementById('results5'));
-	tourneyResultsElements.push(document.getElementById('results6'));
-	tourneyResultsElements.push(document.getElementById('results7'));
 }
 
 var clipmakerRateElement;
@@ -415,7 +375,6 @@ var factoryDivSpaceElement;
 var clipsPerSecDivElement;
 var tothDivElement;
 var strategyEngineElement;
-var tournamentManagementElement;
 var btnQcomputeElement;
 var qComputingElement;
 var transWireElement;
@@ -423,17 +382,11 @@ var processorDisplayElement;
 var compDivElement;
 var projectsDivElement;
 var creationDivElement;
-var stratPickerElement;
-var investUpgradeCostElement;
 var yomiDisplayElement;
 var investmentBankrollElement;
 var fundsElement;
 var secValueElement;
 var portValueElement;
-var investStratElement;
-var btnRunTournamentElement;
-var vertStratElement;
-var horizStratElement;
 var vLabelaElement;
 var vLabelbElement;
 var hLabelaElement;
@@ -446,10 +399,6 @@ var baPayoffHElement;
 var baPayoffVElement;
 var bbPayoffHElement;
 var bbPayoffVElement;
-var autoTourneyStatusElement;
-var tournamentTableElement;
-var tournamentResultsTableElement;
-var tourneyDisplayElement;
 var payoffCellAAElement;
 var payoffCellABElement;
 var payoffCellBAElement;
@@ -541,11 +490,9 @@ var clipsPerSecDivElement;
 var tothDivElement;
 var prestigeUcounterElement;
 var prestigeScounterElement;
-var newTourneyCostElement;
 var maxTrustDisplayElement;
 var victoryDivElement;
 var probeTrustCostDisplayElement;
-var tournamentResultsTableElement;
 var farmCostElement;
 var batteryCostElement;
 var farmLevelElement;
@@ -559,7 +506,6 @@ var megaClipperLevelElement;
 var investmentBankrollElement;
 var secValueElement;
 var portValueElement;
-var investUpgradeCostElement;
 var driftersKilledElement;
 var availableMatterDisplayElement;
 var honorDisplayElement;
@@ -618,12 +564,8 @@ var batteryRebootToolTipElement;
 
 var swarmSliderDivElement;
 var clipCountCrunchedElement;
-var autoTourneyStatusDivElement;
-var autoTourneyControlElement;
 
 var dustBusterDivElement;
-var tournamentResultsTableElement;
-var tournamentStuffElement;
 
 var increaseMaxTrustDivElement;
 var honorDivElement;
@@ -644,12 +586,7 @@ var btnExpandMarketingElement;
 var btnLowerPriceElement;
 var btnAddProcElement;
 var btnAddMemElement;
-var btnNewTournamentElement;
 var btnImproveInvestmentsElement;
-var investmentEngineElement;
-var investmentEngineUpgradeElement;
-var strategyEngineElement;
-var tournamentManagementElement;
 var megaClipperDivElement;
 var btnMakeMegaClipperElement;
 var autoClipperDivElement;
@@ -708,8 +645,6 @@ var stockAmountElements = [];
 var stockPriceElements = [];
 var stockTotalElements = [];
 var stockProfitElements = [];
-
-var tourneyResultsElements = [];
 
 // Cache
 
@@ -1064,14 +999,6 @@ function buttonUpdate() {
 
 	clipCountCrunchedElement.innerHTML = spellf(Math.round(clips));
 
-	if (autoTourneyFlag == 1) {
-		autoTourneyStatusDivElement.style.display = '';
-		autoTourneyControlElement.style.display = '';
-	} else {
-		autoTourneyStatusDivElement.style.display = 'none';
-		autoTourneyControlElement.style.display = 'none';
-	}
-
 	qCompDisplayElement.style.opacity = qFade;
 	qFade = qFade - 0.001;
 
@@ -1080,28 +1007,6 @@ function buttonUpdate() {
 	} else {
 		dustBusterDivElement.style.display = 'none';
 	}
-
-	if (
-		resultsFlag == 1 &&
-		autoTourneyFlag == 1 &&
-		autoTourneyStatus == 1 &&
-		tournamentResultsTableElement.style.display == ''
-	) {
-		resultsTimer++;
-
-		if (resultsTimer >= 300 && operations >= tourneyCost) {
-			newTourney();
-			runTourney();
-			resultsTimer = 0;
-		}
-	}
-
-	tournamentStuffElement.onmouseover = function () {
-		revealGrid();
-	};
-	tournamentStuffElement.onmouseout = function () {
-		revealResults();
-	};
 
 	if (battleFlag == 0) {
 		drifterDivElement.style.display = 'none';
@@ -1190,30 +1095,10 @@ function buttonUpdate() {
 		btnAddProcElement.disabled = false;
 		btnAddMemElement.disabled = false;
 	}
-	if (operations >= tourneyCost && tourneyInProg == 0) {
-		btnNewTournamentElement.disabled = false;
-	} else {
-		btnNewTournamentElement.disabled = true;
-	}
 	if (yomi < investUpgradeCost) {
 		btnImproveInvestmentsElement.disabled = true;
 	} else {
 		btnImproveInvestmentsElement.disabled = false;
-	}
-	if (investmentEngineFlag == 0) {
-		investmentEngineElement.style.display = 'none';
-		investmentEngineUpgradeElement.style.display = 'none';
-	} else {
-		investmentEngineElement.style.display = '';
-		investmentEngineUpgradeElement.style.display = '';
-	}
-
-	if (strategyEngineFlag == 0) {
-		strategyEngineElement.style.display = 'none';
-		tournamentManagementElement.style.display = 'none';
-	} else {
-		strategyEngineElement.style.display = '';
-		tournamentManagementElement.style.display = '';
 	}
 
 	if (megaClipperFlag == 0) {
@@ -1266,7 +1151,6 @@ function buttonUpdate() {
 		businessDivElement.style.display = 'none';
 		manufacturingDivElement.style.display = 'none';
 		trustDivElement.style.display = 'none';
-		investmentEngineFlag = 0;
 		dustBusterFlag = 0;
 		creationDivElement.style.display = '';
 	} else {
@@ -1450,7 +1334,6 @@ function buttonUpdate() {
 
 //----------INVESTMENTS----------------------------------------------------------------
 
-var stocks = [];
 var alphabet = [
 	'A',
 	'B',
@@ -1487,25 +1370,8 @@ var sellDelay = 0;
 var riskiness = 5;
 var maxPort = 5;
 var m = 0;
-var investLevel = 0;
-var investUpgradeCost = 100;
-var stockGainThreshold = 0.5;
 var ledger = 0;
 var stockReportCounter = 0;
-
-function investUpgrade() {
-	yomi = yomi - investUpgradeCost;
-	investLevel++;
-	investmentLevelElement.innerHTML = investLevel;
-	stockGainThreshold = stockGainThreshold + 0.01;
-	investUpgradeCost = Math.floor(Math.pow(investLevel + 1, Math.E) * 100);
-	investUpgradeCostElement.innerHTML = formatWithCommas(investUpgradeCost);
-	yomiDisplayElement.innerHTML = formatWithCommas(yomi);
-	displayMessage(
-		'Investment engine upgraded, expected profit/loss ratio now ' +
-			stockGainThreshold
-	);
-}
 
 function investDeposit() {
 	ledger = ledger - Math.floor(funds);
@@ -1637,10 +1503,6 @@ function updateStocks() {
 		stocks[i].age = stocks[i].age + 1;
 		if (Math.random() < 0.6) {
 			var gain = true;
-			if (Math.random() > stockGainThreshold) {
-				gain = false;
-			}
-
 			var currentPrice = stocks[i].price;
 			var delta = Math.ceil((Math.random() * currentPrice) / (4 * riskiness));
 
@@ -1667,16 +1529,6 @@ function updateStocks() {
 
 // Stock List Display Routine
 window.setInterval(function () {
-	if (investStratElement.value == 'low') {
-		riskiness = 7;
-	} else if (investStratElement.value == 'med') {
-		riskiness = 5;
-	} else {
-		riskiness = 1;
-	}
-
-	m = 0;
-
 	for (var i = 0; i < portfolioSize; i++) {
 		m = m + stocks[i].total;
 	}
@@ -1789,7 +1641,6 @@ var bb = 0;
 var rounds = 0;
 var currentRound = 0;
 var rCounter = 0;
-var tourneyInProg = 0;
 var winnerPtr = 0;
 var placeScore = 0;
 var showScore = 0;
@@ -1940,10 +1791,7 @@ var stratBeatlast = {
 
 allStrats.push(stratBeatlast);
 
-var hStrat = strats[0];
 var vStrat = strats[0];
-
-btnRunTournamentElement.disabled = true;
 
 function findBiggestPayoff() {
 	if (aa >= ab && aa >= ba && aa >= bb) {
@@ -2005,13 +1853,11 @@ function pickStrats(roundNum) {
 	}
 
 	vStrat = strats[v];
-	hStrat = strats[h];
 
 	strats[h].currentPos = 1;
 	strats[v].currentPos = 2;
 
 	vertStratElement.innerHTML = vStrat.name;
-	horizStratElement.innerHTML = hStrat.name;
 }
 
 function generateGrid() {
@@ -2039,93 +1885,6 @@ function generateGrid() {
 	baPayoffVElement.innerHTML = payoffGrid.valueAB;
 	bbPayoffHElement.innerHTML = payoffGrid.valueBB;
 	bbPayoffVElement.innerHTML = payoffGrid.valueBB;
-}
-
-function toggleAutoTourney() {
-	if (autoTourneyStatus == 1) {
-		autoTourneyStatus = 0;
-		autoTourneyStatusElement.innerHTML = 'OFF';
-	} else {
-		autoTourneyStatus = 1;
-		autoTourneyStatusElement.innerHTML = 'ON';
-	}
-}
-
-function newTourney() {
-	resultsFlag = 0;
-
-	tournamentTableElement.style.display = '';
-	tournamentResultsTableElement.style.display = 'none';
-
-	high = 0;
-	tourneyInProg = 1;
-	currentRound = 0;
-	rounds = strats.length * strats.length;
-	for (i = 0; i < strats.length; i++) {
-		strats[i].currentScore = 0;
-	}
-	stratCounter = 0;
-	standardOps = standardOps - tourneyCost;
-	tourneyLvl++;
-	generateGrid();
-
-	btnRunTournamentElement.disabled = false;
-	vertStratElement.innerHTML = '&nbsp';
-	horizStratElement.innerHTML = '&nbsp';
-	tourneyDisplayElement.innerHTML = 'Pick strategy, run tournament, gain yomi';
-}
-
-function runTourney() {
-	btnRunTournamentElement.disabled = true;
-	if (currentRound < rounds) {
-		round(currentRound);
-	} else {
-		tourneyInProg = 0;
-		pickWinner();
-		calculatePlaceScore();
-		calculateShowScore();
-		declareWinner();
-	}
-}
-
-function pickWinner() {
-	results = [];
-
-	var temp = [];
-	var tempHigh = 0;
-	var tempWinnerPtr = 0;
-
-	// 1. Make a temp copy of the strats array
-
-	for (i = 0; i < strats.length; i++) {
-		temp[i] = strats[i];
-	}
-
-	for (n = 0; n < strats.length; n++) {
-		tempHigh = 0;
-		tempWinnerPtr = 0;
-
-		// 2. Find a high scoring strat in temp
-
-		for (i = 0; i < temp.length; i++) {
-			if (temp[i].currentScore > tempHigh) {
-				tempWinnerPtr = i;
-				tempHigh = temp[i].currentScore;
-			}
-		}
-
-		// 3. Move the high scoring strat to slot one in results
-
-		results.push(temp[tempWinnerPtr]);
-		temp.splice(tempWinnerPtr, 1);
-	}
-
-	for (i = 0; i < strats.length; i++) {
-		if (strats[i].currentScore > high) {
-			winnerPtr = i;
-			high = strats[i].currentScore;
-		}
-	}
 }
 
 function calculatePlaceScore() {
@@ -2169,7 +1928,6 @@ function declareWinner() {
 			bB = beatBoost;
 		}
 
-		tourneyReport('TOURNAMENT RESULTS (roll over for payoff grid)');
 		yomi = yomi + strats[pick].currentScore * yomiBoost * beatBoost;
 		yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 
@@ -2219,11 +1977,7 @@ function declareWinner() {
 			}
 			yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 		} else {
-			tourneyReport('TOURNAMENT RESULTS (roll over for grid)');
 		}
-
-		populateTourneyReport();
-		displayTourneyReport();
 	}
 }
 
@@ -2237,48 +1991,16 @@ function calculateStratsBeat() {
 	}
 }
 
-function populateTourneyReport() {
-	//m@ make results array
-
-	for (i = 0; i < results.length; i++) {
-		tourneyResultsElements[i].innerHTML =
-			i + 1 + '. ' + results[i].name + ': ' + results[i].currentScore;
-
-		if (pick < 10) {
-			if (results[i].name == strats[pick].name) {
-				tourneyResultsElements[i].style.fontWeight = 'bold';
-			} else {
-				tourneyResultsElements[i].style.fontWeight = 'normal';
-			}
-		}
-	}
-}
-
-function displayTourneyReport() {
-	resultsFlag = 1;
-
-	vertStratElement.innerHTML = '&nbsp';
-	horizStratElement.innerHTML = '&nbsp';
-	tournamentTableElement.style.display = 'none';
-	tournamentResultsTableElement.style.display = '';
-}
-
-function tourneyReport($) {
-	tourneyDisplayElement.innerHTML = $;
-}
-
 function revealGrid() {
 	if (resultsFlag == 1) {
 		resultsTimer = 0;
 		tournamentTableElement.style.display = '';
-		tournamentResultsTableElement.style.display = 'none';
 	}
 }
 
 function revealResults() {
 	if (resultsFlag == 1) {
 		tournamentTableElement.style.display = 'none';
-		tournamentResultsTableElement.style.display = '';
 	}
 }
 
@@ -2314,7 +2036,6 @@ function round(roundNum) {
 		rCounter = 0;
 		pickStrats(roundNum);
 		var $ = 'Round ' + (roundNum + 1);
-		tourneyReport($);
 	}
 
 	function roundLoop() {
@@ -2345,16 +2066,11 @@ function round(roundNum) {
 
 		hMovePrev = hMove;
 		vMovePrev = vMove;
-		hMove = hStrat.pickMove();
 		vMove = vStrat.pickMove();
 
 		calcPayoff(hMove, vMove);
 	}
 }
-
-window.setInterval(function () {
-	pick = stratPickerElement.value;
-}, 100);
 
 //--------------------------------------------------------------------------------
 
@@ -4391,16 +4107,6 @@ window.setInterval(function () {
 		clipRateTemp = 0;
 	}
 
-	// Stock Report
-	if (investmentEngineFlag == 1) {
-		stockReportCounter++;
-		if (stockReportCounter >= 10000) {
-			var r = formatWithCommas(ledger + portTotal);
-			displayMessage('Lifetime investment revenue report: $' + r);
-			stockReportCounter = 0;
-		}
-	}
-
 	// DustBuster
 	if (
 		humanFlag == 1 &&
@@ -4516,11 +4222,6 @@ window.setInterval(function () {
 		factoryDivSpaceElement.style.display = 'none';
 		clipsPerSecDivElement.style.display = 'none';
 		tothDivElement.style.display = 'none';
-	}
-
-	if (dismantle >= 4) {
-		strategyEngineElement.style.display = 'none';
-		tournamentManagementElement.style.display = 'none';
 	}
 
 	if (dismantle >= 5) {
@@ -4644,10 +4345,6 @@ window.setInterval(function () {
 
 	if (project212.flag == 1) {
 		endTimer3++;
-	}
-
-	if (project213.flag == 1) {
-		endTimer4++;
 	}
 
 	if (project215.flag == 1) {
@@ -4783,17 +4480,12 @@ function refresh() {
 	investmentBankrollElement.innerHTML = formatWithCommas(bankroll);
 	secValueElement.innerHTML = formatWithCommas(secTotal);
 	portValueElement.innerHTML = formatWithCommas(portTotal);
-	investUpgradeCostElement.innerHTML = formatWithCommas(investUpgradeCost);
 	yomiDisplayElement.innerHTML = formatWithCommas(yomi);
-	investmentLevelElement.innerHTML = investLevel;
 	prestigeUcounterElement.innerHTML = prestigeU + 1;
 	prestigeScounterElement.innerHTML = prestigeS + 1;
-	newTourneyCostElement.innerHTML = formatWithCommas(tourneyCost);
-	tourneyInProg = 0;
 	maxTrustDisplayElement.innerHTML = formatWithCommas(maxTrust);
 	victoryDivElement.style.visibility = 'hidden';
 	probeTrustCostDisplayElement.innerHTML = formatWithCommas(probeTrustCost);
-	tournamentResultsTableElement.style.display = 'none';
 	farmCostElement.innerHTML = spellf(farmCost);
 	batteryCostElement.innerHTML = spellf(batteryCost);
 	farmLevelElement.innerHTML = formatWithCommas(farmLevel);
@@ -4858,7 +4550,6 @@ function save() {
 		dustBusterStatus: dustBusterStatus,
 		wirePriceTimer: wirePriceTimer,
 		qFade: qFade,
-		autoTourneyStatus: autoTourneyStatus,
 		driftKingMessageCost: driftKingMessageCost,
 		sliderPos: sliderPos,
 		tempOps: tempOps,
@@ -4920,7 +4611,6 @@ function save() {
 		wireBasePrice: wireBasePrice,
 
 		egoFlag: egoFlag,
-		autoTourneyFlag: autoTourneyFlag,
 		tothFlag: tothFlag,
 
 		incomeTracker: incomeTracker.slice(0),
@@ -4971,8 +4661,6 @@ function save() {
 		bankroll: bankroll,
 		fib1: fib1,
 		fib2: fib2,
-		strategyEngineFlag: strategyEngineFlag,
-		investmentEngineFlag: investmentEngineFlag,
 		revPerSecFlag: revPerSecFlag,
 		compFlag: compFlag,
 		projectsFlag: projectsFlag,
@@ -5029,9 +4717,6 @@ function save() {
 		riskiness: riskiness,
 		maxPort: maxPort,
 		m: m,
-		investLevel: investLevel,
-		investUpgradeCost: investUpgradeCost,
-		stockGainThreshold: stockGainThreshold,
 		ledger: ledger,
 		stockReportCounter: stockReportCounter,
 
@@ -5050,7 +4735,6 @@ function save() {
 		rounds: rounds,
 		currentRound: currentRound,
 		rCounter: rCounter,
-		tourneyInProg: tourneyInProg,
 		winnerPtr: winnerPtr,
 		high: high,
 		pick: pick,
@@ -5132,7 +4816,6 @@ function save1() {
 		dustBusterStatus: dustBusterStatus,
 		wirePriceTimer: wirePriceTimer,
 		qFade: qFade,
-		autoTourneyStatus: autoTourneyStatus,
 		driftKingMessageCost: driftKingMessageCost,
 		sliderPos: sliderPos,
 		tempOps: tempOps,
@@ -5194,7 +4877,6 @@ function save1() {
 		wireBasePrice: wireBasePrice,
 
 		egoFlag: egoFlag,
-		autoTourneyFlag: autoTourneyFlag,
 		tothFlag: tothFlag,
 
 		incomeTracker: incomeTracker.slice(0),
@@ -5245,8 +4927,6 @@ function save1() {
 		bankroll: bankroll,
 		fib1: fib1,
 		fib2: fib2,
-		strategyEngineFlag: strategyEngineFlag,
-		investmentEngineFlag: investmentEngineFlag,
 		revPerSecFlag: revPerSecFlag,
 		compFlag: compFlag,
 		projectsFlag: projectsFlag,
@@ -5303,9 +4983,6 @@ function save1() {
 		riskiness: riskiness,
 		maxPort: maxPort,
 		m: m,
-		investLevel: investLevel,
-		investUpgradeCost: investUpgradeCost,
-		stockGainThreshold: stockGainThreshold,
 		ledger: ledger,
 		stockReportCounter: stockReportCounter,
 
@@ -5324,7 +5001,6 @@ function save1() {
 		rounds: rounds,
 		currentRound: currentRound,
 		rCounter: rCounter,
-		tourneyInProg: tourneyInProg,
 		winnerPtr: winnerPtr,
 		high: high,
 		pick: pick,
@@ -5406,7 +5082,6 @@ function save2() {
 		dustBusterStatus: dustBusterStatus,
 		wirePriceTimer: wirePriceTimer,
 		qFade: qFade,
-		autoTourneyStatus: autoTourneyStatus,
 		driftKingMessageCost: driftKingMessageCost,
 		sliderPos: sliderPos,
 		tempOps: tempOps,
@@ -5468,7 +5143,6 @@ function save2() {
 		wireBasePrice: wireBasePrice,
 
 		egoFlag: egoFlag,
-		autoTourneyFlag: autoTourneyFlag,
 		tothFlag: tothFlag,
 
 		incomeTracker: incomeTracker.slice(0),
@@ -5519,8 +5193,6 @@ function save2() {
 		bankroll: bankroll,
 		fib1: fib1,
 		fib2: fib2,
-		strategyEngineFlag: strategyEngineFlag,
-		investmentEngineFlag: investmentEngineFlag,
 		revPerSecFlag: revPerSecFlag,
 		compFlag: compFlag,
 		projectsFlag: projectsFlag,
@@ -5577,9 +5249,6 @@ function save2() {
 		riskiness: riskiness,
 		maxPort: maxPort,
 		m: m,
-		investLevel: investLevel,
-		investUpgradeCost: investUpgradeCost,
-		stockGainThreshold: stockGainThreshold,
 		ledger: ledger,
 		stockReportCounter: stockReportCounter,
 
@@ -5598,7 +5267,6 @@ function save2() {
 		rounds: rounds,
 		currentRound: currentRound,
 		rCounter: rCounter,
-		tourneyInProg: tourneyInProg,
 		winnerPtr: winnerPtr,
 		high: high,
 		pick: pick,
@@ -5650,22 +5318,6 @@ function load() {
 	var loadProjectsActive = JSON.parse(
 		localStorage.getItem('saveProjectsActive')
 	);
-	var loadStratsActive = JSON.parse(localStorage.getItem('saveStratsActive'));
-
-	for (var i = 0; i < allStrats.length; i++) {
-		allStrats[i].active = loadStratsActive[i];
-	}
-
-	for (var i = 1; i < allStrats.length; i++) {
-		if (allStrats[i].active == 1) {
-			strats.push(allStrats[i]);
-
-			var el = document.createElement('option');
-			el.textContent = strats[i].name;
-			el.value = i;
-			stratPickerElement.appendChild(el);
-		}
-	}
 
 	resetFlag = loadGame.resetFlag;
 
@@ -5684,7 +5336,6 @@ function load() {
 	dustBusterStatus = loadGame.dustBusterStatus;
 	wirePriceTimer = loadGame.wirePriceTimer;
 	qFade = loadGame.qFade;
-	autoTourneyStatus = loadGame.autoTourneyStatus;
 	driftKingMessageCost = loadGame.driftKingMessageCost;
 	sliderPos = loadGame.sliderPos;
 	tempOps = loadGame.tempOps;
@@ -5746,7 +5397,6 @@ function load() {
 	wireBasePrice = loadGame.wireBasePrice;
 
 	egoFlag = loadGame.egoFlag;
-	autoTourneyFlag = loadGame.autoTourneyFlag;
 	tothFlag = loadGame.tothFlag;
 
 	incomeTracker = loadGame.incomeTracker.slice(0);
@@ -5797,8 +5447,6 @@ function load() {
 	bankroll = loadGame.bankroll;
 	fib1 = loadGame.fib1;
 	fib2 = loadGame.fib2;
-	strategyEngineFlag = loadGame.strategyEngineFlag;
-	investmentEngineFlag = loadGame.investmentEngineFlag;
 	revPerSecFlag = loadGame.revPerSecFlag;
 	compFlag = loadGame.compFlag;
 	projectsFlag = loadGame.projectsFlag;
@@ -5855,9 +5503,6 @@ function load() {
 	riskiness = loadGame.riskiness;
 	maxPort = loadGame.maxPort;
 	m = loadGame.m;
-	investLevel = loadGame.investLevel;
-	investUpgradeCost = loadGame.investUpgradeCost;
-	stockGainThreshold = loadGame.stockGainThreshold;
 	ledger = loadGame.ledger;
 	stockReportCounter = loadGame.stockReportCounter;
 
@@ -5876,7 +5521,6 @@ function load() {
 	rounds = loadGame.rounds;
 	currentRound = loadGame.currentRound;
 	rCounter = loadGame.rCounter;
-	tourneyInProg = loadGame.tourneyInProg;
 	winnerPtr = loadGame.winnerPtr;
 	high = loadGame.high;
 	pick = loadGame.pick;
@@ -5944,7 +5588,6 @@ function load1() {
 	var loadProjectsActive = JSON.parse(
 		localStorage.getItem('saveProjectsActive1')
 	);
-	var loadStratsActive = JSON.parse(localStorage.getItem('saveStratsActive1'));
 
 	for (var i = 0; i < projects.length; i++) {
 		projects[i].uses = loadProjectsUses[i];
@@ -5955,21 +5598,6 @@ function load1() {
 		if (loadProjectsActive.indexOf(projects[i].id) >= 0) {
 			displayProjects(projects[i]);
 			activeProjects.push(projects[i]);
-		}
-	}
-
-	for (var i = 0; i < allStrats.length; i++) {
-		allStrats[i].active = loadStratsActive[i];
-	}
-
-	for (var i = 1; i < allStrats.length; i++) {
-		if (allStrats[i].active == 1) {
-			strats.push(allStrats[i]);
-
-			var el = document.createElement('option');
-			el.textContent = strats[i].name;
-			el.value = i;
-			stratPickerElement.appendChild(el);
 		}
 	}
 
@@ -5990,7 +5618,6 @@ function load1() {
 	dustBusterStatus = loadGame.dustBusterStatus;
 	wirePriceTimer = loadGame.wirePriceTimer;
 	qFade = loadGame.qFade;
-	autoTourneyStatus = loadGame.autoTourneyStatus;
 	driftKingMessageCost = loadGame.driftKingMessageCost;
 	sliderPos = loadGame.sliderPos;
 	tempOps = loadGame.tempOps;
@@ -6052,7 +5679,6 @@ function load1() {
 	wireBasePrice = loadGame.wireBasePrice;
 
 	egoFlag = loadGame.egoFlag;
-	autoTourneyFlag = loadGame.autoTourneyFlag;
 	tothFlag = loadGame.tothFlag;
 
 	incomeTracker = loadGame.incomeTracker.slice(0);
@@ -6103,8 +5729,6 @@ function load1() {
 	bankroll = loadGame.bankroll;
 	fib1 = loadGame.fib1;
 	fib2 = loadGame.fib2;
-	strategyEngineFlag = loadGame.strategyEngineFlag;
-	investmentEngineFlag = loadGame.investmentEngineFlag;
 	revPerSecFlag = loadGame.revPerSecFlag;
 	compFlag = loadGame.compFlag;
 	projectsFlag = loadGame.projectsFlag;
@@ -6161,9 +5785,6 @@ function load1() {
 	riskiness = loadGame.riskiness;
 	maxPort = loadGame.maxPort;
 	m = loadGame.m;
-	investLevel = loadGame.investLevel;
-	investUpgradeCost = loadGame.investUpgradeCost;
-	stockGainThreshold = loadGame.stockGainThreshold;
 	ledger = loadGame.ledger;
 	stockReportCounter = loadGame.stockReportCounter;
 
@@ -6182,7 +5803,6 @@ function load1() {
 	rounds = loadGame.rounds;
 	currentRound = loadGame.currentRound;
 	rCounter = loadGame.rCounter;
-	tourneyInProg = loadGame.tourneyInProg;
 	winnerPtr = loadGame.winnerPtr;
 	high = loadGame.high;
 	pick = loadGame.pick;
@@ -6234,7 +5854,6 @@ function load2() {
 	var loadProjectsActive = JSON.parse(
 		localStorage.getItem('saveProjectsActive2')
 	);
-	var loadStratsActive = JSON.parse(localStorage.getItem('saveStratsActive2'));
 
 	for (var i = 0; i < projects.length; i++) {
 		projects[i].uses = loadProjectsUses[i];
@@ -6245,21 +5864,6 @@ function load2() {
 		if (loadProjectsActive.indexOf(projects[i].id) >= 0) {
 			displayProjects(projects[i]);
 			activeProjects.push(projects[i]);
-		}
-	}
-
-	for (var i = 0; i < allStrats.length; i++) {
-		allStrats[i].active = loadStratsActive[i];
-	}
-
-	for (var i = 1; i < allStrats.length; i++) {
-		if (allStrats[i].active == 1) {
-			strats.push(allStrats[i]);
-
-			var el = document.createElement('option');
-			el.textContent = strats[i].name;
-			el.value = i;
-			stratPickerElement.appendChild(el);
 		}
 	}
 
@@ -6280,7 +5884,6 @@ function load2() {
 	dustBusterStatus = loadGame.dustBusterStatus;
 	wirePriceTimer = loadGame.wirePriceTimer;
 	qFade = loadGame.qFade;
-	autoTourneyStatus = loadGame.autoTourneyStatus;
 	driftKingMessageCost = loadGame.driftKingMessageCost;
 	sliderPos = loadGame.sliderPos;
 	tempOps = loadGame.tempOps;
@@ -6342,7 +5945,6 @@ function load2() {
 	wireBasePrice = loadGame.wireBasePrice;
 
 	egoFlag = loadGame.egoFlag;
-	autoTourneyFlag = loadGame.autoTourneyFlag;
 	tothFlag = loadGame.tothFlag;
 
 	incomeTracker = loadGame.incomeTracker.slice(0);
@@ -6393,8 +5995,6 @@ function load2() {
 	bankroll = loadGame.bankroll;
 	fib1 = loadGame.fib1;
 	fib2 = loadGame.fib2;
-	strategyEngineFlag = loadGame.strategyEngineFlag;
-	investmentEngineFlag = loadGame.investmentEngineFlag;
 	revPerSecFlag = loadGame.revPerSecFlag;
 	compFlag = loadGame.compFlag;
 	projectsFlag = loadGame.projectsFlag;
@@ -6451,9 +6051,6 @@ function load2() {
 	riskiness = loadGame.riskiness;
 	maxPort = loadGame.maxPort;
 	m = loadGame.m;
-	investLevel = loadGame.investLevel;
-	investUpgradeCost = loadGame.investUpgradeCost;
-	stockGainThreshold = loadGame.stockGainThreshold;
 	ledger = loadGame.ledger;
 	stockReportCounter = loadGame.stockReportCounter;
 
@@ -6472,7 +6069,6 @@ function load2() {
 	rounds = loadGame.rounds;
 	currentRound = loadGame.currentRound;
 	rCounter = loadGame.rCounter;
-	tourneyInProg = loadGame.tourneyInProg;
 	winnerPtr = loadGame.winnerPtr;
 	high = loadGame.high;
 	pick = loadGame.pick;

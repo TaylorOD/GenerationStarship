@@ -228,7 +228,8 @@
 						</div>
 						<div id="droneDivSpace" style="display: none">
 							Harvester Drones: <span id="harvesterLevelSpace">0</span><br />
-							Builder Drones: <span id="wireDroneLevelSpace">0</span><br /><br />
+							Builder Drones: <spanZ id="wireDroneLevelSpace">0</spanZ
+							><br /><br />
 						</div>
 					</div>
 					<div id="spaceDiv" style="display: none">
@@ -524,11 +525,6 @@
 					<div class="engine" id="investmentEngine" style="display: none">
 						<p class="engineText">
 							<b>Investments</b>
-							<select id="investStrat">
-								<option value="low">Low Risk</option>
-								<option value="med">Med Risk</option>
-								<option value="hi">High Risk</option>
-							</select>
 							<br />
 						</p>
 						<div id="investmentDiv1">
@@ -597,20 +593,6 @@
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div id="investmentEngineUpgrade" style="display: none">
-						<button
-							class="button2"
-							id="btnImproveInvestments"
-							onclick="investUpgrade()"
-							disabled=""
-						>
-							Upgrade Investment Engine</button
-						><span class="engineText7"> Level: </span
-						><span class="engineText7" id="investmentLevel">0</span><br />
-						<p class="engineText8">
-							Cost: <span id="investUpgradeCost">100</span> Yomi
-						</p>
 					</div>
 					<div class="engine2" id="strategyEngine" style="display: none">
 						<p class="engineText">
@@ -700,34 +682,6 @@
 							</div>
 						</div>
 						<p class="engineText4">Yomi: <span id="yomiDisplay">0</span></p>
-					</div>
-					<div id="tournamentManagement" style="display: none">
-						<div id="tourneyButton">
-							<button
-								class="button2"
-								id="btnNewTournament"
-								onclick="newTourney()"
-								disabled=""
-							>
-								&nbsp; New Tournament &nbsp;
-							</button>
-						</div>
-						<div id="autoTourneyControl" style="display: none">
-							<button
-								class="button2"
-								id="btnToggleAutoTourney"
-								onclick="toggleAutoTourney()"
-							>
-								AutoTourney
-							</button>
-						</div>
-						<div id="autoTourneyStatusDiv" style="display: none">
-							<span class="engineText9" id="autoTourneyStatus">ON</span>
-						</div>
-						<br />
-						<p class="engineText8">
-							Cost: <span id="newTourneyCost">1,000</span> ops
-						</p>
 					</div>
 					<!--       BATTLE-->
 					<div id="battleCanvasDiv" style="display: none">
@@ -1011,8 +965,8 @@
 						</button>
 						<div class="toolTip2">
 							<span class="toolTipText2"
-								>Rate at which probes spawn Builder Drones (each new drone costs 2
-								million clips)</span
+								>Rate at which probes spawn Builder Drones (each new drone costs
+								2 million clips)</span
 							>
 							Builder Drone Production: <span id="probeWireDisplay">0</span>
 						</div>
