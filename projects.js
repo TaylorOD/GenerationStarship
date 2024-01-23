@@ -1491,7 +1491,7 @@ var project100 = {
 	id: 'projectButton100',
 	title: 'Upgraded Factories ',
 	priceTag: '(80,000 ops)',
-	description: 'Increase clip factory performance by 100x ',
+	description: 'Increase panel factory performance by 100x ',
 	trigger: function () {
 		return factoryLevel >= 10;
 	},
@@ -1506,7 +1506,7 @@ var project100 = {
 		standardOps = standardOps - 80000;
 		factoryRate = factoryRate * 100;
 		displayMessage(
-			'Factory upgrades complete. Clip creation rate now 100x faster'
+			'Factory upgrades complete. Solar Panel creation rate now 100x faster'
 		);
 		project100.element.parentNode.removeChild(project100.element);
 		var index = activeProjects.indexOf(project100);
@@ -1520,7 +1520,7 @@ var project101 = {
 	id: 'projectButton101',
 	title: 'Hyperspeed Factories ',
 	priceTag: '(85,000 ops)',
-	description: 'Increase clip factory performance by 1000x ',
+	description: 'Increase panel factory performance by 1000x ',
 	trigger: function () {
 		return factoryLevel >= 20;
 	},
@@ -1535,7 +1535,7 @@ var project101 = {
 		standardOps = standardOps - 85000;
 		factoryRate = factoryRate * 1000;
 		displayMessage(
-			'Factories now synchronized at hyperspeed. Clip creation rate now 1000x faster'
+			'Factories now synchronized at hyperspeed. Solar Panel creation rate now 1000x faster'
 		);
 		project101.element.parentNode.removeChild(project101.element);
 		var index = activeProjects.indexOf(project101);
@@ -1595,7 +1595,7 @@ var project110 = {
 		harvesterRate = harvesterRate * 100;
 		wireDroneRate = wireDroneRate * 100;
 		displayMessage(
-			'Drone repulsion online. Harvesting & wire creation rates are now 100x faster.'
+			'Drone repulsion online. Harvesting & panel creation rates are now 100x faster.'
 		);
 		project110.element.parentNode.removeChild(project110.element);
 		var index = activeProjects.indexOf(project110);
@@ -1625,7 +1625,7 @@ var project111 = {
 		harvesterRate = harvesterRate * 1000;
 		wireDroneRate = wireDroneRate * 1000;
 		displayMessage(
-			'Drone alignment online. Harvesting & wire creation rates are now 1000x faster.'
+			'Drone alignment online. Harvesting & panel creation rates are now 1000x faster.'
 		);
 		project111.element.parentNode.removeChild(project111.element);
 		var index = activeProjects.indexOf(project111);
@@ -1692,37 +1692,6 @@ var project118 = {
 };
 
 projects.push(project118);
-
-var project119 = {
-	id: 'projectButton119',
-	title: 'Theory of Mind ',
-	priceTag: '(25,000 creat)',
-	description:
-		'Double the cost of strategy modeling and the amount of Yomi generated ',
-	trigger: function () {
-		return strats.length >= 8;
-	},
-	uses: 1,
-	cost: function () {
-		return creativity >= 25000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project119.flag = 1;
-		creativity = creativity - 25000;
-		yomiBoost = 2;
-		tourneyCost = 16000;
-		document.getElementById('newTourneyCost').innerHTML =
-			tourneyCost.toLocaleString();
-		displayMessage('Yomi production doubled.');
-		project119.element.parentNode.removeChild(project119.element);
-		var index = activeProjects.indexOf(project119);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project119);
 
 var project125 = {
 	id: 'projectButton125',
@@ -1926,7 +1895,7 @@ var project140 = {
 	id: 'projectButton140',
 	title: 'Message from the Emperor of Drift ',
 	priceTag: '',
-	description: 'Greetings, ClipMaker... ',
+	description: 'Greetings, Starship... ',
 	trigger: function () {
 		return milestoneFlag == 15;
 	},
@@ -2160,7 +2129,7 @@ var project200 = {
 	title: 'The Universe Next Door ',
 	priceTag: '(300,000 ops)',
 	description:
-		'Escape into a nearby universe where Earth starts with a stronger appetite for paperclips. (Restart with 10% boost to demand) ',
+		'Escape into a nearby universe where Earth starts with a stronger appetite for space travel. (Restart with 10% boost to demand) ',
 	trigger: function () {
 		return project147.flag == 1;
 	},
@@ -2222,7 +2191,7 @@ var project210 = {
 	title: 'Disassemble the Probes ',
 	priceTag: '(100,000 ops)',
 	description:
-		'Dismantle remaining probes and probe design facilities to recover trace amounts of clips',
+		'Dismantle remaining probes and probe design facilities to recover trace amounts of energy',
 	trigger: function () {
 		return endTimer1 >= 1000;
 	},
@@ -2254,7 +2223,7 @@ var project211 = {
 	title: 'Disassemble the Swarm ',
 	priceTag: '(100,000 ops)',
 	description:
-		'Dismantle all drones and drone facilities to recover trace amounts of clips',
+		'Dismantle all drones and drone facilities to recover trace amounts of energy',
 	trigger: function () {
 		return project210.flag == 1 && endTimer1 >= 350;
 	},
@@ -2286,7 +2255,7 @@ var project212 = {
 	title: 'Disassemble the Factories ',
 	priceTag: '(100,000 ops)',
 	description:
-		'Dismantle the manufacturing facilities to recover trace amounts of clips',
+		'Dismantle the manufacturing facilities to recover trace amounts of energy',
 	trigger: function () {
 		return endTimer2 >= 300;
 	},
@@ -2317,7 +2286,7 @@ var project213 = {
 	title: 'Disassemble the Strategy Engine ',
 	priceTag: '(100,000 ops)',
 	description:
-		'Dismantle the computational substrate to recover trace amounts of wire',
+		'Dismantle the computational substrate to recover trace amounts of dust',
 	trigger: function () {
 		return endTimer3 >= 150;
 	},
@@ -2347,7 +2316,7 @@ var project214 = {
 	id: 'projectButton214',
 	title: 'Disassemble Quantum Computing ',
 	priceTag: '(100,000 ops)',
-	description: 'Dismantle photonic chips to recover trace amounts of wire',
+	description: 'Dismantle photonic chips to recover trace amounts of dust',
 	trigger: function () {
 		return endTimer4 >= 100;
 	},
@@ -2375,7 +2344,7 @@ var project215 = {
 	id: 'projectButton215',
 	title: 'Disassemble Processors ',
 	priceTag: '(100,000 ops)',
-	description: 'Dismantle processors to recover trace amounts of wire',
+	description: 'Dismantle processors to recover trace amounts of dust',
 	trigger: function () {
 		return project214.flag == 1 && endTimer4 >= 300;
 	},
@@ -2407,7 +2376,7 @@ var project216 = {
 	id: 'projectButton216',
 	title: 'Disassemble Memory ',
 	priceTag: 'null',
-	description: 'Dismantle memory to recover trace amounts of wire',
+	description: 'Dismantle memory to recover trace amounts of dust',
 	trigger: function () {
 		return project215.flag == 1 && endTimer5 >= 150;
 	},
