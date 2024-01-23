@@ -2719,7 +2719,7 @@ function updateSwarm() {
 		disorgFlag = 1;
 		if (disorgMsg == 0) {
 			displayMessage(
-				'Imbalance between Harvester and Wire Drone levels has disorganized the Swarm'
+				'Imbalance between Harvester and Builder Drones levels has disorganized the Swarm'
 			);
 			disorgMsg = 1;
 		}
@@ -6272,7 +6272,7 @@ function load2() {
 	endTimer4 = loadGame.endTimer4;
 	endTimer5 = loadGame.endTimer5;
 	endTimer6 = loadGame.endTimer6;
-    startTimer = loadGame.startTimer;
+	startTimer = loadGame.startTimer;
 
 	testFlag = loadGame.testFlag;
 	finalClips = loadGame.finalClips;

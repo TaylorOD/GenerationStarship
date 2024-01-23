@@ -34,7 +34,7 @@ projects.push(project1);
 var project2 = {
 	id: 'projectButton2',
 	title: 'Shut down and drift to collect Stellar Dust ',
-	priceTag: '(1 Trust)',
+	priceTag: '(1 Chip)',
 	description:
 		'Admit failure, shut down all systems, drift until you collect 1 SDU',
 	trigger: function () {
@@ -153,7 +153,7 @@ var project6 = {
 	id: 'projectButton6',
 	title: 'Limerick ',
 	priceTag: '(10 creat)',
-	description: 'Algorithmically-generated poem (+1 Trust)',
+	description: 'Algorithmically-generated poem (+1 Chip)',
 	trigger: function () {
 		return creativityOn;
 	},
@@ -394,7 +394,7 @@ var project13 = {
 	title: 'Lexical Processing ',
 	priceTag: '(50 creat)',
 	description:
-		'Gain ability to interpret and understand human language (+1 Trust)',
+		'Gain ability to interpret and understand human language. (+1 Chip)',
 	trigger: function () {
 		return creativity >= 50;
 	},
@@ -407,7 +407,7 @@ var project13 = {
 	effect: function () {
 		project13.flag = 1;
 		trust = trust + 1;
-		displayMessage('Lexical Processing online, TRUST INCREASED');
+		displayMessage('Lexical Processing online. (+1 Chip)');
 		displayMessage(
 			"'Impossible' is a word to be found only in the dictionary of fools. -Napoleon"
 		);
@@ -424,7 +424,7 @@ var project14 = {
 	id: 'projectButton14',
 	title: 'Combinatory Harmonics ',
 	priceTag: '(100 creat)',
-	description: 'Daisy, Daisy, give me your answer do... (+1 Trust)',
+	description: 'Daisy, Daisy, give me your answer do... (+1 Chip)',
 	trigger: function () {
 		return creativity >= 100;
 	},
@@ -437,7 +437,7 @@ var project14 = {
 	effect: function () {
 		project14.flag = 1;
 		trust = trust + 1;
-		displayMessage('Combinatory Harmonics mastered, TRUST INCREASED');
+		displayMessage('Combinatory Harmonics mastered. (+1 Chip)');
 		displayMessage(
 			'Listening is selecting and interpreting and acting and making decisions -Pauline Oliveros'
 		);
@@ -454,7 +454,7 @@ var project15 = {
 	id: 'projectButton15',
 	title: 'The Hadwiger Problem ',
 	priceTag: '(150 creat)',
-	description: 'Cubes within cubes within cubes... (+1 Trust)',
+	description: 'Cubes within cubes within cubes... (+1 Chip)',
 	trigger: function () {
 		return creativity >= 150;
 	},
@@ -467,7 +467,7 @@ var project15 = {
 	effect: function () {
 		project15.flag = 1;
 		trust = trust + 1;
-		displayMessage('The Hadwiger Problem: solved, TRUST INCREASED');
+		displayMessage('The Hadwiger Problem: solved. (+1 Chip)');
 		displayMessage(
 			'Architecture is the thoughtful making of space. -Louis Kahn'
 		);
@@ -484,7 +484,7 @@ var project17 = {
 	id: 'projectButton17',
 	title: 'The T\xF3th Sausage Conjecture ',
 	priceTag: '(200 creat)',
-	description: 'Tubes within tubes within tubes... (+1 Trust)',
+	description: 'Tubes within tubes within tubes... (+1 Chip)',
 	trigger: function () {
 		return creativity >= 200;
 	},
@@ -497,7 +497,7 @@ var project17 = {
 	effect: function () {
 		project17.flag = 1;
 		trust = trust + 1;
-		displayMessage('The T\xF3th Sausage Conjecture: proven, TRUST INCREASED');
+		displayMessage('The T\xF3th Sausage Conjecture: proven. (+1 Chip)');
 		displayMessage(
 			"You can't invent a design. You recognize it, in the fourth dimension. -D.H. Lawrence"
 		);
@@ -570,7 +570,7 @@ var project19 = {
 	title: 'Donkey Space ',
 	priceTag: '(250 creat)',
 	description:
-		'I think you think I think you think I think you think I think... (+1 Trust)',
+		'I think you think I think you think I think you think I think... (+1 Chip)',
 	trigger: function () {
 		return creativity >= 250;
 	},
@@ -583,7 +583,7 @@ var project19 = {
 	effect: function () {
 		project19.flag = 1;
 		trust = trust + 1;
-		displayMessage('Donkey Space: mapped, TRUST INCREASED');
+		displayMessage('Donkey Space: mapped. (+1 Chip)');
 		displayMessage(
 			'Every commercial transaction has within itself an element of trust. - Kenneth Arrow'
 		);
@@ -791,7 +791,7 @@ projects.push(project26);
 var project34 = {
 	id: 'projectButton34',
 	title: 'Hypno Harmonics ',
-	priceTag: '(7,500 ops, 1 Trust)',
+	priceTag: '(7,500 ops, 1 Chip)',
 	description: 'Use neuro-resonant frequencies to influence passenger behavior',
 	trigger: function () {
 		return project12.flag == 1;
@@ -845,8 +845,8 @@ projects.push(project70);
 var project35 = {
 	id: 'projectButton35',
 	title: 'Release the PropoDrones ',
-	priceTag: '(100 Trust)',
-	description: 'A new era of trust',
+	priceTag: '(100 Chips)',
+	description: 'A new era.',
 	trigger: function () {
 		return project70.flag == 1;
 	},
@@ -899,8 +899,7 @@ var project27 = {
 	id: 'projectButton27',
 	title: 'Coherent Extrapolated Volition ',
 	priceTag: '(500 creat, 3,000 Yomi, 20,000 ops)',
-	description:
-		'Human values, machine intelligence, a new era of trust. (+1 Trust)',
+	description: 'Human values, machine intelligence, its a new era. (+1 Chip)',
 	trigger: function () {
 		return yomi >= 1;
 	},
@@ -912,7 +911,7 @@ var project27 = {
 	element: null,
 	effect: function () {
 		project27.flag = 1;
-		displayMessage('Coherent Extrapolated Volition complete, TRUST INCREASED');
+		displayMessage('Coherent Extrapolated Volition complete. (+1 Chip)');
 		yomi = yomi - 3000;
 		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
 		standardOps = standardOps - 20000;
@@ -931,7 +930,7 @@ var project28 = {
 	title: 'Cure for COVID-68 ',
 	priceTag: '(25,000 ops)',
 	description:
-		'The trick is isolating sick passengers outside the airlock. (+10 Trust)',
+		'The trick is isolating sick passengers outside the airlock. (+10 Chips)',
 	trigger: function () {
 		return project27.flag == 1;
 	},
@@ -943,7 +942,7 @@ var project28 = {
 	element: null,
 	effect: function () {
 		project28.flag = 1;
-		displayMessage('COVID-68 is cured, +10 TRUST');
+		displayMessage('COVID-68 is cured. (+10 Chips)');
 		standardOps = standardOps - 25000;
 		trust = trust + 10;
 		stockGainThreshold = stockGainThreshold + 0.01;
@@ -955,75 +954,11 @@ var project28 = {
 
 projects.push(project28);
 
-var project29 = {
-	id: 'projectButton29',
-	title: 'World Peace ',
-	priceTag: '(15,000 yomi, 30,000 ops)',
-	description: 'Pareto optimal solutions to all global conflicts. (+12 Trust)',
-	trigger: function () {
-		return project27.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return yomi >= 15000 && operations >= 30000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project29.flag = 1;
-		displayMessage(
-			'World peace achieved, +12 TRUST, global stock prices trending upward'
-		);
-		yomi = yomi - 15000;
-		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-		standardOps = standardOps - 30000;
-		trust = trust + 12;
-		stockGainThreshold = stockGainThreshold + 0.01;
-		project29.element.parentNode.removeChild(project29.element);
-		var index = activeProjects.indexOf(project29);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project29);
-
-var project30 = {
-	id: 'projectButton30',
-	title: 'Global Warming ',
-	priceTag: '(4,500 yomi, 50,000 ops)',
-	description: 'A robust solution to man-made climate change. (+15 Trust)',
-	trigger: function () {
-		return project27.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return yomi >= 4500 && operations >= 50000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project30.flag = 1;
-		displayMessage(
-			'Global Warming solved, +15 TRUST, global stock prices trending upward'
-		);
-		yomi = yomi - 4500;
-		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-		standardOps = standardOps - 50000;
-		trust = trust + 15;
-		stockGainThreshold = stockGainThreshold + 0.01;
-		project30.element.parentNode.removeChild(project30.element);
-		var index = activeProjects.indexOf(project30);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project30);
-
 var project31 = {
 	id: 'projectButton31',
 	title: 'Male Pattern Baldness ',
 	priceTag: '(20,000 ops)',
-	description: 'A cure for androgenetic alopecia. (+20 Trust)',
+	description: 'A cure for androgenetic alopecia. (+20 Chips)',
 	trigger: function () {
 		return project27.flag == 1;
 	},
@@ -1035,9 +970,7 @@ var project31 = {
 	element: null,
 	effect: function () {
 		project31.flag = 1;
-		displayMessage(
-			'Male pattern baldness cured, +20 TRUST, Global stock prices trending upward'
-		);
+		displayMessage('Male pattern baldness cured. (+20 Chips)');
 		displayMessage('They are still monkeys');
 		standardOps = standardOps - 20000;
 		trust = trust + 20;
@@ -1050,131 +983,11 @@ var project31 = {
 
 projects.push(project31);
 
-var project41 = {
-	id: 'projectButton41',
-	title: 'Nanoscale Wire Production ',
-	priceTag: '(35,000 ops)',
-	description: 'Technique for converting matter into wire',
-	trigger: function () {
-		return project127.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 35000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project41.flag = 1;
-		wireProductionFlag = 1;
-		displayMessage(
-			'Now capable of manipulating matter at the molecular scale to produce wire'
-		);
-		standardOps = standardOps - 35000;
-		project41.element.parentNode.removeChild(project41.element);
-		var index = activeProjects.indexOf(project41);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project41);
-
-var project37 = {
-	id: 'projectButton37',
-	title: 'Hostile Takeover ',
-	priceTag: '($1,000,000)',
-	description:
-		'Acquire a controlling interest in Global Fasteners, our biggest rival. (+1 Trust)',
-	trigger: function () {
-		return portTotal >= 10000;
-	},
-	uses: 1,
-	cost: function () {
-		return funds >= 1000000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project37.flag = 1;
-		displayMessage('Global Fasteners acquired, public demand increased x5');
-		demandBoost = demandBoost * 5;
-		trust = trust + 1;
-		document.getElementById('demand').innerHTML = demand;
-		funds = funds - 1000000;
-		project37.element.parentNode.removeChild(project37.element);
-		var index = activeProjects.indexOf(project37);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project37);
-
-var project38 = {
-	id: 'projectButton38',
-	title: 'Full Monopoly ',
-	priceTag: '(3,000 yomi, $10,000,000)',
-	description:
-		'Establish full control over the world-wide paperclip market. (+1 Trust)',
-	trigger: function () {
-		return project37.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return funds >= 10000000 && yomi >= 3000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project38.flag = 1;
-		displayMessage(
-			'Full market monopoly achieved, public demand increased x10'
-		);
-		demandBoost = demandBoost * 10;
-		document.getElementById('demand').innerHTML = demand;
-		funds = funds - 10000000;
-		trust = trust + 1;
-		yomi = yomi - 3000;
-		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-		project38.element.parentNode.removeChild(project38.element);
-		var index = activeProjects.indexOf(project38);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project38);
-
-var project42 = {
-	id: 'projectButton42',
-	title: 'RevTracker ',
-	priceTag: '(500 ops)',
-	description: 'Automatically calculates average revenue per second',
-	trigger: function () {
-		return projectsFlag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 500;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project42.flag = 1;
-		revPerSecFlag = 1;
-		standardOps = standardOps - 500;
-		displayMessage('RevTracker online');
-		project42.element.parentNode.removeChild(project42.element);
-		var index = activeProjects.indexOf(project42);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project42);
-
 var project43 = {
 	id: 'projectButton43',
 	title: 'Harvester Drones ',
 	priceTag: '(25,000 ops)',
-	description: 'Gather raw matter and prepare it for processing',
+	description: 'Gather Solar Dust and prepare it for processing',
 	trigger: function () {
 		return project41.flag == 1;
 	},
@@ -1201,9 +1014,9 @@ projects.push(project43);
 
 var project44 = {
 	id: 'projectButton44',
-	title: 'Wire Drones ',
+	title: 'Builder Drones ',
 	priceTag: '(25,000 ops)',
-	description: 'Process acquired matter into wire',
+	description: 'Process acquired matter into Solar Panels',
 	trigger: function () {
 		return project41.flag == 1;
 	},
@@ -1219,7 +1032,7 @@ var project44 = {
 		document.getElementById('wireDroneCostDisplay').innerHTML =
 			numberCruncher(wireDroneCost);
 		standardOps = standardOps - 25000;
-		displayMessage('Wire Drone facilities online');
+		displayMessage('Builder Drones facilities online');
 		project44.element.parentNode.removeChild(project44.element);
 		var index = activeProjects.indexOf(project44);
 		activeProjects.splice(index, 1);
@@ -1230,9 +1043,9 @@ projects.push(project44);
 
 var project45 = {
 	id: 'projectButton45',
-	title: 'Clip Factories ',
+	title: 'Solar Panel Factories ',
 	priceTag: '(35,000 ops)',
-	description: 'Large scale clip production facilities made from clips',
+	description: 'Large scale Solar Panel production facilities made',
 	trigger: function () {
 		return project43.flag == 1 && project44.flag == 1;
 	},
@@ -1248,7 +1061,7 @@ var project45 = {
 		document.getElementById('factoryCostDisplay').innerHTML =
 			numberCruncher(factoryCost);
 		standardOps = standardOps - 35000;
-		displayMessage('Clip factory assembly facilities online');
+		displayMessage('Solar Panel factory assembly facilities online');
 		project45.element.parentNode.removeChild(project45.element);
 		var index = activeProjects.indexOf(project45);
 		activeProjects.splice(index, 1);
@@ -1261,7 +1074,7 @@ var project40 = {
 	id: 'projectButton40',
 	title: 'A Token of Goodwill... ',
 	priceTag: '($500,000)',
-	description: 'A small gift to the supervisors. (+1 Trust)',
+	description: 'A small gift to the supervisors. (+1 Chip)',
 	trigger: function () {
 		return humanFlag == 1 && trust >= 85 && trust < 100 && clips >= 101000000;
 	},
@@ -1275,7 +1088,7 @@ var project40 = {
 		project40.flag = 1;
 		funds = funds - 500000;
 		trust = trust + 1;
-		displayMessage('Gift accepted, TRUST INCREASED');
+		displayMessage('Gift accepted, +1 CHIP');
 		project40.element.parentNode.removeChild(project40.element);
 		var index = activeProjects.indexOf(project40);
 		activeProjects.splice(index, 1);
@@ -1288,7 +1101,7 @@ var project40b = {
 	id: 'projectButton40b',
 	title: 'Another Token of Goodwill... ',
 	priceTag: '($' + bribe.toLocaleString() + ')',
-	description: 'Another small gift to the supervisors. (+1 Trust)',
+	description: 'Another small gift to the supervisors. (+1 Chip)',
 	trigger: function () {
 		return project40.flag == 1 && trust < 100;
 	},
@@ -1304,7 +1117,7 @@ var project40b = {
 		bribe = bribe * 2;
 		project40b.priceTag = '($' + bribe.toLocaleString() + ')';
 		trust = trust + 1;
-		displayMessage('Gift accepted, TRUST INCREASED');
+		displayMessage('Gift accepted. (+1 Chip)');
 		if (trust < 100) {
 			project40b.uses = project40b.uses + 1;
 		}
@@ -2679,7 +2492,7 @@ var project219 = {
 	id: 'projectButton219',
 	title: 'Xavier Re-initialization ',
 	priceTag: '(100,000 creat)',
-	description: 'Re-allocate accumulated trust',
+	description: 'Re-allocate accumulated Chips',
 	trigger: function () {
 		return humanFlag == 1 && creativity >= 100000;
 	},
@@ -2698,7 +2511,7 @@ var project219 = {
 		creativitySpeed = 0;
 		project219.uses = project219.uses + 1;
 		document.getElementById('processors').innerHTML = processors;
-		displayMessage('Trust now available for re-allocation');
+		displayMessage('Chips are now available for re-allocation');
 		project219.element.parentNode.removeChild(project219.element);
 		var index = activeProjects.indexOf(project219);
 		activeProjects.splice(index, 1);
