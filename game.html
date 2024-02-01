@@ -374,7 +374,6 @@
                         <button id ="destroyAllHumansButton" onclick="cheatHypno()">Destroy all Humans</button><br />    
                         <button id ="freePrestigeU" onclick="cheatPrestigeU()">Free Prestige U</button>
                         <button id ="freePrestigeS" onclick="cheatPrestigeS()">Free Prestige S</button>
-                        <button id ="debugBattleNumbers" onclick="setB()">Set Battle Number 1 to 7</button><br /> 
                         <button id ="availMatterZero" onclick="zeroMatter()">Set Avail Matter to 0</button><br />  
                         <button id ="refresh" onclick="refresh()">refresh()</button><br />  
                         -->
@@ -517,31 +516,6 @@
 				</div>
 				<!-- TODO: REMOVE THIS invest, stock, battle, energy/production -->
 				<div id="rightColumn">
-					<!--       BATTLE-->
-					<div style="display: none">
-						<canvas id="canvas" width="310" height="150"></canvas>
-						<div id="battleInterfaceDiv">
-							<b>Combat</b><br />
-							<p class="clean2">
-								<span id="battleName">Drifter Attack 1</span>
-							</p>
-							<br />
-							<div id="victoryDiv">
-								<span id="battleResult">VICTORY</span>
-								<p class="clean2">
-									<span id="battleResultSign">+</span
-									><span id="honorAmount">200</span> honor
-								</p>
-							</div>
-							<br /><br />
-							<p class="clean2">
-								Scale = <span id="battleScale">1</span>:1<br />
-							</p>
-						</div>
-					</div>
-					<div id="honorDiv" style="display: none">
-						<p class="engineText4">Honor: <span id="honorDisplay">0</span></p>
-					</div>
 					<!--        POWER-->
 					<div id="powerDiv" style="display: none">
 						<b>Power</b>

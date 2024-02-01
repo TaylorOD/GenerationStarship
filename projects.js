@@ -843,6 +843,9 @@ var project28 = {
 	description:
 		'The trick is isolating sick passengers outside the airlock. (+10 Chips)',
 	uses: 1,
+	trigger: function () {
+		return project31.flag == 1;
+	},
 	cost: function () {
 		return operations >= 25000;
 	},
@@ -867,6 +870,9 @@ var project31 = {
 	priceTag: '(20,000 ops)',
 	description: 'A cure for androgenetic alopecia. (+20 Chips)',
 	uses: 1,
+	trigger: function () {
+		return project31.flag == 1;
+	},
 	cost: function () {
 		return operations >= 20000;
 	},

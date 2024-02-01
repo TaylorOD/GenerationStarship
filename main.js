@@ -30,7 +30,7 @@ function cacheDOMElements() {
 	clipCountCrunchedElement = document.getElementById('clipCountCrunched');
 	dustBusterDivElement = document.getElementById('dustBusterDiv');
 	increaseMaxTrustDivElement = document.getElementById('increaseMaxTrustDiv');
-	honorDivElement = document.getElementById('honorDiv');
+
 	factoryUpgradeDisplayElement = document.getElementById(
 		'factoryUpgradeDisplay'
 	);
@@ -111,7 +111,7 @@ function cacheDOMElements() {
 	availableMatterDisplayElement = document.getElementById(
 		'availableMatterDisplay'
 	);
-	honorDisplayElement = document.getElementById('honorDisplay');
+
 	clipmakerLevel2Element = document.getElementById('clipmakerLevel2');
 	clipperCostElement = document.getElementById('clipperCost');
 	acquiredMatterDisplayElement = document.getElementById(
@@ -151,7 +151,6 @@ function cacheDOMElements() {
 	prestigeUcounterElement = document.getElementById('prestigeUcounter');
 	prestigeScounterElement = document.getElementById('prestigeScounter');
 	maxTrustDisplayElement = document.getElementById('maxTrustDisplay');
-	victoryDivElement = document.getElementById('victoryDiv');
 	probeTrustCostDisplayElement = document.getElementById(
 		'probeTrustCostDisplay'
 	);
@@ -174,7 +173,7 @@ function cacheDOMElements() {
 	);
 	increaseMaxTrustDivElement = document.getElementById('increaseMaxTrustDiv');
 	spaceDivElement = document.getElementById('spaceDiv');
-	honorDivElement = document.getElementById('honorDiv');
+
 	wireProductionDivElement = document.getElementById('wireProductionDiv');
 	wireTransDivElement = document.getElementById('wireTransDiv');
 	swarmGiftDivElement = document.getElementById('swarmGiftDiv');
@@ -301,7 +300,7 @@ var probeDesignDivElement;
 var increaseProbeTrustDivElement;
 var increaseMaxTrustDivElement;
 var spaceDivElement;
-var honorDivElement;
+
 var wireProductionDivElement;
 var wireTransDivElement;
 var swarmGiftDivElement;
@@ -405,7 +404,7 @@ var tothDivElement;
 var prestigeUcounterElement;
 var prestigeScounterElement;
 var maxTrustDisplayElement;
-var victoryDivElement;
+
 var probeTrustCostDisplayElement;
 var farmCostElement;
 var batteryCostElement;
@@ -418,7 +417,7 @@ var harvesterLevelDisplayElement;
 var megaClipperCostElement;
 var megaClipperLevelElement;
 var availableMatterDisplayElement;
-var honorDisplayElement;
+
 var clipmakerLevel2Element;
 var clipperCostElement;
 var acquiredMatterDisplayElement;
@@ -476,7 +475,7 @@ var clipCountCrunchedElement;
 var dustBusterDivElement;
 
 var increaseMaxTrustDivElement;
-var honorDivElement;
+
 var factoryUpgradeDisplayElement;
 var droneUpgradeDisplayElement;
 var btnIncreaseMaxTrustElement;
@@ -1214,11 +1213,6 @@ function buttonUpdate() {
 	coverElement.style.display = 'none';
 }
 
-//-------------------STRATEGY-----------------------------------------------------
-// TODO: remove
-
-var strats = [];
-
 //--------------------------------------------------------------------------------
 
 function clipClick(number) {
@@ -1521,6 +1515,7 @@ function factoryReboot() {
 	factoryCostDisplayElement.innerHTML = spellf(factoryCost);
 }
 
+// TODO: Remove
 // SWARM
 
 var giftBits = 0;
@@ -1608,11 +1603,6 @@ function updateSwarm() {
 			);
 		}
 
-		//        THE OLD WAY
-		//        giftCountdown = giftPeriod;
-		//        elapsedTime = 0;
-
-		//        THE NEW WAY
 		giftBits = 0;
 	}
 
@@ -1645,11 +1635,6 @@ function updateSwarm() {
 	}
 
 	if (swarmStatus == 0) {
-		//       THE OLD WAY
-		//      elapsedTime = elapsedTime + 1;
-		//      giftCountdown = ((giftPeriod/Math.log(d)) / (sliderPos/100)) - elapsedTime;
-
-		//      THE NEW WAY
 		giftBitGenerationRate = Math.log(d) * (sliderPos / 100);
 		giftBits = giftBits + giftBitGenerationRate;
 		giftCountdown = (giftPeriod - giftBits) / giftBitGenerationRate;
@@ -2203,9 +2188,7 @@ function cheatPrestigeS() {
 	refresh();
 }
 
-function setB() {
-	battleNumbers[1] = 7;
-}
+function setB() {}
 
 function cheatClips() {
 	clips = clips + 100000000;
@@ -2878,7 +2861,7 @@ function increaseProbeTrust() {
 function increaseMaxTrust() {
 	if (honor >= maxTrustCost) {
 		honor = honor - maxTrustCost;
-		honorDisplayElement.innerHTML = formatWithCommas(Math.round(honor));
+
 		maxTrust = maxTrust + 10;
 		// maxTrustCost = Math.floor(Math.pow(maxTrust, 1.17)*1000);
 		maxTrustDisplayElement.innerHTML = formatWithCommas(maxTrust);
@@ -3123,17 +3106,6 @@ function drift() {
 	probesTotalDisplayElement.innerHTML = spellf(probeCount);
 }
 
-function war() {
-	checkForBattles();
-	//  battleClock++;
-	//  if (battleClock>=battleAlarm){
-	//            updateBattles();
-	//            battleClock = 0;
-	//    }
-
-	//  battleCleanUp();
-}
-
 // DRONES
 
 function acquireMatter() {
@@ -3290,7 +3262,6 @@ window.setInterval(function () {
 		spawnWireDrones();
 		spawnProbes();
 		drift();
-		war();
 	}
 
 	// Auto-Clipper
@@ -3324,10 +3295,6 @@ window.setInterval(function () {
 
 		if (endTimer1 >= 150) {
 			spaceDivElement.style.display = 'none';
-		}
-
-		if (endTimer1 >= 190) {
-			honorDivElement.style.display = 'none';
 		}
 	}
 
@@ -3576,7 +3543,7 @@ function refresh() {
 	//    acquiredMatter = 0;
 
 	availableMatterDisplayElement.innerHTML = spellf(availableMatter);
-	honorDisplayElement.innerHTML = formatWithCommas(Math.round(honor));
+
 	clipmakerLevel2Element.innerHTML = clipmakerLevel;
 	clipperCostElement.innerHTML = formatWithCommas(clipperCost, 2);
 	acquiredMatterDisplayElement.innerHTML = spellf(acquiredMatter);
@@ -3609,7 +3576,7 @@ function refresh() {
 	prestigeUcounterElement.innerHTML = prestigeU + 1;
 	prestigeScounterElement.innerHTML = prestigeS + 1;
 	maxTrustDisplayElement.innerHTML = formatWithCommas(maxTrust);
-	victoryDivElement.style.visibility = 'hidden';
+
 	probeTrustCostDisplayElement.innerHTML = formatWithCommas(probeTrustCost);
 	farmCostElement.innerHTML = spellf(farmCost);
 	batteryCostElement.innerHTML = spellf(batteryCost);
@@ -3628,12 +3595,6 @@ function refresh() {
 
 	project218.uses = 1;
 	project219.uses = 1;
-
-	// DEBUG
-
-	if (battles.length > 0) {
-		battles.splice(0, 1);
-	}
 }
 
 // SAVES AND LOADS
@@ -3681,10 +3642,6 @@ function save() {
 		boredomFlag: boredomFlag,
 		boredomMsg: boredomMsg,
 
-		honorCount: honorCount,
-		bonusHonor: bonusHonor,
-		honorReward: honorReward,
-
 		honor: honor,
 		maxTrust: maxTrust,
 		maxTrustCost: maxTrustCost,
@@ -3726,8 +3683,6 @@ function save() {
 
 		incomeTracker: incomeTracker.slice(0),
 		qChips: qChips.slice(0),
-		battles: battles.slice(0),
-		battleNumbers: battleNumbers.slice(0),
 
 		clips: clips,
 		unusedClips: unusedClips,
@@ -3826,20 +3781,7 @@ function save() {
 		probesLostDrift: probesLostDrift,
 		probeFac: probeFac,
 		probeWire: probeWire,
-		attackSpeed: attackSpeed,
-		battleSpeed: battleSpeed,
-		attackSpeedFlag: attackSpeedFlag,
-		attackSpeedMod: attackSpeedMod,
-		probeDescendents: probeDescendents,
-		warTrigger: warTrigger,
-		battleID: battleID,
-		battleName: battleName,
-		battleNameFlag: battleNameFlag,
-		maxBattles: maxBattles,
-		battleClock: battleClock,
-		battleAlarm: battleAlarm,
-		outcomeTimer: outcomeTimer,
-		drifterCombat: drifterCombat,
+
 		probeTrust: probeTrust,
 		probeUsedTrust: probeUsedTrust,
 		probeTrustCost: probeTrustCost,
@@ -3896,10 +3838,6 @@ function save1() {
 		boredomFlag: boredomFlag,
 		boredomMsg: boredomMsg,
 
-		honorCount: honorCount,
-		bonusHonor: bonusHonor,
-		honorReward: honorReward,
-
 		honor: honor,
 		maxTrust: maxTrust,
 		maxTrustCost: maxTrustCost,
@@ -3941,8 +3879,6 @@ function save1() {
 
 		incomeTracker: incomeTracker.slice(0),
 		qChips: qChips.slice(0),
-		battles: battles.slice(0),
-		battleNumbers: battleNumbers.slice(0),
 
 		clips: clips,
 		unusedClips: unusedClips,
@@ -4041,20 +3977,7 @@ function save1() {
 		probesLostDrift: probesLostDrift,
 		probeFac: probeFac,
 		probeWire: probeWire,
-		attackSpeed: attackSpeed,
-		battleSpeed: battleSpeed,
-		attackSpeedFlag: attackSpeedFlag,
-		attackSpeedMod: attackSpeedMod,
-		probeDescendents: probeDescendents,
-		warTrigger: warTrigger,
-		battleID: battleID,
-		battleName: battleName,
-		battleNameFlag: battleNameFlag,
-		maxBattles: maxBattles,
-		battleClock: battleClock,
-		battleAlarm: battleAlarm,
-		outcomeTimer: outcomeTimer,
-		drifterCombat: drifterCombat,
+
 		probeTrust: probeTrust,
 		probeUsedTrust: probeUsedTrust,
 		probeTrustCost: probeTrustCost,
@@ -4111,10 +4034,6 @@ function save2() {
 		boredomFlag: boredomFlag,
 		boredomMsg: boredomMsg,
 
-		honorCount: honorCount,
-		bonusHonor: bonusHonor,
-		honorReward: honorReward,
-
 		honor: honor,
 		maxTrust: maxTrust,
 		maxTrustCost: maxTrustCost,
@@ -4156,8 +4075,6 @@ function save2() {
 
 		incomeTracker: incomeTracker.slice(0),
 		qChips: qChips.slice(0),
-		battles: battles.slice(0),
-		battleNumbers: battleNumbers.slice(0),
 
 		clips: clips,
 		unusedClips: unusedClips,
@@ -4256,20 +4173,7 @@ function save2() {
 		probesLostDrift: probesLostDrift,
 		probeFac: probeFac,
 		probeWire: probeWire,
-		attackSpeed: attackSpeed,
-		battleSpeed: battleSpeed,
-		attackSpeedFlag: attackSpeedFlag,
-		attackSpeedMod: attackSpeedMod,
-		probeDescendents: probeDescendents,
-		warTrigger: warTrigger,
-		battleID: battleID,
-		battleName: battleName,
-		battleNameFlag: battleNameFlag,
-		maxBattles: maxBattles,
-		battleClock: battleClock,
-		battleAlarm: battleAlarm,
-		outcomeTimer: outcomeTimer,
-		drifterCombat: drifterCombat,
+
 		probeTrust: probeTrust,
 		probeUsedTrust: probeUsedTrust,
 		probeTrustCost: probeTrustCost,
@@ -4319,10 +4223,6 @@ function load() {
 	boredomFlag = loadGame.boredomFlag;
 	boredomMsg = loadGame.boredomMsg;
 
-	honorCount = loadGame.honorCount;
-	bonusHonor = loadGame.bonusHonor;
-	honorReward = loadGame.honorReward;
-
 	honor = loadGame.honor;
 	maxTrust = loadGame.maxTrust;
 	maxTrustCost = loadGame.maxTrustCost;
@@ -4364,8 +4264,6 @@ function load() {
 
 	incomeTracker = loadGame.incomeTracker.slice(0);
 	qChips = loadGame.qChips.slice(0);
-	battles = loadGame.battles.slice(0);
-	battleNumbers = loadGame.battleNumbers.slice(0);
 
 	clips = loadGame.clips;
 	unusedClips = loadGame.unusedClips;
@@ -4464,20 +4362,7 @@ function load() {
 	probesLostDrift = loadGame.probesLostDrift;
 	probeFac = loadGame.probeFac;
 	probeWire = loadGame.probeWire;
-	attackSpeed = loadGame.attackSpeed;
-	battleSpeed = loadGame.battleSpeed;
-	attackSpeedFlag = loadGame.attackSpeedFlag;
-	attackSpeedMod = loadGame.attackSpeedMod;
-	probeDescendents = loadGame.probeDescendents;
-	warTrigger = loadGame.warTrigger;
-	battleID = loadGame.battleID;
-	battleName = loadGame.battleName;
-	battleNameFlag = loadGame.battleNameFlag;
-	maxBattles = loadGame.maxBattles;
-	battleClock = loadGame.battleClock;
-	battleAlarm = loadGame.battleAlarm;
-	outcomeTimer = loadGame.outcomeTimer;
-	drifterCombat = loadGame.drifterCombat;
+
 	probeTrust = loadGame.probeTrust;
 	probeUsedTrust = loadGame.probeUsedTrust;
 	probeTrustCost = loadGame.probeTrustCost;
@@ -4556,10 +4441,6 @@ function load1() {
 	boredomFlag = loadGame.boredomFlag;
 	boredomMsg = loadGame.boredomMsg;
 
-	honorCount = loadGame.honorCount;
-	bonusHonor = loadGame.bonusHonor;
-	honorReward = loadGame.honorReward;
-
 	honor = loadGame.honor;
 	maxTrust = loadGame.maxTrust;
 	maxTrustCost = loadGame.maxTrustCost;
@@ -4601,8 +4482,6 @@ function load1() {
 
 	incomeTracker = loadGame.incomeTracker.slice(0);
 	qChips = loadGame.qChips.slice(0);
-	battles = loadGame.battles.slice(0);
-	battleNumbers = loadGame.battleNumbers.slice(0);
 
 	clips = loadGame.clips;
 	unusedClips = loadGame.unusedClips;
@@ -4701,20 +4580,7 @@ function load1() {
 	probesLostDrift = loadGame.probesLostDrift;
 	probeFac = loadGame.probeFac;
 	probeWire = loadGame.probeWire;
-	attackSpeed = loadGame.attackSpeed;
-	battleSpeed = loadGame.battleSpeed;
-	attackSpeedFlag = loadGame.attackSpeedFlag;
-	attackSpeedMod = loadGame.attackSpeedMod;
-	probeDescendents = loadGame.probeDescendents;
-	warTrigger = loadGame.warTrigger;
-	battleID = loadGame.battleID;
-	battleName = loadGame.battleName;
-	battleNameFlag = loadGame.battleNameFlag;
-	maxBattles = loadGame.maxBattles;
-	battleClock = loadGame.battleClock;
-	battleAlarm = loadGame.battleAlarm;
-	outcomeTimer = loadGame.outcomeTimer;
-	drifterCombat = loadGame.drifterCombat;
+
 	probeTrust = loadGame.probeTrust;
 	probeUsedTrust = loadGame.probeUsedTrust;
 	probeTrustCost = loadGame.probeTrustCost;
@@ -4777,12 +4643,6 @@ function load2() {
 	boredomFlag = loadGame.boredomFlag;
 	boredomMsg = loadGame.boredomMsg;
 
-	masterBattleClock = loadGame.masterBattleClock;
-
-	honorCount = loadGame.honorCount;
-	bonusHonor = loadGame.bonusHonor;
-	honorReward = loadGame.honorReward;
-
 	honor = loadGame.honor;
 	maxTrust = loadGame.maxTrust;
 	maxTrustCost = loadGame.maxTrustCost;
@@ -4824,8 +4684,6 @@ function load2() {
 
 	incomeTracker = loadGame.incomeTracker.slice(0);
 	qChips = loadGame.qChips.slice(0);
-	battles = loadGame.battles.slice(0);
-	battleNumbers = loadGame.battleNumbers.slice(0);
 
 	clips = loadGame.clips;
 	unusedClips = loadGame.unusedClips;
@@ -4924,20 +4782,7 @@ function load2() {
 	probesLostDrift = loadGame.probesLostDrift;
 	probeFac = loadGame.probeFac;
 	probeWire = loadGame.probeWire;
-	attackSpeed = loadGame.attackSpeed;
-	battleSpeed = loadGame.battleSpeed;
-	attackSpeedFlag = loadGame.attackSpeedFlag;
-	attackSpeedMod = loadGame.attackSpeedMod;
-	probeDescendents = loadGame.probeDescendents;
-	warTrigger = loadGame.warTrigger;
-	battleID = loadGame.battleID;
-	battleName = loadGame.battleName;
-	battleNameFlag = loadGame.battleNameFlag;
-	maxBattles = loadGame.maxBattles;
-	battleClock = loadGame.battleClock;
-	battleAlarm = loadGame.battleAlarm;
-	outcomeTimer = loadGame.outcomeTimer;
-	drifterCombat = loadGame.drifterCombat;
+
 	probeTrust = loadGame.probeTrust;
 	probeUsedTrust = loadGame.probeUsedTrust;
 	probeTrustCost = loadGame.probeTrustCost;
