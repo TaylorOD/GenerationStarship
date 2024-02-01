@@ -52,9 +52,7 @@ function cacheDOMElements() {
 	btnLowerPriceElement = document.getElementById('btnLowerPrice');
 	btnAddProcElement = document.getElementById('btnAddProc');
 	btnAddMemElement = document.getElementById('btnAddMem');
-	btnImproveInvestmentsElement = document.getElementById(
-		'btnImproveInvestments'
-	);
+
 	megaClipperDivElement = document.getElementById('megaClipperDiv');
 	btnMakeMegaClipperElement = document.getElementById('btnMakeMegaClipper');
 	autoClipperDivElement = document.getElementById('autoClipperDiv');
@@ -113,7 +111,6 @@ function cacheDOMElements() {
 	unsoldClipsElement = document.getElementById('unsoldClips');
 	yomiDisplayElement = document.getElementById('yomiDisplay');
 	projectListTopElement = document.getElementById('projectListTop');
-	investmentLevelElement = document.getElementById('investmentLevel');
 	driftersKilledElement = document.getElementById('driftersKilled');
 	availableMatterDisplayElement = document.getElementById(
 		'availableMatterDisplay'
@@ -155,9 +152,6 @@ function cacheDOMElements() {
 	);
 	megaClipperCostElement = document.getElementById('megaClipperCost');
 	megaClipperLevelElement = document.getElementById('megaClipperLevel');
-	investmentBankrollElement = document.getElementById('investmentBankroll');
-	secValueElement = document.getElementById('secValue');
-	portValueElement = document.getElementById('portValue');
 	prestigeUcounterElement = document.getElementById('prestigeUcounter');
 	prestigeScounterElement = document.getElementById('prestigeScounter');
 	maxTrustDisplayElement = document.getElementById('maxTrustDisplay');
@@ -203,9 +197,6 @@ function cacheDOMElements() {
 	projectsDivElement = document.getElementById('projectsDiv');
 	creationDivElement = document.getElementById('creationDiv');
 	yomiDisplayElement = document.getElementById('yomiDisplay');
-	investmentBankrollElement = document.getElementById('investmentBankroll');
-	secValueElement = document.getElementById('secValue');
-	portValueElement = document.getElementById('portValue');
 	vLabelaElement = document.getElementById('vLabela');
 	vLabelbElement = document.getElementById('vLabelb');
 	hLabelaElement = document.getElementById('hLabela');
@@ -321,36 +312,6 @@ function cacheDOMElements() {
 	tothDivElement = document.getElementById('tothDiv');
 	clipmakerRateElement = document.getElementById('clipmakerRate');
 	clipmakerRate2Element = document.getElementById('clipmakerRate2');
-
-	stockSymbolElements.push(document.getElementById('stock1Symbol'));
-	stockAmountElements.push(document.getElementById('stock1Amount'));
-	stockPriceElements.push(document.getElementById('stock1Price'));
-	stockTotalElements.push(document.getElementById('stock1Total'));
-	stockProfitElements.push(document.getElementById('stock1Profit'));
-
-	stockSymbolElements.push(document.getElementById('stock2Symbol'));
-	stockAmountElements.push(document.getElementById('stock2Amount'));
-	stockPriceElements.push(document.getElementById('stock2Price'));
-	stockTotalElements.push(document.getElementById('stock2Total'));
-	stockProfitElements.push(document.getElementById('stock2Profit'));
-
-	stockSymbolElements.push(document.getElementById('stock3Symbol'));
-	stockAmountElements.push(document.getElementById('stock3Amount'));
-	stockPriceElements.push(document.getElementById('stock3Price'));
-	stockTotalElements.push(document.getElementById('stock3Total'));
-	stockProfitElements.push(document.getElementById('stock3Profit'));
-
-	stockSymbolElements.push(document.getElementById('stock4Symbol'));
-	stockAmountElements.push(document.getElementById('stock4Amount'));
-	stockPriceElements.push(document.getElementById('stock4Price'));
-	stockTotalElements.push(document.getElementById('stock4Total'));
-	stockProfitElements.push(document.getElementById('stock4Profit'));
-
-	stockSymbolElements.push(document.getElementById('stock5Symbol'));
-	stockAmountElements.push(document.getElementById('stock5Amount'));
-	stockPriceElements.push(document.getElementById('stock5Price'));
-	stockTotalElements.push(document.getElementById('stock5Total'));
-	stockProfitElements.push(document.getElementById('stock5Profit'));
 }
 
 var clipmakerRateElement;
@@ -383,10 +344,7 @@ var compDivElement;
 var projectsDivElement;
 var creationDivElement;
 var yomiDisplayElement;
-var investmentBankrollElement;
 var fundsElement;
-var secValueElement;
-var portValueElement;
 var vLabelaElement;
 var vLabelbElement;
 var hLabelaElement;
@@ -503,9 +461,6 @@ var harvesterCostDisplayElement;
 var harvesterLevelDisplayElement;
 var megaClipperCostElement;
 var megaClipperLevelElement;
-var investmentBankrollElement;
-var secValueElement;
-var portValueElement;
 var driftersKilledElement;
 var availableMatterDisplayElement;
 var honorDisplayElement;
@@ -533,7 +488,6 @@ var factoryCostDisplayElement;
 var factoryLevelDisplayElement;
 var yomiDisplayElement;
 var projectListTopElement;
-var investmentLevelElement;
 
 var wireCostElement;
 var dustBusterStatusElement;
@@ -586,7 +540,6 @@ var btnExpandMarketingElement;
 var btnLowerPriceElement;
 var btnAddProcElement;
 var btnAddMemElement;
-var btnImproveInvestmentsElement;
 var megaClipperDivElement;
 var btnMakeMegaClipperElement;
 var autoClipperDivElement;
@@ -639,12 +592,6 @@ var transWireElement;
 var nanoWireElement;
 var clipsElement;
 var unsoldClipsElement;
-
-var stockSymbolElements = [];
-var stockAmountElements = [];
-var stockPriceElements = [];
-var stockTotalElements = [];
-var stockProfitElements = [];
 
 // Cache
 
@@ -1095,11 +1042,6 @@ function buttonUpdate() {
 		btnAddProcElement.disabled = false;
 		btnAddMemElement.disabled = false;
 	}
-	if (yomi < investUpgradeCost) {
-		btnImproveInvestmentsElement.disabled = true;
-	} else {
-		btnImproveInvestmentsElement.disabled = false;
-	}
 
 	if (megaClipperFlag == 0) {
 		megaClipperDivElement.style.display = 'none';
@@ -1362,69 +1304,11 @@ var alphabet = [
 	'Y',
 	'Z',
 ];
-var portfolioSize = 0;
-var stockID = 0;
-var secTotal = 0;
-var portTotal = 0;
-var sellDelay = 0;
-var riskiness = 5;
-var maxPort = 5;
+
+// TODO: Remove
 var m = 0;
-var ledger = 0;
-var stockReportCounter = 0;
-
-function investDeposit() {
-	ledger = ledger - Math.floor(funds);
-	bankroll = Math.floor(bankroll + funds);
-	funds = 0;
-	investmentBankrollElement.innerHTML = formatWithCommas(bankroll);
-	fundsElement.innerHTML = formatWithCommas(funds, 2);
-	portValueElement.innerHTML = formatWithCommas(portTotal);
-}
-
-function investWithdraw() {
-	ledger = ledger + bankroll;
-	funds = funds + bankroll;
-	bankroll = 0;
-	investmentBankrollElement.innerHTML = formatWithCommas(bankroll);
-	fundsElement.innerHTML = formatWithCommas(funds, 2);
-	portValueElement.innerHTML = formatWithCommas(portTotal);
-}
-
-function stockShop() {
-	var budget = Math.ceil(portTotal / riskiness);
-	var r = 11 - riskiness;
-	var reserves = Math.ceil(portTotal / r);
-	if (riskiness == 1) {
-		reserves = 0;
-	}
-
-	if (
-		bankroll - budget < reserves &&
-		riskiness == 1 &&
-		bankroll > portTotal / 10
-	) {
-		budget = bankroll;
-	} else if (bankroll - budget < reserves && riskiness == 1) {
-		budget = 0;
-	} else if (bankroll - budget < reserves) {
-		budget = bankroll - reserves;
-	}
-
-	if (
-		portfolioSize < maxPort &&
-		bankroll >= 5 &&
-		budget >= 1 &&
-		bankroll - budget >= reserves
-	) {
-		if (Math.random() < 0.25) {
-			createStock(budget);
-		}
-	}
-}
 
 function createStock(dollars) {
-	stockID++;
 	var sym = generateSymbol();
 	var roll = Math.random();
 	if (roll > 0.99) {
@@ -1448,31 +1332,12 @@ function createStock(dollars) {
 		amt = 1000000;
 	}
 
-	var newStock = {
-		id: stockID,
-		symbol: sym,
-		price: pri,
-		amount: amt,
-		total: pri * amt,
-		profit: 0,
-		age: 0,
-	};
-
-	stocks.push(newStock);
-	portfolioSize = stocks.length;
 	bankroll = bankroll - pri * amt;
-	investmentBankrollElement.innerHTML = formatWithCommas(bankroll);
-	secValueElement.innerHTML = formatWithCommas(secTotal);
-	portValueElement.innerHTML = formatWithCommas(portTotal);
 }
 
 function sellStock() {
 	bankroll = bankroll + stocks[0].total;
-	investmentBankrollElement.innerHTML = formatWithCommas(bankroll);
-	secValueElement.innerHTML = formatWithCommas(secTotal);
-	portValueElement.innerHTML = formatWithCommas(portTotal);
 	stocks.splice(0, 1);
-	portfolioSize = stocks.length;
 }
 
 function generateSymbol() {
@@ -1499,12 +1364,11 @@ function generateSymbol() {
 }
 
 function updateStocks() {
-	for (var i = 0; i < portfolioSize; i++) {
+	for (var i = 0; i < 0; i++) {
 		stocks[i].age = stocks[i].age + 1;
 		if (Math.random() < 0.6) {
 			var gain = true;
 			var currentPrice = stocks[i].price;
-			var delta = Math.ceil((Math.random() * currentPrice) / (4 * riskiness));
 
 			if (gain) {
 				stocks[i].price = stocks[i].price + delta;
@@ -1527,67 +1391,8 @@ function updateStocks() {
 	}
 }
 
-// Stock List Display Routine
-window.setInterval(function () {
-	for (var i = 0; i < portfolioSize; i++) {
-		m = m + stocks[i].total;
-	}
-
-	secTotal = m;
-
-	portTotal = bankroll + secTotal;
-
-	secValueElement.innerHTML = formatWithCommas(secTotal);
-	portValueElement.innerHTML = formatWithCommas(portTotal);
-
-	portfolioSize = stocks.length;
-
-	for (var i = 1; i <= portfolioSize; i++) {
-		var n = i.toString();
-		var s = i - 1;
-		stockSymbolElements[i - 1].innerHTML = stocks[s].symbol;
-		stockAmountElements[i - 1].innerHTML = Math.ceil(stocks[s].amount);
-		stockPriceElements[i - 1].innerHTML = Math.ceil(stocks[s].price);
-		stockTotalElements[i - 1].innerHTML = Math.ceil(stocks[s].total);
-		stockProfitElements[i - 1].innerHTML = Math.ceil(stocks[s].profit);
-	}
-
-	var firstBlankSlot = portfolioSize + 1;
-
-	for (var i = firstBlankSlot; i < 5; i++) {
-		stockSymbolElements[i].innerHTML = '&nbsp';
-		stockAmountElements[i].innerHTML = '&nbsp';
-		stockPriceElements[i].innerHTML = '&nbsp';
-		stockTotalElements[i].innerHTML = '&nbsp';
-		stockProfitElements[i].innerHTML = '&nbsp';
-	}
-}, 100);
-
-window.setInterval(function () {
-	if (humanFlag == 1) {
-		stockShop();
-	}
-}, 1000);
-
-window.setInterval(function () {
-	sellDelay = sellDelay + 1;
-
-	if (
-		portfolioSize > 0 &&
-		sellDelay >= 5 &&
-		Math.random() <= 0.3 &&
-		humanFlag == 1
-	) {
-		sellStock();
-		sellDelay = 0;
-	}
-
-	if (portfolioSize > 0 && humanFlag == 1) {
-		updateStocks();
-	}
-}, 2500);
-
 //-------------------STRATEGY-----------------------------------------------------
+// TODO: remove
 var tourneyCost = 1000;
 var tourneyLvl = 1;
 var choiceANames = [
@@ -1856,8 +1661,6 @@ function pickStrats(roundNum) {
 
 	strats[h].currentPos = 1;
 	strats[v].currentPos = 2;
-
-	vertStratElement.innerHTML = vStrat.name;
 }
 
 function generateGrid() {
@@ -4477,9 +4280,6 @@ function refresh() {
 	harvesterLevelDisplayElement.innerHTML = harvesterLevel;
 	megaClipperCostElement.innerHTML = formatWithCommas(megaClipperCost);
 	megaClipperLevelElement.innerHTML = megaClipperLevel;
-	investmentBankrollElement.innerHTML = formatWithCommas(bankroll);
-	secValueElement.innerHTML = formatWithCommas(secTotal);
-	portValueElement.innerHTML = formatWithCommas(portTotal);
 	yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 	prestigeUcounterElement.innerHTML = prestigeU + 1;
 	prestigeScounterElement.innerHTML = prestigeS + 1;
@@ -4658,7 +4458,6 @@ function save() {
 		wireSupply: wireSupply,
 		marketingEffectiveness: marketingEffectiveness,
 		milestoneFlag: milestoneFlag,
-		bankroll: bankroll,
 		fib1: fib1,
 		fib2: fib2,
 		revPerSecFlag: revPerSecFlag,
@@ -4708,17 +4507,6 @@ function save() {
 		nextQchip: nextQchip,
 		bribe: bribe,
 		battleFlag: battleFlag,
-
-		portfolioSize: portfolioSize,
-		stockID: stockID,
-		secTotal: secTotal,
-		portTotal: portTotal,
-		sellDelay: sellDelay,
-		riskiness: riskiness,
-		maxPort: maxPort,
-		m: m,
-		ledger: ledger,
-		stockReportCounter: stockReportCounter,
 
 		tourneyCost: tourneyCost,
 		tourneyLvl: tourneyLvl,
@@ -4924,7 +4712,6 @@ function save1() {
 		wireSupply: wireSupply,
 		marketingEffectiveness: marketingEffectiveness,
 		milestoneFlag: milestoneFlag,
-		bankroll: bankroll,
 		fib1: fib1,
 		fib2: fib2,
 		revPerSecFlag: revPerSecFlag,
@@ -4974,17 +4761,6 @@ function save1() {
 		nextQchip: nextQchip,
 		bribe: bribe,
 		battleFlag: battleFlag,
-
-		portfolioSize: portfolioSize,
-		stockID: stockID,
-		secTotal: secTotal,
-		portTotal: portTotal,
-		sellDelay: sellDelay,
-		riskiness: riskiness,
-		maxPort: maxPort,
-		m: m,
-		ledger: ledger,
-		stockReportCounter: stockReportCounter,
 
 		tourneyCost: tourneyCost,
 		tourneyLvl: tourneyLvl,
@@ -5190,7 +4966,6 @@ function save2() {
 		wireSupply: wireSupply,
 		marketingEffectiveness: marketingEffectiveness,
 		milestoneFlag: milestoneFlag,
-		bankroll: bankroll,
 		fib1: fib1,
 		fib2: fib2,
 		revPerSecFlag: revPerSecFlag,
@@ -5240,17 +5015,6 @@ function save2() {
 		nextQchip: nextQchip,
 		bribe: bribe,
 		battleFlag: battleFlag,
-
-		portfolioSize: portfolioSize,
-		stockID: stockID,
-		secTotal: secTotal,
-		portTotal: portTotal,
-		sellDelay: sellDelay,
-		riskiness: riskiness,
-		maxPort: maxPort,
-		m: m,
-		ledger: ledger,
-		stockReportCounter: stockReportCounter,
 
 		tourneyCost: tourneyCost,
 		tourneyLvl: tourneyLvl,
@@ -5444,7 +5208,6 @@ function load() {
 	wireSupply = loadGame.wireSupply;
 	marketingEffectiveness = loadGame.marketingEffectiveness;
 	milestoneFlag = loadGame.milestoneFlag;
-	bankroll = loadGame.bankroll;
 	fib1 = loadGame.fib1;
 	fib2 = loadGame.fib2;
 	revPerSecFlag = loadGame.revPerSecFlag;
@@ -5494,17 +5257,6 @@ function load() {
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
 	battleFlag = loadGame.battleFlag;
-
-	portfolioSize = loadGame.portfolioSize;
-	stockID = loadGame.stockID;
-	secTotal = loadGame.secTotal;
-	portTotal = loadGame.portTotal;
-	sellDelay = loadGame.sellDelay;
-	riskiness = loadGame.riskiness;
-	maxPort = loadGame.maxPort;
-	m = loadGame.m;
-	ledger = loadGame.ledger;
-	stockReportCounter = loadGame.stockReportCounter;
 
 	tourneyCost = loadGame.tourneyCost;
 	tourneyLvl = loadGame.tourneyLvl;
@@ -5726,7 +5478,6 @@ function load1() {
 	wireSupply = loadGame.wireSupply;
 	marketingEffectiveness = loadGame.marketingEffectiveness;
 	milestoneFlag = loadGame.milestoneFlag;
-	bankroll = loadGame.bankroll;
 	fib1 = loadGame.fib1;
 	fib2 = loadGame.fib2;
 	revPerSecFlag = loadGame.revPerSecFlag;
@@ -5776,17 +5527,6 @@ function load1() {
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
 	battleFlag = loadGame.battleFlag;
-
-	portfolioSize = loadGame.portfolioSize;
-	stockID = loadGame.stockID;
-	secTotal = loadGame.secTotal;
-	portTotal = loadGame.portTotal;
-	sellDelay = loadGame.sellDelay;
-	riskiness = loadGame.riskiness;
-	maxPort = loadGame.maxPort;
-	m = loadGame.m;
-	ledger = loadGame.ledger;
-	stockReportCounter = loadGame.stockReportCounter;
 
 	tourneyCost = loadGame.tourneyCost;
 	tourneyLvl = loadGame.tourneyLvl;
@@ -5992,7 +5732,6 @@ function load2() {
 	wireSupply = loadGame.wireSupply;
 	marketingEffectiveness = loadGame.marketingEffectiveness;
 	milestoneFlag = loadGame.milestoneFlag;
-	bankroll = loadGame.bankroll;
 	fib1 = loadGame.fib1;
 	fib2 = loadGame.fib2;
 	revPerSecFlag = loadGame.revPerSecFlag;
@@ -6042,17 +5781,6 @@ function load2() {
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
 	battleFlag = loadGame.battleFlag;
-
-	portfolioSize = loadGame.portfolioSize;
-	stockID = loadGame.stockID;
-	secTotal = loadGame.secTotal;
-	portTotal = loadGame.portTotal;
-	sellDelay = loadGame.sellDelay;
-	riskiness = loadGame.riskiness;
-	maxPort = loadGame.maxPort;
-	m = loadGame.m;
-	ledger = loadGame.ledger;
-	stockReportCounter = loadGame.stockReportCounter;
 
 	tourneyCost = loadGame.tourneyCost;
 	tourneyLvl = loadGame.tourneyLvl;

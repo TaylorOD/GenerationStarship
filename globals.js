@@ -41,7 +41,6 @@ var wireSupply = 1000;
 var marketingEffectiveness = 1;
 var marketingEffectiveness = 1;
 var milestoneFlag = 0;
-var bankroll = 0;
 var fib1 = 2;
 var fib2 = 3;
 var revPerSecFlag = 0;
