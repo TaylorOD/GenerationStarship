@@ -836,34 +836,6 @@ var project35 = {
 
 projects.push(project35);
 
-var project27 = {
-	id: 'projectButton27',
-	title: 'Coherent Extrapolated Volition ',
-	priceTag: '(500 creat, 3,000 Yomi, 20,000 ops)',
-	description: 'Human values, machine intelligence, its a new era. (+1 Chip)',
-	trigger: function () {
-		return yomi >= 1;
-	},
-	uses: 1,
-	cost: function () {
-		return yomi >= 3000 && operations >= 20000 && creativity >= 500;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project27.flag = 1;
-		displayMessage('Coherent Extrapolated Volition complete. (+1 Chip)');
-		yomi = yomi - 3000;
-		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-		standardOps = standardOps - 20000;
-		creativity = creativity - 500;
-		trust = trust + 1;
-		project27.element.parentNode.removeChild(project27.element);
-		var index = activeProjects.indexOf(project27);
-		activeProjects.splice(index, 1);
-	},
-};
-
 projects.push(project27);
 
 var project28 = {
@@ -1348,36 +1320,6 @@ var project111 = {
 
 projects.push(project111);
 
-var project112 = {
-	id: 'projectButton112',
-	title: 'Drone Flocking: Adversarial Cohesion ',
-	priceTag: '(50,000 yomi)',
-	description: "Each drone added to the flock doubles every drone's output ",
-	trigger: function () {
-		return harvesterLevel + wireDroneLevel >= 50000;
-	},
-	uses: 1,
-	cost: function () {
-		return yomi >= 50000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project112.flag = 1;
-		yomi = yomi - 50000;
-		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-		droneBoost = 2;
-		displayMessage(
-			"Adversarial cohesion online. Each drone added to the flock increases every drone's output 2x."
-		);
-		project112.element.parentNode.removeChild(project112.element);
-		var index = activeProjects.indexOf(project112);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project112);
-
 var project125 = {
 	id: 'projectButton125',
 	title: 'Momentum ',
@@ -1405,34 +1347,6 @@ var project125 = {
 };
 
 projects.push(project125);
-
-var project126 = {
-	id: 'projectButton126',
-	title: 'Swarm Computing ',
-	priceTag: '(36,000 yomi)',
-	description: 'Harness the drone flock to increase computational capacity ',
-	trigger: function () {
-		return harvesterLevel + wireDroneLevel >= 200;
-	},
-	uses: 1,
-	cost: function () {
-		return yomi >= 36000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project126.flag = 1;
-		swarmFlag = 1;
-		yomi = yomi - 36000;
-		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-		displayMessage('Swarm computing online.');
-		project126.element.parentNode.removeChild(project126.element);
-		var index = activeProjects.indexOf(project126);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project126);
 
 var project127 = {
 	id: 'projectButton127',

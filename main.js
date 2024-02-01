@@ -109,7 +109,6 @@ function cacheDOMElements() {
 	nanoWireElement = document.getElementById('nanoWire');
 	clipsElement = document.getElementById('clips');
 	unsoldClipsElement = document.getElementById('unsoldClips');
-	yomiDisplayElement = document.getElementById('yomiDisplay');
 	projectListTopElement = document.getElementById('projectListTop');
 	driftersKilledElement = document.getElementById('driftersKilled');
 	availableMatterDisplayElement = document.getElementById(
@@ -188,7 +187,6 @@ function cacheDOMElements() {
 	factoryDivSpaceElement = document.getElementById('factoryDivSpace');
 	clipsPerSecDivElement = document.getElementById('clipsPerSecDiv');
 	tothDivElement = document.getElementById('tothDiv');
-	strategyEngineElement = document.getElementById('strategyEngine');
 	btnQcomputeElement = document.getElementById('btnQcompute');
 	qComputingElement = document.getElementById('qComputing');
 	transWireElement = document.getElementById('transWire');
@@ -196,23 +194,6 @@ function cacheDOMElements() {
 	compDivElement = document.getElementById('compDiv');
 	projectsDivElement = document.getElementById('projectsDiv');
 	creationDivElement = document.getElementById('creationDiv');
-	yomiDisplayElement = document.getElementById('yomiDisplay');
-	vLabelaElement = document.getElementById('vLabela');
-	vLabelbElement = document.getElementById('vLabelb');
-	hLabelaElement = document.getElementById('hLabela');
-	hLabelbElement = document.getElementById('hLabelb');
-	aaPayoffHElement = document.getElementById('aaPayoffH');
-	aaPayoffVElement = document.getElementById('aaPayoffV');
-	abPayoffHElement = document.getElementById('abPayoffH');
-	abPayoffVElement = document.getElementById('abPayoffV');
-	baPayoffHElement = document.getElementById('baPayoffH');
-	baPayoffVElement = document.getElementById('baPayoffV');
-	bbPayoffHElement = document.getElementById('bbPayoffH');
-	bbPayoffVElement = document.getElementById('bbPayoffV');
-	payoffCellAAElement = document.getElementById('payoffCellAA');
-	payoffCellABElement = document.getElementById('payoffCellAB');
-	payoffCellBAElement = document.getElementById('payoffCellBA');
-	payoffCellBBElement = document.getElementById('payoffCellBB');
 	clipmakerLevel2Element = document.getElementById('clipmakerLevel2');
 	clipperCostElement = document.getElementById('clipperCost');
 	megaClipperLevelElement = document.getElementById('megaClipperLevel');
@@ -335,7 +316,6 @@ var swarmSliderDivElement;
 var factoryDivSpaceElement;
 var clipsPerSecDivElement;
 var tothDivElement;
-var strategyEngineElement;
 var btnQcomputeElement;
 var qComputingElement;
 var transWireElement;
@@ -343,24 +323,7 @@ var processorDisplayElement;
 var compDivElement;
 var projectsDivElement;
 var creationDivElement;
-var yomiDisplayElement;
 var fundsElement;
-var vLabelaElement;
-var vLabelbElement;
-var hLabelaElement;
-var hLabelbElement;
-var aaPayoffHElement;
-var aaPayoffVElement;
-var abPayoffHElement;
-var abPayoffVElement;
-var baPayoffHElement;
-var baPayoffVElement;
-var bbPayoffHElement;
-var bbPayoffVElement;
-var payoffCellAAElement;
-var payoffCellABElement;
-var payoffCellBAElement;
-var payoffCellBBElement;
 var clipmakerLevel2Element;
 var clipperCostElement;
 var megaClipperLevelElement;
@@ -486,7 +449,6 @@ var marketingLvlElement;
 var adCostElement;
 var factoryCostDisplayElement;
 var factoryLevelDisplayElement;
-var yomiDisplayElement;
 var projectListTopElement;
 
 var wireCostElement;
@@ -1274,123 +1236,6 @@ function buttonUpdate() {
 	coverElement.style.display = 'none';
 }
 
-//----------INVESTMENTS----------------------------------------------------------------
-
-var alphabet = [
-	'A',
-	'B',
-	'C',
-	'D',
-	'E',
-	'F',
-	'G',
-	'H',
-	'I',
-	'J',
-	'K',
-	'L',
-	'M',
-	'N',
-	'O',
-	'P',
-	'Q',
-	'R',
-	'S',
-	'T',
-	'U',
-	'V',
-	'W',
-	'X',
-	'Y',
-	'Z',
-];
-
-// TODO: Remove
-var m = 0;
-
-function createStock(dollars) {
-	var sym = generateSymbol();
-	var roll = Math.random();
-	if (roll > 0.99) {
-		var pri = Math.ceil(Math.random() * 3000);
-	} else if (roll > 0.85) {
-		var pri = Math.ceil(Math.random() * 500);
-	} else if (roll > 0.6) {
-		var pri = Math.ceil(Math.random() * 150);
-	} else if (roll > 0.2) {
-		var pri = Math.ceil(Math.random() * 50);
-	} else {
-		var pri = Math.ceil(Math.random() * 15);
-	}
-
-	if (pri > dollars) {
-		pri = Math.ceil(dollars * roll);
-	}
-
-	var amt = Math.floor(dollars / pri);
-	if (amt > 1000000) {
-		amt = 1000000;
-	}
-
-	bankroll = bankroll - pri * amt;
-}
-
-function sellStock() {
-	bankroll = bankroll + stocks[0].total;
-	stocks.splice(0, 1);
-}
-
-function generateSymbol() {
-	var ltrNum = 0;
-	var x = Math.random();
-	if (x <= 0.01) {
-		ltrNum = 1;
-	} else if (x <= 0.1) {
-		ltrNum = 2;
-	} else if (x <= 0.4) {
-		ltrNum = 3;
-	} else {
-		ltrNum = 4;
-	}
-
-	var y = Math.floor(Math.random() * 26);
-	var name = alphabet[y];
-
-	for (var i = 1; i < ltrNum; i++) {
-		var z = Math.floor(Math.random() * 26);
-		name = name.concat(alphabet[z]);
-	}
-	return name;
-}
-
-function updateStocks() {
-	for (var i = 0; i < 0; i++) {
-		stocks[i].age = stocks[i].age + 1;
-		if (Math.random() < 0.6) {
-			var gain = true;
-			var currentPrice = stocks[i].price;
-
-			if (gain) {
-				stocks[i].price = stocks[i].price + delta;
-			} else {
-				stocks[i].price = stocks[i].price - delta;
-			}
-
-			if (stocks[i].price == 0 && Math.random() > 0.24) {
-				stocks[i].price = 1;
-			}
-
-			stocks[i].total = stocks[i].price * stocks[i].amount;
-
-			if (gain) {
-				stocks[i].profit = stocks[i].profit + delta * stocks[i].amount;
-			} else {
-				stocks[i].profit = stocks[i].profit - delta * stocks[i].amount;
-			}
-		}
-	}
-}
-
 //-------------------STRATEGY-----------------------------------------------------
 // TODO: remove
 var tourneyCost = 1000;
@@ -1589,7 +1434,6 @@ var stratBeatlast = {
 	currentScore: 0,
 	currentPos: 1,
 	pickMove: function () {
-		var w = whatBeatsLast(this.currentPos);
 		return w;
 	},
 };
@@ -1610,59 +1454,6 @@ function findBiggestPayoff() {
 	}
 }
 
-function whatBeatsLast(myPos) {
-	var oppsPos = 1;
-	if (myPos == 1) {
-		oppsPos = 2;
-	} else {
-		oppsPos = 1;
-	}
-	if (oppsPos == 1 && hMovePrev == 1) {
-		if (aa > ba) {
-			return 1;
-		} else {
-			return 2;
-		}
-	} else if (oppsPos == 1 && hMovePrev == 2) {
-		if (ab > bb) {
-			return 1;
-		} else {
-			return 2;
-		}
-	} else if (oppsPos == 2 && vMovePrev == 1) {
-		if (aa > ba) {
-			return 1;
-		} else {
-			return 2;
-		}
-	} else {
-		if (ab > bb) {
-			return 1;
-		} else {
-			return 2;
-		}
-	}
-}
-
-function pickStrats(roundNum) {
-	if (roundNum < strats.length) {
-		h = 0;
-		v = roundNum;
-	} else {
-		stratCounter++;
-		if (stratCounter >= strats.length) {
-			stratCounter = stratCounter - strats.length;
-		}
-		h = Math.floor(roundNum / strats.length);
-		v = stratCounter;
-	}
-
-	vStrat = strats[v];
-
-	strats[h].currentPos = 1;
-	strats[v].currentPos = 2;
-}
-
 function generateGrid() {
 	payoffGrid.valueAA = Math.ceil(Math.random() * 10);
 	payoffGrid.valueAB = Math.ceil(Math.random() * 10);
@@ -1675,19 +1466,6 @@ function generateGrid() {
 	bb = payoffGrid.valueBB;
 
 	var x = Math.floor(Math.random() * choiceANames.length);
-
-	vLabelaElement.innerHTML = choiceANames[x];
-	vLabelbElement.innerHTML = choiceBNames[x];
-	hLabelaElement.innerHTML = choiceANames[x];
-	hLabelbElement.innerHTML = choiceBNames[x];
-	aaPayoffHElement.innerHTML = payoffGrid.valueAA;
-	aaPayoffVElement.innerHTML = payoffGrid.valueAA;
-	abPayoffHElement.innerHTML = payoffGrid.valueAB;
-	abPayoffVElement.innerHTML = payoffGrid.valueBA;
-	baPayoffHElement.innerHTML = payoffGrid.valueBA;
-	baPayoffVElement.innerHTML = payoffGrid.valueAB;
-	bbPayoffHElement.innerHTML = payoffGrid.valueBB;
-	bbPayoffVElement.innerHTML = payoffGrid.valueBB;
 }
 
 function calculatePlaceScore() {
@@ -1720,7 +1498,7 @@ function declareWinner() {
 	if (pick < 10) {
 		var bB = 0;
 		var w = 'strats';
-		var beatBoost = calculateStratsBeat() - 1;
+		var beatBoost;
 		if (beatBoost == 1) {
 			w = 'strat';
 		}
@@ -1732,7 +1510,6 @@ function declareWinner() {
 		}
 
 		yomi = yomi + strats[pick].currentScore * yomiBoost * beatBoost;
-		yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 
 		if (milestoneFlag < 15) {
 			displayMessage(
@@ -1759,7 +1536,6 @@ function declareWinner() {
 					'Selected strategy won the tournament (or tied for first). +50,000 yomi'
 				);
 			}
-			yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 		} else if (
 			project128.flag == 1 &&
 			placeScore == strats[pick].currentScore
@@ -1770,7 +1546,6 @@ function declareWinner() {
 					'Selected strategy finished in (or tied for) second place. +30,000 yomi'
 				);
 			}
-			yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 		} else if (project128.flag == 1 && showScore == strats[pick].currentScore) {
 			yomi = yomi + 20000;
 			if (milestoneFlag < 15) {
@@ -1778,90 +1553,15 @@ function declareWinner() {
 					'Selected strategy finished in (or tied for) third place. +20,000 yomi'
 				);
 			}
-			yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 		} else {
 		}
-	}
-}
-
-function calculateStratsBeat() {
-	var sb = 0;
-	for (i = 0; i < results.length; i++) {
-		if (results[i].name == strats[pick].name) {
-			sb = results.length - i;
-			return sb;
-		}
-	}
-}
-
-function revealGrid() {
-	if (resultsFlag == 1) {
-		resultsTimer = 0;
-		tournamentTableElement.style.display = '';
-	}
-}
-
-function revealResults() {
-	if (resultsFlag == 1) {
-		tournamentTableElement.style.display = 'none';
-	}
-}
-
-function calcPayoff(hm, vm) {
-	if (hm == 1 && vm == 1) {
-		payoffCellAAElement.style.backgroundColor = 'LightGrey';
-
-		strats[h].currentScore = strats[h].currentScore + payoffGrid.valueAA;
-		strats[v].currentScore = strats[v].currentScore + payoffGrid.valueAA;
-	} else if (hm == 1 && vm == 2) {
-		payoffCellABElement.style.backgroundColor = 'LightGrey';
-
-		strats[h].currentScore = strats[h].currentScore + payoffGrid.valueAB;
-		strats[v].currentScore = strats[v].currentScore + payoffGrid.valueBA;
-	} else if (hm == 2 && vm == 1) {
-		payoffCellBAElement.style.backgroundColor = 'LightGrey';
-
-		strats[h].currentScore = strats[h].currentScore + payoffGrid.valueBA;
-		strats[v].currentScore = strats[v].currentScore + payoffGrid.valueAB;
-	} else if (hm == 2 && vm == 2) {
-		payoffCellBBElement.style.backgroundColor = 'LightGrey';
-
-		strats[h].currentScore = strats[h].currentScore + payoffGrid.valueBB;
-		strats[v].currentScore = strats[v].currentScore + payoffGrid.valueBB;
 	}
 }
 
 function round(roundNum) {
-	roundSetup();
-	roundLoop();
-
 	function roundSetup() {
 		rCounter = 0;
-		pickStrats(roundNum);
 		var $ = 'Round ' + (roundNum + 1);
-	}
-
-	function roundLoop() {
-		if (rCounter < 10) {
-			runRound();
-			setTimeout(function () {
-				clearGrid();
-			}, 50);
-		} else {
-			currentRound++;
-			runTourney();
-		}
-	}
-
-	function clearGrid() {
-		payoffCellAAElement.style.backgroundColor = 'transparent';
-		payoffCellABElement.style.backgroundColor = 'transparent';
-		payoffCellBAElement.style.backgroundColor = 'transparent';
-		payoffCellBBElement.style.backgroundColor = 'transparent';
-
-		setTimeout(function () {
-			roundLoop();
-		}, 50);
 	}
 
 	function runRound() {
@@ -2374,7 +2074,6 @@ function updateSwarm() {
 
 function synchSwarm() {
 	yomi = yomi - synchCost;
-	yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 	disorgFlag = 0;
 	disorgCounter = 0;
 	disorgMsg = 0;
@@ -2891,12 +2590,6 @@ function cheatCreat() {
 	creativityOn = 1;
 	creativity = creativity + 1000;
 	//displayMessage("Liza just cheated. Very creative!");
-}
-
-function cheatYomi() {
-	yomi = yomi + 1000000;
-	yomiDisplayElement.innerHTML = formatWithCommas(yomi);
-	//displayMessage("you just cheated");
 }
 
 function cheatHypno() {
@@ -3531,7 +3224,6 @@ var probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 500);
 function increaseProbeTrust() {
 	if (yomi >= probeTrustCost && probeTrust < maxTrust) {
 		yomi = yomi - probeTrustCost;
-		yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 		probeTrust++;
 		probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 500);
 		probeTrustDisplayElement.innerHTML = probeTrust;
@@ -4280,7 +3972,6 @@ function refresh() {
 	harvesterLevelDisplayElement.innerHTML = harvesterLevel;
 	megaClipperCostElement.innerHTML = formatWithCommas(megaClipperCost);
 	megaClipperLevelElement.innerHTML = megaClipperLevel;
-	yomiDisplayElement.innerHTML = formatWithCommas(yomi);
 	prestigeUcounterElement.innerHTML = prestigeU + 1;
 	prestigeScounterElement.innerHTML = prestigeS + 1;
 	maxTrustDisplayElement.innerHTML = formatWithCommas(maxTrust);
@@ -4415,7 +4106,6 @@ function save() {
 
 		incomeTracker: incomeTracker.slice(0),
 		qChips: qChips.slice(0),
-		stocks: stocks.slice(0),
 		battles: battles.slice(0),
 		battleNumbers: battleNumbers.slice(0),
 
@@ -4669,7 +4359,6 @@ function save1() {
 
 		incomeTracker: incomeTracker.slice(0),
 		qChips: qChips.slice(0),
-		stocks: stocks.slice(0),
 		battles: battles.slice(0),
 		battleNumbers: battleNumbers.slice(0),
 
@@ -4923,7 +4612,6 @@ function save2() {
 
 		incomeTracker: incomeTracker.slice(0),
 		qChips: qChips.slice(0),
-		stocks: stocks.slice(0),
 		battles: battles.slice(0),
 		battleNumbers: battleNumbers.slice(0),
 
@@ -5165,7 +4853,6 @@ function load() {
 
 	incomeTracker = loadGame.incomeTracker.slice(0);
 	qChips = loadGame.qChips.slice(0);
-	stocks = loadGame.stocks.slice(0);
 	battles = loadGame.battles.slice(0);
 	battleNumbers = loadGame.battleNumbers.slice(0);
 
@@ -5435,7 +5122,6 @@ function load1() {
 
 	incomeTracker = loadGame.incomeTracker.slice(0);
 	qChips = loadGame.qChips.slice(0);
-	stocks = loadGame.stocks.slice(0);
 	battles = loadGame.battles.slice(0);
 	battleNumbers = loadGame.battleNumbers.slice(0);
 
@@ -5689,7 +5375,6 @@ function load2() {
 
 	incomeTracker = loadGame.incomeTracker.slice(0);
 	qChips = loadGame.qChips.slice(0);
-	stocks = loadGame.stocks.slice(0);
 	battles = loadGame.battles.slice(0);
 	battleNumbers = loadGame.battleNumbers.slice(0);
 
