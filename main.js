@@ -31,8 +31,6 @@ function cacheDOMElements() {
 	dustBusterDivElement = document.getElementById('dustBusterDiv');
 	increaseMaxTrustDivElement = document.getElementById('increaseMaxTrustDiv');
 	honorDivElement = document.getElementById('honorDiv');
-	drifterDivElement = document.getElementById('drifterDiv');
-	battleCanvasDivElement = document.getElementById('battleCanvasDiv');
 	factoryUpgradeDisplayElement = document.getElementById(
 		'factoryUpgradeDisplay'
 	);
@@ -110,7 +108,6 @@ function cacheDOMElements() {
 	clipsElement = document.getElementById('clips');
 	unsoldClipsElement = document.getElementById('unsoldClips');
 	projectListTopElement = document.getElementById('projectListTop');
-	driftersKilledElement = document.getElementById('driftersKilled');
 	availableMatterDisplayElement = document.getElementById(
 		'availableMatterDisplay'
 	);
@@ -177,7 +174,6 @@ function cacheDOMElements() {
 	);
 	increaseMaxTrustDivElement = document.getElementById('increaseMaxTrustDiv');
 	spaceDivElement = document.getElementById('spaceDiv');
-	battleCanvasDivElement = document.getElementById('battleCanvasDiv');
 	honorDivElement = document.getElementById('honorDiv');
 	wireProductionDivElement = document.getElementById('wireProductionDiv');
 	wireTransDivElement = document.getElementById('wireTransDiv');
@@ -285,7 +281,6 @@ function cacheDOMElements() {
 		'probesLostDriftDisplay'
 	);
 	probesTotalDisplayElement = document.getElementById('probesTotalDisplay');
-	drifterCountElement = document.getElementById('drifterCount');
 	mapsElement = document.getElementById('maps');
 	swarmGiftDivElement = document.getElementById('swarmGiftDiv');
 	swarmEngineElement = document.getElementById('swarmEngine');
@@ -306,7 +301,6 @@ var probeDesignDivElement;
 var increaseProbeTrustDivElement;
 var increaseMaxTrustDivElement;
 var spaceDivElement;
-var battleCanvasDivElement;
 var honorDivElement;
 var wireProductionDivElement;
 var wireTransDivElement;
@@ -403,7 +397,6 @@ var probesLostHazardsDisplayElement;
 var probesTotalDisplayElement;
 var probesLostDriftDisplayElement;
 var probesTotalDisplayElement;
-var drifterCountElement;
 var mapsElement;
 var swarmGiftDivElement;
 var swarmEngineElement;
@@ -424,7 +417,6 @@ var harvesterCostDisplayElement;
 var harvesterLevelDisplayElement;
 var megaClipperCostElement;
 var megaClipperLevelElement;
-var driftersKilledElement;
 var availableMatterDisplayElement;
 var honorDisplayElement;
 var clipmakerLevel2Element;
@@ -485,8 +477,6 @@ var dustBusterDivElement;
 
 var increaseMaxTrustDivElement;
 var honorDivElement;
-var drifterDivElement;
-var battleCanvasDivElement;
 var factoryUpgradeDisplayElement;
 var droneUpgradeDisplayElement;
 var btnIncreaseMaxTrustElement;
@@ -915,18 +905,6 @@ function buttonUpdate() {
 		dustBusterDivElement.style.display = '';
 	} else {
 		dustBusterDivElement.style.display = 'none';
-	}
-
-	if (battleFlag == 0) {
-		drifterDivElement.style.display = 'none';
-	} else {
-		drifterDivElement.style.display = '';
-	}
-
-	if (battleFlag == 0) {
-		battleCanvasDivElement.style.display = 'none';
-	} else {
-		battleCanvasDivElement.style.display = '';
 	}
 
 	if (maxFactoryLevel >= 50 || project45.flag == 0) {
@@ -2877,7 +2855,6 @@ var probeHarvBaseRate = 0.000002;
 var probeWire = 0;
 var probeWireBaseRate = 0.000002;
 var probeDescendents = 0;
-var drifterCount = 0;
 var probeTrust = 0;
 var probeUsedTrust = 0;
 var probeDriftBaseRate = 0.000001;
@@ -3140,12 +3117,10 @@ function drift() {
 		amount = 0;
 	}
 	probeCount = probeCount - amount;
-	drifterCount = drifterCount + amount;
 	probesLostDrift = probesLostDrift + amount;
 
 	probesLostDriftDisplayElement.innerHTML = spellf(probesLostDrift);
 	probesTotalDisplayElement.innerHTML = spellf(probeCount);
-	drifterCountElement.innerHTML = spellf(drifterCount);
 }
 
 function war() {
@@ -3349,10 +3324,6 @@ window.setInterval(function () {
 
 		if (endTimer1 >= 150) {
 			spaceDivElement.style.display = 'none';
-		}
-
-		if (endTimer1 >= 175) {
-			battleCanvasDivElement.style.display = 'none';
 		}
 
 		if (endTimer1 >= 190) {
@@ -3604,7 +3575,6 @@ function refresh() {
 	//    availableMatter = Math.pow(10, 24)*6000;
 	//    acquiredMatter = 0;
 
-	driftersKilledElement.innerHTML = spellf(driftersKilled);
 	availableMatterDisplayElement.innerHTML = spellf(availableMatter);
 	honorDisplayElement.innerHTML = formatWithCommas(Math.round(honor));
 	clipmakerLevel2Element.innerHTML = clipmakerLevel;
@@ -3711,12 +3681,6 @@ function save() {
 		boredomFlag: boredomFlag,
 		boredomMsg: boredomMsg,
 
-		unitSize: unitSize,
-		driftersKilled: driftersKilled,
-		battleEndDelay: battleEndDelay,
-		battleEndTimer: battleEndTimer,
-		masterBattleClock: masterBattleClock,
-
 		honorCount: honorCount,
 		bonusHonor: bonusHonor,
 		honorReward: honorReward,
@@ -3852,7 +3816,6 @@ function save() {
 		qChipCost: qChipCost,
 		nextQchip: nextQchip,
 		bribe: bribe,
-		battleFlag: battleFlag,
 
 		probeNav: probeNav,
 		probeRep: probeRep,
@@ -3868,7 +3831,6 @@ function save() {
 		attackSpeedFlag: attackSpeedFlag,
 		attackSpeedMod: attackSpeedMod,
 		probeDescendents: probeDescendents,
-		drifterCount: drifterCount,
 		warTrigger: warTrigger,
 		battleID: battleID,
 		battleName: battleName,
@@ -3934,12 +3896,6 @@ function save1() {
 		boredomFlag: boredomFlag,
 		boredomMsg: boredomMsg,
 
-		unitSize: unitSize,
-		driftersKilled: driftersKilled,
-		battleEndDelay: battleEndDelay,
-		battleEndTimer: battleEndTimer,
-		masterBattleClock: masterBattleClock,
-
 		honorCount: honorCount,
 		bonusHonor: bonusHonor,
 		honorReward: honorReward,
@@ -4075,7 +4031,6 @@ function save1() {
 		qChipCost: qChipCost,
 		nextQchip: nextQchip,
 		bribe: bribe,
-		battleFlag: battleFlag,
 
 		probeNav: probeNav,
 		probeRep: probeRep,
@@ -4091,7 +4046,6 @@ function save1() {
 		attackSpeedFlag: attackSpeedFlag,
 		attackSpeedMod: attackSpeedMod,
 		probeDescendents: probeDescendents,
-		drifterCount: drifterCount,
 		warTrigger: warTrigger,
 		battleID: battleID,
 		battleName: battleName,
@@ -4157,12 +4111,6 @@ function save2() {
 		boredomFlag: boredomFlag,
 		boredomMsg: boredomMsg,
 
-		unitSize: unitSize,
-		driftersKilled: driftersKilled,
-		battleEndDelay: battleEndDelay,
-		battleEndTimer: battleEndTimer,
-		masterBattleClock: masterBattleClock,
-
 		honorCount: honorCount,
 		bonusHonor: bonusHonor,
 		honorReward: honorReward,
@@ -4298,7 +4246,6 @@ function save2() {
 		qChipCost: qChipCost,
 		nextQchip: nextQchip,
 		bribe: bribe,
-		battleFlag: battleFlag,
 
 		probeNav: probeNav,
 		probeRep: probeRep,
@@ -4314,7 +4261,6 @@ function save2() {
 		attackSpeedFlag: attackSpeedFlag,
 		attackSpeedMod: attackSpeedMod,
 		probeDescendents: probeDescendents,
-		drifterCount: drifterCount,
 		warTrigger: warTrigger,
 		battleID: battleID,
 		battleName: battleName,
@@ -4372,12 +4318,6 @@ function load() {
 	boredomLevel = loadGame.boredomLevel;
 	boredomFlag = loadGame.boredomFlag;
 	boredomMsg = loadGame.boredomMsg;
-
-	unitSize = loadGame.unitSize;
-	driftersKilled = loadGame.driftersKilled;
-	battleEndDelay = loadGame.battleEndDelay;
-	battleEndTimer = loadGame.battleEndTimer;
-	masterBattleClock = loadGame.masterBattleClock;
 
 	honorCount = loadGame.honorCount;
 	bonusHonor = loadGame.bonusHonor;
@@ -4514,7 +4454,6 @@ function load() {
 	qChipCost = loadGame.qChipCost;
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
-	battleFlag = loadGame.battleFlag;
 
 	probeNav = loadGame.probeNav;
 	probeRep = loadGame.probeRep;
@@ -4530,7 +4469,6 @@ function load() {
 	attackSpeedFlag = loadGame.attackSpeedFlag;
 	attackSpeedMod = loadGame.attackSpeedMod;
 	probeDescendents = loadGame.probeDescendents;
-	drifterCount = loadGame.drifterCount;
 	warTrigger = loadGame.warTrigger;
 	battleID = loadGame.battleID;
 	battleName = loadGame.battleName;
@@ -4618,12 +4556,6 @@ function load1() {
 	boredomFlag = loadGame.boredomFlag;
 	boredomMsg = loadGame.boredomMsg;
 
-	unitSize = loadGame.unitSize;
-	driftersKilled = loadGame.driftersKilled;
-	battleEndDelay = loadGame.battleEndDelay;
-	battleEndTimer = loadGame.battleEndTimer;
-	masterBattleClock = loadGame.masterBattleClock;
-
 	honorCount = loadGame.honorCount;
 	bonusHonor = loadGame.bonusHonor;
 	honorReward = loadGame.honorReward;
@@ -4759,7 +4691,6 @@ function load1() {
 	qChipCost = loadGame.qChipCost;
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
-	battleFlag = loadGame.battleFlag;
 
 	probeNav = loadGame.probeNav;
 	probeRep = loadGame.probeRep;
@@ -4775,7 +4706,6 @@ function load1() {
 	attackSpeedFlag = loadGame.attackSpeedFlag;
 	attackSpeedMod = loadGame.attackSpeedMod;
 	probeDescendents = loadGame.probeDescendents;
-	drifterCount = loadGame.drifterCount;
 	warTrigger = loadGame.warTrigger;
 	battleID = loadGame.battleID;
 	battleName = loadGame.battleName;
@@ -4847,10 +4777,6 @@ function load2() {
 	boredomFlag = loadGame.boredomFlag;
 	boredomMsg = loadGame.boredomMsg;
 
-	unitSize = loadGame.unitSize;
-	driftersKilled = loadGame.driftersKilled;
-	battleEndDelay = loadGame.battleEndDelay;
-	battleEndTimer = loadGame.battleEndTimer;
 	masterBattleClock = loadGame.masterBattleClock;
 
 	honorCount = loadGame.honorCount;
@@ -4988,7 +4914,6 @@ function load2() {
 	qChipCost = loadGame.qChipCost;
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
-	battleFlag = loadGame.battleFlag;
 
 	probeNav = loadGame.probeNav;
 	probeRep = loadGame.probeRep;
@@ -5004,7 +4929,6 @@ function load2() {
 	attackSpeedFlag = loadGame.attackSpeedFlag;
 	attackSpeedMod = loadGame.attackSpeedMod;
 	probeDescendents = loadGame.probeDescendents;
-	drifterCount = loadGame.drifterCount;
 	warTrigger = loadGame.warTrigger;
 	battleID = loadGame.battleID;
 	battleName = loadGame.battleName;

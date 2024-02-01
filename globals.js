@@ -89,7 +89,6 @@ var qClock = 0;
 var qChipCost = 10000;
 var nextQchip = 0;
 var bribe = 1000000;
-var battleFlag = 0;
 
 var prestigeU = 0;
 var prestigeS = 0;

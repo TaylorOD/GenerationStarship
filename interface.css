@@ -218,36 +218,6 @@ h2 {
 	margin-bottom: 2;
 }
 
-#victoryDiv {
-	margin-top: 10px;
-	width: 289px;
-	text-align: center;
-}
-
-#increaseProbeTrustDiv {
-	float: left;
-	width: 130px;
-	margin-left: 5;
-	border: 0;
-}
-
-#increaseMaxTrustDiv {
-	float: left;
-	width: 150px;
-	margin: 0;
-	border: 0;
-}
-
-#battleCanvasDiv {
-	position: relative;
-}
-
-#battleInterfaceDiv {
-	position: absolute;
-	left: 15px;
-	top: 8px;
-}
-
 canvas {
 	display: block;
 	margin-top: 0;

@@ -20,6 +20,7 @@ var grid = new Array(battleGRID_HEIGHT);
 var numLeftShips = 0;
 var numRightShips = 0;
 
+// TODO: remove
 var probeCombat = 0;
 var probeCombatBaseRate = 0.15;
 var attackSpeed = 0.2;
@@ -37,12 +38,7 @@ var outcomeTimer = 150;
 var drifterCombat = 1.75;
 var warTrigger = 1000000;
 
-var unitSize = 0;
-var driftersKilled = 0;
-var battleEndDelay = 0;
-var battleEndTimer = 100;
-var masterBattleClock = 0;
-
+// TODO: remove
 var honorCount = 0;
 var threnodyTitle = 'Durenstein 1';
 var bonusHonor = 0;
@@ -51,16 +47,9 @@ var honorReward = 0;
 //NON-CANVAS BATTLE LOGIC
 
 function checkForBattles() {
-	if (
-		drifterCount > warTrigger &&
-		probeCount > 0 &&
-		battles.length < maxBattles
-	) {
+	if (probeCount > 0 && battles.length < maxBattles) {
 		var r = Math.random() * 100;
 		if (r >= 50) {
-			if (battleFlag == 0) {
-				battleFlag = 1;
-			}
 			createBattle();
 		}
 	}
@@ -187,191 +176,6 @@ function generateBattleName() {
 	return name;
 }
 
-/*
-
-function battleWrite(newBattle){
-    
-    var element = document.getElementById("battleReportsDiv"); 
-    var reference = document.getElementById("battleListTop");
-    
-    var newBattleReport = document.createElement("div");
-    newBattleReport.setAttribute("id", "battleReport"+newBattle.id);
-    
-    var battleNameP = document.createElement("p");
-    battleNameP.setAttribute("class", "clean");
-    
-    if (battleNameFlag == 0){
-        battleName = document.createTextNode("Battle "+newBattle.id);
-
-        }
-    
-    if (battleNameFlag == 1){
-        battleName = document.createTextNode(generateBattleName());
-        }
-    
-    battleNameP.appendChild(battleName);
-    
-    newBattleReport.appendChild(battleNameP);
-    
-    var battleDetailsP = document.createElement("p");
-    battleDetailsP.setAttribute("class", "clean");
-    
-    var clipsLabelSpan = document.createElement("span");
-    clipsLabelSpan.style.fontWeight = "bold";
-    
-    var clipsLabel = document.createTextNode("Clips: ");
-    clipsLabelSpan.appendChild(clipsLabel);
-    
-    battleDetailsP.appendChild(clipsLabelSpan);
-    
-    var clipProbeCountSpan = document.createElement("span");
-    clipProbeCountSpan.setAttribute("id", "battle"+newBattle.id+"clipCount")
-    var clipProbeCount = document.createTextNode(numberCruncher(newBattle.clipProbes));
-    clipProbeCountSpan.appendChild(clipProbeCount);
-    battleDetailsP.appendChild(clipProbeCountSpan);
-    
-    var driftersLabelSpan = document.createElement("span");
-    driftersLabelSpan.style.fontWeight = "bold";
-    
-    var driftersLabel = document.createTextNode(" Drifters: ");
-    driftersLabelSpan.appendChild(driftersLabel);
-    
-    battleDetailsP.appendChild(driftersLabelSpan);
-    
-    var drifterProbeCountSpan = document.createElement("span");
-    drifterProbeCountSpan.setAttribute("id", "battle"+newBattle.id+"drifterCount")    
-    var drifterProbeCount = document.createTextNode(numberCruncher(newBattle.drifterProbes));
-    drifterProbeCountSpan.appendChild(drifterProbeCount);
-    battleDetailsP.appendChild(drifterProbeCountSpan);
-    
-    newBattleReport.appendChild(battleDetailsP);
-    
-    var territoryP = document.createElement("p");
-    territoryP.setAttribute("class", "clean");
-    var t = (newBattle.territory/availableMatter);
-    var territoryDisplay = document.createTextNode("Territory at stake: "+Math.ceil(t*100)+"% of available matter");
-    territoryP.appendChild(territoryDisplay);
-    
-    newBattleReport.appendChild(territoryP);
-   
-    var line = document.createElement("hr");
-    newBattleReport.appendChild(line);
-    
-    reference.insertBefore(newBattleReport, reference.childNodes[0]);
-        
-    }
-
-function updateBattles(){
-    
-    var combatEffectiveness = probeCombatBaseRate;
-    
-    if (battleNameFlag == 1) {
-        combatEffectiveness = combatEffectiveness*2
-    }
-    
-    if (attackSpeedFlag == 1){
-        battleSpeed = attackSpeed * .85;
-        if (battleSpeed > .99){
-            battleSpeed = .99;
-        }
-    }
-    
-    for(var i = 0; i < battles.length; i++){
-        r = Math.random();
-        if (r>=battleSpeed) {
-            var clipCasualties = battles[i].drifterProbes * drifterCombat * (1-battleSpeed);
-                if (clipCasualties>battles[i].clipProbes){
-                    clipCasualties=battles[i].clipProbes;
-                    }
-            
-            battles[i].clipProbes = battles[i].clipProbes - clipCasualties;
-            probeCount = probeCount - clipCasualties;
-            probesLostCombat = probesLostCombat + clipCasualties;
-            document.getElementById('probesLostCombatDisplay').innerHTML = numberCruncher(probesLostCombat);
-            
-//            document.getElementById('battle'+battles[i].id+"clipCount").innerHTML = numberCruncher(battles[i].clipProbes);
-            
-            } else {
-            var drifterCasualties = battles[i].clipProbes * Math.pow(probeCombat, 1.7) * combatEffectiveness;
-                if (drifterCasualties>battles[i].drifterProbes){
-                    drifterCasualties=battles[i].drifterProbes;
-                    }
-            
-                battles[i].drifterProbes = battles[i].drifterProbes - drifterCasualties;
-                drifterCount = drifterCount - drifterCasualties;
-                
-//                document.getElementById('battle'+battles[i].id+"drifterCount").innerHTML = numberCruncher(battles[i].drifterProbes);
-            }
-        
-        if (battles[i].drifterProbes < 1){
-            battles[i].victory = true;
-        }
-    
-        if (battles[i].clipProbes < 1 && battles[i].victory == false){
-            battles[i].loss = true;
-        }
-
-        if (battles[i].loss == true && battles[i].whiteFlag == 0){
-            availableMatter = availableMatter - battles[i].territory;
-            battles[i].whiteFlag = 1;
-        }     
-        
-        if (battles[i].loss == true){
-            
-//            document.getElementById("battleReport"+battles[i].id).style.backgroundColor = "LightGrey";
-            
-            battles[i].reportCount++;
-            if (battles[i].reportCount > outcomeTimer){
-                battles[i].garbageFlag = 1;
-            }
-        }
-        
-        if (battles[i].victory == true){
-            battles[i].reportCount++;
-            if (battles[i].reportCount > outcomeTimer){
-                battles[i].garbageFlag = 1;
-            }
-        }
-    }
-}
-
-function battleCleanUp(){
-    for(var i = battles.length-1; i >= 0; i--){
-        if (battles[i].garbageFlag == 1){
-            var element = document.getElementById('battleReport'+battles[i].id);
-            element.parentNode.removeChild(element);
-            battles.splice(i,1);
-        }
-    }
-    
-}
-
-
-
-function updateBattleDisplay(battle){
-  
-  var element = document.getElementById("battleListTop"); 
-  
-  var newBattle = document.createElement("div");
-  newBattle.setAttribute("id", battle.id);
-  element.appendChild(newBattle, element.firstChild);
-  
-  var span = document.createElement("span");
-  span.setAttribute("class", "clean");    
-  span.style.fontWeight = "bold";
-  newBattle.appendChild(span);
-  
-  var hed = document.createTextNode("Combatants");
-  span.appendChild(hed);    
-  
-  var clipsCount = document.createElement("span");
-  clipsCount = battle.clipProbes;
-  element.appendChild(span);
-  
-}
-
-*/
-
 //CANVAS BATTLE DISPLAY
 
 function Battle() {
@@ -441,32 +245,17 @@ function Battle() {
 							Math.round(honor).toLocaleString();
 					}
 				}
-
-				battleEndDelay++;
 			} else if (numLeftShips <= 4 || numRightShips <= 4) {
 				battleClock = battleClock + 1;
-				if (battleClock > 2000) {
-					endBattle();
-				}
-			}
-
-			if (battleEndDelay >= battleEndTimer) {
-				endBattle();
-			}
-
-			masterBattleClock++;
-			if (masterBattleClock >= 8000) {
-				endBattle();
 			}
 		}
 	}
 
+	// TODO: remove
 	function endBattle() {
 		document.getElementById('victoryDiv').style.visibility = 'hidden';
 		honorCount = 0;
 		battleClock = 0;
-		masterBattleClock = 0;
-		battleEndDelay = 0;
 		battles.splice(0, 1);
 	}
 
@@ -607,24 +396,11 @@ function Battle() {
 						p.alive = false;
 						if (p.team == 0) {
 							numLeftShips--;
-							if (unitSize > probeCount) {
-								unitSize = probeCount;
-							}
-							probeCount = probeCount - unitSize;
-							probesLostCombat = probesLostCombat + unitSize;
+
 							document.getElementById('probesLostCombatDisplay').innerHTML =
 								numberCruncher(probesLostCombat);
 						} else {
 							numRightShips--;
-							if (unitSize > drifterCount) {
-								unitSize = drifterCount;
-							}
-							drifterCount = drifterCount - unitSize;
-							driftersKilled = driftersKilled + unitSize;
-							document.getElementById('driftersKilled').innerHTML =
-								numberCruncher(driftersKilled);
-							document.getElementById('drifterCount').innerHTML =
-								numberCruncher(drifterCount);
 						}
 					}
 
@@ -819,26 +595,8 @@ function Ship(team) {
 }
 
 function createBattle() {
-	unitSize = 0;
+	document.getElementById('battleScale').innerHTML = numberCruncher(0, 0);
 
-	if (drifterCount >= probeCount) {
-		unitSize = probeCount / 100;
-	} else {
-		unitSize = drifterCount / 100;
-	}
-
-	if (unitSize < 1) {
-		unitSize = 1;
-	}
-	document.getElementById('battleScale').innerHTML = numberCruncher(
-		unitSize,
-		0
-	);
-
-	var rr = Math.random() * drifterCount;
-	if (rr < 1) {
-		rr = 1;
-	}
 	var ss = Math.random() * probeCount;
 	if (ss < 1) {
 		ss = 1;
