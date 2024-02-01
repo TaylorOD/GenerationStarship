@@ -186,14 +186,6 @@ h2 {
 	z-index: 10;
 }
 
-#tournamentStuff {
-	height: 58px;
-}
-
-#tournamentLabel {
-	margin-bottom: 5px;
-}
-
 #dustBusterDiv {
 	margin-bottom: 3px;
 }
@@ -224,51 +216,6 @@ h2 {
 
 #batteryMultiButtons {
 	margin-bottom: 2;
-}
-
-#autoTourneyStatusDiv {
-	float: left;
-	width: 30px;
-}
-
-#tourneyButton {
-	float: left;
-	width: 120px;
-}
-
-#autoTourneyControl {
-	float: left;
-	width: 78px;
-}
-
-#victoryDiv {
-	margin-top: 10px;
-	width: 289px;
-	text-align: center;
-}
-
-#increaseProbeTrustDiv {
-	float: left;
-	width: 130px;
-	margin-left: 5;
-	border: 0;
-}
-
-#increaseMaxTrustDiv {
-	float: left;
-	width: 150px;
-	margin: 0;
-	border: 0;
-}
-
-#battleCanvasDiv {
-	position: relative;
-}
-
-#battleInterfaceDiv {
-	position: absolute;
-	left: 15px;
-	top: 8px;
 }
 
 canvas {
@@ -333,72 +280,6 @@ canvas {
 	white-space: normal;
 	width: 320px;
 	margin-left: 10px;
-}
-
-#investmentDiv1 {
-	float: left;
-	width: 64px;
-	line-height: 20%;
-}
-
-#investmentDiv2 {
-	float: left;
-	width: 65%;
-	text-align: top;
-	margin-top: 0;
-	margin-left: 5px;
-}
-
-#stratDiv1 {
-	float: left;
-	width: 95px;
-	line-height: 20%;
-}
-
-#stratDiv2 {
-	float: left;
-	width: 60%;
-	text-align: top;
-	margin-top: 0;
-	margin-left: 5px;
-}
-
-#vertPad {
-	float: left;
-	width: 35%;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 11;
-}
-
-#vertStrat {
-	float: right;
-	text-align: center;
-	width: 65%;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 11;
-}
-
-#horizStrat {
-	float: left;
-
-	display: flex;
-	align-items: center;
-
-	justify-content: center;
-	width: 25%;
-	height: 56px;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 11;
-}
-
-#investmentEngineUpgrade {
-	margin: 5px;
-	margin-bottom: 10px;
-}
-
-#tournamentManagement {
-	margin: 5px;
-	margin-bottom: 10px;
 }
 
 #feedButtonDiv {
@@ -535,47 +416,6 @@ table.table1 {
 
 table.table1 tr:nth-child(even) {
 	background-color: #333333;
-}
-
-table.table2 {
-	border-collapse: collapse;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 11;
-	margin-bottom: 0;
-	margin-top: 0;
-	margin-right: 0px;
-	margin-left: 0px;
-	width: 70%;
-}
-
-table.table3 {
-	border-collapse: collapse;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 11;
-	margin-bottom: 0;
-	margin-top: 0;
-	margin-right: 0px;
-	margin-left: 0px;
-	width: 100%;
-}
-
-table.table2 td:nth-child(1) {
-	width: 45px;
-	text-align: right;
-	padding-right: 4px;
-	border-left: none;
-	border-top: none;
-	border-bottom: none;
-	font-weight: bold;
-}
-
-table.table2 td:nth-child(n + 2) {
-	table-layout: fixed;
-}
-
-table.table2 td {
-	border: 1px solid white;
-	text-align: center;
 }
 
 p.clean {

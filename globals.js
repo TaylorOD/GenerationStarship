@@ -41,11 +41,8 @@ var wireSupply = 1000;
 var marketingEffectiveness = 1;
 var marketingEffectiveness = 1;
 var milestoneFlag = 0;
-var bankroll = 0;
 var fib1 = 2;
 var fib2 = 3;
-var strategyEngineFlag = 0;
-var investmentEngineFlag = 0;
 var revPerSecFlag = 0;
 var compFlag = 0;
 var projectsFlag = 0;
@@ -92,12 +89,10 @@ var qClock = 0;
 var qChipCost = 10000;
 var nextQchip = 0;
 var bribe = 1000000;
-var battleFlag = 0;
 
 var prestigeU = 0;
 var prestigeS = 0;
 
-var autoTourneyFlag = 0;
 var egoFlag = 0;
 var tothFlag = 0;
 
@@ -142,7 +137,6 @@ var boredomMsg = 0;
 var dustBusterStatus = 1;
 var wirePriceTimer = 0;
 var qFade = 1;
-var autoTourneyStatus = 1;
 var driftKingMessageCost = 1;
 var sliderPos = 0;
 var tempOps = 0;

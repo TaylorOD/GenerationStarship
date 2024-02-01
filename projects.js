@@ -38,9 +38,7 @@ var project2 = {
 	description:
 		'Admit failure, shut down all systems, drift until you collect 1 SDU',
 	trigger: function () {
-		return (
-			portTotal < wireCost && funds < wireCost && wire < 1 && unsoldClips < 1
-		);
+		return wireCost && funds < wireCost && wire < 1 && unsoldClips < 1;
 	},
 	uses: 1,
 	cost: function () {
@@ -596,63 +594,6 @@ var project19 = {
 
 projects.push(project19);
 
-var project20 = {
-	id: 'projectButton20',
-	title: 'Strategic Modeling ',
-	priceTag: '(12,000 ops)',
-	description: 'Analyze strategy tournaments to generate Yomi',
-	trigger: function () {
-		return project19.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 12000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project20.flag = 1;
-		displayMessage(
-			"Run tournament, pick strategy, earn Yomi based on that strategy's performance."
-		);
-		standardOps = standardOps - 12000;
-		project20.element.parentNode.removeChild(project20.element);
-		var index = activeProjects.indexOf(project20);
-		activeProjects.splice(index, 1);
-		strategyEngineFlag = 1;
-		document.getElementById('tournamentResultsTable').style.display = 'none';
-	},
-};
-
-projects.push(project20);
-
-var project21 = {
-	id: 'projectButton21',
-	title: 'Algorithmic Trading ',
-	priceTag: '(10,000 ops)',
-	description: 'Develop an investment engine for generating funds',
-	trigger: function () {
-		return trust >= 8;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 10000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project21.flag = 1;
-		displayMessage('Investment engine unlocked');
-		standardOps = standardOps - 10000;
-		project21.element.parentNode.removeChild(project21.element);
-		var index = activeProjects.indexOf(project21);
-		activeProjects.splice(index, 1);
-		investmentEngineFlag = 1;
-	},
-};
-
-projects.push(project21);
-
 var project22 = {
 	id: 'projectButton22',
 	title: 'MegaSolar Panel ',
@@ -895,46 +836,16 @@ var project35 = {
 
 projects.push(project35);
 
-var project27 = {
-	id: 'projectButton27',
-	title: 'Coherent Extrapolated Volition ',
-	priceTag: '(500 creat, 3,000 Yomi, 20,000 ops)',
-	description: 'Human values, machine intelligence, its a new era. (+1 Chip)',
-	trigger: function () {
-		return yomi >= 1;
-	},
-	uses: 1,
-	cost: function () {
-		return yomi >= 3000 && operations >= 20000 && creativity >= 500;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project27.flag = 1;
-		displayMessage('Coherent Extrapolated Volition complete. (+1 Chip)');
-		yomi = yomi - 3000;
-		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-		standardOps = standardOps - 20000;
-		creativity = creativity - 500;
-		trust = trust + 1;
-		project27.element.parentNode.removeChild(project27.element);
-		var index = activeProjects.indexOf(project27);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project27);
-
 var project28 = {
 	id: 'projectButton28',
 	title: 'Cure for COVID-68 ',
 	priceTag: '(25,000 ops)',
 	description:
 		'The trick is isolating sick passengers outside the airlock. (+10 Chips)',
-	trigger: function () {
-		return project27.flag == 1;
-	},
 	uses: 1,
+	trigger: function () {
+		return project31.flag == 1;
+	},
 	cost: function () {
 		return operations >= 25000;
 	},
@@ -945,7 +856,6 @@ var project28 = {
 		displayMessage('COVID-68 is cured. (+10 Chips)');
 		standardOps = standardOps - 25000;
 		trust = trust + 10;
-		stockGainThreshold = stockGainThreshold + 0.01;
 		project28.element.parentNode.removeChild(project28.element);
 		var index = activeProjects.indexOf(project28);
 		activeProjects.splice(index, 1);
@@ -959,10 +869,10 @@ var project31 = {
 	title: 'Male Pattern Baldness ',
 	priceTag: '(20,000 ops)',
 	description: 'A cure for androgenetic alopecia. (+20 Chips)',
-	trigger: function () {
-		return project27.flag == 1;
-	},
 	uses: 1,
+	trigger: function () {
+		return project31.flag == 1;
+	},
 	cost: function () {
 		return operations >= 20000;
 	},
@@ -974,7 +884,6 @@ var project31 = {
 		displayMessage('They are still monkeys');
 		standardOps = standardOps - 20000;
 		trust = trust + 20;
-		stockGainThreshold = stockGainThreshold + 0.01;
 		project31.element.parentNode.removeChild(project31.element);
 		var index = activeProjects.indexOf(project31);
 		activeProjects.splice(index, 1);
@@ -1261,261 +1170,6 @@ var project51 = {
 
 projects.push(project51);
 
-var project60 = {
-	id: 'projectButton60',
-	title: 'New Strategy: A100 ',
-	priceTag: '(15,000 ops)',
-	description: 'Always choose A ',
-	trigger: function () {
-		return project20.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 15000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project60.flag = 1;
-		standardOps = standardOps - 15000;
-		allStrats[1].active = 1;
-		strats.push(stratA100);
-		displayMessage('A100 added to strategy pool');
-		tourneyCost = tourneyCost + 1000;
-		document.getElementById('newTourneyCost').innerHTML =
-			tourneyCost.toLocaleString();
-		var stratList = document.getElementById('stratPicker');
-		var el = document.createElement('option');
-		el.textContent = 'A100';
-		el.value = 1;
-		stratList.appendChild(el);
-		project60.element.parentNode.removeChild(project60.element);
-		var index = activeProjects.indexOf(project60);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project60);
-
-var project61 = {
-	id: 'projectButton61',
-	title: 'New Strategy: B100 ',
-	priceTag: '(17,500 ops)',
-	description: 'Always choose B ',
-	trigger: function () {
-		return project60.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 17500;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project61.flag = 1;
-		standardOps = standardOps - 17500;
-		allStrats[2].active = 1;
-		strats.push(stratB100);
-		displayMessage('B100 added to strategy pool');
-		tourneyCost = tourneyCost + 1000;
-		document.getElementById('newTourneyCost').innerHTML =
-			tourneyCost.toLocaleString();
-		var stratList = document.getElementById('stratPicker');
-		var el = document.createElement('option');
-		el.textContent = 'B100';
-		el.value = 2;
-		stratList.appendChild(el);
-		project61.element.parentNode.removeChild(project61.element);
-		var index = activeProjects.indexOf(project61);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project61);
-
-var project62 = {
-	id: 'projectButton62',
-	title: 'New Strategy: GREEDY ',
-	priceTag: '(20,000 ops)',
-	description: 'Choose the option with the largest potential payoff ',
-	trigger: function () {
-		return project61.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 20000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project62.flag = 1;
-		standardOps = standardOps - 20000;
-		allStrats[3].active = 1;
-		strats.push(stratGreedy);
-		displayMessage('GREEDY added to strategy pool');
-		tourneyCost = tourneyCost + 1000;
-		document.getElementById('newTourneyCost').innerHTML =
-			tourneyCost.toLocaleString();
-		var stratList = document.getElementById('stratPicker');
-		var el = document.createElement('option');
-		el.textContent = 'GREEDY';
-		el.value = 3;
-		stratList.appendChild(el);
-		project62.element.parentNode.removeChild(project62.element);
-		var index = activeProjects.indexOf(project62);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project62);
-
-var project63 = {
-	id: 'projectButton63',
-	title: 'New Strategy: GENEROUS ',
-	priceTag: '(22,500 ops)',
-	description:
-		'Choose the option that gives your opponent the largest potential payoff ',
-	trigger: function () {
-		return project62.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 22500;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project63.flag = 1;
-		standardOps = standardOps - 22500;
-		allStrats[4].active = 1;
-		strats.push(stratGenerous);
-		displayMessage('GENEROUS added to strategy pool');
-		tourneyCost = tourneyCost + 1000;
-		document.getElementById('newTourneyCost').innerHTML =
-			tourneyCost.toLocaleString();
-		var stratList = document.getElementById('stratPicker');
-		var el = document.createElement('option');
-		el.textContent = 'GENEROUS';
-		el.value = 4;
-		stratList.appendChild(el);
-		project63.element.parentNode.removeChild(project63.element);
-		var index = activeProjects.indexOf(project63);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project63);
-
-var project64 = {
-	id: 'projectButton64',
-	title: 'New Strategy: MINIMAX ',
-	priceTag: '(25,000 ops)',
-	description:
-		'Choose the option that gives your opponent the smallest potential payoff ',
-	trigger: function () {
-		return project63.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 25000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project64.flag = 1;
-		standardOps = standardOps - 25000;
-		allStrats[5].active = 1;
-		strats.push(stratMinimax);
-		displayMessage('MINIMAX added to strategy pool');
-		tourneyCost = tourneyCost + 1000;
-		document.getElementById('newTourneyCost').innerHTML =
-			tourneyCost.toLocaleString();
-		var stratList = document.getElementById('stratPicker');
-		var el = document.createElement('option');
-		el.textContent = 'MINIMAX';
-		el.value = 5;
-		stratList.appendChild(el);
-		project64.element.parentNode.removeChild(project64.element);
-		var index = activeProjects.indexOf(project64);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project64);
-
-var project65 = {
-	id: 'projectButton65',
-	title: 'New Strategy: TIT FOR TAT ',
-	priceTag: '(30,000 ops)',
-	description: 'Choose the option your opponent chose last round ',
-	trigger: function () {
-		return project64.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 30000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project65.flag = 1;
-		standardOps = standardOps - 30000;
-		allStrats[6].active = 1;
-		strats.push(stratTitfortat);
-		displayMessage('TIT FOR TAT added to strategy pool');
-		tourneyCost = tourneyCost + 1000;
-		document.getElementById('newTourneyCost').innerHTML =
-			tourneyCost.toLocaleString();
-		var stratList = document.getElementById('stratPicker');
-		var el = document.createElement('option');
-		el.textContent = 'TIT FOR TAT';
-		el.value = 6;
-		stratList.appendChild(el);
-		project65.element.parentNode.removeChild(project65.element);
-		var index = activeProjects.indexOf(project65);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project65);
-
-var project66 = {
-	id: 'projectButton66',
-	title: 'New Strategy: BEAT LAST ',
-	priceTag: '(32,500 ops)',
-	description:
-		'Choose the option that does the best against what your opponent chose last round ',
-	trigger: function () {
-		return project65.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 32500;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project66.flag = 1;
-		standardOps = standardOps - 32500;
-		allStrats[7].active = 1;
-		strats.push(stratBeatlast);
-		displayMessage('BEAT LAST added to strategy pool');
-		tourneyCost = tourneyCost + 1000;
-		document.getElementById('newTourneyCost').innerHTML =
-			tourneyCost.toLocaleString();
-		var stratList = document.getElementById('stratPicker');
-		var el = document.createElement('option');
-		el.textContent = 'BEAT LAST';
-		el.value = 7;
-		stratList.appendChild(el);
-		project66.element.parentNode.removeChild(project66.element);
-		var index = activeProjects.indexOf(project66);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project66);
-
 var project100 = {
 	id: 'projectButton100',
 	title: 'Upgraded Factories ',
@@ -1664,64 +1318,6 @@ var project111 = {
 
 projects.push(project111);
 
-var project112 = {
-	id: 'projectButton112',
-	title: 'Drone Flocking: Adversarial Cohesion ',
-	priceTag: '(50,000 yomi)',
-	description: "Each drone added to the flock doubles every drone's output ",
-	trigger: function () {
-		return harvesterLevel + wireDroneLevel >= 50000;
-	},
-	uses: 1,
-	cost: function () {
-		return yomi >= 50000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project112.flag = 1;
-		yomi = yomi - 50000;
-		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-		droneBoost = 2;
-		displayMessage(
-			"Adversarial cohesion online. Each drone added to the flock increases every drone's output 2x."
-		);
-		project112.element.parentNode.removeChild(project112.element);
-		var index = activeProjects.indexOf(project112);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project112);
-
-var project118 = {
-	id: 'projectButton118',
-	title: 'AutoTourney ',
-	priceTag: '(50,000 creat)',
-	description:
-		'Automatically start a new tournament when the previous one has finished ',
-	trigger: function () {
-		return strategyEngineFlag == 1 && trust >= 90;
-	},
-	uses: 1,
-	cost: function () {
-		return creativity >= 50000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project118.flag = 1;
-		autoTourneyFlag = 1;
-		creativity = creativity - 50000;
-		displayMessage('AutoTourney online.');
-		project118.element.parentNode.removeChild(project118.element);
-		var index = activeProjects.indexOf(project118);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project118);
-
 var project125 = {
 	id: 'projectButton125',
 	title: 'Momentum ',
@@ -1750,34 +1346,6 @@ var project125 = {
 
 projects.push(project125);
 
-var project126 = {
-	id: 'projectButton126',
-	title: 'Swarm Computing ',
-	priceTag: '(36,000 yomi)',
-	description: 'Harness the drone flock to increase computational capacity ',
-	trigger: function () {
-		return harvesterLevel + wireDroneLevel >= 200;
-	},
-	uses: 1,
-	cost: function () {
-		return yomi >= 36000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project126.flag = 1;
-		swarmFlag = 1;
-		yomi = yomi - 36000;
-		document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-		displayMessage('Swarm computing online.');
-		project126.element.parentNode.removeChild(project126.element);
-		var index = activeProjects.indexOf(project126);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project126);
-
 var project127 = {
 	id: 'projectButton127',
 	title: 'Power Grid ',
@@ -1803,34 +1371,6 @@ var project127 = {
 };
 
 projects.push(project127);
-
-var project128 = {
-	id: 'projectButton128',
-	title: 'Strategic Attachment ',
-	priceTag: '(175,000 creat)',
-	description: 'Gain bonus yomi based on the results of your pick ',
-	trigger: function () {
-		return spaceFlag == 1 && strats.length >= 8 && probeTrustCost > yomi;
-	},
-	uses: 1,
-	cost: function () {
-		return creativity >= 175000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project128.flag = 1;
-		creativity = creativity - 175000;
-		displayMessage(
-			'The object of war is victory, the object of victory is conquest, and the object of conquest is occupation.'
-		);
-		project128.element.parentNode.removeChild(project128.element);
-		var index = activeProjects.indexOf(project128);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project128);
 
 var project129 = {
 	id: 'projectButton129',
@@ -2309,37 +1849,6 @@ var project212 = {
 };
 
 projects.push(project212);
-
-var project213 = {
-	id: 'projectButton213',
-	title: 'Disassemble the Strategy Engine ',
-	priceTag: '(100,000 ops)',
-	description:
-		'Dismantle the computational substrate to recover trace amounts of dust',
-	trigger: function () {
-		return endTimer3 >= 150;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 100000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		autoTourneyFlag = 0;
-		project213.flag = 1;
-		dismantle = 4;
-		standardOps = standardOps - 100000;
-		wire = wire + 50;
-		document.getElementById('transWire').innerHTML = wire;
-		displayMessage('Dismantling strategy engine');
-		project213.element.parentNode.removeChild(project213.element);
-		var index = activeProjects.indexOf(project213);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project213);
 
 var project214 = {
 	id: 'projectButton214',
