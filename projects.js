@@ -836,17 +836,12 @@ var project35 = {
 
 projects.push(project35);
 
-projects.push(project27);
-
 var project28 = {
 	id: 'projectButton28',
 	title: 'Cure for COVID-68 ',
 	priceTag: '(25,000 ops)',
 	description:
 		'The trick is isolating sick passengers outside the airlock. (+10 Chips)',
-	trigger: function () {
-		return project27.flag == 1;
-	},
 	uses: 1,
 	cost: function () {
 		return operations >= 25000;
@@ -871,9 +866,6 @@ var project31 = {
 	title: 'Male Pattern Baldness ',
 	priceTag: '(20,000 ops)',
 	description: 'A cure for androgenetic alopecia. (+20 Chips)',
-	trigger: function () {
-		return project27.flag == 1;
-	},
 	uses: 1,
 	cost: function () {
 		return operations >= 20000;
@@ -1373,34 +1365,6 @@ var project127 = {
 };
 
 projects.push(project127);
-
-var project128 = {
-	id: 'projectButton128',
-	title: 'Strategic Attachment ',
-	priceTag: '(175,000 creat)',
-	description: 'Gain bonus yomi based on the results of your pick ',
-	trigger: function () {
-		return spaceFlag == 1 && strats.length >= 8 && probeTrustCost > yomi;
-	},
-	uses: 1,
-	cost: function () {
-		return creativity >= 175000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project128.flag = 1;
-		creativity = creativity - 175000;
-		displayMessage(
-			'The object of war is victory, the object of victory is conquest, and the object of conquest is occupation.'
-		);
-		project128.element.parentNode.removeChild(project128.element);
-		var index = activeProjects.indexOf(project128);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project128);
 
 var project129 = {
 	id: 'projectButton129',

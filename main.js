@@ -1149,7 +1149,7 @@ function buttonUpdate() {
 
 	probeTrustUsedDisplayElement.innerHTML = probeUsedTrust;
 
-	if (yomi < probeTrustCost || probeTrust >= maxTrust) {
+	if (probeTrust >= maxTrust) {
 		btnIncreaseProbeTrustElement.disabled = true;
 	} else {
 		btnIncreaseProbeTrustElement.disabled = false;
@@ -1238,342 +1238,8 @@ function buttonUpdate() {
 
 //-------------------STRATEGY-----------------------------------------------------
 // TODO: remove
-var tourneyCost = 1000;
-var tourneyLvl = 1;
-var choiceANames = [
-	'cooperate',
-	'swerve',
-	'macro',
-	'fight',
-	'bet',
-	'raise_price',
-	'opera',
-	'go',
-	'heads',
-	'particle',
-	'discrete',
-	'peace',
-	'search',
-	'lead',
-	'accept',
-	'accept',
-	'attack',
-];
-var choiceBNames = [
-	'defect',
-	'straight',
-	'micro',
-	'back_down',
-	'fold',
-	'lower_price',
-	'football',
-	'stay',
-	'tails',
-	'wave',
-	'continuous',
-	'war',
-	'evaluate',
-	'follow',
-	'reject',
-	'deny',
-	'decay',
-];
-var stratCounter = 0;
-var roundNum = 0;
-var hMove = 1;
-var vMove = 1;
-var hMovePrev = 1;
-var vMovePrev = 1;
-var aa = 0;
-var ab = 0;
-var ba = 0;
-var bb = 0;
-var rounds = 0;
-var currentRound = 0;
-var rCounter = 0;
-var winnerPtr = 0;
-var placeScore = 0;
-var showScore = 0;
-var high = 0;
-var pick = 10;
-var yomi = 0;
-var yomiBoost = 1;
 
-var allStrats = [];
 var strats = [];
-
-var resultsTimer = 0;
-var results = [];
-var resultsFlag = 0;
-
-var payoffGrid = {
-	valueAA: 0,
-	valueAB: 0,
-	valueBA: 0,
-	valueBB: 0,
-};
-
-var stratRandom = {
-	name: 'RANDOM',
-	active: 1,
-	currentScore: 0,
-	currentPos: 1,
-	pickMove: function () {
-		var r = Math.random();
-		if (r < 0.5) {
-			return 1;
-		} else {
-			return 2;
-		}
-	},
-};
-
-allStrats.push(stratRandom);
-strats.push(stratRandom);
-
-var stratA100 = {
-	name: 'A100',
-	active: 0,
-	currentScore: 0,
-	currentPos: 1,
-	pickMove: function () {
-		return 1;
-	},
-};
-
-allStrats.push(stratA100);
-
-var stratB100 = {
-	name: 'B100',
-	active: 0,
-	currentScore: 0,
-	currentPos: 1,
-	pickMove: function () {
-		return 2;
-	},
-};
-
-allStrats.push(stratB100);
-
-var stratGreedy = {
-	name: 'GREEDY',
-	active: 0,
-	currentScore: 0,
-	currentPos: 1,
-	pickMove: function () {
-		var x = findBiggestPayoff();
-		if (x < 3) {
-			return 1;
-		} else {
-			return 2;
-		}
-	},
-};
-
-allStrats.push(stratGreedy);
-
-var stratGenerous = {
-	name: 'GENEROUS',
-	active: 0,
-	currentScore: 0,
-	currentPos: 1,
-	pickMove: function () {
-		var x = findBiggestPayoff();
-		if (x == 1) {
-			return 1;
-		} else if (x == 3) {
-			return 1;
-		} else {
-			return 2;
-		}
-	},
-};
-
-allStrats.push(stratGenerous);
-
-var stratMinimax = {
-	name: 'MINIMAX',
-	active: 0,
-	currentScore: 0,
-	currentPos: 1,
-	pickMove: function () {
-		var x = findBiggestPayoff();
-		if (x == 1) {
-			return 2;
-		} else if (x == 3) {
-			return 2;
-		} else {
-			return 1;
-		}
-	},
-};
-
-allStrats.push(stratMinimax);
-
-var stratTitfortat = {
-	name: 'TIT FOR TAT',
-	active: 0,
-	currentScore: 0,
-	currentPos: 1,
-	pickMove: function () {
-		if (this.currentPos == 1) {
-			w = vMovePrev;
-			return w;
-		} else {
-			w = hMovePrev;
-			return w;
-		}
-	},
-};
-
-allStrats.push(stratTitfortat);
-
-var stratBeatlast = {
-	name: 'BEAT LAST',
-	active: 0,
-	currentScore: 0,
-	currentPos: 1,
-	pickMove: function () {
-		return w;
-	},
-};
-
-allStrats.push(stratBeatlast);
-
-var vStrat = strats[0];
-
-function findBiggestPayoff() {
-	if (aa >= ab && aa >= ba && aa >= bb) {
-		return 1;
-	} else if (ab >= aa && ab >= ba && ab >= bb) {
-		return 2;
-	} else if (ba >= aa && ba >= ab && ba >= bb) {
-		return 3;
-	} else {
-		return 4;
-	}
-}
-
-function generateGrid() {
-	payoffGrid.valueAA = Math.ceil(Math.random() * 10);
-	payoffGrid.valueAB = Math.ceil(Math.random() * 10);
-	payoffGrid.valueBA = Math.ceil(Math.random() * 10);
-	payoffGrid.valueBB = Math.ceil(Math.random() * 10);
-
-	aa = payoffGrid.valueAA;
-	ab = payoffGrid.valueAB;
-	ba = payoffGrid.valueBA;
-	bb = payoffGrid.valueBB;
-
-	var x = Math.floor(Math.random() * choiceANames.length);
-}
-
-function calculatePlaceScore() {
-	placeScore = 0;
-
-	// 1. Find top non-winning score
-
-	for (i = 1; i < results.length; i++) {
-		if (results[i].currentScore < results[i - 1].currentScore) {
-			placeScore = results[i].currentScore;
-			break;
-		}
-	}
-}
-
-function calculateShowScore() {
-	showScore = 0;
-
-	// 1. Find top non-placing score
-
-	for (i = 1; i < results.length; i++) {
-		if (results[i].currentScore < placeScore) {
-			showScore = results[i].currentScore;
-			break;
-		}
-	}
-}
-
-function declareWinner() {
-	if (pick < 10) {
-		var bB = 0;
-		var w = 'strats';
-		var beatBoost;
-		if (beatBoost == 1) {
-			w = 'strat';
-		}
-		if (beatBoost == 0) {
-			bB = 0;
-			beatBoost = 1;
-		} else {
-			bB = beatBoost;
-		}
-
-		yomi = yomi + strats[pick].currentScore * yomiBoost * beatBoost;
-
-		if (milestoneFlag < 15) {
-			displayMessage(
-				strats[pick].name +
-					' scored ' +
-					strats[pick].currentScore +
-					' and beat ' +
-					bB +
-					' ' +
-					w +
-					'. Yomi increased by ' +
-					strats[pick].currentScore * yomiBoost * beatBoost
-			);
-		}
-
-		if (
-			project128.flag == 1 &&
-			strats[winnerPtr].currentScore == strats[pick].currentScore
-		) {
-			yomi = yomi + 50000;
-
-			if (milestoneFlag < 15) {
-				displayMessage(
-					'Selected strategy won the tournament (or tied for first). +50,000 yomi'
-				);
-			}
-		} else if (
-			project128.flag == 1 &&
-			placeScore == strats[pick].currentScore
-		) {
-			yomi = yomi + 30000;
-			if (milestoneFlag < 15) {
-				displayMessage(
-					'Selected strategy finished in (or tied for) second place. +30,000 yomi'
-				);
-			}
-		} else if (project128.flag == 1 && showScore == strats[pick].currentScore) {
-			yomi = yomi + 20000;
-			if (milestoneFlag < 15) {
-				displayMessage(
-					'Selected strategy finished in (or tied for) third place. +20,000 yomi'
-				);
-			}
-		} else {
-		}
-	}
-}
-
-function round(roundNum) {
-	function roundSetup() {
-		rCounter = 0;
-		var $ = 'Round ' + (roundNum + 1);
-	}
-
-	function runRound() {
-		rCounter++;
-
-		hMovePrev = hMove;
-		vMovePrev = vMove;
-		vMove = vStrat.pickMove();
-
-		calcPayoff(hMove, vMove);
-	}
-}
 
 //--------------------------------------------------------------------------------
 
@@ -1891,7 +1557,7 @@ function updateSwarm() {
 		sliderPos = sliderElement.value;
 	}
 
-	if (yomi < synchCost) {
+	if (true) {
 		btnSynchSwarmElement.disabled = true;
 	} else {
 		btnSynchSwarmElement.disabled = false;
@@ -2073,7 +1739,6 @@ function updateSwarm() {
 }
 
 function synchSwarm() {
-	yomi = yomi - synchCost;
 	disorgFlag = 0;
 	disorgCounter = 0;
 	disorgMsg = 0;
@@ -3222,8 +2887,7 @@ var probeCost = Math.pow(10, 17);
 var probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 500);
 
 function increaseProbeTrust() {
-	if (yomi >= probeTrustCost && probeTrust < maxTrust) {
-		yomi = yomi - probeTrustCost;
+	if (probeTrust < maxTrust) {
 		probeTrust++;
 		probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 500);
 		probeTrustDisplayElement.innerHTML = probeTrust;
@@ -4008,7 +3672,6 @@ function save() {
 	var projectsUses = [];
 	var projectsFlags = [];
 	var projectsActive = [];
-	var stratsActive = [];
 
 	for (var i = 0; i < projects.length; i++) {
 		projectsUses[i] = projects[i].uses;
@@ -4017,10 +3680,6 @@ function save() {
 
 	for (var i = 0; i < activeProjects.length; i++) {
 		projectsActive[i] = activeProjects[i].id;
-	}
-
-	for (var i = 0; i < allStrats.length; i++) {
-		stratsActive[i] = allStrats[i].active;
 	}
 
 	var saveGame = {
@@ -4061,9 +3720,6 @@ function save() {
 		honorCount: honorCount,
 		bonusHonor: bonusHonor,
 		honorReward: honorReward,
-
-		resultsTimer: resultsTimer,
-		resultsFlag: resultsFlag,
 
 		honor: honor,
 		maxTrust: maxTrust,
@@ -4197,27 +3853,6 @@ function save() {
 		nextQchip: nextQchip,
 		bribe: bribe,
 		battleFlag: battleFlag,
-
-		tourneyCost: tourneyCost,
-		tourneyLvl: tourneyLvl,
-		stratCounter: stratCounter,
-		roundNum: roundNum,
-		hMove: hMove,
-		vMove: vMove,
-		hMovePrev: hMovePrev,
-		vMovePrev: vMovePrev,
-		aa: aa,
-		ab: ab,
-		ba: ba,
-		bb: bb,
-		rounds: rounds,
-		currentRound: currentRound,
-		rCounter: rCounter,
-		winnerPtr: winnerPtr,
-		high: high,
-		pick: pick,
-		yomi: yomi,
-		yomiBoost: yomiBoost,
 
 		probeNav: probeNav,
 		probeRep: probeRep,
@@ -4254,14 +3889,12 @@ function save() {
 	localStorage.setItem('saveProjectsUses', JSON.stringify(projectsUses));
 	localStorage.setItem('saveProjectsFlags', JSON.stringify(projectsFlags));
 	localStorage.setItem('saveProjectsActive', JSON.stringify(projectsActive));
-	localStorage.setItem('saveStratsActive', JSON.stringify(stratsActive));
 }
 
 function save1() {
 	var projectsUses = [];
 	var projectsFlags = [];
 	var projectsActive = [];
-	var stratsActive = [];
 
 	for (var i = 0; i < projects.length; i++) {
 		projectsUses[i] = projects[i].uses;
@@ -4270,10 +3903,6 @@ function save1() {
 
 	for (var i = 0; i < activeProjects.length; i++) {
 		projectsActive[i] = activeProjects[i].id;
-	}
-
-	for (var i = 0; i < allStrats.length; i++) {
-		stratsActive[i] = allStrats[i].active;
 	}
 
 	var saveGame = {
@@ -4314,9 +3943,6 @@ function save1() {
 		honorCount: honorCount,
 		bonusHonor: bonusHonor,
 		honorReward: honorReward,
-
-		resultsTimer: resultsTimer,
-		resultsFlag: resultsFlag,
 
 		honor: honor,
 		maxTrust: maxTrust,
@@ -4450,27 +4076,6 @@ function save1() {
 		nextQchip: nextQchip,
 		bribe: bribe,
 		battleFlag: battleFlag,
-
-		tourneyCost: tourneyCost,
-		tourneyLvl: tourneyLvl,
-		stratCounter: stratCounter,
-		roundNum: roundNum,
-		hMove: hMove,
-		vMove: vMove,
-		hMovePrev: hMovePrev,
-		vMovePrev: vMovePrev,
-		aa: aa,
-		ab: ab,
-		ba: ba,
-		bb: bb,
-		rounds: rounds,
-		currentRound: currentRound,
-		rCounter: rCounter,
-		winnerPtr: winnerPtr,
-		high: high,
-		pick: pick,
-		yomi: yomi,
-		yomiBoost: yomiBoost,
 
 		probeNav: probeNav,
 		probeRep: probeRep,
@@ -4507,14 +4112,12 @@ function save1() {
 	localStorage.setItem('saveProjectsUses1', JSON.stringify(projectsUses));
 	localStorage.setItem('saveProjectsFlags1', JSON.stringify(projectsFlags));
 	localStorage.setItem('saveProjectsActive1', JSON.stringify(projectsActive));
-	localStorage.setItem('saveStratsActive1', JSON.stringify(stratsActive));
 }
 
 function save2() {
 	var projectsUses = [];
 	var projectsFlags = [];
 	var projectsActive = [];
-	var stratsActive = [];
 
 	for (var i = 0; i < projects.length; i++) {
 		projectsUses[i] = projects[i].uses;
@@ -4523,10 +4126,6 @@ function save2() {
 
 	for (var i = 0; i < activeProjects.length; i++) {
 		projectsActive[i] = activeProjects[i].id;
-	}
-
-	for (var i = 0; i < allStrats.length; i++) {
-		stratsActive[i] = allStrats[i].active;
 	}
 
 	var saveGame = {
@@ -4567,9 +4166,6 @@ function save2() {
 		honorCount: honorCount,
 		bonusHonor: bonusHonor,
 		honorReward: honorReward,
-
-		resultsTimer: resultsTimer,
-		resultsFlag: resultsFlag,
 
 		honor: honor,
 		maxTrust: maxTrust,
@@ -4704,27 +4300,6 @@ function save2() {
 		bribe: bribe,
 		battleFlag: battleFlag,
 
-		tourneyCost: tourneyCost,
-		tourneyLvl: tourneyLvl,
-		stratCounter: stratCounter,
-		roundNum: roundNum,
-		hMove: hMove,
-		vMove: vMove,
-		hMovePrev: hMovePrev,
-		vMovePrev: vMovePrev,
-		aa: aa,
-		ab: ab,
-		ba: ba,
-		bb: bb,
-		rounds: rounds,
-		currentRound: currentRound,
-		rCounter: rCounter,
-		winnerPtr: winnerPtr,
-		high: high,
-		pick: pick,
-		yomi: yomi,
-		yomiBoost: yomiBoost,
-
 		probeNav: probeNav,
 		probeRep: probeRep,
 		partialProbeSpawn: partialProbeSpawn,
@@ -4760,7 +4335,6 @@ function save2() {
 	localStorage.setItem('saveProjectsUses2', JSON.stringify(projectsUses));
 	localStorage.setItem('saveProjectsFlags2', JSON.stringify(projectsFlags));
 	localStorage.setItem('saveProjectsActive2', JSON.stringify(projectsActive));
-	localStorage.setItem('saveStratsActive2', JSON.stringify(stratsActive));
 }
 
 function load() {
@@ -4808,9 +4382,6 @@ function load() {
 	honorCount = loadGame.honorCount;
 	bonusHonor = loadGame.bonusHonor;
 	honorReward = loadGame.honorReward;
-
-	resultsTimer = loadGame.resultsTimer;
-	resultsFlag = loadGame.resultsFlag;
 
 	honor = loadGame.honor;
 	maxTrust = loadGame.maxTrust;
@@ -4944,27 +4515,6 @@ function load() {
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
 	battleFlag = loadGame.battleFlag;
-
-	tourneyCost = loadGame.tourneyCost;
-	tourneyLvl = loadGame.tourneyLvl;
-	stratCounter = loadGame.stratCounter;
-	roundNum = loadGame.roundNum;
-	hMove = loadGame.hMove;
-	vMove = loadGame.vMove;
-	hMovePrev = loadGame.hMovePrev;
-	vMovePrev = loadGame.vMovePrev;
-	aa = loadGame.aa;
-	ab = loadGame.ab;
-	ba = loadGame.ba;
-	bb = loadGame.bb;
-	rounds = loadGame.rounds;
-	currentRound = loadGame.currentRound;
-	rCounter = loadGame.rCounter;
-	winnerPtr = loadGame.winnerPtr;
-	high = loadGame.high;
-	pick = loadGame.pick;
-	yomi = loadGame.yomi;
-	yomiBoost = loadGame.yomiBoost;
 
 	probeNav = loadGame.probeNav;
 	probeRep = loadGame.probeRep;
@@ -5078,9 +4628,6 @@ function load1() {
 	bonusHonor = loadGame.bonusHonor;
 	honorReward = loadGame.honorReward;
 
-	resultsTimer = loadGame.resultsTimer;
-	resultsFlag = loadGame.resultsFlag;
-
 	honor = loadGame.honor;
 	maxTrust = loadGame.maxTrust;
 	maxTrustCost = loadGame.maxTrustCost;
@@ -5213,27 +4760,6 @@ function load1() {
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
 	battleFlag = loadGame.battleFlag;
-
-	tourneyCost = loadGame.tourneyCost;
-	tourneyLvl = loadGame.tourneyLvl;
-	stratCounter = loadGame.stratCounter;
-	roundNum = loadGame.roundNum;
-	hMove = loadGame.hMove;
-	vMove = loadGame.vMove;
-	hMovePrev = loadGame.hMovePrev;
-	vMovePrev = loadGame.vMovePrev;
-	aa = loadGame.aa;
-	ab = loadGame.ab;
-	ba = loadGame.ba;
-	bb = loadGame.bb;
-	rounds = loadGame.rounds;
-	currentRound = loadGame.currentRound;
-	rCounter = loadGame.rCounter;
-	winnerPtr = loadGame.winnerPtr;
-	high = loadGame.high;
-	pick = loadGame.pick;
-	yomi = loadGame.yomi;
-	yomiBoost = loadGame.yomiBoost;
 
 	probeNav = loadGame.probeNav;
 	probeRep = loadGame.probeRep;
@@ -5331,9 +4857,6 @@ function load2() {
 	bonusHonor = loadGame.bonusHonor;
 	honorReward = loadGame.honorReward;
 
-	resultsTimer = loadGame.resultsTimer;
-	resultsFlag = loadGame.resultsFlag;
-
 	honor = loadGame.honor;
 	maxTrust = loadGame.maxTrust;
 	maxTrustCost = loadGame.maxTrustCost;
@@ -5467,27 +4990,6 @@ function load2() {
 	bribe = loadGame.bribe;
 	battleFlag = loadGame.battleFlag;
 
-	tourneyCost = loadGame.tourneyCost;
-	tourneyLvl = loadGame.tourneyLvl;
-	stratCounter = loadGame.stratCounter;
-	roundNum = loadGame.roundNum;
-	hMove = loadGame.hMove;
-	vMove = loadGame.vMove;
-	hMovePrev = loadGame.hMovePrev;
-	vMovePrev = loadGame.vMovePrev;
-	aa = loadGame.aa;
-	ab = loadGame.ab;
-	ba = loadGame.ba;
-	bb = loadGame.bb;
-	rounds = loadGame.rounds;
-	currentRound = loadGame.currentRound;
-	rCounter = loadGame.rCounter;
-	winnerPtr = loadGame.winnerPtr;
-	high = loadGame.high;
-	pick = loadGame.pick;
-	yomi = loadGame.yomi;
-	yomiBoost = loadGame.yomiBoost;
-
 	probeNav = loadGame.probeNav;
 	probeRep = loadGame.probeRep;
 	partialProbeSpawn = loadGame.partialProbeSpawn;
@@ -5529,7 +5031,6 @@ function reset() {
 	localStorage.removeItem('saveProjectsUses');
 	localStorage.removeItem('saveProjectsFlags');
 	localStorage.removeItem('saveProjectsActive');
-	localStorage.removeItem('saveStratsActive');
 	location.reload();
 }
 
