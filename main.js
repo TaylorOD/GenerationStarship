@@ -1246,7 +1246,6 @@ function factoryReboot() {
 	factoryCostDisplayElement.innerHTML = spellf(factoryCost);
 }
 
-// TODO: Remove
 // SWARM
 
 var giftBits = 0;
