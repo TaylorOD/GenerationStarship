@@ -6,9 +6,6 @@ body {
 }
 
 /* Original CSS */
-#btnMakeProbe {
-	margin-bottom: 2px;
-}
 
 #btnAddProc {
 	width: 70px;
@@ -237,7 +234,6 @@ canvas {
 
 #prestigeDiv {
 	background-color: #222222;
-	/*color: black;*/
 	font-weight: bold;
 }
 
@@ -318,7 +314,7 @@ canvas {
 	margin-right: 2;
 	margin-top: 2;
 	margin-bottom: 7;
-	background-color: white; /* black originally */
+	background-color: white;
 	float: left;
 }
 

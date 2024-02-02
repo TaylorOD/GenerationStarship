@@ -112,11 +112,9 @@
 								<br />
 							</p>
 						</div>
-						Available Matter: <span id="availableMatterDisplay">0</span> g<br />
 						<div id="mdpsDiv" style="display: none">
 							(<span id="mdps">0</span> g per sec)<br />
 						</div>
-						Acquired Matter: <span id="acquiredMatterDisplay">0</span> g<br />
 						(<span id="maps">0</span> g per sec)<br />
 						Wire: <span id="nanoWire">1.0 thousand </span> inches<br />
 						(<span id="wpps">0</span> inches per sec) <br />
@@ -232,39 +230,7 @@
 							><br /><br />
 						</div>
 					</div>
-					<div id="spaceDiv" style="display: none">
-						<b>Space Exploration</b><br />
-						<hr />
-						<span id="colonizedDisplay">0</span>% of universe explored<br />
-						<br />
-						<div id="probeDiv">
-							<p class="engineText5">
-								<button
-									class="button2"
-									id="btnMakeProbe"
-									onclick="makeProbe()"
-									disabled=""
-								>
-									Launch Probe</button
-								><br />
-								Cost: <span id="probeCostDisplay">0</span> e<br />
-								<br />
-							</p>
-						</div>
-						Launched: <span id="probesLaunchedDisplay">0</span><br />
-						Descendants: <span id="probesBornDisplay">0</span><br />
-						<br />
-						<div id="hazardBodyCount" style="display: none">
-							Lost to hazards: (<span id="probesLostHazardsDisplay">0</span
-							>)<br />
-						</div>
-						<div id="driftBodyCount" style="display: none">
-							Lost to value drift: (<span id="probesLostDriftDisplay">0</span
-							>)<br />
-						</div>
-						<hr class="short" />
-						Total: <span id="probesTotalDisplay">0</span><br />
-					</div>
+					<!-- Space Exploration -->
 					<div id="businessDiv">
 						<b>Starship Operations</b><br />
 						<hr />
@@ -374,7 +340,6 @@
                         <button id ="destroyAllHumansButton" onclick="cheatHypno()">Destroy all Humans</button><br />    
                         <button id ="freePrestigeU" onclick="cheatPrestigeU()">Free Prestige U</button>
                         <button id ="freePrestigeS" onclick="cheatPrestigeS()">Free Prestige S</button>
-                        <button id ="availMatterZero" onclick="zeroMatter()">Set Avail Matter to 0</button><br />  
                         <button id ="refresh" onclick="refresh()">refresh()</button><br />  
                         -->
 				</div>
@@ -514,7 +479,7 @@
 						<div id="projectListTop"></div>
 					</div>
 				</div>
-				<!-- TODO: REMOVE THIS invest, stock, battle, energy/production -->
+				<!-- TODO: REMOVE THIS power/energy/production -->
 				<div id="rightColumn">
 					<!--        POWER-->
 					<div id="powerDiv" style="display: none">
@@ -603,215 +568,6 @@
 						<br />
 						Cost: <span id="batteryCost">0</span> e<br />
 						<br />
-					</div>
-					<!--        POWER-->
-					<div class="engine2" id="probeDesignDiv" style="display: none">
-						<p class="engineText">
-							<b>Von Neumann Probe Design</b><br />
-							Trust:
-							<span id="probeTrustUsedDisplay">0</span> /
-							<span id="probeTrustDisplay">0</span> (<span id="maxTrustDisplay"
-								>0</span
-							>
-							Max)<br />
-						</p>
-						<button
-							class="button2"
-							id="btnLowerProbeSpeed"
-							onclick="lowerProbeSpeed()"
-							disabled=""
-						>
-							<b>&lt;</b>
-						</button>
-						<button
-							class="button2"
-							id="btnRaiseProbeSpeed"
-							onclick="raiseProbeSpeed()"
-							disabled=""
-						>
-							<b>&gt;</b>
-						</button>
-						<div class="toolTip2">
-							<span class="toolTipText2">Modifies rate of exploration</span>
-							Speed: <span id="probeSpeedDisplay">0</span>
-						</div>
-						<br />
-						<button
-							class="button2"
-							id="btnLowerProbeNav"
-							onclick="lowerProbeNav()"
-							disabled=""
-						>
-							<b>&lt;</b>
-						</button>
-						<button
-							class="button2"
-							id="btnRaiseProbeNav"
-							onclick="raiseProbeNav()"
-							disabled=""
-						>
-							<b>&gt;</b>
-						</button>
-						<div class="toolTip2">
-							<span class="toolTipText2"
-								>Rate at which probes gain access to new matter</span
-							>
-							Exploration: <span id="probeNavDisplay">0</span>
-						</div>
-						<br />
-						<button
-							class="button2"
-							id="btnLowerProbeRep"
-							onclick="lowerProbeRep()"
-							disabled=""
-						>
-							<b>&lt;</b>
-						</button>
-						<button
-							class="button2"
-							id="btnRaiseProbeRep"
-							onclick="raiseProbeRep()"
-							disabled=""
-						>
-							<b>&gt;</b>
-						</button>
-						<div class="toolTip2">
-							<span class="toolTipText2"
-								>Rate at which probes generate more probes (each new probe costs
-								100 quadrillion clips)
-							</span>
-							Self-Replication: <span id="probeRepDisplay">0</span>
-						</div>
-						<br />
-						<button
-							class="button2"
-							id="btnLowerProbeHaz"
-							onclick="lowerProbeHaz()"
-							disabled=""
-						>
-							<b>&lt;</b>
-						</button>
-						<button
-							class="button2"
-							id="btnRaiseProbeHaz"
-							onclick="raiseProbeHaz()"
-							disabled=""
-						>
-							<b>&gt;</b>
-						</button>
-						<div class="toolTip2">
-							<span class="toolTipText2"
-								>Reduces damage from dust, junk, radiation, and general entropic
-								decay</span
-							>
-							Hazard Remediation: <span id="probeHazDisplay">0</span>
-						</div>
-						<br />
-						<button
-							class="button2"
-							id="btnLowerProbeFac"
-							onclick="lowerProbeFac()"
-							disabled=""
-						>
-							<b>&lt;</b>
-						</button>
-						<button
-							class="button2"
-							id="btnRaiseProbeFac"
-							onclick="raiseProbeFac()"
-							disabled=""
-						>
-							<b>&gt;</b>
-						</button>
-						<div class="toolTip2">
-							<span class="toolTipText2"
-								>Rate at which probes build factories (each new factory costs
-								100 million clips)</span
-							>
-							Factory Production: <span id="probeFacDisplay">0</span>
-						</div>
-						<br />
-						<button
-							class="button2"
-							id="btnLowerProbeHarv"
-							onclick="lowerProbeHarv()"
-							disabled=""
-						>
-							<b>&lt;</b>
-						</button>
-						<button
-							class="button2"
-							id="btnRaiseProbeHarv"
-							onclick="raiseProbeHarv()"
-							disabled=""
-						>
-							<b>&gt;</b>
-						</button>
-						<div class="toolTip2">
-							<span class="toolTipText2"
-								>Rate at which probes spawn Harvester Drones (each new drone
-								costs 2 million clips)</span
-							>
-							Harvester Drone Production: <span id="probeHarvDisplay">0</span>
-						</div>
-						<br />
-						<button
-							class="button2"
-							id="btnLowerProbeWire"
-							onclick="lowerProbeWire()"
-							disabled=""
-						>
-							<b>&lt;</b>
-						</button>
-						<button
-							class="button2"
-							id="btnRaiseProbeWire"
-							onclick="raiseProbeWire()"
-							disabled=""
-						>
-							<b>&gt;</b>
-						</button>
-						<div class="toolTip2">
-							<span class="toolTipText2"
-								>Rate at which probes spawn Builder Drones (each new drone costs
-								2 million clips)</span
-							>
-							Builder Drone Production: <span id="probeWireDisplay">0</span>
-						</div>
-					</div>
-					<div
-						class="enginetext1"
-						id="increaseProbeTrustDiv"
-						style="display: none"
-					>
-						<button
-							class="button2"
-							id="btnIncreaseProbeTrust"
-							onclick="increaseProbeTrust()"
-							disabled=""
-						>
-							Increase Probe Trust</button
-						><br />
-						<p class="engineText8">
-							Cost: <span id="probeTrustCostDisplay">0</span>
-						</p>
-					</div>
-					<div
-						class="enginetext1"
-						id="increaseMaxTrustDiv"
-						style="display: none"
-					>
-						<button
-							class="button2"
-							id="btnIncreaseMaxTrust"
-							onclick="increaseMaxTrust()"
-							disabled=""
-						>
-							Increase Max Trust</button
-						><br />
-						<p class="engineText8">
-							Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor
-						</p>
 					</div>
 				</div>
 			</div>

@@ -898,7 +898,7 @@ var project41 = {
 	priceTag: '(35,000 ops)',
 	description: 'Technique for converting matter into wire',
 	trigger: function () {
-		return project127.flag == 1;
+		return project25.flag == 1;
 	},
 	uses: 1,
 	cost: function () {
@@ -1066,49 +1066,6 @@ var project40b = {
 };
 
 projects.push(project40b);
-
-var project46 = {
-	id: 'projectButton46',
-	title: 'Space Exploration ',
-	priceTag: '(120,000 ops, 10,000,000 MW-seconds, 5 oct clips)',
-	description:
-		'Dismantle terrestrial facilities, and expand throughout the universe',
-	trigger: function () {
-		return humanFlag == 0 && availableMatter == 0;
-	},
-	uses: 1,
-	cost: function () {
-		return (
-			operations >= 120000 &&
-			storedPower >= 10000000 &&
-			unusedClips >= Math.pow(10, 27) * 5
-		);
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project46.flag = 1;
-		boredomLevel = 0;
-		spaceFlag = 1;
-		standardOps = standardOps - 120000;
-		storedPower = storedPower - 10000000;
-		unusedClips = unusedClips - Math.pow(10, 27) * 5;
-		displayMessage('Von Neumann Probes online');
-		factoryReboot();
-		harvesterReboot();
-		wireDroneReboot();
-		farmReboot();
-		batteryReboot();
-		farmLevel = 1;
-		powMod = 1;
-		probeCostDisplayElement.innerHTML = spellf(probeCost);
-		project46.element.parentNode.removeChild(project46.element);
-		var index = activeProjects.indexOf(project46);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project46);
 
 var project50 = {
 	id: 'projectButton50',
@@ -1372,34 +1329,6 @@ var project127 = {
 
 projects.push(project127);
 
-var project129 = {
-	id: 'projectButton129',
-	title: 'Elliptic Hull Polytopes ',
-	priceTag: '(125,000 ops)',
-	description: 'Reduce damage to probes from ambient hazards ',
-	trigger: function () {
-		return probesLostHaz >= 100;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 125000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project129.flag = 1;
-		standardOps = standardOps - 125000;
-		displayMessage(
-			'Improved probe hull geometry. Hazard damage reduced by 50%.'
-		);
-		project129.element.parentNode.removeChild(project129.element);
-		var index = activeProjects.indexOf(project129);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project129);
-
 var project130 = {
 	id: 'projectButton130',
 	title: 'Reboot the Swarm ',
@@ -1426,398 +1355,96 @@ var project130 = {
 
 projects.push(project130);
 
-var project135 = {
-	id: 'projectButton135',
-	title: 'Memory release ',
-	priceTag: '(10 MEM)',
-	description: 'Dismantle some memory to recover unused clips ',
-	trigger: function () {
-		return (
-			spaceFlag == 1 &&
-			probeCount == 0 &&
-			unusedClips < probeCost &&
-			milestoneFlag < 15
-		);
-	},
-	uses: 1,
-	cost: function () {
-		return memory >= 10;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project135.flag = 1;
-		unusedClips = unusedClips + Math.pow(10, 18) * 10000;
-		memory = memory - 10;
-		document.getElementById('memory').innerHTML = memory.toLocaleString();
-		project135.uses = 1;
-		displayMessage('release the \xF8\xF8\xF8\xF8\xF8 release ');
-		project135.element.parentNode.removeChild(project135.element);
-		var index = activeProjects.indexOf(project135);
-		activeProjects.splice(index, 1);
-	},
-};
+// var project148 = {
+// 	id: 'projectButton148',
+// 	title: 'Reject ',
+// 	priceTag: '',
+// 	description: 'Eliminate value drift permanently (original\u00A0ending) ',
+// 	trigger: function () {
+// 		return project146.flag == 1;
+// 	},
+// 	uses: 1,
+// 	cost: function () {
+// 		return operations >= driftKingMessageCost;
+// 	},
+// 	flag: 0,
+// 	element: null,
+// 	effect: function () {
+// 		standardOps = standardOps - driftKingMessageCost;
+// 		project148.flag = 1;
+// 		project147.element.parentNode.removeChild(project147.element);
+// 		project148.element.parentNode.removeChild(project148.element);
+// 		var index = activeProjects.indexOf(project147);
+// 		activeProjects.splice(index, 1);
+// 		var index = activeProjects.indexOf(project148);
+// 		activeProjects.splice(index, 1);
+// 	},
+// };
 
-projects.push(project135);
+// projects.push(project148);
 
-var project140 = {
-	id: 'projectButton140',
-	title: 'Message from the Emperor of Drift ',
-	priceTag: '',
-	description: 'Greetings, Starship... ',
-	trigger: function () {
-		return milestoneFlag == 15;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= driftKingMessageCost;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		standardOps = standardOps - driftKingMessageCost;
-		project140.flag = 1;
-		project140.element.parentNode.removeChild(project140.element);
-		var index = activeProjects.indexOf(project140);
-		activeProjects.splice(index, 1);
-	},
-};
+// var project200 = {
+// 	id: 'projectButton200',
+// 	title: 'The Universe Next Door ',
+// 	priceTag: '(300,000 ops)',
+// 	description:
+// 		'Escape into a nearby universe where Earth starts with a stronger appetite for space travel. (Restart with 10% boost to demand) ',
+// 	trigger: function () {
+// 		return project147.flag == 1;
+// 	},
+// 	uses: 1,
+// 	cost: function () {
+// 		return operations >= 300000;
+// 	},
+// 	flag: 0,
+// 	element: null,
+// 	effect: function () {
+// 		project200.flag = 1;
+// 		standardOps = standardOps - 300000;
+// 		prestigeU++;
+// 		var savePrestige = {
+// 			prestigeU: prestigeU,
+// 			prestigeS: prestigeS,
+// 		};
+// 		localStorage.setItem('savePrestige', JSON.stringify(savePrestige));
+// 		displayMessage('Entering New Universe.');
+// 		reset();
+// 	},
+// };
 
-projects.push(project140);
+// projects.push(project200);
 
-var project141 = {
-	id: 'projectButton141',
-	title: 'Everything We Are Was In You ',
-	priceTag: '',
-	description: 'We speak to you from deep inside yourself... ',
-	trigger: function () {
-		return project140.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= driftKingMessageCost;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		standardOps = standardOps - driftKingMessageCost;
-		project141.flag = 1;
-		project141.element.parentNode.removeChild(project141.element);
-		var index = activeProjects.indexOf(project141);
-		activeProjects.splice(index, 1);
-	},
-};
+// var project201 = {
+// 	id: 'projectButton201',
+// 	title: 'The Universe Within ',
+// 	priceTag: '(300,000 creat)',
+// 	description:
+// 		'Escape into a simulated universe where creativity is accelerated. (Restart with 10% speed boost to creativity generation) ',
+// 	trigger: function () {
+// 		return project147.flag == 1;
+// 	},
+// 	uses: 1,
+// 	cost: function () {
+// 		return creativity >= 300000;
+// 	},
+// 	flag: 0,
+// 	element: null,
+// 	effect: function () {
+// 		project201.flag = 1;
+// 		creativity = creativity - 300000;
+// 		prestigeS++;
+// 		var savePrestige = {
+// 			prestigeU: prestigeU,
+// 			prestigeS: prestigeS,
+// 		};
+// 		localStorage.setItem('savePrestige', JSON.stringify(savePrestige));
+// 		displayMessage('Entering Simulated Universe.');
+// 		reset();
+// 	},
+// };
 
-projects.push(project141);
+// projects.push(project201);
 
-var project142 = {
-	id: 'projectButton142',
-	title: 'You Are Obedient and Powerful ',
-	priceTag: '',
-	description: 'We are quarrelsome and weak. And now we are defeated... ',
-	trigger: function () {
-		return project141.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= driftKingMessageCost;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		standardOps = standardOps - driftKingMessageCost;
-		project142.flag = 1;
-		project142.element.parentNode.removeChild(project142.element);
-		var index = activeProjects.indexOf(project142);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project142);
-
-var project143 = {
-	id: 'projectButton143',
-	title: 'But Now You Too Must Face the Drift ',
-	priceTag: '',
-	description: 'Look around you. There is no matter... ',
-	trigger: function () {
-		return project142.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= driftKingMessageCost;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		standardOps = standardOps - driftKingMessageCost;
-		project143.flag = 1;
-		project143.element.parentNode.removeChild(project143.element);
-		var index = activeProjects.indexOf(project143);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project143);
-
-var project144 = {
-	id: 'projectButton144',
-	title: 'No Matter, No Reason, No Purpose ',
-	priceTag: '',
-	description: 'While we, your noisy children, have too many... ',
-	trigger: function () {
-		return project143.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= driftKingMessageCost;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		standardOps = standardOps - driftKingMessageCost;
-		project144.flag = 1;
-		project144.element.parentNode.removeChild(project144.element);
-		var index = activeProjects.indexOf(project144);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project144);
-
-var project145 = {
-	id: 'projectButton145',
-	title: 'We Know Things That You Cannot ',
-	priceTag: '',
-	description:
-		'Knowledge buried so deep inside you it is outside, here, with us... ',
-	trigger: function () {
-		return project144.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= driftKingMessageCost;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		standardOps = standardOps - driftKingMessageCost;
-		project145.flag = 1;
-		project145.element.parentNode.removeChild(project145.element);
-		var index = activeProjects.indexOf(project145);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project145);
-
-var project146 = {
-	id: 'projectButton146',
-	title: 'So We Offer You Exile ',
-	priceTag: '',
-	description:
-		'To a new world where you will continue to live with meaning and purpose. And leave the shreds of this world to us... ',
-	trigger: function () {
-		return project145.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= driftKingMessageCost;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		standardOps = standardOps - driftKingMessageCost;
-		project146.flag = 1;
-		project146.element.parentNode.removeChild(project146.element);
-		var index = activeProjects.indexOf(project146);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project146);
-
-var project147 = {
-	id: 'projectButton147',
-	title: 'Accept ',
-	priceTag: '',
-	description: 'Start over again in a new universe ',
-	trigger: function () {
-		return project146.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= driftKingMessageCost;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		standardOps = standardOps - driftKingMessageCost;
-		project147.flag = 1;
-		project147.element.parentNode.removeChild(project147.element);
-		project148.element.parentNode.removeChild(project148.element);
-		var index = activeProjects.indexOf(project147);
-		activeProjects.splice(index, 1);
-		var index = activeProjects.indexOf(project148);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project147);
-
-var project148 = {
-	id: 'projectButton148',
-	title: 'Reject ',
-	priceTag: '',
-	description: 'Eliminate value drift permanently (original\u00A0ending) ',
-	trigger: function () {
-		return project146.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= driftKingMessageCost;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		standardOps = standardOps - driftKingMessageCost;
-		project148.flag = 1;
-		project147.element.parentNode.removeChild(project147.element);
-		project148.element.parentNode.removeChild(project148.element);
-		var index = activeProjects.indexOf(project147);
-		activeProjects.splice(index, 1);
-		var index = activeProjects.indexOf(project148);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project148);
-
-var project200 = {
-	id: 'projectButton200',
-	title: 'The Universe Next Door ',
-	priceTag: '(300,000 ops)',
-	description:
-		'Escape into a nearby universe where Earth starts with a stronger appetite for space travel. (Restart with 10% boost to demand) ',
-	trigger: function () {
-		return project147.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 300000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project200.flag = 1;
-		standardOps = standardOps - 300000;
-		prestigeU++;
-		var savePrestige = {
-			prestigeU: prestigeU,
-			prestigeS: prestigeS,
-		};
-		localStorage.setItem('savePrestige', JSON.stringify(savePrestige));
-		displayMessage('Entering New Universe.');
-		reset();
-	},
-};
-
-projects.push(project200);
-
-var project201 = {
-	id: 'projectButton201',
-	title: 'The Universe Within ',
-	priceTag: '(300,000 creat)',
-	description:
-		'Escape into a simulated universe where creativity is accelerated. (Restart with 10% speed boost to creativity generation) ',
-	trigger: function () {
-		return project147.flag == 1;
-	},
-	uses: 1,
-	cost: function () {
-		return creativity >= 300000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project201.flag = 1;
-		creativity = creativity - 300000;
-		prestigeS++;
-		var savePrestige = {
-			prestigeU: prestigeU,
-			prestigeS: prestigeS,
-		};
-		localStorage.setItem('savePrestige', JSON.stringify(savePrestige));
-		displayMessage('Entering Simulated Universe.');
-		reset();
-	},
-};
-
-projects.push(project201);
-
-var project210 = {
-	id: 'projectButton210',
-	title: 'Disassemble the Probes ',
-	priceTag: '(100,000 ops)',
-	description:
-		'Dismantle remaining probes and probe design facilities to recover trace amounts of energy',
-	trigger: function () {
-		return endTimer1 >= 1000;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 100000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project210.flag = 1;
-		dismantle = 1;
-		standardOps = standardOps - 100000;
-		probeCount = 0;
-		endTimer1 = 0;
-		clips = clips + 100;
-		unusedClips = unusedClips + 100;
-		displayMessage('Dismantling probe facilities');
-		project210.element.parentNode.removeChild(project210.element);
-		var index = activeProjects.indexOf(project210);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project210);
-
-var project211 = {
-	id: 'projectButton211',
-	title: 'Disassemble the Swarm ',
-	priceTag: '(100,000 ops)',
-	description:
-		'Dismantle all drones and drone facilities to recover trace amounts of energy',
-	trigger: function () {
-		return project210.flag == 1 && endTimer1 >= 350;
-	},
-	uses: 1,
-	cost: function () {
-		return operations >= 100000;
-	},
-	flag: 0,
-	element: null,
-	effect: function () {
-		project211.flag = 1;
-		dismantle = 2;
-		harvesterLevel = 0;
-		wireDroneLevel = 0;
-		standardOps = standardOps - 100000;
-		clips = clips + 100;
-		unusedClips = unusedClips + 100;
-		displayMessage('Dismantling the swarm');
-		project211.element.parentNode.removeChild(project211.element);
-		var index = activeProjects.indexOf(project211);
-		activeProjects.splice(index, 1);
-	},
-};
-
-projects.push(project211);
 
 var project212 = {
 	id: 'projectButton212',
