@@ -2513,24 +2513,6 @@ function spellf(userInput) {
 	}
 }
 
-// PROBES
-// TODO: Remove probes
-function spawnFactories() {
-	factoryLevel = factoryLevel + amount;
-	factoryLevelDisplayElement;
-	factoryLevelDisplayElement.innerHTML = spellf(factoryLevel);
-}
-
-function spawnHarvesters() {
-	harvesterLevel = harvesterLevel + amount;
-	harvesterLevelDisplayElement.innerHTML = spellf(harvesterLevel);
-}
-
-function spawnWireDrones() {
-	wireDroneLevel = wireDroneLevel + amount;
-	wireDroneLevelDisplayElement.innerHTML = spellf(wireDroneLevel);
-}
-
 // CHECK FOR SAVES
 if (localStorage.getItem('saveGame') != null) {
 	load();
@@ -2612,12 +2594,6 @@ window.setInterval(function () {
 
 	if (dismantle < 4) {
 		clipClick(powMod * fbst * (Math.floor(factoryLevel) * factoryRate));
-	}
-	// Then Other Probe Functions
-	if (spaceFlag == 1) {
-		spawnFactories();
-		spawnHarvesters();
-		spawnWireDrones();
 	}
 
 	// Auto-Clipper

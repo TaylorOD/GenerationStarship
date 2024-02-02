@@ -57,6 +57,7 @@ var dustBusterFlag = 0;
 var demandBoost = 1;
 var humanFlag = 1;
 var trustFlag = 1;
+var spaceFlag = 0;
 var nanoWire = 0;
 var creationFlag = 0;
 var wireProductionFlag = 0;
