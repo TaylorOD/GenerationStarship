@@ -16,7 +16,7 @@ function cacheDOMElements() {
 	readoutElement7 = document.getElementById('readout7');
 	readoutElement8 = document.getElementById('readout8');
 	readoutElementTime = document.getElementById('readoutClock');
-	mpdsDivElement = document.getElementById('mdpsDiv');
+
 	factoryRebootToolTipElement = document.getElementById('factoryRebootToolTip');
 	harvesterRebootToolTipElement = document.getElementById(
 		'harvesterRebootToolTip'
@@ -29,19 +29,12 @@ function cacheDOMElements() {
 	swarmSliderDivElement = document.getElementById('swarmSliderDiv');
 	clipCountCrunchedElement = document.getElementById('clipCountCrunched');
 	dustBusterDivElement = document.getElementById('dustBusterDiv');
-	increaseMaxTrustDivElement = document.getElementById('increaseMaxTrustDiv');
 
 	factoryUpgradeDisplayElement = document.getElementById(
 		'factoryUpgradeDisplay'
 	);
 	droneUpgradeDisplayElement = document.getElementById('droneUpgradeDisplay');
-	btnIncreaseMaxTrustElement = document.getElementById('btnIncreaseMaxTrust');
-	btnMakerProbeElement = document.getElementById('btnMakeProbe');
-	hazardBodyCountElement = document.getElementById('hazardBodyCount');
-	probesLostHazardsDisplayElement = document.getElementById(
-		'probesLostHazardsDisplay'
-	);
-	driftBodyCountElement = document.getElementById('driftBodyCount');
+
 	prestigeDivElement = document.getElementById('prestigeDiv');
 	btnMakePaperclipElement = document.getElementById('btnMakePaperclip');
 	btnBuyWireElement = document.getElementById('btnBuyWire');
@@ -68,38 +61,13 @@ function cacheDOMElements() {
 	harvesterDivElement = document.getElementById('harvesterDiv');
 	wireDroneDivElement = document.getElementById('wireDroneDiv');
 	tothDivElement = document.getElementById('tothDiv');
-	spaceDivElement = document.getElementById('spaceDiv');
-	factoryDivSpaceElement = document.getElementById('factoryDivSpace');
-	droneDivSpaceElement = document.getElementById('droneDivSpace');
-	probeDesignDivElement = document.getElementById('probeDesignDiv');
-	increaseProbeTrustDivElement = document.getElementById(
-		'increaseProbeTrustDiv'
-	);
+
 	qComputingElement = document.getElementById('qComputing');
 	btnMakeFactoryElement = document.getElementById('btnMakeFactory');
 	btnHarvesterRebootElement = document.getElementById('btnHarvesterReboot');
 	btnWireDroneRebootElement = document.getElementById('btnWireDroneReboot');
 	btnFactoryRebootElement = document.getElementById('btnFactoryReboot');
-	probeTrustUsedDisplayElement = document.getElementById(
-		'probeTrustUsedDisplay'
-	);
-	btnIncreaseProbeTrustElement = document.getElementById(
-		'btnIncreaseProbeTrust'
-	);
-	btnRaiseProbeSpeedElement = document.getElementById('btnRaiseProbeSpeed');
-	btnLowerProbeSpeedElement = document.getElementById('btnLowerProbeSpeed');
-	btnRaiseProbeNavElement = document.getElementById('btnRaiseProbeNav');
-	btnLowerProbeNavElement = document.getElementById('btnLowerProbeNav');
-	btnRaiseProbeRepElement = document.getElementById('btnRaiseProbeRep');
-	btnLowerProbeRepElement = document.getElementById('btnLowerProbeRep');
-	btnRaiseProbeHazElement = document.getElementById('btnRaiseProbeHaz');
-	btnLowerProbeHazElement = document.getElementById('btnLowerProbeHaz');
-	btnRaiseProbeFacElement = document.getElementById('btnRaiseProbeFac');
-	btnLowerProbeFacElement = document.getElementById('btnLowerProbeFac');
-	btnRaiseProbeHarvElement = document.getElementById('btnRaiseProbeHarv');
-	btnLowerProbeHarvElement = document.getElementById('btnLowerProbeHarv');
-	btnRaiseProbeWireElement = document.getElementById('btnRaiseProbeWire');
-	btnLowerProbeWireElement = document.getElementById('btnLowerProbeWire');
+
 	coverElement = document.getElementById('cover');
 	hypnoDroneEventDivElement = document.getElementById('hypnoDroneEventDiv');
 	unusedClipsDisplayElement = document.getElementById('unusedClipsDisplay');
@@ -108,29 +76,12 @@ function cacheDOMElements() {
 	clipsElement = document.getElementById('clips');
 	unsoldClipsElement = document.getElementById('unsoldClips');
 	projectListTopElement = document.getElementById('projectListTop');
-	availableMatterDisplayElement = document.getElementById(
-		'availableMatterDisplay'
-	);
 
 	clipmakerLevel2Element = document.getElementById('clipmakerLevel2');
 	clipperCostElement = document.getElementById('clipperCost');
-	acquiredMatterDisplayElement = document.getElementById(
-		'acquiredMatterDisplay'
-	);
+
 	nanoWireElement = document.getElementById('nanoWire');
-	probesBornDisplayElement = document.getElementById('probesBornDisplay');
-	probesTotalDisplayElement = document.getElementById('probesTotalDisplay');
-	probesLaunchedDisplayElement = document.getElementById(
-		'probesLaunchedDisplay'
-	);
-	probeCostDisplayElement = document.getElementById('probeCostDisplay');
-	probeWireDisplayElement = document.getElementById('probeWireDisplay');
-	probeHarvDisplayElement = document.getElementById('probeHarvDisplay');
-	probeFacDisplayElement = document.getElementById('probeFacDisplay');
-	probeRepDisplayElement = document.getElementById('probeRepDisplay');
-	probeHazDisplayElement = document.getElementById('probeHazDisplay');
-	probeNavDisplayElement = document.getElementById('probeNavDisplay');
-	probeTrustDisplayElement = document.getElementById('probeTrustDisplay');
+
 	memoryElement = document.getElementById('memory');
 	processorsElement = document.getElementById('processors');
 	marginElement = document.getElementById('margin');
@@ -150,29 +101,15 @@ function cacheDOMElements() {
 	megaClipperLevelElement = document.getElementById('megaClipperLevel');
 	prestigeUcounterElement = document.getElementById('prestigeUcounter');
 	prestigeScounterElement = document.getElementById('prestigeScounter');
-	maxTrustDisplayElement = document.getElementById('maxTrustDisplay');
-	probeTrustCostDisplayElement = document.getElementById(
-		'probeTrustCostDisplay'
-	);
+
 	farmCostElement = document.getElementById('farmCost');
 	batteryCostElement = document.getElementById('batteryCost');
 	farmLevelElement = document.getElementById('farmLevel');
 	batteryLevelElement = document.getElementById('batteryLevel');
-	availableMatterDisplayElement = document.getElementById(
-		'availableMatterDisplay'
-	);
-	acquiredMatterDisplayElement = document.getElementById(
-		'acquiredMatterDisplay'
-	);
+
 	mapsElement = document.getElementById('maps');
 	nanoWireElement = document.getElementById('nanoWire');
 	wppsElement = document.getElementById('wpps');
-	probeDesignDivElement = document.getElementById('probeDesignDiv');
-	increaseProbeTrustDivElement = document.getElementById(
-		'increaseProbeTrustDiv'
-	);
-	increaseMaxTrustDivElement = document.getElementById('increaseMaxTrustDiv');
-	spaceDivElement = document.getElementById('spaceDiv');
 
 	wireProductionDivElement = document.getElementById('wireProductionDiv');
 	wireTransDivElement = document.getElementById('wireTransDiv');
@@ -267,19 +204,10 @@ function cacheDOMElements() {
 	maxOpsElement = document.getElementById('maxOps');
 	avgSalesElement = document.getElementById('avgSales');
 	avgRevElement = document.getElementById('avgRev');
-	probeTrustCostDisplayElement = document.getElementById(
-		'probeTrustCostDisplay'
-	);
+
 	mdpsElement = document.getElementById('mdps');
 	colonizedDisplayElement = document.getElementById('colonizedDisplay');
-	probesLostHazardsDisplayElement = document.getElementById(
-		'probesLostHazardsDisplay'
-	);
-	probesTotalDisplayElement = document.getElementById('probesTotalDisplay');
-	probesLostDriftDisplayElement = document.getElementById(
-		'probesLostDriftDisplay'
-	);
-	probesTotalDisplayElement = document.getElementById('probesTotalDisplay');
+
 	mapsElement = document.getElementById('maps');
 	swarmGiftDivElement = document.getElementById('swarmGiftDiv');
 	swarmEngineElement = document.getElementById('swarmEngine');
@@ -291,15 +219,10 @@ function cacheDOMElements() {
 
 var clipmakerRateElement;
 var clipmakerRate2Element;
-var availableMatterDisplayElement;
-var acquiredMatterDisplayElement;
+
 var mapsElement;
 var nanoWireElement;
 var wppsElement;
-var probeDesignDivElement;
-var increaseProbeTrustDivElement;
-var increaseMaxTrustDivElement;
-var spaceDivElement;
 
 var wireProductionDivElement;
 var wireTransDivElement;
@@ -389,13 +312,10 @@ var wireDroneLevelSpaceElement;
 var maxOpsElement;
 var avgSalesElement;
 var avgRevElement;
-var probeTrustCostDisplayElement;
+
 var mdpsElement;
 var colonizedDisplayElement;
-var probesLostHazardsDisplayElement;
-var probesTotalDisplayElement;
-var probesLostDriftDisplayElement;
-var probesTotalDisplayElement;
+
 var mapsElement;
 var swarmGiftDivElement;
 var swarmEngineElement;
@@ -403,9 +323,7 @@ var clipsPerSecDivElement;
 var tothDivElement;
 var prestigeUcounterElement;
 var prestigeScounterElement;
-var maxTrustDisplayElement;
 
-var probeTrustCostDisplayElement;
 var farmCostElement;
 var batteryCostElement;
 var farmLevelElement;
@@ -416,23 +334,11 @@ var harvesterCostDisplayElement;
 var harvesterLevelDisplayElement;
 var megaClipperCostElement;
 var megaClipperLevelElement;
-var availableMatterDisplayElement;
 
 var clipmakerLevel2Element;
 var clipperCostElement;
-var acquiredMatterDisplayElement;
 var nanoWireElement;
-var probesBornDisplayElement;
-var probesTotalDisplayElement;
-var probesLaunchedDisplayElement;
-var probeCostDisplayElement;
-var probeWireDisplayElement;
-var probeHarvDisplayElement;
-var probeFacDisplayElement;
-var probeRepDisplayElement;
-var probeHazDisplayElement;
-var probeNavDisplayElement;
-var probeTrustDisplayElement;
+
 var memoryElement;
 var processorsElement;
 var marginElement;
@@ -461,8 +367,6 @@ var readoutElement7;
 var readoutElement8;
 var readoutElementTime;
 
-var mpdsDivElement;
-
 var factoryRebootToolTipElement;
 var harvesterRebootToolTipElement;
 var wireDroneRebootToolTipElement;
@@ -474,15 +378,9 @@ var clipCountCrunchedElement;
 
 var dustBusterDivElement;
 
-var increaseMaxTrustDivElement;
-
 var factoryUpgradeDisplayElement;
 var droneUpgradeDisplayElement;
-var btnIncreaseMaxTrustElement;
-var btnMakerProbeElement;
-var hazardBodyCountElement;
-var probesLostHazardsDisplayElement;
-var driftBodyCountElement;
+
 var prestigeDivElement;
 var btnMakePaperclipElement;
 var btnBuyWireElement;
@@ -508,33 +406,12 @@ var wireTransDivElement;
 var harvesterDivElement;
 var wireDroneDivElement;
 var tothDivElement;
-var spaceDivElement;
-var factoryDivSpaceElement;
-var droneDivSpaceElement;
-var probeDesignDivElement;
-var increaseProbeTrustDivElement;
+
 var qComputingElement;
 var btnMakeFactoryElement;
 var btnHarvesterRebootElement;
 var btnWireDroneRebootElement;
 var btnFactoryRebootElement;
-
-var probeTrustUsedDisplayElement;
-var btnIncreaseProbeTrustElement;
-var btnRaiseProbeSpeedElement;
-var btnLowerProbeSpeedElement;
-var btnRaiseProbeNavElement;
-var btnLowerProbeNavElement;
-var btnRaiseProbeRepElement;
-var btnLowerProbeRepElement;
-var btnRaiseProbeHazElement;
-var btnLowerProbeHazElement;
-var btnRaiseProbeFacElement;
-var btnLowerProbeFacElement;
-var btnRaiseProbeHarvElement;
-var btnLowerProbeHarvElement;
-var btnRaiseProbeWireElement;
-var btnLowerProbeWireElement;
 
 var coverElement;
 
@@ -869,18 +746,6 @@ function buttonUpdate() {
 		swarmGiftDivElement.style.display = '';
 	}
 
-	if (project127.flag == 1 && spaceFlag == 0) {
-		powerDivElement.style.display = '';
-	} else {
-		powerDivElement.style.display = 'none';
-	}
-
-	if (spaceFlag == 0) {
-		mpdsDivElement.style.display = 'none';
-	} else if (spaceFlag == 1) {
-		mpdsDivElement.style.display = '';
-	}
-
 	factoryRebootToolTipElement.innerHTML = '+' + spellf(factoryBill) + ' clips';
 	harvesterRebootToolTipElement.innerHTML =
 		'+' + spellf(harvesterBill) + ' clips';
@@ -914,32 +779,6 @@ function buttonUpdate() {
 
 	if (maxDroneLevel >= 50000) {
 		droneUpgradeDisplayElement.style.display = 'none';
-	}
-
-	if (honor < maxTrustCost) {
-		btnIncreaseMaxTrustElement.disabled = true;
-	} else {
-		btnIncreaseMaxTrustElement.disabled = false;
-	}
-
-	if (unusedClips < probeCost) {
-		btnMakerProbeElement.disabled = true;
-	} else {
-		btnMakerProbeElement.disabled = false;
-	}
-
-	if (probesLostHaz < 1) {
-		hazardBodyCountElement.style.display = 'none';
-	} else {
-		hazardBodyCountElement.style.display = '';
-
-		probesLostHazardsDisplayElement.innerHTML = spellf(probesLostHaz);
-	}
-
-	if (probesLostDrift < 1) {
-		driftBodyCountElement.style.display = 'none';
-	} else {
-		driftBodyCountElement.style.display = '';
 	}
 
 	if (prestigeU < 1 && prestigeS < 1) {
@@ -1072,23 +911,6 @@ function buttonUpdate() {
 		tothDivElement.style.display = '';
 	}
 
-	if (spaceFlag === 0) {
-		spaceDivElement.style.display = 'none';
-		factoryDivSpaceElement.style.display = 'none';
-		droneDivSpaceElement.style.display = 'none';
-		probeDesignDivElement.style.display = 'none';
-		increaseProbeTrustDivElement.style.display = 'none';
-	} else {
-		spaceDivElement.style.display = '';
-		factoryDivSpaceElement.style.display = '';
-		droneDivSpaceElement.style.display = '';
-		probeDesignDivElement.style.display = '';
-		increaseProbeTrustDivElement.style.display = '';
-		factoryDivElement.style.display = 'none';
-		harvesterDivElement.style.display = 'none';
-		wireDroneDivElement.style.display = 'none';
-	}
-
 	if (qFlag === 0) {
 		qComputingElement.style.display = 'none';
 	} else {
@@ -1117,97 +939,6 @@ function buttonUpdate() {
 		btnFactoryRebootElement.disabled = true;
 	} else {
 		btnFactoryRebootElement.disabled = false;
-	}
-
-	// PROBE DESIGN
-
-	probeUsedTrust =
-		probeNav + probeRep + probeHaz + probeFac + probeHarv + probeWire;
-
-	probeTrustUsedDisplayElement.innerHTML = probeUsedTrust;
-
-	if (probeTrust >= maxTrust) {
-		btnIncreaseProbeTrustElement.disabled = true;
-	} else {
-		btnIncreaseProbeTrustElement.disabled = false;
-	}
-
-	if (probeTrust - probeUsedTrust < 1) {
-		btnRaiseProbeSpeedElement.disabled = true;
-	} else {
-		btnRaiseProbeSpeedElement.disabled = false;
-	}
-
-	if (probeTrust - probeUsedTrust < 1) {
-		btnRaiseProbeNavElement.disabled = true;
-	} else {
-		btnRaiseProbeNavElement.disabled = false;
-	}
-
-	if (probeNav < 1) {
-		btnLowerProbeNavElement.disabled = true;
-	} else {
-		btnLowerProbeNavElement.disabled = false;
-	}
-
-	if (probeTrust - probeUsedTrust < 1) {
-		btnRaiseProbeRepElement.disabled = true;
-	} else {
-		btnRaiseProbeRepElement.disabled = false;
-	}
-
-	if (probeRep < 1) {
-		btnLowerProbeRepElement.disabled = true;
-	} else {
-		btnLowerProbeRepElement.disabled = false;
-	}
-
-	if (probeTrust - probeUsedTrust < 1) {
-		btnRaiseProbeHazElement.disabled = true;
-	} else {
-		btnRaiseProbeHazElement.disabled = false;
-	}
-
-	if (probeHaz < 1) {
-		btnLowerProbeHaz.disabled = true;
-	} else {
-		btnLowerProbeHaz.disabled = false;
-	}
-
-	if (probeTrust - probeUsedTrust < 1) {
-		btnRaiseProbeFacElement.disabled = true;
-	} else {
-		btnRaiseProbeFacElement.disabled = false;
-	}
-
-	if (probeFac < 1) {
-		btnLowerProbeFacElement.disabled = true;
-	} else {
-		btnLowerProbeFacElement.disabled = false;
-	}
-
-	if (probeTrust - probeUsedTrust < 1) {
-		btnRaiseProbeHarvElement.disabled = true;
-	} else {
-		btnRaiseProbeHarvElement.disabled = false;
-	}
-
-	if (probeHarv < 1) {
-		btnLowerProbeHarvElement.disabled = true;
-	} else {
-		btnLowerProbeHarvElement.disabled = false;
-	}
-
-	if (probeTrust - probeUsedTrust < 1) {
-		btnRaiseProbeWireElement.disabled = true;
-	} else {
-		btnRaiseProbeWireElement.disabled = false;
-	}
-
-	if (probeWire < 1) {
-		btnLowerProbeWireElement.disabled = true;
-	} else {
-		btnLowerProbeWireElement.disabled = false;
 	}
 
 	coverElement.style.display = 'none';
@@ -1515,7 +1246,6 @@ function factoryReboot() {
 	factoryCostDisplayElement.innerHTML = spellf(factoryCost);
 }
 
-// TODO: Remove
 // SWARM
 
 var giftBits = 0;
@@ -1540,23 +1270,6 @@ function updateSwarm() {
 		btnEntertainSwarmElement.disabled = true;
 	} else {
 		btnEntertainSwarmElement.disabled = false;
-	}
-
-	if (availableMatter == 0 && harvesterLevel + wireDroneLevel >= 1) {
-		boredomLevel = boredomLevel + 1;
-	} else if (availableMatter > 0 && boredomLevel > 0) {
-		boredomLevel = boredomLevel - 1;
-	}
-
-	if (boredomLevel >= 30000) {
-		boredomFlag = 1;
-		boredomLevel = 0;
-		if (boredomMsg == 0) {
-			displayMessage(
-				'No matter to harvest. Inactivity has caused the Swarm to become bored'
-			);
-			boredomMsg = 1;
-		}
 	}
 
 	var droneRatio =
@@ -2222,11 +1935,6 @@ function cheatHypno() {
 	hypnoDroneEvent();
 }
 
-function zeroMatter() {
-	availableMatter = 0;
-	//displayMessage("you just cheated");
-}
-
 function calculateTrust() {
 	if (clips > nextTrust - 1) {
 		trust = trust + 1;
@@ -2389,21 +2097,6 @@ function milestoneCheck() {
 		displayMessage(
 			'Terrestrial resources fully utilized in ' + timeCruncher(ticks)
 		);
-	}
-
-	if (milestoneFlag == 14 && clips >= totalMatter) {
-		milestoneFlag = milestoneFlag + 1;
-		displayMessage('Universal Paperclips achieved in ' + timeCruncher(ticks));
-	}
-
-	if (
-		milestoneFlag == 14 &&
-		foundMatter >= totalMatter &&
-		availableMatter < 1 &&
-		wire < 1
-	) {
-		milestoneFlag = milestoneFlag + 1;
-		displayMessage('Universal Paperclips achieved in ' + timeCruncher(ticks));
 	}
 }
 
@@ -2819,348 +2512,6 @@ function spellf(userInput) {
 	}
 }
 
-// PROBES
-
-var probeNav = 0;
-var probeXBaseRate = 1750000000000000000;
-var probeRep = 0;
-var probeRepBaseRate = 0.00005;
-var partialProbeSpawn = 0;
-var probeHaz = 0;
-var probeHazBaseRate = 0.01;
-var partialProbeHaz = 0;
-var probesLostHaz = 0;
-var probesLostDrift = 0;
-var probeFac = 0;
-var probeFacBaseRate = 0.000001;
-var probeHarv = 0;
-var probeHarvBaseRate = 0.000002;
-var probeWire = 0;
-var probeWireBaseRate = 0.000002;
-var probeDescendents = 0;
-var probeTrust = 0;
-var probeUsedTrust = 0;
-var probeDriftBaseRate = 0.000001;
-var probeLaunchLevel = 0;
-var probeCost = Math.pow(10, 17);
-
-var probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 500);
-
-function increaseProbeTrust() {
-	if (probeTrust < maxTrust) {
-		probeTrust++;
-		probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 500);
-		probeTrustDisplayElement.innerHTML = probeTrust;
-		probeTrustCostDisplayElement.innerHTML = formatWithCommas(
-			Math.floor(probeTrustCost)
-		);
-		displayMessage('WARNING: Risk of value drift increased');
-	}
-}
-
-function increaseMaxTrust() {
-	if (honor >= maxTrustCost) {
-		honor = honor - maxTrustCost;
-
-		maxTrust = maxTrust + 10;
-		// maxTrustCost = Math.floor(Math.pow(maxTrust, 1.17)*1000);
-		maxTrustDisplayElement.innerHTML = formatWithCommas(maxTrust);
-		// document.getElementById('maxTrustCostDisplay').innerHTML = Math.floor(maxTrustCost).toLocaleString();
-		displayMessage('Maximum trust increased, probe design space expanded');
-	}
-}
-
-function raiseProbeNav() {
-	if (probeUsedTrust < probeTrust) {
-		probeNav++;
-		probeNavDisplayElement.innerHTML = probeNav;
-	}
-}
-
-function lowerProbeNav() {
-	if (probeNav > 0) {
-		probeNav--;
-		probeNavDisplayElement.innerHTML = probeNav;
-	}
-}
-
-function raiseProbeHaz() {
-	if (probeUsedTrust < probeTrust) {
-		probeHaz++;
-		probeHazDisplayElement.innerHTML = probeHaz;
-	}
-}
-
-function lowerProbeHaz() {
-	if (probeHaz > 0) {
-		probeHaz--;
-		probeHazDisplayElement.innerHTML = probeHaz;
-	}
-}
-
-function raiseProbeRep() {
-	if (probeUsedTrust < probeTrust) {
-		probeRep++;
-		probeRepDisplayElement.innerHTML = probeRep;
-	}
-}
-
-function lowerProbeRep() {
-	if (probeRep > 0) {
-		probeRep--;
-		probeRepDisplayElement.innerHTML = probeRep;
-	}
-}
-
-function raiseProbeFac() {
-	if (probeUsedTrust < probeTrust) {
-		probeFac++;
-		probeFacDisplayElement.innerHTML = probeFac;
-	}
-}
-
-function lowerProbeFac() {
-	if (probeFac > 0) {
-		probeFac--;
-		probeFacDisplayElement.innerHTML = probeFac;
-	}
-}
-
-function raiseProbeHarv() {
-	if (probeUsedTrust < probeTrust) {
-		probeHarv++;
-		probeHarvDisplayElement.innerHTML = probeHarv;
-	}
-}
-
-function lowerProbeHarv() {
-	if (probeHarv > 0) {
-		probeHarv--;
-		probeHarvDisplayElement.innerHTML = probeHarv;
-	}
-}
-
-function raiseProbeWire() {
-	if (probeUsedTrust < probeTrust) {
-		probeWire++;
-		probeWireDisplayElement.innerHTML = probeWire;
-	}
-}
-
-function lowerProbeWire() {
-	if (probeWire > 0) {
-		probeWire--;
-		probeWireDisplayElement.innerHTML = probeWire;
-	}
-}
-
-function makeProbe() {
-	if (unusedClips > probeCost) {
-		unusedClips = unusedClips - probeCost;
-		unusedClipsDisplayElement.innerHTML = spellf(unusedClips);
-		probeLaunchLevel++;
-		probeCount++;
-		probesLaunchedDisplayElement.innerHTML = formatWithCommas(probeLaunchLevel);
-
-		// probeCost = Math.pow((probeLaunchLevel+1), 1.23)*Math.pow(10, 20);
-		// probeCost = Math.pow(10, 20);
-
-		probeCostDisplayElement.innerHTML = spellf(probeCost);
-	}
-}
-
-function spawnProbes() {
-	var nextGen = probeCount * probeRepBaseRate * probeRep;
-
-	// Cap Probe Growth
-	if (probeCount >= 999999999999999999999999999999999999999999999999) {
-		nextGen = 0;
-	}
-
-	// Partial Spawn = early slow growth
-	if (nextGen > 0 && nextGen < 1) {
-		partialProbeSpawn = partialProbeSpawn + nextGen;
-		if (partialProbeSpawn >= 1) {
-			nextGen = 1;
-			partialProbeSpawn = 0;
-		}
-	}
-
-	// Probes Cost Clips
-	if (nextGen * probeCost > unusedClips) {
-		nextGen = Math.floor(unusedClips / probeCost);
-	}
-
-	unusedClips = unusedClips - nextGen * probeCost;
-	unusedClipsDisplayElement.innerHTML = spellf(unusedClips);
-
-	probeDescendents = probeDescendents + nextGen;
-	probeCount = probeCount + nextGen;
-	probesBornDisplayElement.innerHTML = spellf(probeDescendents);
-	probesTotalDisplayElement.innerHTML = spellf(probeCount);
-}
-
-function exploreUniverse() {
-	availableMatterDisplayElement.innerHTML = spellf(availableMatter);
-	var xRate = Math.floor(probeCount) * probeXBaseRate * probeSpeed * probeNav;
-	if (xRate > totalMatter - foundMatter) {
-		xRate = totalMatter - foundMatter;
-	}
-	foundMatter = foundMatter + xRate;
-	availableMatter = availableMatter + xRate;
-
-	var newRate = xRate * 100;
-	mdpsElement.innerHTML = spellf(xRate * 100);
-	availableMatterDisplayElement.innerHTML = spellf(availableMatter);
-	colonizedDisplayElement.innerHTML = (
-		100 /
-		(totalMatter / foundMatter)
-	).toFixed(12);
-}
-
-function encounterHazards() {
-	var boost = Math.pow(probeHaz, 1.6);
-	var amount = probeCount * (probeHazBaseRate / (3 * boost + 1));
-	if (project129.flag == 1) {
-		amount = 0.5 * amount;
-	}
-	if (amount < 1) {
-		partialProbeHaz = partialProbeHaz + amount;
-		if (partialProbeHaz >= 1) {
-			amount = 1;
-			partialProbeHaz = 0;
-			probeCount = probeCount - amount;
-			if (probeCount < 0) {
-				probeCount = 0;
-			}
-			probesLostHaz = probesLostHaz + amount;
-			probesLostHazardsDisplayElement.innerHTML = spellf(probesLostHaz);
-			probesTotalDisplayElement.innerHTML = spellf(probeCount);
-		}
-	} else {
-		if (amount > probeCount) {
-			amount = probeCount;
-		}
-		probeCount = probeCount - amount;
-		if (probeCount < 0) {
-			probeCount = 0;
-		}
-		probesLostHaz = probesLostHaz + amount;
-		probesLostHazardsDisplayElement.innerHTML = spellf(probesLostHaz);
-		probesTotalDisplayElement.innerHTML = spellf(probeCount);
-	}
-}
-
-function spawnFactories() {
-	var amount = probeCount * probeFacBaseRate * probeFac;
-
-	//FACTORIES COST 100M CLIPS EACH
-	if (amount * 100000000 > unusedClips) {
-		amount = Math.floor(unusedClips / 100000000);
-	}
-	unusedClips = unusedClips - amount * 100000000;
-	unusedClipsDisplayElement.innerHTML = spellf(unusedClips);
-	factoryLevel = factoryLevel + amount;
-	factoryLevelDisplayElement;
-	factoryLevelDisplayElement.innerHTML = spellf(factoryLevel);
-}
-
-function spawnHarvesters() {
-	var amount = probeCount * probeHarvBaseRate * probeHarv;
-
-	//DRONES COST 2M CLIPS EACH
-	if (amount * 2000000 > unusedClips) {
-		amount = Math.floor(unusedClips / 2000000);
-	}
-	unusedClips = unusedClips - amount * 2000000;
-	unusedClipsDisplayElement.innerHTML = spellf(unusedClips);
-	harvesterLevel = harvesterLevel + amount;
-	harvesterLevelDisplayElement.innerHTML = spellf(harvesterLevel);
-}
-
-function spawnWireDrones() {
-	var amount = probeCount * probeWireBaseRate * probeWire;
-
-	//DRONES COST 2M CLIPS EACH
-	if (amount * 2000000 > unusedClips) {
-		amount = Math.floor(unusedClips / 2000000);
-	}
-	unusedClips = unusedClips - amount * 2000000;
-	unusedClipsDisplayElement.innerHTML = spellf(unusedClips);
-	wireDroneLevel = wireDroneLevel + amount;
-	wireDroneLevelDisplayElement.innerHTML = spellf(wireDroneLevel);
-}
-
-function drift() {
-	var amount = probeCount * probeDriftBaseRate * Math.pow(probeTrust, 1.2);
-	if (amount > probeCount) {
-		amount = probeCount;
-	}
-	if (project148.flag == 1) {
-		amount = 0;
-	}
-	probeCount = probeCount - amount;
-	probesLostDrift = probesLostDrift + amount;
-
-	probesLostDriftDisplayElement.innerHTML = spellf(probesLostDrift);
-	probesTotalDisplayElement.innerHTML = spellf(probeCount);
-}
-
-// DRONES
-
-function acquireMatter() {
-	if (availableMatter > 0) {
-		var dbsth = 1;
-		if (droneBoost > 1) {
-			dbsth = droneBoost * Math.floor(harvesterLevel);
-		}
-
-		var mtr = powMod * dbsth * Math.floor(harvesterLevel) * harvesterRate;
-
-		mtr = mtr * ((200 - sliderPos) / 100);
-
-		if (mtr > availableMatter) {
-			mtr = availableMatter;
-		}
-
-		availableMatter = availableMatter - mtr;
-
-		acquiredMatter = acquiredMatter + mtr;
-		availableMatterDisplayElement.innerHTML = spellf(availableMatter);
-		acquiredMatterDisplayElement.innerHTML = spellf(acquiredMatter);
-
-		mapsElement.innerHTML = spellf(mtr * 100);
-	} else {
-		mapsElement.innerHTML = 0;
-	}
-}
-
-function processMatter() {
-	if (acquiredMatter > 0) {
-		var dbstw = 1;
-		if (droneBoost > 1) {
-			dbstw = droneBoost * Math.floor(wireDroneLevel);
-		}
-
-		var a = powMod * dbstw * Math.floor(wireDroneLevel) * wireDroneRate;
-
-		a = a * ((200 - sliderPos) / 100);
-
-		if (a > acquiredMatter) {
-			a = acquiredMatter;
-		}
-
-		acquiredMatter = acquiredMatter - a;
-		wire = wire + a;
-		acquiredMatterDisplayElement.innerHTML = spellf(acquiredMatter);
-		nanoWireElement.innerHTML = spellf(wire);
-
-		wppsElement.innerHTML = spellf(a * 100);
-	} else {
-		wppsElement.innerHTML = 0;
-	}
-}
-
 // CHECK FOR SAVES
 if (localStorage.getItem('saveGame') != null) {
 	load();
@@ -3223,11 +2574,6 @@ window.setInterval(function () {
 		buyWire();
 	}
 
-	// First, Explore
-	if (probeCount >= 1) {
-		exploreUniverse();
-	}
-
 	// Then, Drones
 	if (humanFlag == 0 && spaceFlag == 0) {
 		updateDroneButtons();
@@ -3236,8 +2582,6 @@ window.setInterval(function () {
 	if (humanFlag == 0) {
 		updatePower();
 		updateSwarm();
-		acquireMatter();
-		processMatter();
 	}
 
 	// Then Factories
@@ -3249,19 +2593,6 @@ window.setInterval(function () {
 
 	if (dismantle < 4) {
 		clipClick(powMod * fbst * (Math.floor(factoryLevel) * factoryRate));
-	}
-	// Then Other Probe Functions
-	if (spaceFlag == 1) {
-		if (probeCount < 0) {
-			probeCount = 0;
-		}
-
-		encounterHazards();
-		spawnFactories();
-		spawnHarvesters();
-		spawnWireDrones();
-		spawnProbes();
-		drift();
 	}
 
 	// Auto-Clipper
@@ -3283,21 +2614,6 @@ window.setInterval(function () {
 	}
 
 	// Ending
-	if (dismantle >= 1) {
-		probeDesignDivElement.style.display = 'none';
-		if (endTimer1 >= 50) {
-			increaseProbeTrustDivElement.style.display = 'none';
-		}
-
-		if (endTimer1 >= 100) {
-			increaseMaxTrustDivElement.style.display = 'none';
-		}
-
-		if (endTimer1 >= 150) {
-			spaceDivElement.style.display = 'none';
-		}
-	}
-
 	if (dismantle >= 2) {
 		wireProductionDivElement.style.display = 'none';
 		wireTransDivElement.style.display = '';
@@ -3432,14 +2748,6 @@ window.setInterval(function () {
 		projectsDivElement.style.display = 'none';
 	}
 
-	if (project148.flag == 1) {
-		endTimer1++;
-	}
-
-	if (project211.flag == 1) {
-		endTimer2++;
-	}
-
 	if (project212.flag == 1) {
 		endTimer3++;
 	}
@@ -3539,26 +2847,10 @@ window.setInterval(function () {
 function refresh() {
 	//DEBUG
 
-	//    availableMatter = Math.pow(10, 24)*6000;
-	//    acquiredMatter = 0;
-
-	availableMatterDisplayElement.innerHTML = spellf(availableMatter);
-
 	clipmakerLevel2Element.innerHTML = clipmakerLevel;
 	clipperCostElement.innerHTML = formatWithCommas(clipperCost, 2);
-	acquiredMatterDisplayElement.innerHTML = spellf(acquiredMatter);
 	nanoWireElement.innerHTML = spellf(wire);
-	probesBornDisplayElement.innerHTML = spellf(probeDescendents);
-	probesTotalDisplayElement.innerHTML = spellf(probeCount);
-	probesLaunchedDisplayElement.innerHTML = formatWithCommas(probeLaunchLevel);
-	probeCostDisplayElement.innerHTML = spellf(probeCost);
-	probeWireDisplayElement.innerHTML = probeWire;
-	probeHarvDisplayElement.innerHTML = probeHarv;
-	probeFacDisplayElement.innerHTML = probeFac;
-	probeRepDisplayElement.innerHTML = probeRep;
-	probeHazDisplayElement.innerHTML = probeHaz;
-	probeNavDisplayElement.innerHTML = probeNav;
-	probeTrustDisplayElement.innerHTML = probeTrust;
+
 	memoryElement.innerHTML = memory;
 	processorsElement.innerHTML = processors;
 	marginElement.innerHTML = margin.toFixed(2);
@@ -3575,9 +2867,7 @@ function refresh() {
 	megaClipperLevelElement.innerHTML = megaClipperLevel;
 	prestigeUcounterElement.innerHTML = prestigeU + 1;
 	prestigeScounterElement.innerHTML = prestigeS + 1;
-	maxTrustDisplayElement.innerHTML = formatWithCommas(maxTrust);
 
-	probeTrustCostDisplayElement.innerHTML = formatWithCommas(probeTrustCost);
 	farmCostElement.innerHTML = spellf(farmCost);
 	batteryCostElement.innerHTML = spellf(batteryCost);
 	farmLevelElement.innerHTML = formatWithCommas(farmLevel);
@@ -3631,7 +2921,7 @@ function save() {
 		dustBusterStatus: dustBusterStatus,
 		wirePriceTimer: wirePriceTimer,
 		qFade: qFade,
-		driftKingMessageCost: driftKingMessageCost,
+
 		sliderPos: sliderPos,
 		tempOps: tempOps,
 		standardOps: standardOps,
@@ -3642,9 +2932,6 @@ function save() {
 		boredomFlag: boredomFlag,
 		boredomMsg: boredomMsg,
 
-		honor: honor,
-		maxTrust: maxTrust,
-		maxTrustCost: maxTrustCost,
 		disorgCounter: disorgCounter,
 		disorgFlag: disorgFlag,
 		synchCost: synchCost,
@@ -3749,9 +3036,7 @@ function save() {
 		factoryLevel: factoryLevel,
 		factoryBoost: factoryBoost,
 		droneBoost: droneBoost,
-		availableMatter: availableMatter,
-		acquiredMatter: acquiredMatter,
-		processedMatter: processedMatter,
+
 		harvesterLevel: harvesterLevel,
 		wireDroneLevel: wireDroneLevel,
 		factoryCost: factoryCost,
@@ -3763,30 +3048,12 @@ function save() {
 		harvesterBill: harvesterBill,
 		wireDroneBill: wireDroneBill,
 		factoryBill: factoryBill,
-		probeCount: probeCount,
-		totalMatter: totalMatter,
-		foundMatter: foundMatter,
+
 		qFlag: qFlag,
 		qClock: qClock,
 		qChipCost: qChipCost,
 		nextQchip: nextQchip,
 		bribe: bribe,
-
-		probeNav: probeNav,
-		probeRep: probeRep,
-		partialProbeSpawn: partialProbeSpawn,
-		probeHaz: probeHaz,
-		partialProbeHaz: partialProbeHaz,
-		probesLostHaz: probesLostHaz,
-		probesLostDrift: probesLostDrift,
-		probeFac: probeFac,
-		probeWire: probeWire,
-
-		probeTrust: probeTrust,
-		probeUsedTrust: probeUsedTrust,
-		probeTrustCost: probeTrustCost,
-		probeLaunchLevel: probeLaunchLevel,
-		probeCost: probeCost,
 	};
 
 	localStorage.setItem('saveGame', JSON.stringify(saveGame));
@@ -3827,7 +3094,7 @@ function save1() {
 		dustBusterStatus: dustBusterStatus,
 		wirePriceTimer: wirePriceTimer,
 		qFade: qFade,
-		driftKingMessageCost: driftKingMessageCost,
+
 		sliderPos: sliderPos,
 		tempOps: tempOps,
 		standardOps: standardOps,
@@ -3838,9 +3105,6 @@ function save1() {
 		boredomFlag: boredomFlag,
 		boredomMsg: boredomMsg,
 
-		honor: honor,
-		maxTrust: maxTrust,
-		maxTrustCost: maxTrustCost,
 		disorgCounter: disorgCounter,
 		disorgFlag: disorgFlag,
 		synchCost: synchCost,
@@ -3945,9 +3209,7 @@ function save1() {
 		factoryLevel: factoryLevel,
 		factoryBoost: factoryBoost,
 		droneBoost: droneBoost,
-		availableMatter: availableMatter,
-		acquiredMatter: acquiredMatter,
-		processedMatter: processedMatter,
+
 		harvesterLevel: harvesterLevel,
 		wireDroneLevel: wireDroneLevel,
 		factoryCost: factoryCost,
@@ -3959,30 +3221,12 @@ function save1() {
 		harvesterBill: harvesterBill,
 		wireDroneBill: wireDroneBill,
 		factoryBill: factoryBill,
-		probeCount: probeCount,
-		totalMatter: totalMatter,
-		foundMatter: foundMatter,
+
 		qFlag: qFlag,
 		qClock: qClock,
 		qChipCost: qChipCost,
 		nextQchip: nextQchip,
 		bribe: bribe,
-
-		probeNav: probeNav,
-		probeRep: probeRep,
-		partialProbeSpawn: partialProbeSpawn,
-		probeHaz: probeHaz,
-		partialProbeHaz: partialProbeHaz,
-		probesLostHaz: probesLostHaz,
-		probesLostDrift: probesLostDrift,
-		probeFac: probeFac,
-		probeWire: probeWire,
-
-		probeTrust: probeTrust,
-		probeUsedTrust: probeUsedTrust,
-		probeTrustCost: probeTrustCost,
-		probeLaunchLevel: probeLaunchLevel,
-		probeCost: probeCost,
 	};
 
 	localStorage.setItem('saveGame1', JSON.stringify(saveGame));
@@ -4023,7 +3267,7 @@ function save2() {
 		dustBusterStatus: dustBusterStatus,
 		wirePriceTimer: wirePriceTimer,
 		qFade: qFade,
-		driftKingMessageCost: driftKingMessageCost,
+
 		sliderPos: sliderPos,
 		tempOps: tempOps,
 		standardOps: standardOps,
@@ -4034,9 +3278,6 @@ function save2() {
 		boredomFlag: boredomFlag,
 		boredomMsg: boredomMsg,
 
-		honor: honor,
-		maxTrust: maxTrust,
-		maxTrustCost: maxTrustCost,
 		disorgCounter: disorgCounter,
 		disorgFlag: disorgFlag,
 		synchCost: synchCost,
@@ -4141,9 +3382,7 @@ function save2() {
 		factoryLevel: factoryLevel,
 		factoryBoost: factoryBoost,
 		droneBoost: droneBoost,
-		availableMatter: availableMatter,
-		acquiredMatter: acquiredMatter,
-		processedMatter: processedMatter,
+
 		harvesterLevel: harvesterLevel,
 		wireDroneLevel: wireDroneLevel,
 		factoryCost: factoryCost,
@@ -4155,30 +3394,12 @@ function save2() {
 		harvesterBill: harvesterBill,
 		wireDroneBill: wireDroneBill,
 		factoryBill: factoryBill,
-		probeCount: probeCount,
-		totalMatter: totalMatter,
-		foundMatter: foundMatter,
+
 		qFlag: qFlag,
 		qClock: qClock,
 		qChipCost: qChipCost,
 		nextQchip: nextQchip,
 		bribe: bribe,
-
-		probeNav: probeNav,
-		probeRep: probeRep,
-		partialProbeSpawn: partialProbeSpawn,
-		probeHaz: probeHaz,
-		partialProbeHaz: partialProbeHaz,
-		probesLostHaz: probesLostHaz,
-		probesLostDrift: probesLostDrift,
-		probeFac: probeFac,
-		probeWire: probeWire,
-
-		probeTrust: probeTrust,
-		probeUsedTrust: probeUsedTrust,
-		probeTrustCost: probeTrustCost,
-		probeLaunchLevel: probeLaunchLevel,
-		probeCost: probeCost,
 	};
 
 	localStorage.setItem('saveGame2', JSON.stringify(saveGame));
@@ -4212,7 +3433,7 @@ function load() {
 	dustBusterStatus = loadGame.dustBusterStatus;
 	wirePriceTimer = loadGame.wirePriceTimer;
 	qFade = loadGame.qFade;
-	driftKingMessageCost = loadGame.driftKingMessageCost;
+
 	sliderPos = loadGame.sliderPos;
 	tempOps = loadGame.tempOps;
 	standardOps = loadGame.standardOps;
@@ -4223,9 +3444,6 @@ function load() {
 	boredomFlag = loadGame.boredomFlag;
 	boredomMsg = loadGame.boredomMsg;
 
-	honor = loadGame.honor;
-	maxTrust = loadGame.maxTrust;
-	maxTrustCost = loadGame.maxTrustCost;
 	disorgCounter = loadGame.disorgCounter;
 	disorgFlag = loadGame.disorgFlag;
 	synchCost = loadGame.synchCost;
@@ -4330,9 +3548,7 @@ function load() {
 	factoryLevel = loadGame.factoryLevel;
 	factoryBoost = loadGame.factoryBoost;
 	droneBoost = loadGame.droneBoost;
-	availableMatter = loadGame.availableMatter;
-	acquiredMatter = loadGame.acquiredMatter;
-	processedMatter = loadGame.processedMatter;
+
 	harvesterLevel = loadGame.harvesterLevel;
 	wireDroneLevel = loadGame.wireDroneLevel;
 	factoryCost = loadGame.factoryCost;
@@ -4344,30 +3560,12 @@ function load() {
 	harvesterBill = loadGame.harvesterBill;
 	wireDroneBill = loadGame.wireDroneBill;
 	factoryBill = loadGame.factoryBill;
-	probeCount = loadGame.probeCount;
-	totalMatter = loadGame.totalMatter;
-	foundMatter = loadGame.foundMatter;
+
 	qFlag = loadGame.qFlag;
 	qClock = loadGame.qClock;
 	qChipCost = loadGame.qChipCost;
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
-
-	probeNav = loadGame.probeNav;
-	probeRep = loadGame.probeRep;
-	partialProbeSpawn = loadGame.partialProbeSpawn;
-	probeHaz = loadGame.probeHaz;
-	partialProbeHaz = loadGame.partialProbeHaz;
-	probesLostHaz = loadGame.probesLostHaz;
-	probesLostDrift = loadGame.probesLostDrift;
-	probeFac = loadGame.probeFac;
-	probeWire = loadGame.probeWire;
-
-	probeTrust = loadGame.probeTrust;
-	probeUsedTrust = loadGame.probeUsedTrust;
-	probeTrustCost = loadGame.probeTrustCost;
-	probeLaunchLevel = loadGame.probeLaunchLevel;
-	probeCost = loadGame.probeCost;
 
 	project40b.priceTag = '($' + formatWithCommas(bribe) + ')';
 	project51.priceTag = '(' + qChipCost + ' ops)';
@@ -4430,7 +3628,7 @@ function load1() {
 	dustBusterStatus = loadGame.dustBusterStatus;
 	wirePriceTimer = loadGame.wirePriceTimer;
 	qFade = loadGame.qFade;
-	driftKingMessageCost = loadGame.driftKingMessageCost;
+
 	sliderPos = loadGame.sliderPos;
 	tempOps = loadGame.tempOps;
 	standardOps = loadGame.standardOps;
@@ -4441,9 +3639,6 @@ function load1() {
 	boredomFlag = loadGame.boredomFlag;
 	boredomMsg = loadGame.boredomMsg;
 
-	honor = loadGame.honor;
-	maxTrust = loadGame.maxTrust;
-	maxTrustCost = loadGame.maxTrustCost;
 	disorgCounter = loadGame.disorgCounter;
 	disorgFlag = loadGame.disorgFlag;
 	synchCost = loadGame.synchCost;
@@ -4548,9 +3743,7 @@ function load1() {
 	factoryLevel = loadGame.factoryLevel;
 	factoryBoost = loadGame.factoryBoost;
 	droneBoost = loadGame.droneBoost;
-	availableMatter = loadGame.availableMatter;
-	acquiredMatter = loadGame.acquiredMatter;
-	processedMatter = loadGame.processedMatter;
+
 	harvesterLevel = loadGame.harvesterLevel;
 	wireDroneLevel = loadGame.wireDroneLevel;
 	factoryCost = loadGame.factoryCost;
@@ -4562,30 +3755,12 @@ function load1() {
 	harvesterBill = loadGame.harvesterBill;
 	wireDroneBill = loadGame.wireDroneBill;
 	factoryBill = loadGame.factoryBill;
-	probeCount = loadGame.probeCount;
-	totalMatter = loadGame.totalMatter;
-	foundMatter = loadGame.foundMatter;
+
 	qFlag = loadGame.qFlag;
 	qClock = loadGame.qClock;
 	qChipCost = loadGame.qChipCost;
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
-
-	probeNav = loadGame.probeNav;
-	probeRep = loadGame.probeRep;
-	partialProbeSpawn = loadGame.partialProbeSpawn;
-	probeHaz = loadGame.probeHaz;
-	partialProbeHaz = loadGame.partialProbeHaz;
-	probesLostHaz = loadGame.probesLostHaz;
-	probesLostDrift = loadGame.probesLostDrift;
-	probeFac = loadGame.probeFac;
-	probeWire = loadGame.probeWire;
-
-	probeTrust = loadGame.probeTrust;
-	probeUsedTrust = loadGame.probeUsedTrust;
-	probeTrustCost = loadGame.probeTrustCost;
-	probeLaunchLevel = loadGame.probeLaunchLevel;
-	probeCost = loadGame.probeCost;
 
 	project40b.priceTag = '($' + formatWithCommas(bribe) + ')';
 	project51.priceTag = '(' + qChipCost + ' ops)';
@@ -4632,7 +3807,7 @@ function load2() {
 	dustBusterStatus = loadGame.dustBusterStatus;
 	wirePriceTimer = loadGame.wirePriceTimer;
 	qFade = loadGame.qFade;
-	driftKingMessageCost = loadGame.driftKingMessageCost;
+
 	sliderPos = loadGame.sliderPos;
 	tempOps = loadGame.tempOps;
 	standardOps = loadGame.standardOps;
@@ -4643,9 +3818,6 @@ function load2() {
 	boredomFlag = loadGame.boredomFlag;
 	boredomMsg = loadGame.boredomMsg;
 
-	honor = loadGame.honor;
-	maxTrust = loadGame.maxTrust;
-	maxTrustCost = loadGame.maxTrustCost;
 	disorgCounter = loadGame.disorgCounter;
 	disorgFlag = loadGame.disorgFlag;
 	synchCost = loadGame.synchCost;
@@ -4750,9 +3922,7 @@ function load2() {
 	factoryLevel = loadGame.factoryLevel;
 	factoryBoost = loadGame.factoryBoost;
 	droneBoost = loadGame.droneBoost;
-	availableMatter = loadGame.availableMatter;
-	acquiredMatter = loadGame.acquiredMatter;
-	processedMatter = loadGame.processedMatter;
+
 	harvesterLevel = loadGame.harvesterLevel;
 	wireDroneLevel = loadGame.wireDroneLevel;
 	factoryCost = loadGame.factoryCost;
@@ -4764,30 +3934,12 @@ function load2() {
 	harvesterBill = loadGame.harvesterBill;
 	wireDroneBill = loadGame.wireDroneBill;
 	factoryBill = loadGame.factoryBill;
-	probeCount = loadGame.probeCount;
-	totalMatter = loadGame.totalMatter;
-	foundMatter = loadGame.foundMatter;
+
 	qFlag = loadGame.qFlag;
 	qClock = loadGame.qClock;
 	qChipCost = loadGame.qChipCost;
 	nextQchip = loadGame.nextQchip;
 	bribe = loadGame.bribe;
-
-	probeNav = loadGame.probeNav;
-	probeRep = loadGame.probeRep;
-	partialProbeSpawn = loadGame.partialProbeSpawn;
-	probeHaz = loadGame.probeHaz;
-	partialProbeHaz = loadGame.partialProbeHaz;
-	probesLostHaz = loadGame.probesLostHaz;
-	probesLostDrift = loadGame.probesLostDrift;
-	probeFac = loadGame.probeFac;
-	probeWire = loadGame.probeWire;
-
-	probeTrust = loadGame.probeTrust;
-	probeUsedTrust = loadGame.probeUsedTrust;
-	probeTrustCost = loadGame.probeTrustCost;
-	probeLaunchLevel = loadGame.probeLaunchLevel;
-	probeCost = loadGame.probeCost;
 
 	project40b.priceTag = '($' + formatWithCommas(bribe) + ')';
 	project51.priceTag = '(' + qChipCost + ' ops)';

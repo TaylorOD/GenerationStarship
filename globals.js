@@ -57,19 +57,18 @@ var dustBusterFlag = 0;
 var demandBoost = 1;
 var humanFlag = 1;
 var trustFlag = 1;
+var spaceFlag = 0;
 var nanoWire = 0;
 var creationFlag = 0;
 var wireProductionFlag = 0;
-var spaceFlag = 0;
+
 var factoryFlag = 0;
 var harvesterFlag = 0;
 var wireDroneFlag = 0;
 var factoryLevel = 0;
 var factoryBoost = 1;
 var droneBoost = 1;
-var availableMatter = Math.pow(10, 24) * 6000;
-var acquiredMatter = 0;
-var processedMatter = 0;
+
 var harvesterLevel = 0;
 var wireDroneLevel = 0;
 var factoryCost = 100000000;
@@ -81,9 +80,7 @@ var wireDroneRate = 16180339;
 var harvesterBill = 0;
 var wireDroneBill = 0;
 var factoryBill = 0;
-var probeCount = 0;
-var totalMatter = Math.pow(10, 54) * 30;
-var foundMatter = availableMatter;
+
 var qFlag = 0;
 var qClock = 0;
 var qChipCost = 10000;
@@ -121,9 +118,6 @@ var giftPeriod = 125000;
 var giftCountdown = giftPeriod;
 var elapsedTime = 0;
 
-var honor = 0;
-var maxTrust = 20;
-var maxTrustCost = 91117.99;
 var disorgCounter = 0;
 var disorgFlag = 0;
 var synchCost = 5000;
@@ -137,7 +131,7 @@ var boredomMsg = 0;
 var dustBusterStatus = 1;
 var wirePriceTimer = 0;
 var qFade = 1;
-var driftKingMessageCost = 1;
+
 var sliderPos = 0;
 var tempOps = 0;
 var standardOps = 0;
