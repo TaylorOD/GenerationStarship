@@ -42,28 +42,35 @@
 					<span id="clipCountCrunched" class="toolTipText">0</span>
 					<h2>Energy: <span id="clips">0</span></h2>
 				</div>
+				<button
+					class="btnCollectEnergy"
+					id="btnMakePaperclip"
+					onclick="clipClick(1)"
+				>
+					Collect Energy
+				</button>
 			</div>
 			<!-- Left Column -->
 			<div id="containerColumns">
 				<div id="leftColumn">
-					<button class="button2" id="btnMakePaperclip" onclick="clipClick(1)">
-						Collect Energy</button
-					><br />
-					<br />
 					<div id="creationDiv" style="display: none">
-						<b>Energy Collection</b><br />
+						<b>Energy Collection</b>
+						<br />
 						<hr />
 						<div id="factoryUpgradeDisplay" style="display: none">
 							<p class="clean">
 								Next Upgrade at:
-								<span id="nextFactoryUpgrade">0</span> Factories <br />
+								<span id="nextFactoryUpgrade">0</span> Factories
+								<br />
 							</p>
 						</div>
 						<div id="clipsPerSecDiv">
-							Energy per Second: <span id="clipmakerRate2">0</span><br />
+							Energy per Second: <span id="clipmakerRate2">0</span>
+							<br />
 						</div>
 						<div id="tothDiv" style="display: none">
-							Unused Energy: <span id="unusedClipsDisplay">0</span><br />
+							Unused Energy: <span id="unusedClipsDisplay">0</span>e
+							<br />
 						</div>
 						<br />
 						<div id="factoryDiv" style="display: none">
@@ -92,20 +99,24 @@
 								</button>
 							</div>
 							<br />
-							Cost: <span id="factoryCostDisplay">0</span> e<br />
+							Cost: <span id="factoryCostDisplay">0</span>e
+							<br />
 							<br />
 						</div>
 						<div id="wireTransDiv">
 							Wire: <span id="transWire">0</span>
-							<span id="inchSpan">inches</span><br />
+							<span id="inchSpan">inches</span>
+							<br />
 						</div>
 						<div id="factoryDivSpace" style="display: none">
-							Factories: <span id="factoryLevelDisplaySpace">0</span
-							><br /><br />
+							Factories: <span id="factoryLevelDisplaySpace">0</span>
+							<br />
+							<br />
 						</div>
 					</div>
 					<div id="wireProductionDiv" style="display: none">
-						<b>Wire Production</b><br />
+						<b>Wire Production</b>
+						<br />
 						<hr />
 						<div id="droneUpgradeDisplay">
 							<p class="clean">
@@ -118,7 +129,8 @@
 						</div>
 						(<span id="maps">0</span> g per sec)<br />
 						Wire: <span id="nanoWire">1.0 thousand </span> inches<br />
-						(<span id="wpps">0</span> inches per sec) <br />
+						(<span id="wpps">0</span> inches per sec)
+						<br />
 						<br />
 						<div id="harvesterDiv" style="display: none">
 							<p class="engineText5">
@@ -170,7 +182,9 @@
 								</button>
 							</div>
 							<br />
-							Cost: <span id="harvesterCostDisplay">0</span> e<br /><br />
+							Cost: <span id="harvesterCostDisplay">0</span> e
+							<br />
+							<br />
 						</div>
 						<div id="wireDroneDiv" style="display: none">
 							<p class="engineText5">
@@ -222,35 +236,51 @@
 								</button>
 							</div>
 							<br />
-							Cost: <span id="wireDroneCostDisplay">0</span> e<br />
+							Cost: <span id="wireDroneCostDisplay">0</span> e
+							<br />
 							<br />
 						</div>
 						<div id="droneDivSpace" style="display: none">
-							Harvester Drones: <span id="harvesterLevelSpace">0</span><br />
-							Builder Drones: <spanZ id="wireDroneLevelSpace">0</spanZ
-							><br /><br />
+							Harvester Drones: <span id="harvesterLevelSpace">0</span>
+							<br />
+							Builder Drones: <span id="wireDroneLevelSpace">0</span>
+							<br />
+							<br />
 						</div>
 					</div>
 
 					<!-- Space Exploration -->
 					<div id="businessDiv">
-						<b>Starship Operations</b><br />
+						<b>Starship Operations</b>
+						<br />
 						<hr />
-						Available Energy: <span id="funds">0.00</span>e<br />
-						Unused Energy: <span id="unsoldClips">0</span><br />
+						Available Dust: <span id="funds">0.00</span>
+						<span class="formatText">SDUs</span>
+						<br />
+						Unused Energy: <span id="unsoldClips">0</span>
+						<span class="formatText">e</span>
+						<br />
+						<br />
 						<button class="button2" id="btnLowerPrice" onclick="lowerPrice()">
-							Increase Power
-						</button>
-						<button class="button2" id="btnRaisePrice" onclick="raisePrice()">
 							Decrease Power
 						</button>
-						Price per Clip: $ <span id="margin">0.25</span><br />
+						<button class="button2" id="btnRaisePrice" onclick="raisePrice()">
+							Increase Power
+						</button>
+						<br />
+						Energy Used per Second by AI: <span id="margin">0.25</span>
+						<span class="formatText">e</span>
+						<br />
 						<br />
 						<div id="revPerSecDiv" style="display: none">
-							Humans on board: <span id="avgRev">0.00</span>h<br />
-							Humans in cryosleep: <span id="avgSales">0h</span><br />
+							Humans on board: <span id="avgRev">0.00</span>
+							<span class="formatText">h</span>
+							<br />
+							Humans in cryosleep: <span id="avgSales">0h</span>
+							<br />
 						</div>
-						Human Happiness: <span id="demand">32</span>%<br />
+						Human Happiness: <span id="demand">32</span>%
+						<br />
 						<br />
 						<button
 							class="button2"
@@ -262,13 +292,23 @@
 						</button>
 						<span class="engineText6"> Level: </span
 						><span class="engineText6" id="marketingLvl">1</span><br />
-						Cost: <span id="adCost">100.00e</span><br />
+						Cost: <span id="adCost">100.00</span>
+						<span class="formatText">SDUs</span>
+						<br />
 						<br />
 					</div>
 					<div id="manufacturingDiv">
 						<b>Energy</b><br />
 						<hr />
-						Energy Generated per Second: <span id="clipmakerRate">0</span><br />
+						<span class="formatText">Solar Panels:</span>
+						<span class="engineText6" id="clipmakerLevel2">0</span>
+						<br />
+						<span class="formatText">Energy (e) Generated per Second:</span>
+						<span id="clipmakerRate">0</span>
+						<br />
+						<span class="formatText">Stellar Dust Units (SDUs) Available:</span>
+						<span class="engineText6" id="wire">1,000</span>
+						<br />
 						<br />
 						<div id="dustBusterDiv" style="display: none">
 							<button
@@ -280,6 +320,7 @@
 							</button>
 							<span class="engineText6" id="dustBusterStatus">ON</span>
 						</div>
+
 						<button
 							class="button2"
 							id="btnBuyWire"
@@ -288,9 +329,10 @@
 						>
 							Collect Stellar Dust
 						</button>
-						<span class="engineText6" id="wire">1,000</span
-						><span class="engineText6"> Stellar Dust Units (SDUs)</span><br />
-						Cost: <span id="wireCost">16</span>e<br />
+						<br />
+						Cost: <span id="wireCost">16</span>
+						<span class="formatText">SDUs</span>
+						<br />
 						<br />
 						<div id="autoClipperDiv" style="display: none">
 							<p class="engineText5">
@@ -302,9 +344,10 @@
 								>
 									Build Solar Panel
 								</button>
-								<span class="engineText6" id="clipmakerLevel2">0</span>
 							</p>
-							Cost: <span id="clipperCost">5.00</span>e<br />
+							Cost: <span id="clipperCost">5.00</span>
+							<span class="formatText">SDUs</span>
+							<br />
 							<br />
 						</div>
 						<div id="megaClipperDiv" style="display: none">
@@ -352,7 +395,7 @@
 						<b>AI Computational Resources</b><br />
 						<hr />
 						<div id="trustDiv">
-							Chips: <span id="trust">2</span><br />
+							Operations Chips: <span id="trust">2</span><br />
 							+1 Chip at: <span id="nextTrust">3,000</span> energy<br />
 							<br />
 						</div>
@@ -369,6 +412,9 @@
 								Processors
 							</button>
 							<span class="engineText10" id="processors">1</span>
+							<span style="font-size: x-small">
+								Processors Increase Ops Speed
+							</span>
 						</div>
 						<br />
 						<div id="memoryDisplay">
@@ -381,6 +427,9 @@
 								&nbsp; Memory &nbsp;
 							</button>
 							<span class="engineText10" id="memory">1</span>
+							<span style="font-size: x-small">
+								Memory Increase Ops Capacity
+							</span>
 						</div>
 						<br />
 						<br />
@@ -477,7 +526,7 @@
 						</div>
 					</div>
 					<div id="projectsDiv" style="display: none">
-						<b>Projects</b><br />
+						<b>AI Self Improvement Projects</b><br />
 						<hr />
 						<div id="projectListTop"></div>
 					</div>
@@ -524,7 +573,7 @@
 							</button>
 						</div>
 						<br />
-						Cost: <span id="farmCost">0</span> e<br />
+						Cost: <span id="farmCost">0</span>e<br />
 						<br />
 						Storage: <span id="storedPower">0</span> /
 						<span id="maxStorage">0</span> MW-seconds<br />
