@@ -48,7 +48,7 @@ function cacheDOMElements() {
 	btnMakeMegaClipperElement = document.getElementById('btnMakeMegaClipper');
 	autoClipperDivElement = document.getElementById('autoClipperDiv');
 	revPerSecDivElement = document.getElementById('revPerSecDiv');
-	compDivElement = document.getElementById('compDiv');
+	computerDivElement = document.getElementById('computerDiv');
 	creativityDivElement = document.getElementById('creativityDiv');
 	projectsDivElement = document.getElementById('projectsDiv');
 	businessDivElement = document.getElementById('businessDiv');
@@ -86,6 +86,7 @@ function cacheDOMElements() {
 	processorsElement = document.getElementById('processors');
 	marginElement = document.getElementById('margin');
 	marketingLvlElement = document.getElementById('marketingLvl');
+	powerDivElement = document.getElementById('powerDiv');
 	adCostElement = document.getElementById('adCost');
 	factoryCostDisplayElement = document.getElementById('factoryCostDisplay');
 	factoryLevelDisplayElement = document.getElementById('factoryLevelDisplay');
@@ -123,7 +124,7 @@ function cacheDOMElements() {
 	qComputingElement = document.getElementById('qComputing');
 	transWireElement = document.getElementById('transWire');
 	processorDisplayElement = document.getElementById('processorDisplay');
-	compDivElement = document.getElementById('compDiv');
+	computerDivElement = document.getElementById('computerDiv');
 	projectsDivElement = document.getElementById('projectsDiv');
 	creationDivElement = document.getElementById('creationDiv');
 	clipmakerLevel2Element = document.getElementById('clipmakerLevel2');
@@ -233,7 +234,7 @@ var btnQcomputeElement;
 var qComputingElement;
 var transWireElement;
 var processorDisplayElement;
-var compDivElement;
+var computerDivElement;
 var projectsDivElement;
 var creationDivElement;
 var fundsElement;
@@ -337,6 +338,7 @@ var memoryElement;
 var processorsElement;
 var marginElement;
 var marketingLvlElement;
+var powerDivElement;
 var adCostElement;
 var factoryCostDisplayElement;
 var factoryLevelDisplayElement;
@@ -387,7 +389,7 @@ var megaClipperDivElement;
 var btnMakeMegaClipperElement;
 var autoClipperDivElement;
 var revPerSecDivElement;
-var compDivElement;
+var computerDivElement;
 var creativityDivElement;
 var projectsDivElement;
 var businessDivElement;
@@ -845,10 +847,10 @@ function buttonUpdate() {
 		revPerSecDivElement.style.display = '';
 	}
 
-	if (compFlag === 0) {
-		compDivElement.style.display = 'none';
+	if (computerFlag === 0) {
+		computerDivElement.style.display = 'none';
 	} else {
-		compDivElement.style.display = '';
+		computerDivElement.style.display = '';
 	}
 
 	if (creativityOn === 0) {
@@ -899,6 +901,12 @@ function buttonUpdate() {
 		wireDroneDivElement.style.display = 'none';
 	} else {
 		wireDroneDivElement.style.display = '';
+	}
+
+	if (powerFlag === 0) {
+		powerDivElement.style.display = 'none';
+	} else {
+		powerDivElement.style.display = '';
 	}
 
 	if (tothFlag === 0) {
@@ -2029,14 +2037,14 @@ function milestoneCheck() {
 		displayMessage('1,000 energy gathered in ' + timeCruncher(ticks));
 	}
 
-	if (compFlag == 0 && unsoldClips < 1 && funds < wireCost && wire < 1) {
-		compFlag = 1;
+	if (computerFlag == 0 && unsoldClips < 1 && funds < wireCost && wire < 1) {
+		computerFlag = 1;
 		projectsFlag = 1;
 		displayMessage('Trust-Constrained Self-Modification enabled');
 	}
 
-	if (compFlag == 0 && Math.ceil(clips) >= 2000) {
-		compFlag = 1;
+	if (computerFlag == 0 && Math.ceil(clips) >= 2000) {
+		computerFlag = 1;
 		projectsFlag = 1;
 		displayMessage('Trust-Constrained Self-Modification enabled');
 	}
@@ -2537,7 +2545,7 @@ window.setInterval(function () {
 	milestoneCheck();
 	buttonUpdate();
 
-	if (compFlag == 1) {
+	if (computerFlag == 1) {
 		calculateOperations();
 	}
 
@@ -2745,7 +2753,7 @@ window.setInterval(function () {
 	}
 
 	if (dismantle >= 7) {
-		compDivElement.style.display = 'none';
+		computerDivElement.style.display = 'none';
 		projectsDivElement.style.display = 'none';
 	}
 
@@ -3014,7 +3022,7 @@ function save() {
 		fib1: fib1,
 		fib2: fib2,
 		revPerSecFlag: revPerSecFlag,
-		compFlag: compFlag,
+		computerFlag: computerFlag,
 		projectsFlag: projectsFlag,
 		autoClipperFlag: autoClipperFlag,
 		megaClipperFlag: megaClipperFlag,
@@ -3180,7 +3188,7 @@ function load() {
 	fib1 = loadGame.fib1;
 	fib2 = loadGame.fib2;
 	revPerSecFlag = loadGame.revPerSecFlag;
-	compFlag = loadGame.compFlag;
+	computerFlag = loadGame.computerFlag;
 	projectsFlag = loadGame.projectsFlag;
 	autoClipperFlag = loadGame.autoClipperFlag;
 	megaClipperFlag = loadGame.megaClipperFlag;

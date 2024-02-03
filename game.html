@@ -32,6 +32,7 @@
 					><span id="cursor" class="pulsate">|</span>
 				</p>
 			</div>
+
 			<!-- Energy Display -->
 			<div id="topDiv">
 				<div id="prestigeDiv" style="display: none">
@@ -50,13 +51,16 @@
 					Collect Energy
 				</button>
 			</div>
+
 			<!-- Left Column -->
 			<div id="containerColumns">
 				<div id="leftColumn">
+					<!-- ENERGY -->
 					<div id="creationDiv" style="display: none">
 						<b>Energy Collection</b>
 						<br />
 						<hr />
+
 						<div id="factoryUpgradeDisplay" style="display: none">
 							<p class="clean">
 								Next Upgrade at:
@@ -69,7 +73,8 @@
 							<br />
 						</div>
 						<div id="tothDiv" style="display: none">
-							Unused Energy: <span id="unusedClipsDisplay">0</span>e
+							Unused Energy: <span id="unusedClipsDisplay">0</span>
+							<span class="formatText">e</span>
 							<br />
 						</div>
 						<br />
@@ -352,7 +357,7 @@
 							<br />
 						</div>
 						<div id="megaClipperDiv" style="display: none">
-							<span class="formatText">MegaClippers:</span>
+							<span class="formatText">MegaPanel:</span>
 							<span class="engineText6" id="megaClipperLevel">0</span>
 							<br />
 							<p class="engineText5">
@@ -362,7 +367,7 @@
 									onclick="makeMegaClipper()"
 									disabled=""
 								>
-									MegaClippers
+									MegaPanel
 								</button>
 							</p>
 							<span class="formatText"> Cost: </span>
@@ -426,7 +431,7 @@
 				<!--Middle Column-->
 				<div id="middleColumn">
 					<!-- COMPUTER -->
-					<div id="compDiv" style="display: none">
+					<div id="computerDiv" style="display: none">
 						<b>AI Computational Resources</b><br />
 						<hr />
 						<div id="trustDiv">
@@ -571,6 +576,7 @@
 					</div>
 				</div>
 
+				<!-- Right Column -->
 				<div id="rightColumn">
 					<!-- POWER -->
 					<div id="powerDiv" style="display: none">
@@ -662,6 +668,7 @@
 					</div>
 				</div>
 			</div>
+
 			<script type="text/javascript" src="./javascript/globals.js"></script>
 			<script type="text/javascript" src="./javascript/projects.js"></script>
 			<script type="text/javascript" src="./javascript/core.js"></script>

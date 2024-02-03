@@ -484,8 +484,8 @@ p.hypnoDrone {
 .projectButton {
 	border-radius: 0px;
 	display: block;
-	height: 60px;
-	width: 275px;
+	height: 75px;
+	width: 290px;
 	background: #e8e8e8;
 	border: 1px solid rgba(0, 0, 0, 1);
 	outline: none;
@@ -494,16 +494,16 @@ p.hypnoDrone {
 
 .projectButton:hover {
 	display: block;
-	height: 60px;
-	width: 275px;
+	height: 75px;
+	width: 290px;
 	background: #c8c8c8;
 	border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .projectButton:active {
 	display: block;
-	height: 60px;
-	width: 275px;
+	height: 75px;
+	width: 290px;
 	background: #d1d1d1;
 	border: 1px solid rgba(0, 0, 0, 1);
 }
@@ -538,5 +538,5 @@ p.hypnoDrone {
 }
 
 .chipDescriptionText {
-  font-size: x-small;
+	font-size: x-small;
 }
