@@ -536,3 +536,7 @@ p.hypnoDrone {
 	vertical-align: bottom;
 	line-height: 1.4;
 }
+
+.chipDescriptionText {
+  font-size: x-small;
+}

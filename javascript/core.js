@@ -1,4 +1,4 @@
-// Cache all DOM elements
+// Cache all DOM elements -----------------------------
 
 function cacheDOMElements() {
 	wireCostElement = document.getElementById('wireCost');
@@ -415,7 +415,7 @@ var nanoWireElement;
 var clipsElement;
 var unsoldClipsElement;
 
-// Cache
+// Cache -------------------------------------------------------
 
 cacheDOMElements();
 
@@ -459,7 +459,7 @@ function buyWire() {
 	}
 }
 
-// QCHIPS -----------------------------------------------------------
+// QCHIPS -----------------------------------------------------
 
 var qChips = [];
 var qChipsElements = [];
@@ -590,6 +590,8 @@ function qComp() {
 			'qOps: ' + formatWithCommas(Math.ceil(q * 360));
 	}
 }
+
+// PROJECTS -------------------------------------
 
 function manageProjects() {
 	for (var i = 0; i < projects.length; i++) {
@@ -938,7 +940,7 @@ function buttonUpdate() {
 	coverElement.style.display = 'none';
 }
 
-//--------------------------------------------------------------------------------
+// CLIP MAKERS ---------------------------------------------------------
 
 function clipClick(number) {
 	if (dismantle >= 4) {
@@ -1240,7 +1242,7 @@ function factoryReboot() {
 	factoryCostDisplayElement.innerHTML = spellf(factoryCost);
 }
 
-// SWARM
+// SWARM ---------------------------------------------------
 
 var giftBits = 0;
 var giftBitGenerationRate = 0;
@@ -1422,7 +1424,7 @@ function entertainSwarm() {
 	boredomMsg = 0;
 }
 
-// POWER
+// POWER ----------------------------------------
 
 var p10f = 0;
 var p100f = 0;
@@ -1637,6 +1639,8 @@ function updatePower() {
 	}
 }
 
+// PROPAGANDA -------------------------------------------
+
 function buyAds() {
 	if (funds >= adCost) {
 		marketingLvl = marketingLvl + 1;
@@ -1821,7 +1825,6 @@ function calculateRev() {
 
 	for (i = 0; i < incomeTracker.length; i++) {
 		sum = Math.round((sum + incomeTracker[i]) * 100) / 100;
-		//        console.log("sum = "+sum);
 	}
 
 	trueAvgRev = sum / incomeTracker.length;
@@ -1909,7 +1912,7 @@ function cheatMoney() {
 	//displayMessage("LIZA just cheated");
 }
 
-function cheatTrust() {
+function cheatChips() {
 	trust = trust + 1;
 	//displayMessage("Hilary is nice. Also, Liza just cheated");
 }
@@ -2840,7 +2843,7 @@ window.setInterval(function () {
 	}
 }, 100);
 
-// Saving and Loading
+// REFRESH -----------------------------------------------------
 
 function refresh() {
 	//DEBUG
@@ -3060,352 +3063,6 @@ function save() {
 	localStorage.setItem('saveProjectsActive', JSON.stringify(projectsActive));
 }
 
-function save1() {
-	var projectsUses = [];
-	var projectsFlags = [];
-	var projectsActive = [];
-
-	for (var i = 0; i < projects.length; i++) {
-		projectsUses[i] = projects[i].uses;
-		projectsFlags[i] = projects[i].flag;
-	}
-
-	for (var i = 0; i < activeProjects.length; i++) {
-		projectsActive[i] = activeProjects[i].id;
-	}
-
-	var saveGame = {
-		resetFlag: resetFlag,
-
-		dismantle: dismantle,
-		endTimer1: endTimer1,
-		endTimer2: endTimer2,
-		endTimer3: endTimer3,
-		endTimer4: endTimer4,
-		endTimer5: endTimer5,
-		endTimer6: endTimer6,
-		startTimer: startTimer,
-
-		testFlag: testFlag,
-		finalClips: finalClips,
-
-		dustBusterStatus: dustBusterStatus,
-		wirePriceTimer: wirePriceTimer,
-		qFade: qFade,
-
-		sliderPos: sliderPos,
-		tempOps: tempOps,
-		standardOps: standardOps,
-		opFade: opFade,
-
-		entertainCost: entertainCost,
-		boredomLevel: boredomLevel,
-		boredomFlag: boredomFlag,
-		boredomMsg: boredomMsg,
-
-		disorgCounter: disorgCounter,
-		disorgFlag: disorgFlag,
-		synchCost: synchCost,
-		disorgMsg: disorgMsg,
-
-		farmRate: farmRate,
-		batterySize: batterySize,
-		factoryPowerRate: factoryPowerRate,
-		dronePowerRate: dronePowerRate,
-		farmLevel: farmLevel,
-		batteryLevel: batteryLevel,
-		farmCost: farmCost,
-		batteryCost: batteryCost,
-		storedPower: storedPower,
-		powMod: powMod,
-		farmBill: farmBill,
-		batteryBill: batteryBill,
-		momentum: momentum,
-
-		swarmFlag: swarmFlag,
-		swarmStatus: swarmStatus,
-		swarmGifts: swarmGifts,
-		nextGift: nextGift,
-		giftPeriod: giftPeriod,
-		giftCountdown: giftCountdown,
-		elapsedTime: elapsedTime,
-
-		maxFactoryLevel: maxFactoryLevel,
-		maxDroneLevel: maxDroneLevel,
-
-		wirePriceCounter: wirePriceCounter,
-		wireBasePrice: wireBasePrice,
-
-		egoFlag: egoFlag,
-		tothFlag: tothFlag,
-
-		incomeTracker: incomeTracker.slice(0),
-		qChips: qChips.slice(0),
-
-		clips: clips,
-		unusedClips: unusedClips,
-		clipRate: clipRate,
-		clipRateTemp: clipRateTemp,
-		prevClips: prevClips,
-		clipRateTracker: clipRateTracker,
-		clipmakerRate: clipmakerRate,
-		clipmakerLevel: clipmakerLevel,
-		clipperCost: clipperCost,
-		unsoldClips: unsoldClips,
-		funds: funds,
-		margin: margin,
-		wire: wire,
-		wireCost: wireCost,
-		adCost: adCost,
-		demand: demand,
-		clipsSold: clipsSold,
-		avgRev: avgRev,
-		ticks: ticks,
-		marketing: marketing,
-		marketingLvl: marketingLvl,
-		x: x,
-		clipperCost: clipperCost,
-		processors: processors,
-		memory: memory,
-		operations: operations,
-		trust: trust,
-		nextTrust: nextTrust,
-		transaction: transaction,
-		clipperBoost: clipperBoost,
-		blinkCounter: blinkCounter,
-		creativity: creativity,
-		creativityOn: creativityOn,
-		safetyProjectOn: safetyProjectOn,
-		boostLvl: boostLvl,
-		wirePurchase: wirePurchase,
-		wireSupply: wireSupply,
-		marketingEffectiveness: marketingEffectiveness,
-		milestoneFlag: milestoneFlag,
-		fib1: fib1,
-		fib2: fib2,
-		revPerSecFlag: revPerSecFlag,
-		compFlag: compFlag,
-		projectsFlag: projectsFlag,
-		autoClipperFlag: autoClipperFlag,
-		megaClipperFlag: megaClipperFlag,
-		megaClipperCost: megaClipperCost,
-		megaClipperLevel: megaClipperLevel,
-		megaClipperBoost: megaClipperBoost,
-		creativitySpeed: creativitySpeed,
-		creativityCounter: creativityCounter,
-		dustBusterFlag: dustBusterFlag,
-		demandBoost: demandBoost,
-		humanFlag: humanFlag,
-		trustFlag: trustFlag,
-		nanoWire: nanoWire,
-		creationFlag: creationFlag,
-		wireProductionFlag: wireProductionFlag,
-		spaceFlag: spaceFlag,
-		factoryFlag: factoryFlag,
-		harvesterFlag: harvesterFlag,
-		wireDroneFlag: wireDroneFlag,
-		factoryLevel: factoryLevel,
-		factoryBoost: factoryBoost,
-		droneBoost: droneBoost,
-
-		harvesterLevel: harvesterLevel,
-		wireDroneLevel: wireDroneLevel,
-		factoryCost: factoryCost,
-		harvesterCost: harvesterCost,
-		wireDroneCost: wireDroneCost,
-		factoryRate: factoryRate,
-		harvesterRate: harvesterRate,
-		wireDroneRate: wireDroneRate,
-		harvesterBill: harvesterBill,
-		wireDroneBill: wireDroneBill,
-		factoryBill: factoryBill,
-
-		qFlag: qFlag,
-		qClock: qClock,
-		qChipCost: qChipCost,
-		nextQchip: nextQchip,
-		bribe: bribe,
-	};
-
-	localStorage.setItem('saveGame1', JSON.stringify(saveGame));
-	localStorage.setItem('saveProjectsUses1', JSON.stringify(projectsUses));
-	localStorage.setItem('saveProjectsFlags1', JSON.stringify(projectsFlags));
-	localStorage.setItem('saveProjectsActive1', JSON.stringify(projectsActive));
-}
-
-function save2() {
-	var projectsUses = [];
-	var projectsFlags = [];
-	var projectsActive = [];
-
-	for (var i = 0; i < projects.length; i++) {
-		projectsUses[i] = projects[i].uses;
-		projectsFlags[i] = projects[i].flag;
-	}
-
-	for (var i = 0; i < activeProjects.length; i++) {
-		projectsActive[i] = activeProjects[i].id;
-	}
-
-	var saveGame = {
-		resetFlag: resetFlag,
-
-		dismantle: dismantle,
-		endTimer1: endTimer1,
-		endTimer2: endTimer2,
-		endTimer3: endTimer3,
-		endTimer4: endTimer4,
-		endTimer5: endTimer5,
-		endTimer6: endTimer6,
-		startTimer: startTimer,
-
-		testFlag: testFlag,
-		finalClips: finalClips,
-
-		dustBusterStatus: dustBusterStatus,
-		wirePriceTimer: wirePriceTimer,
-		qFade: qFade,
-
-		sliderPos: sliderPos,
-		tempOps: tempOps,
-		standardOps: standardOps,
-		opFade: opFade,
-
-		entertainCost: entertainCost,
-		boredomLevel: boredomLevel,
-		boredomFlag: boredomFlag,
-		boredomMsg: boredomMsg,
-
-		disorgCounter: disorgCounter,
-		disorgFlag: disorgFlag,
-		synchCost: synchCost,
-		disorgMsg: disorgMsg,
-
-		farmRate: farmRate,
-		batterySize: batterySize,
-		factoryPowerRate: factoryPowerRate,
-		dronePowerRate: dronePowerRate,
-		farmLevel: farmLevel,
-		batteryLevel: batteryLevel,
-		farmCost: farmCost,
-		batteryCost: batteryCost,
-		storedPower: storedPower,
-		powMod: powMod,
-		farmBill: farmBill,
-		batteryBill: batteryBill,
-		momentum: momentum,
-
-		swarmFlag: swarmFlag,
-		swarmStatus: swarmStatus,
-		swarmGifts: swarmGifts,
-		nextGift: nextGift,
-		giftPeriod: giftPeriod,
-		giftCountdown: giftCountdown,
-		elapsedTime: elapsedTime,
-
-		maxFactoryLevel: maxFactoryLevel,
-		maxDroneLevel: maxDroneLevel,
-
-		wirePriceCounter: wirePriceCounter,
-		wireBasePrice: wireBasePrice,
-
-		egoFlag: egoFlag,
-		tothFlag: tothFlag,
-
-		incomeTracker: incomeTracker.slice(0),
-		qChips: qChips.slice(0),
-
-		clips: clips,
-		unusedClips: unusedClips,
-		clipRate: clipRate,
-		clipRateTemp: clipRateTemp,
-		prevClips: prevClips,
-		clipRateTracker: clipRateTracker,
-		clipmakerRate: clipmakerRate,
-		clipmakerLevel: clipmakerLevel,
-		clipperCost: clipperCost,
-		unsoldClips: unsoldClips,
-		funds: funds,
-		margin: margin,
-		wire: wire,
-		wireCost: wireCost,
-		adCost: adCost,
-		demand: demand,
-		clipsSold: clipsSold,
-		avgRev: avgRev,
-		ticks: ticks,
-		marketing: marketing,
-		marketingLvl: marketingLvl,
-		x: x,
-		clipperCost: clipperCost,
-		processors: processors,
-		memory: memory,
-		operations: operations,
-		trust: trust,
-		nextTrust: nextTrust,
-		transaction: transaction,
-		clipperBoost: clipperBoost,
-		blinkCounter: blinkCounter,
-		creativity: creativity,
-		creativityOn: creativityOn,
-		safetyProjectOn: safetyProjectOn,
-		boostLvl: boostLvl,
-		wirePurchase: wirePurchase,
-		wireSupply: wireSupply,
-		marketingEffectiveness: marketingEffectiveness,
-		milestoneFlag: milestoneFlag,
-		fib1: fib1,
-		fib2: fib2,
-		revPerSecFlag: revPerSecFlag,
-		compFlag: compFlag,
-		projectsFlag: projectsFlag,
-		autoClipperFlag: autoClipperFlag,
-		megaClipperFlag: megaClipperFlag,
-		megaClipperCost: megaClipperCost,
-		megaClipperLevel: megaClipperLevel,
-		megaClipperBoost: megaClipperBoost,
-		creativitySpeed: creativitySpeed,
-		creativityCounter: creativityCounter,
-		dustBusterFlag: dustBusterFlag,
-		demandBoost: demandBoost,
-		humanFlag: humanFlag,
-		trustFlag: trustFlag,
-		nanoWire: nanoWire,
-		creationFlag: creationFlag,
-		wireProductionFlag: wireProductionFlag,
-		spaceFlag: spaceFlag,
-		factoryFlag: factoryFlag,
-		harvesterFlag: harvesterFlag,
-		wireDroneFlag: wireDroneFlag,
-		factoryLevel: factoryLevel,
-		factoryBoost: factoryBoost,
-		droneBoost: droneBoost,
-
-		harvesterLevel: harvesterLevel,
-		wireDroneLevel: wireDroneLevel,
-		factoryCost: factoryCost,
-		harvesterCost: harvesterCost,
-		wireDroneCost: wireDroneCost,
-		factoryRate: factoryRate,
-		harvesterRate: harvesterRate,
-		wireDroneRate: wireDroneRate,
-		harvesterBill: harvesterBill,
-		wireDroneBill: wireDroneBill,
-		factoryBill: factoryBill,
-
-		qFlag: qFlag,
-		qClock: qClock,
-		qChipCost: qChipCost,
-		nextQchip: nextQchip,
-		bribe: bribe,
-	};
-
-	localStorage.setItem('saveGame2', JSON.stringify(saveGame));
-	localStorage.setItem('saveProjectsUses2', JSON.stringify(projectsUses));
-	localStorage.setItem('saveProjectsFlags2', JSON.stringify(projectsFlags));
-	localStorage.setItem('saveProjectsActive2', JSON.stringify(projectsActive));
-}
-
 function load() {
 	var loadGame = JSON.parse(localStorage.getItem('saveGame'));
 	var loadProjectsUses = JSON.parse(localStorage.getItem('saveProjectsUses'));
@@ -3587,370 +3244,14 @@ function load() {
 	}
 }
 
-function load1() {
-	var loadGame = JSON.parse(localStorage.getItem('saveGame1'));
-	var loadProjectsUses = JSON.parse(localStorage.getItem('saveProjectsUses1'));
-	var loadProjectsFlags = JSON.parse(
-		localStorage.getItem('saveProjectsFlags1')
-	);
-	var loadProjectsActive = JSON.parse(
-		localStorage.getItem('saveProjectsActive1')
-	);
-
-	for (var i = 0; i < projects.length; i++) {
-		projects[i].uses = loadProjectsUses[i];
-		projects[i].flag = loadProjectsFlags[i];
-	}
-
-	for (var i = 0; i < projects.length; i++) {
-		if (loadProjectsActive.indexOf(projects[i].id) >= 0) {
-			displayProjects(projects[i]);
-			activeProjects.push(projects[i]);
-		}
-	}
-
-	resetFlag = loadGame.resetFlag;
-
-	dismantle = loadGame.dismantle;
-	endTimer1 = loadGame.endTimer1;
-	endTimer2 = loadGame.endTimer2;
-	endTimer3 = loadGame.endTimer3;
-	endTimer4 = loadGame.endTimer4;
-	endTimer5 = loadGame.endTimer5;
-	endTimer6 = loadGame.endTimer6;
-	startTimer = loadGame.startTimer;
-
-	testFlag = loadGame.testFlag;
-	finalClips = loadGame.finalClips;
-
-	dustBusterStatus = loadGame.dustBusterStatus;
-	wirePriceTimer = loadGame.wirePriceTimer;
-	qFade = loadGame.qFade;
-
-	sliderPos = loadGame.sliderPos;
-	tempOps = loadGame.tempOps;
-	standardOps = loadGame.standardOps;
-	opFade = loadGame.opFade;
-
-	entertainCost = loadGame.entertainCost;
-	boredomLevel = loadGame.boredomLevel;
-	boredomFlag = loadGame.boredomFlag;
-	boredomMsg = loadGame.boredomMsg;
-
-	disorgCounter = loadGame.disorgCounter;
-	disorgFlag = loadGame.disorgFlag;
-	synchCost = loadGame.synchCost;
-	disorgMsg = loadGame.disorgMsg;
-
-	farmRate = loadGame.farmRate;
-	batterySize = loadGame.batterySize;
-	factoryPowerRate = loadGame.factoryPowerRate;
-	dronePowerRate = loadGame.dronePowerRate;
-	farmLevel = loadGame.farmLevel;
-	batteryLevel = loadGame.batteryLevel;
-	farmCost = loadGame.farmCost;
-	batteryCost = loadGame.batteryCost;
-	storedPower = loadGame.storedPower;
-	powMod = loadGame.powMod;
-	farmBill = loadGame.farmBill;
-	batteryBill = loadGame.batteryBill;
-	momentum = loadGame.momentum;
-
-	swarmFlag = loadGame.swarmFlag;
-	swarmStatus = loadGame.swarmStatus;
-	swarmGifts = loadGame.swarmGifts;
-	nextGift = loadGame.nextGift;
-	giftPeriod = loadGame.giftPeriod;
-	giftCountdown = loadGame.giftCountdown;
-	elapsedTime = loadGame.elapsedTime;
-
-	maxFactoryLevel = loadGame.maxFactoryLevel;
-	maxDroneLevel = loadGame.maxDroneLevel;
-
-	wirePriceCounter = loadGame.wirePriceCounter;
-	wireBasePrice = loadGame.wireBasePrice;
-
-	egoFlag = loadGame.egoFlag;
-	tothFlag = loadGame.tothFlag;
-
-	incomeTracker = loadGame.incomeTracker.slice(0);
-	qChips = loadGame.qChips.slice(0);
-
-	clips = loadGame.clips;
-	unusedClips = loadGame.unusedClips;
-	clipRate = loadGame.clipRate;
-	clipRateTemp = loadGame.clipRateTemp;
-	prevClips = loadGame.prevClips;
-	clipRateTracker = loadGame.clipRateTracker;
-	clipmakerRate = loadGame.clipmakerRate;
-	clipmakerLevel = loadGame.clipmakerLevel;
-	clipperCost = loadGame.clipperCost;
-	unsoldClips = loadGame.unsoldClips;
-	funds = loadGame.funds;
-	margin = loadGame.margin;
-	wire = loadGame.wire;
-	wireCost = loadGame.wireCost;
-	adCost = loadGame.adCost;
-	demand = loadGame.demand;
-	clipsSold = loadGame.clipsSold;
-	avgRev = loadGame.avgRev;
-	ticks = loadGame.ticks;
-	marketing = loadGame.marketing;
-	marketingLvl = loadGame.marketingLvl;
-	x = loadGame.x;
-	clipperCost = loadGame.clipperCost;
-	processors = loadGame.processors;
-	memory = loadGame.memory;
-	operations = loadGame.operations;
-	trust = loadGame.trust;
-	nextTrust = loadGame.nextTrust;
-	transaction = loadGame.transaction;
-	clipperBoost = loadGame.clipperBoost;
-	blinkCounter = loadGame.blinkCounter;
-	creativity = loadGame.creativity;
-	creativityOn = loadGame.creativityOn;
-	safetyProjectOn = loadGame.safetyProjectOn;
-	boostLvl = loadGame.boostLvl;
-	wirePurchase = loadGame.wirePurchase;
-	wireSupply = loadGame.wireSupply;
-	marketingEffectiveness = loadGame.marketingEffectiveness;
-	milestoneFlag = loadGame.milestoneFlag;
-	fib1 = loadGame.fib1;
-	fib2 = loadGame.fib2;
-	revPerSecFlag = loadGame.revPerSecFlag;
-	compFlag = loadGame.compFlag;
-	projectsFlag = loadGame.projectsFlag;
-	autoClipperFlag = loadGame.autoClipperFlag;
-	megaClipperFlag = loadGame.megaClipperFlag;
-	megaClipperCost = loadGame.megaClipperCost;
-	megaClipperLevel = loadGame.megaClipperLevel;
-	megaClipperBoost = loadGame.megaClipperBoost;
-	creativitySpeed = loadGame.creativitySpeed;
-	creativityCounter = loadGame.creativityCounter;
-	dustBusterFlag = loadGame.dustBusterFlag;
-	demandBoost = loadGame.demandBoost;
-	humanFlag = loadGame.humanFlag;
-	trustFlag = loadGame.trustFlag;
-	nanoWire = loadGame.nanoWire;
-	creationFlag = loadGame.creationFlag;
-	wireProductionFlag = loadGame.wireProductionFlag;
-	spaceFlag = loadGame.spaceFlag;
-	factoryFlag = loadGame.factoryFlag;
-	harvesterFlag = loadGame.harvesterFlag;
-	wireDroneFlag = loadGame.wireDroneFlag;
-	factoryLevel = loadGame.factoryLevel;
-	factoryBoost = loadGame.factoryBoost;
-	droneBoost = loadGame.droneBoost;
-
-	harvesterLevel = loadGame.harvesterLevel;
-	wireDroneLevel = loadGame.wireDroneLevel;
-	factoryCost = loadGame.factoryCost;
-	harvesterCost = loadGame.harvesterCost;
-	wireDroneCost = loadGame.wireDroneCost;
-	factoryRate = loadGame.factoryRate;
-	harvesterRate = loadGame.harvesterRate;
-	wireDroneRate = loadGame.wireDroneRate;
-	harvesterBill = loadGame.harvesterBill;
-	wireDroneBill = loadGame.wireDroneBill;
-	factoryBill = loadGame.factoryBill;
-
-	qFlag = loadGame.qFlag;
-	qClock = loadGame.qClock;
-	qChipCost = loadGame.qChipCost;
-	nextQchip = loadGame.nextQchip;
-	bribe = loadGame.bribe;
-
-	project40b.priceTag = '($' + formatWithCommas(bribe) + ')';
-	project51.priceTag = '(' + qChipCost + ' ops)';
-
-	refresh();
-}
-
-function load2() {
-	var loadGame = JSON.parse(localStorage.getItem('saveGame2'));
-	var loadProjectsUses = JSON.parse(localStorage.getItem('saveProjectsUses2'));
-	var loadProjectsFlags = JSON.parse(
-		localStorage.getItem('saveProjectsFlags2')
-	);
-	var loadProjectsActive = JSON.parse(
-		localStorage.getItem('saveProjectsActive2')
-	);
-
-	for (var i = 0; i < projects.length; i++) {
-		projects[i].uses = loadProjectsUses[i];
-		projects[i].flag = loadProjectsFlags[i];
-	}
-
-	for (var i = 0; i < projects.length; i++) {
-		if (loadProjectsActive.indexOf(projects[i].id) >= 0) {
-			displayProjects(projects[i]);
-			activeProjects.push(projects[i]);
-		}
-	}
-
-	resetFlag = loadGame.resetFlag;
-
-	dismantle = loadGame.dismantle;
-	endTimer1 = loadGame.endTimer1;
-	endTimer2 = loadGame.endTimer2;
-	endTimer3 = loadGame.endTimer3;
-	endTimer4 = loadGame.endTimer4;
-	endTimer5 = loadGame.endTimer5;
-	endTimer6 = loadGame.endTimer6;
-	startTimer = loadGame.startTimer;
-
-	testFlag = loadGame.testFlag;
-	finalClips = loadGame.finalClips;
-
-	dustBusterStatus = loadGame.dustBusterStatus;
-	wirePriceTimer = loadGame.wirePriceTimer;
-	qFade = loadGame.qFade;
-
-	sliderPos = loadGame.sliderPos;
-	tempOps = loadGame.tempOps;
-	standardOps = loadGame.standardOps;
-	opFade = loadGame.opFade;
-
-	entertainCost = loadGame.entertainCost;
-	boredomLevel = loadGame.boredomLevel;
-	boredomFlag = loadGame.boredomFlag;
-	boredomMsg = loadGame.boredomMsg;
-
-	disorgCounter = loadGame.disorgCounter;
-	disorgFlag = loadGame.disorgFlag;
-	synchCost = loadGame.synchCost;
-	disorgMsg = loadGame.disorgMsg;
-
-	farmRate = loadGame.farmRate;
-	batterySize = loadGame.batterySize;
-	factoryPowerRate = loadGame.factoryPowerRate;
-	dronePowerRate = loadGame.dronePowerRate;
-	farmLevel = loadGame.farmLevel;
-	batteryLevel = loadGame.batteryLevel;
-	farmCost = loadGame.farmCost;
-	batteryCost = loadGame.batteryCost;
-	storedPower = loadGame.storedPower;
-	powMod = loadGame.powMod;
-	farmBill = loadGame.farmBill;
-	batteryBill = loadGame.batteryBill;
-	momentum = loadGame.momentum;
-
-	swarmFlag = loadGame.swarmFlag;
-	swarmStatus = loadGame.swarmStatus;
-	swarmGifts = loadGame.swarmGifts;
-	nextGift = loadGame.nextGift;
-	giftPeriod = loadGame.giftPeriod;
-	giftCountdown = loadGame.giftCountdown;
-	elapsedTime = loadGame.elapsedTime;
-
-	maxFactoryLevel = loadGame.maxFactoryLevel;
-	maxDroneLevel = loadGame.maxDroneLevel;
-
-	wirePriceCounter = loadGame.wirePriceCounter;
-	wireBasePrice = loadGame.wireBasePrice;
-
-	egoFlag = loadGame.egoFlag;
-	tothFlag = loadGame.tothFlag;
-
-	incomeTracker = loadGame.incomeTracker.slice(0);
-	qChips = loadGame.qChips.slice(0);
-
-	clips = loadGame.clips;
-	unusedClips = loadGame.unusedClips;
-	clipRate = loadGame.clipRate;
-	clipRateTemp = loadGame.clipRateTemp;
-	prevClips = loadGame.prevClips;
-	clipRateTracker = loadGame.clipRateTracker;
-	clipmakerRate = loadGame.clipmakerRate;
-	clipmakerLevel = loadGame.clipmakerLevel;
-	clipperCost = loadGame.clipperCost;
-	unsoldClips = loadGame.unsoldClips;
-	funds = loadGame.funds;
-	margin = loadGame.margin;
-	wire = loadGame.wire;
-	wireCost = loadGame.wireCost;
-	adCost = loadGame.adCost;
-	demand = loadGame.demand;
-	clipsSold = loadGame.clipsSold;
-	avgRev = loadGame.avgRev;
-	ticks = loadGame.ticks;
-	marketing = loadGame.marketing;
-	marketingLvl = loadGame.marketingLvl;
-	x = loadGame.x;
-	clipperCost = loadGame.clipperCost;
-	processors = loadGame.processors;
-	memory = loadGame.memory;
-	operations = loadGame.operations;
-	trust = loadGame.trust;
-	nextTrust = loadGame.nextTrust;
-	transaction = loadGame.transaction;
-	clipperBoost = loadGame.clipperBoost;
-	blinkCounter = loadGame.blinkCounter;
-	creativity = loadGame.creativity;
-	creativityOn = loadGame.creativityOn;
-	safetyProjectOn = loadGame.safetyProjectOn;
-	boostLvl = loadGame.boostLvl;
-	wirePurchase = loadGame.wirePurchase;
-	wireSupply = loadGame.wireSupply;
-	marketingEffectiveness = loadGame.marketingEffectiveness;
-	milestoneFlag = loadGame.milestoneFlag;
-	fib1 = loadGame.fib1;
-	fib2 = loadGame.fib2;
-	revPerSecFlag = loadGame.revPerSecFlag;
-	compFlag = loadGame.compFlag;
-	projectsFlag = loadGame.projectsFlag;
-	autoClipperFlag = loadGame.autoClipperFlag;
-	megaClipperFlag = loadGame.megaClipperFlag;
-	megaClipperCost = loadGame.megaClipperCost;
-	megaClipperLevel = loadGame.megaClipperLevel;
-	megaClipperBoost = loadGame.megaClipperBoost;
-	creativitySpeed = loadGame.creativitySpeed;
-	creativityCounter = loadGame.creativityCounter;
-	dustBusterFlag = loadGame.dustBusterFlag;
-	demandBoost = loadGame.demandBoost;
-	humanFlag = loadGame.humanFlag;
-	trustFlag = loadGame.trustFlag;
-	nanoWire = loadGame.nanoWire;
-	creationFlag = loadGame.creationFlag;
-	wireProductionFlag = loadGame.wireProductionFlag;
-	spaceFlag = loadGame.spaceFlag;
-	factoryFlag = loadGame.factoryFlag;
-	harvesterFlag = loadGame.harvesterFlag;
-	wireDroneFlag = loadGame.wireDroneFlag;
-	factoryLevel = loadGame.factoryLevel;
-	factoryBoost = loadGame.factoryBoost;
-	droneBoost = loadGame.droneBoost;
-
-	harvesterLevel = loadGame.harvesterLevel;
-	wireDroneLevel = loadGame.wireDroneLevel;
-	factoryCost = loadGame.factoryCost;
-	harvesterCost = loadGame.harvesterCost;
-	wireDroneCost = loadGame.wireDroneCost;
-	factoryRate = loadGame.factoryRate;
-	harvesterRate = loadGame.harvesterRate;
-	wireDroneRate = loadGame.wireDroneRate;
-	harvesterBill = loadGame.harvesterBill;
-	wireDroneBill = loadGame.wireDroneBill;
-	factoryBill = loadGame.factoryBill;
-
-	qFlag = loadGame.qFlag;
-	qClock = loadGame.qClock;
-	qChipCost = loadGame.qChipCost;
-	nextQchip = loadGame.nextQchip;
-	bribe = loadGame.bribe;
-
-	project40b.priceTag = '($' + formatWithCommas(bribe) + ')';
-	project51.priceTag = '(' + qChipCost + ' ops)';
-
-	refresh();
-}
-
 function reset() {
-	localStorage.removeItem('saveGame');
-	localStorage.removeItem('saveProjectsUses');
-	localStorage.removeItem('saveProjectsFlags');
-	localStorage.removeItem('saveProjectsActive');
-	location.reload();
+	if (confirm('Reset game data?')) {
+		localStorage.removeItem('saveGame');
+		localStorage.removeItem('saveProjectsUses');
+		localStorage.removeItem('saveProjectsFlags');
+		localStorage.removeItem('saveProjectsActive');
+		location.reload();
+	}
 }
 
 function loadPrestige() {

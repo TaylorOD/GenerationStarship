@@ -1,4 +1,4 @@
-// PROJECTS -------------------------------------------------------
+// PROJECTS -----------------------------------------------------
 
 var projects = [];
 var activeProjects = [];
@@ -1444,7 +1444,6 @@ projects.push(project130);
 // };
 
 // projects.push(project201);
-
 
 var project212 = {
 	id: 'projectButton212',

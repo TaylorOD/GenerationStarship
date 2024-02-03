@@ -2,7 +2,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" type="text/css" href="interface.css" />
+		<link rel="stylesheet" type="text/css" href="./stylesheets/interface.css" />
 		<title>Generation Starship</title>
 	</head>
 	<body>
@@ -249,7 +249,7 @@
 						</div>
 					</div>
 
-					<!-- Space Exploration -->
+					<!-- OPERATIONS -->
 					<div id="businessDiv">
 						<b>Starship Operations</b>
 						<br />
@@ -297,12 +297,11 @@
 						<br />
 						<br />
 					</div>
+
+					<!-- MANUFACTURING -->
 					<div id="manufacturingDiv">
 						<b>Energy</b><br />
 						<hr />
-						<span class="formatText">Solar Panels:</span>
-						<span class="engineText6" id="clipmakerLevel2">0</span>
-						<br />
 						<span class="formatText">Energy (e) Generated per Second:</span>
 						<span id="clipmakerRate">0</span>
 						<br />
@@ -320,7 +319,6 @@
 							</button>
 							<span class="engineText6" id="dustBusterStatus">ON</span>
 						</div>
-
 						<button
 							class="button2"
 							id="btnBuyWire"
@@ -335,6 +333,9 @@
 						<br />
 						<br />
 						<div id="autoClipperDiv" style="display: none">
+							<span class="formatText">Solar Panels:</span>
+							<span class="engineText6" id="clipmakerLevel2">0</span>
+							<br />
 							<p class="engineText5">
 								<button
 									class="button2"
@@ -351,6 +352,9 @@
 							<br />
 						</div>
 						<div id="megaClipperDiv" style="display: none">
+							<span class="formatText">MegaClippers:</span>
+							<span class="engineText6" id="megaClipperLevel">0</span>
+							<br />
 							<p class="engineText5">
 								<button
 									class="button2"
@@ -360,9 +364,9 @@
 								>
 									MegaClippers
 								</button>
-								<span class="engineText6" id="megaClipperLevel">0</span>
 							</p>
-							Cost: <span id="megaClipperCost">500</span>
+							<span class="formatText"> Cost: </span>
+							<span id="megaClipperCost">500</span>
 							<span class="formatText">e</span>
 							<br />
 						</div>
@@ -370,23 +374,11 @@
 					<br />
 					<br />
 
-					<!-- <div id="cheatsDiv" style="display: none">
+					<!-- CHEATS -->
+					<div id="cheatsDiv">
 						<b>Cheats</b>
 						<br />
 						<hr />
-
-						<button id="save1Button" onclick="save1()">SAVE SLOT 1</button>
-						<button id="load1Button" onclick="load1()">LOAD SLOT 1</button>
-						<br />
-
-						<button id="save2Button" onclick="save2()">SAVE SLOT 2</button>
-						<button id="load2Button" onclick="load2()">LOAD SLOT 2</button>
-						<br />
-
-						<button id="resetButton" onclick="reset()">
-							RESET ALL PROGRESS
-						</button>
-						<br />
 
 						<button id="freeClipsButton" onclick="cheatClips()">
 							Free Clips
@@ -396,8 +388,8 @@
 							Free Money
 						</button>
 						<br />
-						<button id="freeTrustButton" onclick="cheatTrust()">
-							Free Trust
+						<button id="freeChipsButton" onclick="cheatChips()">
+							Free Chips
 						</button>
 						<br />
 						<button id="freeOpsButton" onclick="cheatOps()">Free Ops</button>
@@ -406,13 +398,18 @@
 							Free Creativity
 						</button>
 						<br />
+						<br />
+						<button id="resetButton" onclick="reset()">
+							RESET ALL PROGRESS
+						</button>
+						<br />
 						<button id="resetPrestige" onclick="resetPrestige()">
-							Reset Prestige
+							RESET PRESTIGE
 						</button>
 						<br />
 
 						<button id="destroyAllHumansButton" onclick="cheatHypno()">
-							Destroy all Humans
+							Destroy all Humans (Cheat Hypno)
 						</button>
 						<br />
 						<button id="freePrestigeU" onclick="cheatPrestigeU()">
@@ -423,11 +420,12 @@
 						</button>
 						<button id="refresh" onclick="refresh()">refresh()</button>
 						<br />
-					</div> -->
+					</div>
 				</div>
 
 				<!--Middle Column-->
 				<div id="middleColumn">
+					<!-- COMPUTER -->
 					<div id="compDiv" style="display: none">
 						<b>AI Computational Resources</b><br />
 						<hr />
@@ -449,7 +447,7 @@
 								Processors
 							</button>
 							<span class="engineText10" id="processors">1</span>
-							<span style="font-size: x-small">
+							<span class="chipDescriptionText">
 								Processors Increase Ops Speed
 							</span>
 						</div>
@@ -464,7 +462,7 @@
 								&nbsp; Memory &nbsp;
 							</button>
 							<span class="engineText10" id="memory">1</span>
-							<span style="font-size: x-small">
+							<span class="chipDescriptionText">
 								Memory Increase Ops Capacity
 							</span>
 						</div>
@@ -477,7 +475,8 @@
 						</div>
 						<br />
 						<div class="swarmEngine" id="swarmEngine" style="display: none">
-							<b>Swarm Computing</b><br />
+							<b>Swarm Computing</b>
+							<br />
 							Drones: <span id="swarmSize">0</span><br />
 							<div id="swarmStatusDiv">
 								Status: <span id="swarmStatus">x </span>
@@ -498,8 +497,9 @@
 									id="btnTeachSwarm"
 									onclick="teachSwarm()"
 								>
-									Teach the Swarm</button
-								><br />
+									Teach the Swarm
+								</button>
+								<br />
 								Cost: <span id="swarmFeedCost">0</span> MWs
 							</div>
 							<div id="entertainButtonDiv">
@@ -510,7 +510,7 @@
 								>
 									Entertain the Swarm</button
 								><br />
-								Cost: <span id="swarmEntertainCost">0</span> creat
+								Cost: <span id="swarmEntertainCost">0</span> creativity
 							</div>
 							<div id="cladButtonDiv">
 								<button class="button2" id="btnCladSwarm" onclick="cladSwarm()">
@@ -562,6 +562,8 @@
 							<span id="qCompDisplay" style="opacity: -2.474"> &nbsp; </span>
 						</div>
 					</div>
+
+					<!-- PROJECTS -->
 					<div id="projectsDiv" style="display: none">
 						<b>AI Self Improvement Projects</b><br />
 						<hr />
@@ -570,7 +572,7 @@
 				</div>
 
 				<div id="rightColumn">
-					<!--        POWER-->
+					<!-- POWER -->
 					<div id="powerDiv" style="display: none">
 						<b>Power</b>
 						<hr />
@@ -660,9 +662,9 @@
 					</div>
 				</div>
 			</div>
-			<script type="text/javascript" src="globals.js"></script>
-			<script type="text/javascript" src="projects.js"></script>
-			<script type="text/javascript" src="main.js"></script>
+			<script type="text/javascript" src="./javascript/globals.js"></script>
+			<script type="text/javascript" src="./javascript/projects.js"></script>
+			<script type="text/javascript" src="./javascript/core.js"></script>
 		</div>
 	</body>
 </html>
