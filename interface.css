@@ -253,6 +253,7 @@ canvas {
 #containerColumns {
 	float: left;
 	white-space: nowrap;
+	margin-bottom: 2rem;
 }
 
 #leftColumn {
@@ -518,4 +519,20 @@ p.hypnoDrone {
 	text-decoration: none;
 	vertical-align: middle;
 	outline: none;
+}
+
+.btnCollectEnergy {
+	margin-left: 1rem;
+	padding: 2px 4px;
+	font-size: 11px;
+	font-family: helvetica, serif;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	outline: none;
+}
+
+.formatText {
+	font-size: small;
+	vertical-align: bottom;
+	line-height: 1.4;
 }
